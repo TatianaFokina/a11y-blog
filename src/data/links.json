@@ -1,0 +1,13 @@
+{
+  "social": {
+	"twitter": "https://twitter.com/ta_fokina"
+  },
+  "public": {
+	"pitera11y": "https://github.com/pitercss/a11y_docs",
+	"webStandards": "https://web-standards.ru"
+  },
+  "copyright": {
+	"eleventy": "https://www.11ty.dev",
+	"iconfinder": "https://www.iconfinder.com"
+  }
+}

@@ -1,0 +1,30 @@
+---
+layout: page.njk
+---
+
+<div class="container">
+	<div class="content">
+		<div class="invisible-anchor" id="main-content"></div>
+		<main class="main">
+
+			<div class="post-inf">
+				<h1 class="post-name">{{ postName }}</h1>
+
+				<ul class="tags-list tags-list--post">
+					{%- for tag in keyTheme -%}
+						<li class="tag">{{ tag }}</li>
+					{%- endfor -%}
+				</ul>
+
+				<span class="post-date">
+					🕠 <time datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
+				</span>
+			</div>
+
+			<div class="post">
+				{{ content | safe }}
+			</div>
+
+		</main>
+	</div>
+</div>

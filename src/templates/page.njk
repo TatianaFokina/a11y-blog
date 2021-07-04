@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="{{ description or site.description }}">
+	<title>{{ title or site.title }}</title>
+	{% include "open-graph.njk" %}
+	<link rel="stylesheet" href="/styles/styles.css">
+	{#Favicons#}
+	{#<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">#}
+</head>
+<body class="body">
+	{% include "header.njk" %}
+
+	{{ content | safe }}
+
+	{% include "footer.njk" %}
+
+	<script type="module" src="/scripts/scripts.js"></script>
+</body>
+</html>
