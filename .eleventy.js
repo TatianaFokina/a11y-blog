@@ -6,7 +6,7 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("src/fonts");
 	eleventyConfig.addPassthroughCopy("src/scripts");
 	eleventyConfig.addPassthroughCopy({ "src/assets/*.{svg,jpg,png}": "assets" });
-	eleventyConfig.addPassthroughCopy({ "src/assets/favicons/*.{svg,jpg,png}": "assets/favicons" });
+	eleventyConfig.addPassthroughCopy({ "src/assets/favicons/*.{svg,jpg,png,ico}": "assets/favicons" });
 	eleventyConfig.addPassthroughCopy({ "src/pages/images/**/*.svg": "images" });
 
 	// Styles
