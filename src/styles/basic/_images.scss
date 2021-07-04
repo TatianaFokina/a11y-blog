@@ -1,0 +1,9 @@
+@import "../_variables.scss";
+@import "../mixins-and-functions";
+
+.content img {
+	display: block;
+	
+	max-width: 100%;
+	height: auto;
+}

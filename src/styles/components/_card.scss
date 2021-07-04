@@ -1,0 +1,76 @@
+@import "../_variables.scss";
+@import "../mixins-and-functions";
+
+.cards--w-margin {
+	margin-top: $gap-3x;
+}
+
+.card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	
+	padding: $gap-4x;
+	
+	background: $card-bg;
+	border-radius: 4px;
+	
+	&:not(:last-of-type) {
+		margin-bottom: $gap-5x;
+	}
+	
+	&:before {
+		content: "";
+		position: absolute;
+	}
+	
+	&:hover {
+		background: $card-bg--hover;
+	}
+	
+	@include media(md) {
+		padding: $gap-10x;
+	}
+}
+
+.keyboard-focus .card:focus-within {
+	outline: 2px solid $link-color--focus;
+	outline-offset: 2px;
+}
+
+.card__title {
+	margin: 0 0 $gap-2x 0;
+}
+
+.card__title-link {
+	font-weight: bold;
+	color: inherit;
+	
+	border-bottom: 0;
+	
+	&:after {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+	}
+	
+	&:hover {
+		color: inherit;
+		background: inherit;
+		
+		border-bottom: 0;
+	}
+}
+
+.keyboard-focus .card__title-link:focus {
+	outline: 0;
+}
+
+.card__post-date {
+	margin-bottom: $gap-3x;
+	font-size: var(--step--1);
+}

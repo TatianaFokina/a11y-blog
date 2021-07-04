@@ -1,0 +1,41 @@
+@import "../_variables.scss";
+@import "../mixins-and-functions";
+
+.nav {
+	margin-left: auto;
+}
+
+.nav__menu {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	
+	margin: $gap-2x 0 0 0;
+	padding: 0;
+	
+	list-style: none;
+}
+
+.nav__menu-img {
+	fill: $icon-logo-color;
+}
+
+.nav__menu-link {
+	display: inline-flex;
+	position: relative;
+	width: 100%;
+	
+	padding: $gap-5x;
+	
+	line-height: $line-height-menu-link;
+	
+	border-bottom: 0;
+	
+	&:hover {
+		background: inherit;
+	}
+	
+	&:hover .nav__menu-img {
+		fill: $link-icon-color--hover;
+	}
+}

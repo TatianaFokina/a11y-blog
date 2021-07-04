@@ -1,0 +1,36 @@
+@import "../_variables.scss";
+@import "../mixins-and-functions";
+
+$logo-width-big: 62px;
+$logo-width-small: 54px;
+
+.logo {
+	display: flex;
+}
+
+.logo__image {
+	width: $logo-width-small;
+	height: auto;
+	
+	@include media(lg) {
+		width: $logo-width-big;
+	}
+}
+
+.logo__image-bg {
+	fill: $icon-logo-color;
+}
+
+.logo__link {
+	display: inline-flex;
+	
+	border-bottom: 0;
+	
+	&:hover {
+		background: inherit;
+	}
+	
+	&:hover .logo__image-bg {
+		fill: $link-icon-color--hover;
+	}
+}

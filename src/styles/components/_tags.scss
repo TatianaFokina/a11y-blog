@@ -1,0 +1,30 @@
+@import "../_variables.scss";
+@import "../mixins-and-functions";
+
+.tags-list {
+	display: flex;
+	
+	margin: 0;
+	padding: 0;
+	
+	list-style: none;
+}
+
+.tags-list--post {
+	justify-content: center;
+}
+
+.tag {
+	padding: $gap-1x;
+	
+	font-size: var(--step--2);
+	//font-weight: bold;
+	color: $tag-text;
+	
+	background: $tag-bg;
+	border-radius: 4px;
+	
+	&:not(:last-of-type) {
+		margin-right: $gap-2x;
+	}
+}

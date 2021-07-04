@@ -1,0 +1,67 @@
+@import "_variables.scss";
+
+// @media
+@mixin media($widthName) {
+	$width: map-get($breakpoints, $widthName);
+	@media (min-width: $width) {
+		@content;
+	}
+}
+
+
+
+
+// Fluid typography
+// Round Function
+@function decimal-round($number, $digits: 0, $mode: round) {
+	$n: 1;
+	// $number must be a number
+	@if type-of($number) != number {
+		@warn '#{ $number } is not a number.';
+		@return $number;
+	}
+	// $digits must be a unitless number
+	@if type-of($digits) != number {
+		@warn '#{ $digits } is not a number.';
+		@return $number;
+	} @else if not unitless($digits) {
+		@warn '#{ $digits } has a unit.';
+		@return $number;
+	}
+	@for $i from 1 through $digits {
+		$n: $n * 10;
+	}
+	@if $mode == round {
+		@return round($number * $n) / $n;
+	} @else if $mode == ceil {
+		@return ceil($number * $n) / $n;
+	} @else if $mode == floor {
+		@return floor($number * $n) / $n;
+	} @else {
+		@warn '#{ $mode } is undefined keyword.';
+		@return $number;
+	}
+}
+
+// Usage example: --step-4: #{fluid-type(320px, 1110px, 14px, 16px)};
+@function fluid-type($minWidthPx, $maxWidthPx, $minFontSizePx, $maxFontSizePx) {
+	// Root font-size
+	$pixelsPerRem: $font-size-base;
+	
+	//Converts width to rem
+	$minWidth: $minWidthPx / $pixelsPerRem;
+	$maxWidth: $maxWidthPx / $pixelsPerRem;
+	
+	// Converts font size to rem
+	$minFontSize: decimal-round($minFontSizePx / $pixelsPerRem, 3);
+	$maxFontSize: decimal-round($maxFontSizePx / $pixelsPerRem, 3);
+	
+	$slope: ($maxFontSize - $minFontSize) / ($maxWidth - $minWidth);
+	$yAxisIntersection: (-1 * $minWidth) * $slope + $minFontSize;
+	
+	$min: #{decimal-round($minFontSize, 3)}rem;
+	$calc-value: #{decimal-round($yAxisIntersection, 3)}rem "+" #{decimal-round($slope * 100, 3)}vw;
+	$max: #{decimal-round($maxFontSize, 3)}rem;
+	
+	@return clamp(#{$min, $calc-value, $max});
+}

@@ -1,0 +1,75 @@
+@import "../_variables.scss";
+@import "../mixins-and-functions";
+
+$paragraph-margin: 20px;
+
+.content p {
+    margin: $paragraph-margin 0;
+    
+    font-size: var(--step-0);
+    line-height: $line-height-base;
+    &:first-child {
+        margin-top: 0;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+::selection {
+    background: $selection-color;
+}
+
+
+
+
+// Figure and figcaption
+.content figure {
+    margin: 0;
+}
+
+.content figcaption {
+    margin: $gap-2x 0 $gap-5x;
+    
+    font-size: var(--step--1);
+}
+
+
+
+
+// Small, code and pre
+.content small {
+    font-size: var(--step--1);
+}
+
+.content code {
+    padding: $gap-1x;
+    
+    font-family: $code-font-family;
+    font-size: var(--step--1);
+    word-wrap: break-word;
+    color: $code-snippet-color;
+    
+    background: $code-snippet-bg;
+    
+    border-radius: 4px;
+}
+
+.content pre code {
+    display: block;
+    
+    padding: $gap-9x;
+    
+    overflow-x: auto;
+}
+
+// Blockquote
+.content blockquote {
+    margin: 0;
+    padding-left: $gap-2x;
+    
+    font-style: italic;
+    word-wrap: break-word;
+    
+    border-left: 4px solid $blockquote-border;
+}

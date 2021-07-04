@@ -1,0 +1,22 @@
+@import "../_variables.scss";
+@import "../mixins-and-functions";
+
+.visually-hidden {
+	position: absolute;
+	left: 0;
+	padding: 0;
+	list-style: none;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+}
+
+.invisible-anchor {
+	position: relative;
+	top: 0;
+	
+	@include media(md) {
+		top: -$gap-10x;
+	}
+}

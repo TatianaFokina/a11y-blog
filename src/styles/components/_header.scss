@@ -1,0 +1,15 @@
+@import "../_variables.scss";
+@import "../mixins-and-functions";
+
+.header {
+	width: 100%;
+	
+	background: $bg-color;
+}
+
+.content__header {
+	display: flex;
+	align-items: center;
+	
+	padding: $gap-5x 0;
+}

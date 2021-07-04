@@ -1,0 +1,39 @@
+@import "../_variables.scss";
+@import "../mixins-and-functions";
+
+.post-inf {
+	margin-bottom: $gap-29x;
+	
+	text-align: center;
+}
+
+.post-date {
+	display: inline-block;
+	
+	margin-top: $gap-7x;
+	
+	font-size: var(--step--1);
+}
+
+.note {
+	position: relative;
+	display: flex;
+	
+	margin: $gap-5x 0;
+	padding: 0 $gap-5x;
+	
+	background: $notion-bg;
+	border-radius: 4px;
+}
+
+.note__text {
+	padding-left: $gap-10x;
+	
+	word-break: break-word;
+}
+
+.note__emoji {
+	display: block;
+	position: absolute;
+	top: $gap-5x;
+}

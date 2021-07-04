@@ -1,0 +1,108 @@
+// Colors
+$primary-color: #4A148C;
+$secondary-color: #E65100;
+
+$gray-100: #eae9e9;
+$gray-200: #e3e3e3;
+$gray-300: #d8d8d8;
+$gray-400: #616161;
+$gray-500: #535353;
+$gray-600: #272624;
+$white: #ffffff;
+
+
+$bg-color: $gray-200;
+$footer-bg: $gray-100;
+
+// Z-index
+$z-index: 1;
+
+// Text
+$text-color: $gray-400;
+$text-footer-color: $gray-400;
+
+$selection-color: transparentize($primary-color, .9);
+
+// Code snippets
+$code-snippet-color: $gray-600;
+$code-snippet-bg: transparentize($primary-color, .9);
+
+// Tags
+$tag-bg: transparentize($secondary-color, .8);
+$tag-text: $gray-500;
+
+// Blockquote
+$blockquote-border: $secondary-color;
+
+// Notion
+$notion-bg: $gray-100;
+
+// Headings color
+$h3-color: $gray-400;
+
+// Cards
+$card-bg: $gray-100;
+$card-bg--hover: $gray-300;
+
+// Logo & icons
+$icon-logo-color: $primary-color;
+
+// Links
+$link-color: $primary-color;
+$link-underline-color: $primary-color;
+// Interactive styles
+$link-color--focus: $primary-color;
+$link-bg-color--hover: transparentize($primary-color, .9);
+$link-icon-color--hover: $secondary-color;
+
+// Font
+$text-font-family: "IBM Plex Sans", "Arial", "Helvetica", sans-serif;
+$code-font-family: "IBM Plex Mono", "Courier New", monospace;
+
+$font-size-base: 20px;
+
+$line-height-base: 1.6; // 32px
+$line-height-h1: 1.318; // 58px
+$line-height-h2: 1.263; // 48px
+$line-height-h3: 1.285; // 36px
+$line-height-h4: 1.5; // 24px
+$line-height-menu-link: 1.7;
+
+
+
+
+// Gaps
+$gap-1x: 4px;
+$gap-2x: $gap-1x * 2; // 8px
+$gap-3x: $gap-1x * 3; // 12px
+$gap-4x: $gap-1x * 4; // 16px
+$gap-5x: $gap-1x * 5; // 20px
+$gap-6x: $gap-1x * 6; // 24px
+$gap-7x: $gap-1x * 7; // 28px
+$gap-8x: $gap-1x * 8; // 32px
+$gap-9x: $gap-1x * 9; // 36px
+$gap-10x: $gap-1x * 10; // 40px
+$gap-12x: $gap-1x * 12; // 48px
+$gap-13x: $gap-1x * 13; // 52px
+$gap-29x: $gap-1x * 29; // 116px
+
+
+
+
+// Grid breakpoints and container min-widths
+$breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1400px
+);
+
+$container-widths: (
+	sm: 540px,
+	md: 720px,
+	lg: 960px,
+	xl: 1020px,
+	xxl: 1320px
+);
