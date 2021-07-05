@@ -1,13 +1,15 @@
 <nav class="nav">
-	<ul class="nav__menu">
-		<li class="nav__menu-item">
-			<a class="nav__menu-link" href="{{ links.social.twitter }}" target="_blank" rel="noopener noreferrer">
+	{% include "logo.njk" %}
+
+	<ul class="nav__list">
+		<li class="nav__list-item">
+			<a class="nav__list-link" href="{{ links.social.twitter }}" target="_blank" rel="noopener noreferrer">
 				{% include "../assets/ico-twitter.svg" %}
 				<span class="visually-hidden">Твиттер Татьяны Фокиной</span>
 			</a>
 		</li>
-		<li class="nav__menu-item">
-			<a class="nav__menu-link" href="{{ links.social.twitter }}" target="_blank" rel="noopener noreferrer">
+		<li class="nav__list-item">
+			<a class="nav__list-link" href="{{ links.social.twitter }}" target="_blank" rel="noopener noreferrer">
 				{% include "../assets/ico-rss.svg" %}
 				<span class="visually-hidden">RSS</span>
 			</a>

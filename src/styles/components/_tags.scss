@@ -3,6 +3,7 @@
 
 .tags-list {
 	display: flex;
+	flex-wrap: wrap;
 	
 	margin: 0;
 	padding: 0;
@@ -15,6 +16,8 @@
 }
 
 .tag {
+	margin-right: $gap-2x;
+	margin-bottom: $gap-2x;
 	padding: $gap-1x;
 	
 	font-size: var(--step--2);
@@ -22,8 +25,4 @@
 	
 	background: $tag-bg;
 	border-radius: 4px;
-	
-	&:not(:last-of-type) {
-		margin-right: $gap-2x;
-	}
 }
