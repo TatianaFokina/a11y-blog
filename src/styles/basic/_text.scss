@@ -8,9 +8,11 @@ $paragraph-margin: 20px;
     
     font-size: var(--step-0);
     line-height: $line-height-base;
+    
     &:first-child {
         margin-top: 0;
     }
+    
     &:last-child {
         margin-bottom: 0;
     }
