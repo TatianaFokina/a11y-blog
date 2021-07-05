@@ -1,14 +1,13 @@
 ---
 title: Все посты — Код без барьеров
-description: Список всех постов, опубликованных ранее в блоге.
+description: Список всех постов, опубликованных в блоге.
 layout: page.njk
 permalink: posts.html
 ---
 
 <div class="container">
 	<div class="content">
-		<div class="invisible-anchor" id="main-content"></div>
-		<main class="main">
+		<main class="main" id="main-content">
 			<h1 class="first-heading">Все посты</h1>
 
 			{% set postslist = collections.post %}
