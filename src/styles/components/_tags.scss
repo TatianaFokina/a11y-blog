@@ -5,7 +5,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	
-	margin: 0;
+	margin: 0 (-$gap-2x) (-$gap-2x) 0;
 	padding: 0;
 	
 	list-style: none;
@@ -15,9 +15,12 @@
 	justify-content: center;
 }
 
+.tags-list--card {
+	margin-top: $gap-2x;
+}
+
 .tag {
-	margin-right: $gap-2x;
-	margin-bottom: $gap-2x;
+	margin: 0 $gap-2x $gap-2x 0;
 	padding: $gap-1x;
 	
 	font-size: var(--step--2);

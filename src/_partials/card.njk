@@ -5,12 +5,11 @@
 		</h3>
 		<p class="card__description">{{ post.data.description }}</p>
 		<time class="card__post-date" datetime="{{ post.date | htmlDateString }}">🕠 {{ post.data.date | readableDate }}</time>
-		<div class="card__tags">
-			<ul class="tags-list">
-				{%- for tag in post.data.keyTheme -%}
-					<li class="tag">{{ tag }}</li>
-				{%- endfor -%}
-			</ul>
-		</div>
+
+		<ul class="tags-list tags-list--card">
+			{%- for tag in post.data.keyTheme -%}
+				<li class="tag">{{ tag }}</li>
+			{%- endfor -%}
+		</ul>
 	</article>
 {%- endfor -%}
