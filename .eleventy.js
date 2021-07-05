@@ -33,7 +33,7 @@ module.exports = function(eleventyConfig) {
 			year: "numeric",
 			month: "long",
 			day: "numeric"
-		}).replace(' г.', '');
+		}).replace(" г.", "");
 	});
 
 	eleventyConfig.addFilter("htmlDateString", (value) => {
