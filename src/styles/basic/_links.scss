@@ -1,6 +1,6 @@
 @import "../_variables.scss";
 
-a {
+.content a {
     text-decoration: none;
     color: $link-color;
     
@@ -28,6 +28,7 @@ a {
     
     font-size: var(--step--1);
     font-weight: bold;
+    text-decoration: none;
     color: $text-color;
     
     border-bottom: 0;

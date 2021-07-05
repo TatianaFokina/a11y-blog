@@ -45,7 +45,5 @@ $container-margin-top-mobile: 60px;
 	max-width: map-get($container-widths, md);
 	
 	margin: 0 auto;
-	
-	padding-left: $gap-5x;
-	padding-right: $gap-5x;
+	padding: 0 $gap-5x;
 }

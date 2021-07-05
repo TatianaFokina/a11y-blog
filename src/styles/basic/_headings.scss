@@ -5,14 +5,7 @@ $h1-margin-bottom: 40px;
 $h2-margin-top: 48px;
 $h3-margin-top: 32px;
 
-h2,
-h3,
-.second-heading,
-.third-heading {
-    margin-bottom: $h2-h3-margin-bottom;
-}
-
-h1,
+.content h1,
 .first-heading {
     margin-top: 0;
     margin-bottom: $h1-margin-bottom;
@@ -21,7 +14,7 @@ h1,
     line-height: $line-height-h1;
 }
 
-h2,
+.content h2,
 .second-heading {
     margin-top: $h2-margin-top;
     
@@ -29,10 +22,17 @@ h2,
     line-height: $line-height-h2;
 }
 
-h3,
+.content h3,
 .third-heading {
     margin-top: $h3-margin-top;
     
     font-size: var(--step-1);
     line-height: $line-height-h3;
+}
+
+.content h2,
+.content h3,
+.second-heading,
+.third-heading {
+    margin-bottom: $h2-h3-margin-bottom;
 }
