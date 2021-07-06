@@ -77,8 +77,8 @@ function copy(cb) {
 		}))
 		.pipe(gulp.dest('dist'));
 
-	// txt
-	gulp.src('src/*.txt')
+	// RSS
+	gulp.src('src/feed.xml')
 		.pipe(gulp.dest('dist'));
 
 	// Webmanifest
