@@ -1,0 +1,33 @@
+---
+title: Код без барьеров
+description: Блог о доступной разработке.
+language: ru
+domain: https://code-without-barriers.ru
+url: https://code-without-barriers.ru/posts
+feedUrl: https://code-without-barriers.ru/feed.xml
+permalink: feed.xml
+---
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>{{ title }}</title>
+        <description>{{ description }}</description>
+        <language>{{ language }}</language>
+        <link>{{ domain }}/</link>
+
+        {% set lastArticle = collections.post | last %}
+        <lastBuildDate>{{ lastArticle.date.toUTCString() }}</lastBuildDate>
+
+        <atom:link href="{{ feedUrl }}" rel="self" type="application/rss+xml"/>
+
+        {%- for post in collections.post | reverse  %}
+            <item>
+                <title>{{ post.data.title }}</title>
+                <link>{{ domain }}{{ post.url }}</link>
+                <pubDate>{{ post.date.toUTCString() }}</pubDate>
+                <guid isPermaLink="true">{{ domain }}{{ post.url }}</guid>
+            </item>
+        {%- endfor %}
+
+    </channel>
+</rss>
