@@ -1,10 +1,10 @@
 @import "../_variables.scss";
 @import "../mixins-and-functions";
 
-$paragraph-margin: 20px;
+$code-padding: 2px;
 
 .content p {
-    margin: $paragraph-margin 0;
+    margin: $gap-5x 0;
     
     font-size: var(--step-0);
     line-height: $line-height-base;
@@ -19,10 +19,10 @@ $paragraph-margin: 20px;
 }
 
 .content hr {
+    display: inline-block;
+    
     width: 100%;
     margin: $gap-8x 0;
-    
-    display: inline-block;
     
     border: 1px solid $hr-color;
 }
@@ -54,7 +54,7 @@ $paragraph-margin: 20px;
 }
 
 .content code {
-    padding: $gap-1x;
+    padding: $code-padding;
     
     font-family: $code-font-family;
     font-size: var(--step--1);
@@ -62,7 +62,6 @@ $paragraph-margin: 20px;
     color: $code-snippet-color;
     
     background: $code-snippet-bg;
-    
     border-radius: 4px;
 }
 

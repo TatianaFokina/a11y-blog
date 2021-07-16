@@ -4,6 +4,7 @@
 .nav {
 	display: flex;
 	flex-direction: row;
+	
 	width: 100%;
 }
 
@@ -25,8 +26,8 @@
 .nav .nav__list-link {
 	display: inline-flex;
 	position: relative;
-	width: 100%;
 	
+	width: 100%;
 	padding: $gap-5x;
 	
 	line-height: $line-height-menu-link;

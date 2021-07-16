@@ -4,10 +4,13 @@
 .visually-hidden {
 	position: absolute;
 	left: 0;
-	padding: 0;
-	list-style: none;
-	height: 1px;
+	
 	width: 1px;
+	height: 1px;
+	padding: 0;
+	
+	list-style: none;
+	
 	overflow: hidden;
 	clip: rect(1px, 1px, 1px, 1px);
 }
