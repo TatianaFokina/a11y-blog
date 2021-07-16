@@ -1,7 +1,7 @@
 {%- for post in postslist | reverse -%}
 	<article class="card">
 		<h3 class="third-heading card__title">
-			<a class="card__title-link" href="{{ post.url }}">{{ post.data.postName }}</a>
+			<a class="card__title-link" href="{{ post.url }}">{{ post.data.title }}</a>
 		</h3>
 		<p class="card__description">{{ post.data.description }}</p>
 		<time class="card__post-date" datetime="{{ post.date | htmlDateString }}">🕠 {{ post.data.date | readableDate }}</time>
