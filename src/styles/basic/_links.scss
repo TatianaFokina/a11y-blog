@@ -6,6 +6,8 @@
     
     border-bottom: 2px solid $link-underline-color;
     
+    transition: background .1s;
+    
     &:hover {
         background: $link-bg-color--hover;
     }

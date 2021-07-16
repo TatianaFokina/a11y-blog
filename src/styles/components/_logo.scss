@@ -19,6 +19,8 @@ $logo-width-small: 54px;
 
 .logo__image-bg {
 	fill: $icon-logo-color;
+	
+	transition: fill .2s;
 }
 
 .nav .logo__link {

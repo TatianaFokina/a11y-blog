@@ -18,6 +18,8 @@
 
 .nav__list-img {
 	fill: $icon-logo-color;
+	
+	transition: fill .2s;
 }
 
 .nav .nav__list-link {

@@ -16,6 +16,8 @@
 	background: $card-bg;
 	border-radius: 4px;
 	
+	transition: background .2s;
+	
 	&:not(:last-of-type) {
 		margin-bottom: $gap-5x;
 	}
