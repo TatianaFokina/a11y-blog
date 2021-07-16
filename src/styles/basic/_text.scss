@@ -18,6 +18,15 @@ $paragraph-margin: 20px;
     }
 }
 
+.content hr {
+    width: 100%;
+    margin: $gap-8x 0;
+    
+    display: inline-block;
+    
+    border: 1px solid $hr-color;
+}
+
 ::selection {
     background: $selection-color;
 }
@@ -68,7 +77,7 @@ $paragraph-margin: 20px;
 // Blockquote
 .content blockquote {
     margin: 0;
-    padding-left: $gap-2x;
+    padding-left: $gap-4x;
     
     font-style: italic;
     word-wrap: break-word;

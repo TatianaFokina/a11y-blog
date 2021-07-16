@@ -18,17 +18,19 @@ $footer-bg: $gray-100;
 $z-index: 1;
 
 // Text
-$text-color: $gray-400;
+$text-color: $gray-500;
 $text-footer-color: $gray-400;
+
+$hr-color: $gray-300;
 
 $selection-color: transparentize($primary-color, .9);
 
 // Code snippets
 $code-snippet-color: $gray-600;
-$code-snippet-bg: transparentize($primary-color, .9);
+$code-snippet-bg: transparentize($secondary-color, .9);
 
 // Tags
-$tag-bg: transparentize($secondary-color, .8);
+$tag-bg: transparentize($primary-color, .9);
 $tag-text: $gray-500;
 
 // Blockquote
@@ -42,7 +44,7 @@ $h3-color: $gray-400;
 
 // Cards
 $card-bg: $gray-100;
-$card-bg--hover: $gray-300;
+$card-bg--hover: desaturate(lighten($primary-color, 55), 67);
 
 // Logo & icons
 $icon-logo-color: $primary-color;
