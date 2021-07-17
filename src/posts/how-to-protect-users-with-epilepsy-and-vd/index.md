@@ -241,12 +241,12 @@ templateEngineOverride: md, njk
 
 ## Полезные ссылки
 
-- [WCAG 2.1. Guideline 2.3 Seizures and Physical Reactions](https://www.w3.org/TR/WCAG21/#seizures-and-physical-reactions).
+- [WCAG 2.1](https://www.w3.org/TR/WCAG21).
 - [Web accessibility for seizures and physical reactions](https://developer.mozilla.org/en-US/docs/Web/Accessibility/Seizure_disorders), MDN.
-- [Seizure and Vestibular Disorders](https://webaim.org/articles/seizure/), WebAIM.
-- [Your Interactive Makes Me Sick](https://source.opennews.org/articles/motion-sick/), Эйлин Уэбб.
-- [Revisiting prefers-reduced-motion, the reduced motion media query](https://css-tricks.com/revisiting-prefers-reduced-motion-the-reduced-motion-media-query/), Эрик Бэйли.
-- [Accessibility for Vestibular Disorders: How My Temporary Disability Changed My Perspective](https://alistapart.com/article/accessibility-for-vestibular/), Факундо Коррадини.
-- [Accessible Web Animation: The WCAG on Animation Explained](https://css-tricks.com/accessible-web-animation-the-wcag-on-animation-explained/), Вал Хед.
-- [Designing Safer Web Animation For Motion Sensitivity](https://alistapart.com/article/designing-safer-web-animation-for-motion-sensitivity/), Вал Хед.
-- Много полезного про&nbsp;доступную анимацию в&nbsp;[блоге Вал Хед](https://valhead.com/blog/).
+- [Seizure and Vestibular Disorders](https://webaim.org/articles/seizure), WebAIM.
+- [Your Interactive Makes Me Sick](https://source.opennews.org/articles/motion-sick), Эйлин Уэбб.
+- [Revisiting prefers-reduced-motion, the reduced motion media query](https://css-tricks.com/revisiting-prefers-reduced-motion-the-reduced-motion-media-query), Эрик Бэйли.
+- [Accessibility for Vestibular Disorders: How My Temporary Disability Changed My Perspective](https://alistapart.com/article/accessibility-for-vestibular), Факундо Коррадини.
+- [Accessible Web Animation: The WCAG on Animation Explained](https://css-tricks.com/accessible-web-animation-the-wcag-on-animation-explained), Вал Хед.
+- [Designing Safer Web Animation For Motion Sensitivity](https://alistapart.com/article/designing-safer-web-animation-for-motion-sensitivity), Вал Хед.
+- Много полезного про&nbsp;доступную анимацию в&nbsp;[блоге Вал Хед](https://valhead.com/blog).
