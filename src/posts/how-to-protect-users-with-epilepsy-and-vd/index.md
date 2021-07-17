@@ -63,7 +63,7 @@ templateEngineOverride: md, njk
 
 Не так давно сама столкнулась с&nbsp;глазной болью и&nbsp;чувством тошноты из-за [сплэшскрина в WebStorm 2021.1](http://mikeozornin.ru/blog/all/jetbrains-ide-splashscreens/). Хотя это всего лишь статичная картинка. Спасибо команде JetBrains, которая прислушалась к&nbsp;отзывам и&nbsp;снизила насыщенность изображений.
 
-Больше примеров проблемных интерфейсов есть в&nbsp;[«Your Interactive Makes Me Sick»](https://source.opennews.org/articles/motion-sick/) Эйлин Уэбб. Надеюсь, ваш вестибулярный аппарат справится с этим испытанием лучше, чем&nbsp;мой.
+Больше примеров проблемных интерфейсов есть в&nbsp;[«Your Interactive Makes Me Sick»](https://source.opennews.org/articles/motion-sick/) Эйлин Уэбб. Надеюсь, ваш вестибулярный аппарат справится с&nbsp;этим испытанием лучше, чем&nbsp;мой.
 
 <figure>
 
