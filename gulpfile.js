@@ -78,11 +78,11 @@ function copy(cb) {
 		.pipe(gulp.dest('dist'));
 
 	// RSS
-	gulp.src('src/feed.xml')
+	gulp.src('test/feed.xml')
 		.pipe(gulp.dest('dist'));
 
 	// Webmanifest
-	gulp.src('src/manifest.json')
+	gulp.src('test/manifest.json')
 		.pipe(gulp.dest('dist'));
 
 	cb();
