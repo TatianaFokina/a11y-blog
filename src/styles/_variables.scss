@@ -34,7 +34,7 @@ $tag-bg: transparentize($primary-color, .9);
 $tag-text: $gray-500;
 
 // Blockquote
-$blockquote-border: $secondary-color;
+$blockquote-border:transparentize($secondary-color, .4);
 
 // Notion
 $notion-bg: $gray-100;
