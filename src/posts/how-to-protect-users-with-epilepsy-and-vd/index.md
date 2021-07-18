@@ -5,7 +5,7 @@ keyTheme:
     - Разработка
     - Дизайн
     - Анимация
-date: 2021-07-17
+date: 2021-07-19
 tags: post
 layout: post.njk
 templateEngineOverride: md, njk
