@@ -20,7 +20,7 @@
 	display: flex;
 	
 	margin: $gap-5x 0;
-	padding: 0 $gap-5x;
+	padding: $gap-5x;
 	
 	font-size: var(--step--1);
 	
@@ -29,6 +29,7 @@
 }
 
 .note .note__text {
+	margin: 0;
 	padding-left: $gap-8x;
 	
 	font-size: var(--step--1);
