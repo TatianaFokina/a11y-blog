@@ -70,11 +70,12 @@ module.exports = function(eleventyConfig) {
 	// Shortcode
 	eleventyConfig.addShortcode("note", function(content) {
 		return `
-			<div class="note">
-				<span class="note__emoji" aria-hidden="true">📌</span>
-				<p class="note__text">${content}</p>
-			</div>
+			<div class="note"><span class="note__emoji" aria-hidden="true">📌</span><p class="note__text">${content}</p></div>
 		`;
+	});
+
+	eleventyConfig.addShortcode("hiddenSpan", function(content) {
+		return `<span aria-hidden="true">${content}</span>`;
 	});
 
 	return {
