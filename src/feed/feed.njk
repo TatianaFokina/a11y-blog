@@ -23,6 +23,7 @@ permalink: feed.xml
         {%- for post in collections.post | reverse  %}
             <item>
                 <title>{{ post.data.title }}</title>
+                <description>{{ post.description }}</description>
                 <link>{{ domain }}{{ post.url }}</link>
                 <pubDate>{{ post.date.toUTCString() }}</pubDate>
                 <guid isPermaLink="true">{{ domain }}{{ post.url }}</guid>
