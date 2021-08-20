@@ -18,37 +18,6 @@
     outline-offset: 2px;
 }
 
-// Skip link
-.skip-link {
-    position: absolute;
-    display: inline-block;
-    top: auto;
-    left: -999px;
-    
-    width: 1px;
-    height: 1px;
-    
-    font-size: var(--step--1);
-    font-weight: bold;
-    text-decoration: none;
-    color: $text-color;
-    
-    border-bottom: 0;
-    
-    z-index: $z-index;
-    
-    &:focus {
-        top: 0;
-        left: 50%;
-        
-        width: auto;
-        height: auto;
-        margin: 0 auto;
-        
-        transform: translateX(-50%);
-    }
-}
-
 // Main page link "See all posts"
 .all-posts-link {
     display: inline-block;
