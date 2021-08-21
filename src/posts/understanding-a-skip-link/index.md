@@ -23,8 +23,8 @@ templateEngineOverride: md, njk
 
 В&nbsp;руководстве по&nbsp;доступности есть два критерия, связанные со&nbsp;skip link. Первый касается их&nbsp;косвенно, а&nbsp;второй напрямую.
 
-- [Критерий 2.1.1. Клавиатура](https://www.w3.org/TR/WCAG21/#keyboard) (A). Вся функциональность контента доступна для клавиатуры и&nbsp;не&nbsp;зависит от&nbsp;пауз между нажатиями клавиш.
-- [Критерий 2.4.1. Пропуск блоков](https://www.w3.org/TR/WCAG21/#bypass-blocks) (А). Доступен механизм пропуска блоков контента, которые&nbsp;повторяются на&nbsp;нескольких страницах.
+- [Критерий 2.1.1.&nbsp;Клавиатура](https://www.w3.org/TR/WCAG21/#keyboard) (A). Вся функциональность контента доступна для клавиатуры и&nbsp;не&nbsp;зависит от&nbsp;пауз между нажатиями клавиш.
+- [Критерий 2.4.1.&nbsp;Пропуск блоков](https://www.w3.org/TR/WCAG21/#bypass-blocks) (А). Доступен механизм пропуска блоков контента, которые&nbsp;повторяются на&nbsp;нескольких страницах.
 
 ### Механизмы для пропуска блоков
 
@@ -107,7 +107,7 @@ templateEngineOverride: md, njk
 - **Chrome**. Фокус остаётся на&nbsp;skip link и&nbsp;перемещается к&nbsp;следующему элементу после ссылки после нажатия на&nbsp;<kbd>Tab</kbd>.
 - **Safari + VoiceOver**. В&nbsp;ишьюс [GOV.UK](http://gov.UK) нашла [свежий баг](https://github.com/alphagov/govuk-frontend/issues/2187) с&nbsp;десктопным Safari 14 и&nbsp;VoiceOver. Если нажать на&nbsp;skip link, а&nbsp;потом на&nbsp;клавишу со&nbsp;стрелкой, то&nbsp;фокус переместится на&nbsp;следующий элемент после ссылки.
 
-[Баг на iOS](https://bugs.webkit.org/show_bug.cgi?id=179011) исправлен в&nbsp;апреле&nbsp;2020, на&nbsp;[Android](https://bugs.chromium.org/p/chromium/issues/detail?id=657157) — в&nbsp;феврале&nbsp;2021 и&nbsp;в&nbsp;[Chrome](https://bugs.chromium.org/p/chromium/issues/detail?id=37721)&nbsp;— ещё в&nbsp;2017. Следовательно, они&nbsp;не&nbsp;встречаются с&nbsp;iOS 13+, как минимум с&nbsp;Android 10+ и&nbsp;в&nbsp;старых версиях Chrome. Только часть пользователей скринридеров долго не&nbsp;обновляет браузеры и&nbsp;операционные системы, так что от&nbsp;фикса багов не&nbsp;становится легче.
+[Баг на&nbsp;iOS](https://bugs.webkit.org/show_bug.cgi?id=179011) исправлен в&nbsp;апреле&nbsp;2020, на&nbsp;[Android](https://bugs.chromium.org/p/chromium/issues/detail?id=657157) — в&nbsp;феврале&nbsp;2021 и&nbsp;в&nbsp;[Chrome](https://bugs.chromium.org/p/chromium/issues/detail?id=37721)&nbsp;— ещё в&nbsp;2017. Следовательно, они&nbsp;не&nbsp;встречаются с&nbsp;iOS 13+, как минимум с&nbsp;Android 10+ и&nbsp;в&nbsp;старых версиях Chrome. Только часть пользователей скринридеров долго не&nbsp;обновляет браузеры и&nbsp;операционные системы, так что от&nbsp;фикса багов не&nbsp;становится легче.
 
 **Вариант 2**, в&nbsp;котором ссылка ведёт к&nbsp;`<h1>` внутри `<main>`.
 
@@ -151,7 +151,7 @@ templateEngineOverride: md, njk
 - При переходе к&nbsp;основному блоку выделяется вся область с&nbsp;отрицательным `tabindex`.
 - При клике по&nbsp;странице фокус вернётся в&nbsp;её&nbsp;начало.
 
-Здесь на&nbsp;помощь приходит JavaScript. Нужен скрипт, который, после события клика у&nbsp;skip link, устанавливает фокус на&nbsp;`main` и&nbsp;добавляет ему&nbsp;атрибут `tabindex="-1"`. При потере фокуса этот атрибут удаляется. Можно подсмотреть реализацию в [демке Майка Фоскетта](https://codepen.io/2kool2/pen/bxdzEJ), в&nbsp;том числе для Android. Аника Хенке предлагает более универсальное [решение на jQuery](https://github.com/selfthinker/dokuwiki_template_writr/blob/master/js/skip-link-focus-fix.js), которое исправляет все ссылки и&nbsp;тоже удаляет `tabindex` в&nbsp;момент потери фокуса.
+Здесь на&nbsp;помощь приходит JavaScript. Нужен скрипт, который, после события клика у&nbsp;skip link, устанавливает фокус на&nbsp;`main` и&nbsp;добавляет ему&nbsp;атрибут `tabindex="-1"`. При потере фокуса этот атрибут удаляется. Можно подсмотреть реализацию в&nbsp;[демке Майка Фоскетта](https://codepen.io/2kool2/pen/bxdzEJ), в&nbsp;том числе для Android. Аника Хенке предлагает более универсальное [решение на&nbsp;jQuery](https://github.com/selfthinker/dokuwiki_template_writr/blob/master/js/skip-link-focus-fix.js), которое исправляет все ссылки и&nbsp;тоже удаляет `tabindex` в&nbsp;момент потери фокуса.
 
 **Вариант 4**, в&nbsp;котором skip link ведёт к&nbsp;другой ссылке перед `<main>`.
 
@@ -300,7 +300,7 @@ templateEngineOverride: md, njk
 }
 ```
 
-Свойство `clip` устарело, и&nbsp;ему&nbsp;на&nbsp;смену должно прийти `clip-path`. Пока будущее не&nbsp;наступило окончательно, и&nbsp;`clip-path` в&nbsp;большинстве браузеров [поддерживается с префиксом](https://caniuse.com/css-clip-path).
+Свойство `clip` устарело, и&nbsp;ему&nbsp;на&nbsp;смену должно прийти `clip-path`. Пока будущее не&nbsp;наступило окончательно, и&nbsp;`clip-path` в&nbsp;большинстве браузеров [поддерживается с&nbsp;префиксом](https://caniuse.com/css-clip-path).
 
 **Вариант 3** с&nbsp;`transform`.
 
