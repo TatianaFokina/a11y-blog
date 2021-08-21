@@ -48,7 +48,7 @@ $code-padding: 2px;
 
 
 
-// Small, code and pre
+// Small, code, pre and kbd
 .content small {
     font-size: var(--step--1);
 }
@@ -71,6 +71,11 @@ $code-padding: 2px;
     padding: $gap-9x;
     
     overflow-x: auto;
+}
+
+// Kbd
+.content kbd {
+    font-family: $code-font-family;
 }
 
 // Blockquote
