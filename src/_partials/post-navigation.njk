@@ -1,0 +1,18 @@
+{%- set nextPost = collections.post | getNextCollectionItem(page) %}
+{%- set previousPost = collections.post | getPreviousCollectionItem(page) %}
+{%- if nextPost or previousPost %}
+	<ul class="cards cards--in-post">
+		{%- if nextPost %}
+			<li class="card card--short">
+				<a href="{{ nextPost.url | url }}" class="card__title-link" >{{ nextPost.data.title }}</a>
+				<span class="card__description card__description--in-post">Следующий пост →</span>
+			</li>
+		{% endif %}
+		{%- if previousPost %}
+			<li class="card card--short">
+				<a href="{{ previousPost.url | url }}" class="card__title-link">{{ previousPost.data.title }}</a>
+				<span class="card__description card__description--in-post">← Предыдущий пост</span>
+			</li>
+		{% endif %}
+	</ul>
+{%- endif %}
