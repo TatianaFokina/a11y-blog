@@ -1,5 +1,6 @@
 const pluginSass = require("eleventy-plugin-sass");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
+const pluginNavigation = require("@11ty/eleventy-navigation");
 const markdownIt = require("markdown-it");
 const prettyData = require("pretty-data");
 
@@ -28,6 +29,9 @@ module.exports = function(eleventyConfig) {
 		linkify: true
 	};
 	eleventyConfig.setLibrary("md", markdownIt(options).disable("code"));
+
+	// Navigation
+	eleventyConfig.addPlugin(pluginNavigation);
 
 	// RSS
 	eleventyConfig.addPlugin(pluginRss);
