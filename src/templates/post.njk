@@ -16,7 +16,8 @@ layout: page.njk
 				</ul>
 
 				<span class="post-date">
-					🕠 <time datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
+					<span aria-hidden="true">🕠</span>
+					Опубликовано: <time datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
 				</span>
 			</div>
 
