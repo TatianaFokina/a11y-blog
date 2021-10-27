@@ -81,7 +81,7 @@ function copy(cb) {
 	gulp.src('test/feed.xml')
 		.pipe(gulp.dest('dist'));
 
-	// Webmanifest
+	// Manifest
 	gulp.src('test/manifest.json')
 		.pipe(gulp.dest('dist'));
 
