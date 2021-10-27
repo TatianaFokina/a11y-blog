@@ -19,6 +19,8 @@ $logo-width-small: 54px;
 
 .logo__image-bg {
 	fill: $icon-logo-color;
+	// Fix for high contrast mode
+	forced-color-adjust: auto;
 	
 	transition: fill .2s;
 }

@@ -1,0 +1,28 @@
+@import "../_variables.scss";
+@import "../mixins-and-functions";
+
+// High contrast mode
+@media (forced-colors) {
+	.card {
+		border: 2px solid transparent;
+	}
+
+	.keyboard-focus .card:focus-within {
+		outline: 2px solid transparent;
+	}
+	
+	.footer .footer__wave {
+		fill: Window;
+	}
+}
+
+
+
+
+// Inverted colors mode
+@media (inverted-colors) {
+	.content img,
+	.content video {
+		filter: invert(100%);
+	}
+}

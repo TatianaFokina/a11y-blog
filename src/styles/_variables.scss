@@ -47,7 +47,7 @@ $card-bg: $gray-100;
 $card-bg--hover: desaturate(lighten($primary-color, 55), 67);
 
 // Logo & icons
-$icon-logo-color: $primary-color;
+$icon-logo-color: currentColor;
 
 // Links
 $link-color: $primary-color;
