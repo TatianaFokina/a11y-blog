@@ -78,6 +78,11 @@ $code-padding: 2px;
     font-family: $code-font-family;
 }
 
+// Samp
+.content samp {
+    font-family: $text-font-family;
+}
+
 // Blockquote
 .content blockquote {
     margin: 0;
