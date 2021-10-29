@@ -17,7 +17,7 @@ $logo-width-small: 54px;
 	}
 }
 
-.logo__image-bg {
+.logo__image {
 	fill: $icon-logo-color;
 	// Fix for high contrast mode
 	forced-color-adjust: auto;
@@ -34,7 +34,7 @@ $logo-width-small: 54px;
 		background: inherit;
 	}
 	
-	&:hover .logo__image-bg {
+	&:hover .logo__image {
 		fill: $link-icon-color--hover;
 	}
 }
