@@ -10,7 +10,7 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("src/scripts");
 	eleventyConfig.addPassthroughCopy({ "src/assets/*.{svg,jpg,png}": "assets" });
 	eleventyConfig.addPassthroughCopy({ "src/assets/favicons/*.{svg,jpg,png,ico}": "assets/favicons" });
-	eleventyConfig.addPassthroughCopy({ "src/pages/images/**/*.svg": "images" });
+	eleventyConfig.addPassthroughCopy( "src/posts/**/*.(gif|jpg|png|webp|svg)");
 
 	// Styles
 	eleventyConfig.addPlugin(pluginSass, {

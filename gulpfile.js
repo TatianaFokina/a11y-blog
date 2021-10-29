@@ -65,9 +65,9 @@ function copy(cb) {
 	gulp.src('test/assets/**/*')
 		.pipe(cache(imagemin($imageminOptions)))
 		.pipe(gulp.dest('dist/assets'));
-	gulp.src('test/images/**/*')
+	gulp.src('test/posts/**/images/*')
 		.pipe(cache(imagemin($imageminOptions)))
-		.pipe(gulp.dest('dist/images'));
+		.pipe(gulp.dest('dist/posts'));
 
 	// html
 	gulp.src('test/**/*.html')
