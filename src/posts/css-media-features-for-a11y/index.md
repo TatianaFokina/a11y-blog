@@ -590,18 +590,18 @@ templateEngineOverride: md, njk
 
 CSS-медиафичи дают нам возможность учитывать на&nbsp;сайтах пользовательские настройки. С&nbsp;их помощью можно в&nbsp;несколько строк кода улучшить пользовательский опыт и&nbsp;сделать интерфейс доступнее и&nbsp;безопаснее.
 
-Уже сейчас можно смело использовать `prefers-reduced-motion` и&nbsp;`prefers-color-scheme`. Довольно плохо пока поддерживаются `inverted-colors` и&nbsp;`prefers-contrast`, но&nbsp;их поддержка постепенно расширяется. Про `prefers-reduced-transparency` сейчас рано что-то говорить. А&nbsp;`ms-high-contrast` устарела, так лучше не&nbsp;задавать стили для режима высокой контрастности в&nbsp;современных браузерах.
+Уже сейчас можно смело использовать `prefers-reduced-motion` и&nbsp;`prefers-color-scheme`. Пока не&nbsp;так хорошо поддерживаются `forced-colors`, `inverted-colors` и&nbsp;`prefers-contrast`, но&nbsp;их поддержка постепенно расширяется. У&nbsp;`prefers-reduced-transparency`, скорее всего, всё ещё впереди. А&nbsp;`ms-high-contrast` устарела, так лучше не&nbsp;задавать стили для режима высокой контрастности в&nbsp;современных браузерах.
 
 ## Что почитать и посмотреть
 
-- [CSS Color Adjustment Module Level 1](https://www.w3.org/TR/css-color-adjust-1/), W3C.
-- [Media Queries Level 5](https://www.w3.org/TR/mediaqueries-5/), W3C.
+- [CSS Color Adjustment Module Level 1](https://www.w3.org/TR/css-color-adjust-1/).
+- [Media Queries Level 5](https://www.w3.org/TR/mediaqueries-5/).
 - [Operating System and Browser Accessibility Display Modes](https://www.a11yproject.com/posts/2020-01-23-operating-system-and-browser-accessibility-display-modes/), Эрик Бейли.
 - [A Complete Guide to CSS Media Queries](https://css-tricks.com/a-complete-guide-to-css-media-queries/?utm_source=pocket_mylist), Андрес Галанте.
-- [Revisiting prefers-reduced-motion, the reduced motion media query](https://css-tricks.com/revisiting-prefers-reduced-motion-the-reduced-motion-media-query/), Эрик Бэйли.
+- [Revisiting prefers-reduced-motion, the reduced motion media query](https://css-tricks.com/revisiting-prefers-reduced-motion-the-reduced-motion-media-query/), Эрик Бейли.
 - [Respecting Users’ Motion Preferences](https://www.smashingmagazine.com/2021/10/respecting-users-motion-preferences/), Мишель Баркер.
 - [Reduced motion auto-playing videos and background animations](https://www.scottohara.me/note/2019/07/12/reduced-motion-video.html), Скотт О’Хара.
-- [thoughtbot.com, dark mode, and other user preferences](https://ericwbailey.design/writing/thoughtbot-com-dark-mode-and-other-user-preferences/), Эрик Бэйли.
+- [thoughtbot.com, dark mode, and other user preferences](https://ericwbailey.design/writing/thoughtbot-com-dark-mode-and-other-user-preferences/), Эрик Бейли.
 - [A Complete Guide to Dark Mode on the Web](https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/), Adhuham.
 - [Светлая и тёмная темы на CSS: кастомные свойства, подключение, фолбэк для старых браузеров](https://www.youtube.com/watch?v=Qwuyeo7iuNY), видео Вадима Макеева.
 - [Using JavaScript to detect high contrast and dark modes](https://www.scottohara.me/note/2021/10/01/detect-high-contrast-and-dark-modes.html), Скотт О’Хара.
@@ -618,4 +618,4 @@ CSS-медиафичи дают нам возможность учитывать
 
 ***
 
-И снова спасибо [Василию Дудину](https://twitter.com/vasiliy_dudin) за помощь с редактированием.
+И&nbsp;снова спасибо [Василию Дудину](https://twitter.com/vasiliy_dudin) за&nbsp;помощь с&nbsp;редактированием.
