@@ -85,11 +85,14 @@ $code-padding: 2px;
 
 // Blockquote
 .content blockquote {
-    margin: 0;
-    padding-left: $gap-4x;
-    
-    font-style: italic;
-    word-wrap: break-word;
-    
     border-left: 4px solid $blockquote-border;
+    
+    word-wrap: break-word;
+}
+
+.content blockquote,
+.content blockquote ol,
+.content blockquote ul {
+    margin: 0;
+    padding-left: $gap-6x;
 }
