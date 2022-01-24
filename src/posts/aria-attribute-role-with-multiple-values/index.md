@@ -63,7 +63,7 @@ templateEngineOverride: md, njk
 
 В&nbsp;следующих, пока&nbsp;что&nbsp;черновых версиях [WAI-ARIA&nbsp;1.2](https://www.w3.org/TR/wai-aria-1.2/#host_general_role) и&nbsp;[Core Accessibility API Mappings&nbsp;1.2](https://www.w3.org/TR/core-aam-1.2/#mapping_role), нет ничего нового про&nbsp;несколько атрибутов у&nbsp;`role=""`. Единственное, в&nbsp;спецификации для&nbsp;User Agent появилось больше деталей о поддержке ролей разными реализациями Accessibility API.
 
-### Перевод с&nbsp;документационного на&nbsp;человеческий
+### Перевод с&nbsp;документационного
 
 Какие выводы можно сделать после путешествия по&nbsp;спецификациям?
 
