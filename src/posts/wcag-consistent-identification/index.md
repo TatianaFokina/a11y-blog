@@ -6,7 +6,7 @@ keyTheme:
     - Дизайн
     - ARIA
     - HTML
-date: 2022-10-23
+date: 2022-10-22
 tags: post
 layout: post.njk
 templateEngineOverride: md, njk
