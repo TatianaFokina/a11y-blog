@@ -46,13 +46,17 @@
 	display: inline-flex;
 }
 
-.keyboard-focus .card:focus-within {
+.card .card__title {
+	margin: 0 0 $gap-2x 0;
+}
+
+.card:focus-within {
 	outline: 2px solid $link-color--focus;
 	outline-offset: 3px;
 }
 
-.card .card__title {
-	margin: 0 0 $gap-2x 0;
+.card:focus-within a:focus {
+    outline: 0;
 }
 
 .card .card__title-link {
@@ -82,10 +86,6 @@
 
 .card__description--in-post {
 	margin-top: $gap-7x;
-}
-
-.keyboard-focus .card__title-link:focus {
-	outline: 0;
 }
 
 .card__post-date {
