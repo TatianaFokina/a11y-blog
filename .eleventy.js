@@ -67,7 +67,7 @@ module.exports = function(eleventyConfig) {
 	// Shortcode
 	eleventyConfig.addShortcode("note", function(content) {
 		return `
-			<div class="note"><span class="note__emoji" aria-hidden="true">📌</span><p class="note__text">${content}</p></div>
+			<aside class="note"><span class="note__emoji" aria-hidden="true">📌</span><p class="note__text">${content}</p></aside>
 		`;
 	});
 
