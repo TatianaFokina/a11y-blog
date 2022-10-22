@@ -1,6 +1,6 @@
 ---
 title: Принципы WCAG. Консистентная идентификация
-description:
+description: Что такое консистентная идентификация на страницах и как избежать этот барьер.
 keyTheme:
     - WCAG
     - Дизайн
@@ -15,7 +15,7 @@ templateEngineOverride: md, njk
 
 Проблема WCAG в том, что не всегда понятно, что руководства хотят от дизайнеров, разработчиков и других специалистов. Так что решила написать серию постов с коротким разбором критериев простым языком.
 
-Первый пост серии про **критерий 3.2.4: Консистентная идентификация**. Критерий входит в  руководство про понятность и он уровня AA, поэтому точно столкнётесь с ним при аудите и тестировании.
+Первый пост серии про [критерий 3.2.4: Консистентная идентификация](https://www.w3.org/TR/WCAG22/#consistent-identification). Критерий входит в руководство про понятность и он уровня AA, поэтому точно столкнётесь с ним при аудите и тестировании.
 
 ## Коротко о критерии
 
@@ -57,7 +57,7 @@ templateEngineOverride: md, njk
 - Элементы с разными функциями, но с одинаковыми иконками в виде галочки и c разными видимыми названиями «Согласен» и «Получать рассылку».
 - Пагинация со ссылками, в названиях которых есть номера страниц. Например, «Страница 1», «Страница 2», «Страница 3».
 
-На [сайте gov.uk](http://gov.uk) есть поиск с кнопкой с иконкой лупы на отдельных страницах и в меню. Иконки и сами кнопки выглядят одинаково, у них везде одно и то же название «Search GOV.UK».
+На [сайте gov.uk](http://gov.uk/) есть поиск с кнопкой с иконкой лупы на отдельных страницах и в меню. Иконки и сами кнопки выглядят одинаково, у них везде одно и то же название «Search GOV.UK».
 
 <figure>
 	<img src="images/govuk-second-page.png" alt="">
@@ -69,7 +69,7 @@ templateEngineOverride: md, njk
 	<figcaption>На другой странице gov.uk есть поле поиска с кнопкой с такой же скрытой подписью «Search GOV.UK».</figcaption>
 </figure>
 
-На [сайте Amazon](https://www.amazon.com) на страницах с категориями товаров есть пагинация. В ней одинаковые по функциональности элементы с одинаковыми названиями в `aria-label` — «Current page, page 1», «Current page, page 2» и так далее.
+На [сайте Amazon](https://www.amazon.com/) на страницах с категориями товаров есть пагинация. В ней одинаковые по функциональности элементы с одинаковыми названиями в `aria-label` — «Current page, page 1», «Current page, page 2» и так далее.
 
 <figure>
 	<img src="images/amazon-first-page.png" alt="">
@@ -97,4 +97,4 @@ templateEngineOverride: md, njk
 
 - [WCAG 2.2](https://www.w3.org/TR/WCAG22/), W3C.
 - [Understanding Success Criterion 3.2.4: Consistent Identification](https://www.w3.org/WAI/WCAG22/Understanding/consistent-identification.html), WCAG 2.2.
-- [Provide consistent UI components](https://www.accessguide.io/guide/consistent-ui), Access Guide.
+- [Provide consistent UI components](https://www.accessguide.io/guide/consistent-ui/), Access Guide.
