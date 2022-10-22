@@ -25,10 +25,12 @@ layout: page.njk
 				{{ content | safe }}
 			</div>
 
-		</main>
+			<section aria-labelledby="heading">
+				<h2 id="heading" class="second-heading">Другие посты</h2>
+				{% include "post-navigation.njk" %}
+			</section>
 
-		<h2 class="second-heading">Другие посты</h2>
-		{% include "post-navigation.njk" %}
+		</main>
 
 	</div>
 </div>
