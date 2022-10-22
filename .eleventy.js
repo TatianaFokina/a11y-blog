@@ -1,4 +1,4 @@
-const pluginSass = require("eleventy-plugin-sass");
+const pluginSass = require("eleventy-sass");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const markdownIt = require("markdown-it");
@@ -13,14 +13,7 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy( "src/posts/**/*.(gif|jpg|png|webp|svg)");
 
 	// Styles
-	eleventyConfig.addPlugin(pluginSass, {
-		watch: [
-			"src/styles/**/*.{scss,sass}",
-			"!node_modules/**"
-		],
-		outputDir: "test/styles",
-		cleanCSS: false
-	});
+	eleventyConfig.addPlugin(pluginSass);
 
 	// Markdown
 	let options = {

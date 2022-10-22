@@ -1,3 +1,4 @@
+@use 'sass:math';
 @import "_variables.scss";
 
 // @media
@@ -32,11 +33,11 @@
 		$n: $n * 10;
 	}
 	@if $mode == round {
-		@return round($number * $n) / $n;
+		@return math.div(math.round($number * $n), $n);
 	} @else if $mode == ceil {
-		@return ceil($number * $n) / $n;
+		@return math.div(math.ceil($number * $n), $n);
 	} @else if $mode == floor {
-		@return floor($number * $n) / $n;
+		@return math.div(math.floor($number * $n), $n);
 	} @else {
 		@warn '#{ $mode } is undefined keyword.';
 		@return $number;
@@ -49,14 +50,14 @@
 	$pixelsPerRem: $font-size-base;
 	
 	//Converts width to rem
-	$minWidth: $minWidthPx / $pixelsPerRem;
-	$maxWidth: $maxWidthPx / $pixelsPerRem;
+	$minWidth: math.div($minWidthPx, $pixelsPerRem);
+	$maxWidth: math.div($maxWidthPx, $pixelsPerRem);
 	
 	// Converts font size to rem
-	$minFontSize: decimal-round($minFontSizePx / $pixelsPerRem, 3);
-	$maxFontSize: decimal-round($maxFontSizePx / $pixelsPerRem, 3);
+	$minFontSize: decimal-round(math.div($minFontSizePx, $pixelsPerRem), 3);
+	$maxFontSize: decimal-round(math.div($maxFontSizePx, $pixelsPerRem), 3);
 	
-	$slope: ($maxFontSize - $minFontSize) / ($maxWidth - $minWidth);
+	$slope: (math.div(($maxFontSize - $minFontSize), ($maxWidth - $minWidth)));
 	$yAxisIntersection: (-1 * $minWidth) * $slope + $minFontSize;
 	
 	$min: #{decimal-round($minFontSize, 3)}rem;
