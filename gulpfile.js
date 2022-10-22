@@ -4,16 +4,16 @@ const cache = require('gulp-cache');
 const postcss = require("gulp-postcss");
 const autoprefixer = require('autoprefixer');
 const postcssCsso = require('postcss-csso');
-const source = require('vinyl-source-stream');
-const buffer = require('vinyl-buffer');
-const rollup = require('rollup-stream');
-const babel = require('gulp-babel');
-const terser = require('gulp-terser');
 const htmlmin = require('gulp-htmlmin');
 const replace = require('gulp-replace');
 const imagemin = require('gulp-imagemin');
+// const source = require('vinyl-source-stream');
+// const buffer = require('vinyl-buffer');
+// const rollup = require('rollup-stream');
+// const babel = require('gulp-babel');
+// const terser = require('gulp-terser');
 
-const { series, parallel } = require('gulp');
+const { series } = require('gulp');
 
 // Styles
 function styles() {
@@ -27,19 +27,19 @@ function styles() {
 }
 
 // Scripts
-function scripts() {
-	return rollup({
-		input: 'test/scripts/scripts.js',
-		format: 'iife',
-	})
-	.pipe(source('scripts.js'))
-	.pipe(buffer())
-	.pipe(babel({
-		presets: ['@babel/preset-env'],
-	}))
-	.pipe(terser())
-	.pipe(gulp.dest('dist/scripts'));
-}
+// function scripts() {
+// 	return rollup({
+// 		input: 'test/scripts/scripts.js',
+// 		format: 'iife',
+// 	})
+// 	.pipe(source('scripts.js'))
+// 	.pipe(buffer())
+// 	.pipe(babel({
+// 		presets: ['@babel/preset-env'],
+// 	}))
+// 	.pipe(terser())
+// 	.pipe(gulp.dest('dist/scripts'));
+// }
 
 // Clean
 function clean() {
@@ -90,6 +90,7 @@ function copy(cb) {
 
 exports.build = series(
 	clean,
-	parallel(scripts, styles),
+	styles,
+	// parallel(scripts, styles),
 	copy
 );
