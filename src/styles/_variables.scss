@@ -1,61 +1,21 @@
 // Colors
-$primary-color: #4A148C;
-$secondary-color: #E65100;
+$midnight-purple: #25023d;
+$light-beige: #cecec3;
+$dark-beige: #e6e6d9;
+$approx-indigo: #37005c;
+$dust-storm: #ddd1bc;
+$purple: #48116d;
+$transperent-beige: #ff972f1d;
+$transperent-purple: #b655f628;
+$light-purple: #6200a3;
+$light-sky-blue: #cf86ff;
 
-$gray-100: #eae9e9;
-$gray-200: #e3e3e3;
-$gray-300: #d8d8d8;
-$gray-400: #616161;
-$gray-500: #424242;
-$gray-600: #272624;
-$white: #ffffff;
+// Images
+$img-filter: unset;
+$img-filter--dark: brightness(.8) contrast(1.2);
 
 
-$bg-color: $gray-200;
-$footer-bg: $gray-100;
 
-// Z-index
-$z-index: 1;
-
-// Text
-$text-color: $gray-500;
-$text-footer-color: $gray-400;
-
-$hr-color: $gray-300;
-
-$selection-color: transparentize($primary-color, .9);
-
-// Code snippets
-$code-snippet-color: $gray-600;
-$code-snippet-bg: transparentize($secondary-color, .9);
-
-// Tags
-$tag-bg: transparentize($primary-color, .9);
-$tag-text: $gray-500;
-
-// Blockquote
-$blockquote-border:transparentize($secondary-color, .4);
-
-// Notion
-$notion-bg: $gray-100;
-
-// Headings color
-$h3-color: $gray-400;
-
-// Cards
-$card-bg: $gray-100;
-$card-bg--hover: desaturate(lighten($primary-color, 55), 67);
-
-// Logo & icons
-$icon-logo-color: currentColor;
-
-// Links
-$link-color: $primary-color;
-$link-underline-color: $primary-color;
-// Interactive styles
-$link-color--focus: $primary-color;
-$link-bg-color--hover: transparentize($primary-color, .9);
-$link-icon-color--hover: $secondary-color;
 
 // Font
 $text-font-family: "IBM Plex Sans", "Arial", "Helvetica", sans-serif;
@@ -108,3 +68,9 @@ $container-widths: (
 	xl: 1020px,
 	xxl: 1320px
 );
+
+
+
+
+// Z-index
+$z-index: 1;

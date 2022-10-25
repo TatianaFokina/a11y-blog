@@ -1,0 +1,31 @@
+@import "../_variables.scss";
+
+// Light theme
+body[data-theme="light"] {
+	--decorative-el-color: #{$transperent-beige};
+	--bg-color: #{$light-beige};
+	--bg-part-color: #{$dark-beige};
+	--text-color: #{$midnight-purple};
+	--code-color: #{$dust-storm};
+	--border-color: #{$midnight-purple};
+	--color-hover: #{$dust-storm};
+	--menu-elements-color-hover: #{$light-purple};
+	--button-bg-color: #{$midnight-purple};
+	--button-text-color: #{$light-beige};
+	--img-filter: #{$img-filter};
+}
+
+// Dark theme
+body[data-theme="dark"] {
+	--decorative-el-color: #{$transperent-purple};
+	--bg-color: #{$midnight-purple};
+	--bg-part-color: #{$approx-indigo};
+	--text-color: #{$light-beige};
+	--code-color: #{$purple};
+	--border-color: #{$light-beige};
+	--color-hover: #{$purple};
+	--menu-elements-color-hover: #{$light-sky-blue};
+	--button-bg-color: #{$light-beige};
+	--button-text-color: #{$midnight-purple};
+	--img-filter: #{$img-filter--dark};
+}

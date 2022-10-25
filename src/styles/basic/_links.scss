@@ -2,19 +2,19 @@
 
 .content a {
     text-decoration: none;
-    color: $link-color;
+    color: var(--text-color);
     
-    border-bottom: 2px solid $link-underline-color;
-    
-    transition: background .1s;
+    border-bottom: 2px solid var(--border-color);
+
+    transition: background .2s;
     
     &:hover {
-        background: $link-bg-color--hover;
+        background: var(--color-hover);
     }
 }
 
 .content a:focus {
-    outline: 2px solid $link-color--focus;
+    outline: 2px solid var(--border-color);
     outline-offset: 2px;
 }
 

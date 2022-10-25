@@ -4,29 +4,28 @@
 .nav {
 	display: flex;
 	flex-direction: row;
+	justify-content: space-between;
 	
 	width: 100%;
+	padding-right: $gap-2x;
 }
 
 .nav__list {
-	display: flex;
-	
-	margin: 0 0 0 auto;
+	margin: 0;
 	padding: 0;
 	
 	list-style: none;
 }
 
 .nav__list-img {
-	fill: $icon-logo-color;
+	fill: currentColor;
 	// Fix for high contrast mode
 	forced-color-adjust: auto;
-	
-	transition: fill .2s;
 }
 
 .nav .nav__list-link {
 	display: inline-flex;
+	align-items: center;
 	position: relative;
 	
 	width: 100%;
@@ -35,12 +34,15 @@
 	line-height: $line-height-menu-link;
 	
 	border-bottom: 0;
-	
+
+	transition: color .2s;
+
 	&:hover {
 		background: inherit;
+		color: var(--menu-elements-color-hover);
 	}
-	
-	&:hover .nav__list-img {
-		fill: $link-icon-color--hover;
-	}
+}
+
+.nav__list-text {
+	padding-left: $gap-2x;
 }

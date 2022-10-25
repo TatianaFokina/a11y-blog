@@ -7,11 +7,11 @@
 	
 	margin-top: $gap-29x;
 	
-	color: $text-footer-color;
+	color: var(--text-color);
 }
 
 .footer__wave {
-	fill: $footer-bg;
+	fill: var(--bg-part-color);
 }
 
 .content__footer {
@@ -26,7 +26,7 @@
 	font-size: var(--step-0);
 	text-align: center;
 	
-	background: $footer-bg;
+	background: var(--bg-part-color);
 	
 }
 

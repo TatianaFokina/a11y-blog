@@ -19,7 +19,7 @@
 	
 	padding: $gap-4x;
 	
-	background: $card-bg;
+	background: var(--bg-part-color);
 	border-radius: 4px;
 	
 	transition: background .2s;
@@ -34,7 +34,7 @@
 	}
 	
 	&:hover {
-		background: $card-bg--hover;
+		background: var(--color-hover);
 	}
 	
 	@include media(md) {
@@ -51,11 +51,11 @@
 }
 
 .card:focus-within {
-	outline: 2px solid $link-color--focus;
+	outline: 2px solid var(--border-color);
 	outline-offset: 3px;
 }
 
-.card:focus-within a:focus {
+.card a:focus {
     outline: 0;
 }
 

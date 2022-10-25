@@ -3,6 +3,7 @@
 @import "mixins-and-functions";
 
 // Core styles
+@import "basic/color-themes";
 @import "basic/fonts";
 @import "basic/typography";
 @import "basic/global";
@@ -18,6 +19,7 @@
 @import "components/header";
 @import "components/menu";
 @import "components/logo";
+@import "components/theme-switcher";
 @import "components/footer";
 @import "components/card";
 @import "components/tags";

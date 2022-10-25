@@ -19,16 +19,16 @@ $code-padding: 2px;
 }
 
 .content hr {
-    display: inline-block;
-    
-    width: 100%;
-    margin: $gap-8x 0;
-    
-    border: 1px solid $hr-color;
+    border: 0;
+    display: block;
+    height: 2px;
+    width: 20%;
+    margin: $gap-12x auto;
+    background: var(--text-color);
 }
 
 ::selection {
-    background: $selection-color;
+    background: var(--decorative-el-color);
 }
 
 
@@ -59,9 +59,9 @@ $code-padding: 2px;
     font-family: $code-font-family;
     font-size: var(--step--1);
     word-wrap: break-word;
-    color: $code-snippet-color;
+    color: var(--text-color);
     
-    background: $code-snippet-bg;
+    background: var(--code-color);
     border-radius: 4px;
 }
 
@@ -85,7 +85,7 @@ $code-padding: 2px;
 
 // Blockquote
 .content blockquote {
-    border-left: 4px solid $blockquote-border;
+    border-left: 4px solid var(--border-color);
     
     word-wrap: break-word;
 }

@@ -3,16 +3,12 @@
 
 	<ul class="nav__list">
 		<li class="nav__list-item">
-			<a class="nav__list-link" href="{{ links.social.twitter }}">
-				{% include "../assets/ico-twitter.svg" %}
-				<span class="visually-hidden">Твиттер Татьяны Фокиной</span>
-			</a>
-		</li>
-		<li class="nav__list-item">
 			<a class="nav__list-link" href="{{ links.social.rss }}">
 				{% include "../assets/ico-rss.svg" %}
-				<span class="visually-hidden">RSS</span>
+				<span class="nav__list-text">RSS</span>
 			</a>
 		</li>
 	</ul>
 </nav>
+
+{% include "theme-switcher.njk" %}

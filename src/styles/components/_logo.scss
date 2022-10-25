@@ -18,11 +18,9 @@ $logo-width-small: 54px;
 }
 
 .logo__image {
-	fill: $icon-logo-color;
+	fill: currentColor;
 	// Fix for high contrast mode
 	forced-color-adjust: auto;
-	
-	transition: fill .2s;
 }
 
 .nav .logo__link {
@@ -35,6 +33,6 @@ $logo-width-small: 54px;
 	}
 	
 	&:hover .logo__image {
-		fill: $link-icon-color--hover;
+		fill: var(--menu-elements-color-hover);
 	}
 }

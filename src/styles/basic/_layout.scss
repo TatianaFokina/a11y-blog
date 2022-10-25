@@ -24,9 +24,9 @@ $container-margin-top-mobile: 60px;
 	font-family: $text-font-family;
 	font-size: var(--step-0);
 	line-height: $line-height-base;
-	color: $text-color;
+	color: var(--text-color);
 	
-	background-color: $bg-color;
+	background: var(--bg-color);
 }
 
 
