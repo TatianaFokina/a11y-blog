@@ -8,7 +8,12 @@
 .content__header {
 	display: flex;
 	align-items: center;
+	flex-direction: column;
 	
 	padding-top: $gap-5x;
 	padding-bottom: $gap-5x;
+
+	@include media(sm) {
+		flex-direction: row;
+	}
 }

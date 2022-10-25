@@ -4,17 +4,29 @@
 .nav {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: center;
 	
 	width: 100%;
-	padding-right: $gap-2x;
+	padding-right: 0;
+	margin-bottom: $gap-5x;
+
+	@include media(sm) {
+		justify-content: space-between;
+
+		margin-bottom: 0;
+		padding-right: $gap-4x;
+	}
 }
 
 .nav__list {
-	margin: 0;
+	margin: 0 0 0 $gap-7x;
 	padding: 0;
 	
 	list-style: none;
+
+	@include media(sm) {
+		margin: 0;
+	}
 }
 
 .nav__list-img {
