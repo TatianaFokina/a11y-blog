@@ -101,4 +101,4 @@ templateEngineOverride: md, njk
 - [Understanding Success Criterion 2.1.4: Character Key Shortcuts](https://www.w3.org/WAI/WCAG22/Understanding/character-key-shortcuts.html), WCAG 2.2.
 - [Provide a way to turn off character key shortcuts](https://www.accessguide.io/guide/character-key-shortcuts), Access Guide.
 - [Exploring WCAG 2.1 — 2.1.4 Character Key Shortcuts](https://knowbility.org/blog/2018/WCAG21-214CharacterKeyShortcuts), Knowbility.
-- [Keyboard shortcuts need modifier keys](https://hidde.blog/keyboard-shortcuts/), Hidde de Vries.
+- [Keyboard shortcuts need modifier keys](https://hidde.blog/keyboard-shortcuts/), Хиде де Врис.
