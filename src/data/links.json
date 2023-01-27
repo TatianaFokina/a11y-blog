@@ -6,7 +6,8 @@
   "public": {
 	  "pitera11y": "https://github.com/pitercss/a11y_docs/",
 	  "webStandards": "https://web-standards.ru/",
-    "doka": "https://doka.guide/"
+    "doka": "https://doka.guide/",
+    "github": "https://github.com/TatianaFokina/a11y-blog"
   },
   "copyright": {
 	  "eleventy": "https://www.11ty.dev/",
