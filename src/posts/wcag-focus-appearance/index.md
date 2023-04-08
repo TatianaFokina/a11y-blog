@@ -10,6 +10,7 @@ date: 2023-01-27
 tags: post
 layout: post.njk
 templateEngineOverride: md, njk
+customOgImageFile: cover.jpg
 ---
 В этом посте из серии про разбор Руководств по доступности веб-контента (Web Content Accessibility Guidelines, коротко WCAG) расскажу про новый критерий из WCAG 2.2 — [2.4.11: внешний вид фокуса](https://www.w3.org/TR/WCAG22/#focus-appearance). Он связан с другим [критерием про видимый фокус](https://tatiana-fokina-blog.ru/posts/wcag-focus-visible/), про который уже рассказывала раньше.
 
