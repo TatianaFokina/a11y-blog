@@ -9,6 +9,7 @@ date: 2023-03-07
 tags: post
 layout: post.njk
 templateEngineOverride: md, njk
+customOgImageFile: cover.jpg
 ---
 В этом посте из серии про разбор Руководств по доступности веб-контента (Web Content Accessibility Guidelines, а коротко WCAG) расскажу про два принципа, связанных с клавиатурой.
 

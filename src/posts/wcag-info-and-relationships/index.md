@@ -10,6 +10,7 @@ date: 2023-01-17
 tags: post
 layout: post.njk
 templateEngineOverride: md, njk
+customOgImageFile: cover.jpg
 ---
 Продолжаю разбирать Руководства по доступности веб-контента (Web Content Accessibility Guidelines, коротко WCAG). Сегодня расскажу про [критерий 1.3.1: информация и взаимосвязи](https://www.w3.org/TR/WCAG22/#info-and-relationships).
 
