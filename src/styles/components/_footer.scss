@@ -4,8 +4,7 @@
 .footer {
 	display: flex;
 	flex-direction: column;
-	
-	margin-top: $gap-29x;
+	padding: 0;
 	
 	color: var(--text-color);
 }
@@ -32,8 +31,18 @@
 
 .footer__info {
 	display: block;
+
+	background-color: var(--bg-part-color);
+
+	font-size: var(--step--1);
+	text-align: center;
 	
 	&:not(:last-of-type) {
-		margin-bottom: $gap-2x;
+		padding-top: 28px;
+		padding-bottom: $gap-2x;
+	}
+
+	&:last-of-type {
+		padding-bottom: 52px;
 	}
 }

@@ -9,8 +9,29 @@ $container-margin-top-mobile: 60px;
 	color: inherit;
 }
 
+// Container and content classes
+.container {
+	//- Sticky footer
+	flex: 1 0 auto;
+	
+	margin-top: $container-margin-top;
+}
+
+.content {
+	width: 100%;
+	max-width: map-get($container-widths, md);
+	
+	margin: 0 auto;
+	padding: 0 $gap-5x;
+}
+
 .page {
 	font-size: $font-size-base;
+}
+
+.page__footer {
+	max-width: 100%;
+	margin-top: $gap-29x;
 }
 
 .body {
@@ -27,23 +48,4 @@ $container-margin-top-mobile: 60px;
 	color: var(--text-color);
 	
 	background: var(--bg-color);
-}
-
-
-
-
-// Container and content classes
-.container {
-	//- Sticky footer
-	flex: 1 0 auto;
-	
-	margin-top: $container-margin-top;
-}
-
-.content {
-	width: 100%;
-	max-width: map-get($container-widths, md);
-	
-	margin: 0 auto;
-	padding: 0 $gap-5x;
 }
