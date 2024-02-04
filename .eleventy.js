@@ -1,4 +1,3 @@
-const pluginSass = require("eleventy-sass");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const markdownIt = require("markdown-it");
@@ -12,8 +11,6 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy({ "src/assets/favicons/*.{svg,jpg,png,ico}": "assets/favicons" });
 	eleventyConfig.addPassthroughCopy( "src/posts/**/*.(gif|jpg|png|webp|svg)");
 
-	// Styles
-	eleventyConfig.addPlugin(pluginSass);
 
 	// Markdown
 	let options = {
