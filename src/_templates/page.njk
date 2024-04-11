@@ -13,7 +13,7 @@
 	<meta name="description" content="{{ description or site.description }}">
 	<title>{{ title or site.title }}{{ titleSub }}</title>
 	{% include "open-graph.njk" %}
-	<script type="module" src="/scripts/scripts.js"></script>
+	<script defer src="/scripts/bundle.js"></script>
 	<link rel="stylesheet" href="/styles/styles.css">
 	{#Favicons#}
 	<link rel="icon" sizes="32x32" href="/assets/favicons/favicon.ico" type="image/png" >

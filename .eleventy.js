@@ -4,7 +4,7 @@ const markdownIt = require("markdown-it");
 const prettyData = require("pretty-data");
 
 module.exports = function(eleventyConfig) {
-	eleventyConfig.addPassthroughCopy('src/manifest.json');
+eleventyConfig.addPassthroughCopy('src/manifest.json');
 	eleventyConfig.addPassthroughCopy("src/fonts");
 	eleventyConfig.addPassthroughCopy("src/scripts");
 	eleventyConfig.addPassthroughCopy({ "src/assets/*.{svg,jpg,png}": "assets" });
@@ -75,13 +75,13 @@ module.exports = function(eleventyConfig) {
 	return {
 		dir: {
 			input: "src",
-			output: "test",
-			includes: "_partials",
-			layouts: "templates",
-			data: "data",
+			output: "dist",
+			includes: "_includes",
+			layouts: "_templates",
+			data: "_data",
 		},
 		dataTemplateEngine: "njk",
-		markdownTemplateEngine: false,
+		markdownTemplateEngine: "njk",
 		htmlTemplateEngine: "njk",
 		passthroughFileCopy: true,
 		templateFormats: [
