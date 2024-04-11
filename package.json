@@ -1,62 +1,39 @@
 {
   "name": "tatiana-fokina-blog",
-  "version": "1.0.0",
   "description": "",
-  "main": "index.html",
   "author": "Tatiana Fokina",
   "license": "ISC",
   "scripts": {
     "_watch": "npm-run-all --parallel watch:*",
-    "_build": "rimraf test && npm-run-all build:sass build:files",
-    "_build+deploy": "npm run _build && npm run _deploy",
+    "watch:js": "rollup -c -w",
+    "_build": "npm-run-all build:* && eleventy && pnpm build:html",
     "_deploy": "type nul > ./dist/.nojekyll && gh-pages --dist dist --dotfiles true",
+    "_build+deploy": "npm-run-all _build _deploy",
     "watch:11ty": "eleventy --serve",
-    "watch:sass": "sass src/styles/styles.scss:test/styles/styles.css --watch",
-    "build:sass": "sass --no-source-map src/styles/styles.scss:test/styles/styles.css",
-    "build:files": "eleventy --quiet && gulp build"
+    "watch:sass": "sass src/styles/styles.scss:dist/styles/styles.css --watch",
+    "build:sass": "sass --no-source-map src/styles/styles.scss:dist/styles/styles.css",
+    "build:lightningcss": "npx lightningcss-cli --minify --bundle dist/styles/styles.css -d dist/styles",
+    "build:js": "rollup -c",
+    "build:html": "html-minifier --input-dir dist --output-dir dist --file-ext html --collapse-whitespace --remove-comments --minify-css true --minify-js true",
+    "remove-dist": "rimraf dist"
   },
   "dependencies": {
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-img": "^4.0.2",
     "@11ty/eleventy-navigation": "^0.3.5",
     "@11ty/eleventy-plugin-rss": "^1.2.0",
-    "@babel/core": "^7.24.4",
-    "@babel/preset-env": "^7.24.4",
-    "autoprefixer": "^10.4.19",
-    "del": "~7.1.0",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
     "gh-pages": "^6.1.1",
-    "gulp": "^5.0.0",
-    "gulp-babel": "^8.0.0",
-    "gulp-cache": "^1.1.3",
-    "gulp-htmlmin": "^5.0.1",
-    "gulp-imagemin": "^9.0.0",
-    "gulp-notify": "^4.0.0",
-    "gulp-plumber": "^1.2.1",
-    "gulp-postcss": "^10.0.0",
-    "gulp-replace": "^1.1.4",
-    "gulp-terser": "^2.1.0",
+    "html-minifier": "^4.0.0",
+    "lightningcss-cli": "^1.24.1",
     "markdown-it": "^14.1.0",
     "npm-run-all": "^4.1.5",
     "nunjucks": "^3.2.4",
-    "postcss": "^8.4.38",
-    "postcss-csso": "^6.0.1",
     "pretty-data": "^0.40.0",
     "rimraf": "^5.0.5",
-    "rollup-stream": "^1.24.1",
-    "sass": "^1.74.1",
-    "vinyl-buffer": "^1.0.1",
-    "vinyl-source-stream": "^2.0.0"
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {
-        "overrideBrowserslist": [
-          "last 3 versions",
-          "not dead",
-          "> 5%",
-          "not ie <= 11"
-        ]
-      }
-    }
+    "rollup": "^4.14.1",
+    "sass": "^1.74.1"
   }
 }
