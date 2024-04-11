@@ -14,11 +14,10 @@ export function colorTheme() {
 
 	// Add a false value for aria-pressed first and after that set true
 	const pressSwither = (clickedSwitcher) => {
-		if (!clickedSwitcher) return; // Early return if clickedSwitcher is null
 		for (let switcher of switchers) {
-			if (switcher) switcher.setAttribute('aria-pressed', 'false');
+			switcher.setAttribute('aria-pressed', 'false');
 		};
-		if (clickedSwitcher) clickedSwitcher.setAttribute('aria-pressed', 'true');
+		clickedSwitcher.setAttribute('aria-pressed', 'true');
 	};
 
 	// Find a pressed switcher and find the currunt theme value
@@ -26,9 +25,7 @@ export function colorTheme() {
 		let savedTheme = getThemePreference();
 		const savedSwitcher = document.querySelector(`.theme-switcher__button[value=${savedTheme}]`);
 
-		if (savedSwitcher) {
-			pressSwither(savedSwitcher);
-		}
+		pressSwither(savedSwitcher);
 	};
 
 	const setPreference = () => {
