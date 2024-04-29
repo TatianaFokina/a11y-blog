@@ -49,16 +49,29 @@ eleventyConfig.addPassthroughCopy('src/manifest.json');
 
 	// Dates
 	eleventyConfig.addFilter("readableDate", (value) => {
-		return value.toLocaleString("ru", {
-			year: "numeric",
-			month: "long",
-			day: "numeric"
-		}).replace(" г.", "");
+		// TODO Не работает с антернализацией, починить
+		// return value.toLocaleString("ru", {
+		// 	year: "numeric",
+		// 	month: "long",
+		// 	day: "numeric"
+		// }).replace(" г.", "");
+		return value;
 	});
 
 	eleventyConfig.addFilter("htmlDateString", (value) => {
 		return value.toISOString();
 	});
+
+
+
+	// Collections
+	eleventyConfig.addCollection("postsEn", (collection) => {
+		return collection.getFilteredByGlob("./src/en/posts/**/*.md");
+	});
+	eleventyConfig.addCollection("postsRu", (collection) => {
+		return collection.getFilteredByGlob("./src/ru/posts/**/*.md");
+	});
+
 
 	// Get the first `n` elements of a collection.
 	eleventyConfig.addFilter("slice", (array, n) => {
