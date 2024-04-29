@@ -1,0 +1,11 @@
+social:
+  twitter: "https://twitter.com/ta_fokina/"
+  rss: "/feed.xml"
+public:
+  pitera11y: "https://github.com/pitercss/a11y_docs/"
+  webStandards: "https://web-standards.ru/"
+  doka: "https://doka.guide/"
+  github: "https://github.com/TatianaFokina/a11y-blog"
+copyright:
+  eleventy: "https://www.11ty.dev/"
+  iconfinder: "https://www.iconfinder.com/"
