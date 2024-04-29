@@ -1,0 +1,33 @@
+---
+layout: page.njk
+---
+
+<div class="container">
+	<div class="content">
+		<main class="main">
+			<h1 class="visually-hidden">О блоге и последние посты</h1>
+
+			<div class="about-blog">
+				{{ page.lang }}
+				<p>Hi, my name is Tanya.. I'm a frontend developer who loves doing stuff for the web, digital accessibility and  talk about; that others. I also organized <a href="{{ links.public.pitera11y }}">петербургский митап pitera11y_meetup</a>, пишу и&nbsp;перевожу статьи, а ещё редачу в <a href="{{ links.public.doka }}">Doka</a> - a developer's guide.</p>
+				<p>In this blog I share tips, useful links, my thoughts and  just interesting findings about  affordable development ✨</p>
+				<p>If you have any questions about the blog or accessibility, feel free to ask me at <a href="{{ links.social.twitter }}">Twitter</a>.</p>
+			</div>
+
+			<section aria-labelledby="heading">
+				<h2 id="heading" class="second-heading">Последние посты</h2>
+
+				{% set maxPosts = collections.post.length | min(3) %}
+				{% set postslist = collections.post | slice(-3) %}
+				<div class="cards cards--w-margin">
+					{% include "card.njk" %}
+				</div>
+
+				{% if maxPosts === 3 %}
+					<a class="all-posts-link" href="{{ '/posts' | url }}">Все посты</a>
+				{% endif %}
+			</section>
+
+		</main>
+	</div>
+</div>

@@ -2,6 +2,7 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const markdownIt = require("markdown-it");
 const prettyData = require("pretty-data");
+const { EleventyI18nPlugin } = require("@11ty/eleventy");
 
 module.exports = function(eleventyConfig) {
 eleventyConfig.addPassthroughCopy('src/manifest.json');
@@ -10,6 +11,18 @@ eleventyConfig.addPassthroughCopy('src/manifest.json');
 	eleventyConfig.addPassthroughCopy({ "src/assets/*.{svg,jpg,png}": "assets" });
 	eleventyConfig.addPassthroughCopy({ "src/assets/favicons/*.{svg,jpg,png,ico}": "assets/favicons" });
 	eleventyConfig.addPassthroughCopy( "src/posts/**/*.(gif|jpg|png|webp|svg)");
+
+
+	eleventyConfig.addPlugin(EleventyI18nPlugin, {
+        defaultLanguage: "ru", // Set your default language
+        filters: {
+            url: "locale_url",
+            links: "locale_links"
+        },
+        errorMode: "strict"
+    });
+
+
 
 
 	// Markdown

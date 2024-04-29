@@ -1,0 +1,18 @@
+---
+title: Все посты
+description: Список всех постов, опубликованных в блоге.
+layout: page.njk
+---
+
+<div class="container">
+	<div class="content">
+		<main class="main">
+			<h1 class="first-heading">Все посты</h1>
+
+			{% set postslist = collections.post %}
+			<div class="cards">
+				{% include "card.njk" %}
+			</div>
+		</main>
+	</div>
+</div>
