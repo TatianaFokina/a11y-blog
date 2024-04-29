@@ -1,29 +1,29 @@
-# Блог Татьяны Фокиной
+# Tatyana Fokina's blog
 
-## О проекте
+## About the project
 
-Блог о доступной разработке.
+A blog about accessible development.
 
-## Технологии
+## Technologies
 
-Проект работает на движке [11ty](https://www.11ty.dev). Для шаблонов используется [Nunjucks](https://mozilla.github.io/nunjucks/), для стилей — SCSS, скрипты написаны на ванильном JavaScript.
+The project runs on [11ty](https://www.11ty.dev). [Nunjucks](https://mozilla.github.io/nunjucks/) is used for templates, SCSS is used for styles, scripts are written in vanilla JavaScript.
 
-## Разработка
+## Development
 
-Установка зависимостей:
-
-```
-npm install
-```
-
-Запуск тестовой сборки для локальной разработки:
+Dependency Installation:
 
 ```
-npm test
+pnpm i
 ```
 
-Запуск финальной сборки для деплоя:
+Running a test build for local development:
 
 ```
-npm run build
+pnpm _watch
+```
+
+Build and deployment:
+
+```
+pnpm _build+deploy
 ```
