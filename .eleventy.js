@@ -1,8 +1,10 @@
+const yaml = require("js-yaml");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const markdownIt = require("markdown-it");
 const prettyData = require("pretty-data");
 const { EleventyI18nPlugin } = require("@11ty/eleventy");
+
 
 module.exports = function(eleventyConfig) {
 eleventyConfig.addPassthroughCopy('src/manifest.json');
@@ -45,6 +47,15 @@ eleventyConfig.addPassthroughCopy('src/manifest.json');
 			return result;
 		}
 		return content;
+	});
+
+
+
+	// Translate filter
+	eleventyConfig.addFilter("translate", function(key) {		
+		const currentLang = this.ctx.page.lang; // Получаем текущий язык из контекста страницы
+		const translations = this.ctx.i18n[currentLang]; // Получение переводов для текущего языка
+		return translations ? translations[key] || key : key; // Возвращение перевода или ключа, если перевод отсутствует
 	});
 
 	// Dates
