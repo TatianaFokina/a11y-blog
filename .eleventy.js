@@ -1,9 +1,12 @@
 const yaml = require("js-yaml");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginNavigation = require("@11ty/eleventy-navigation");
-const markdownIt = require("markdown-it");
-const prettyData = require("pretty-data");
-const { EleventyI18nPlugin } = require("@11ty/eleventy");
+
+// 11ty config files
+const pluginShortcodes = require("./.eleventy.shortcodes.js");
+const pluginFilters= require("./.eleventy.filters.js");
+const pluginI18n= require("./.eleventy.i18n.js");
+const pluginTransforms= require("./.eleventy.transforms.js");
 
 
 module.exports = function(eleventyConfig) {
@@ -14,104 +17,24 @@ eleventyConfig.addPassthroughCopy('src/manifest.json');
 	eleventyConfig.addPassthroughCopy({ "src/assets/favicons/*.{svg,jpg,png,ico}": "assets/favicons" });
 	eleventyConfig.addPassthroughCopy( "src/posts/**/*.(gif|jpg|png|webp|svg)");
 	eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents));
-
-	eleventyConfig.addPlugin(EleventyI18nPlugin, {
-        defaultLanguage: "ru", // Set your default language
-        filters: {
-            url: "locale_url",
-            links: "locale_links"
-        },
-        errorMode: "strict"
-    });
-
-
-
-	// Markdown
-	let options = {
-		html: true,
-		breaks: true,
-		linkify: true
-	};
-	eleventyConfig.setLibrary("md", markdownIt(options).disable("code"));
-
-	// Navigation
-	eleventyConfig.addPlugin(pluginNavigation);
-
-	// RSS
-	eleventyConfig.addPlugin(pluginRss);
-
-	eleventyConfig.addTransform("xmlmin", function(content, outputPath) {
-		if(outputPath && outputPath.endsWith(".xml")) {
-			let result = prettyData.pd.xmlmin(content);
-			return result;
-		}
-		return content;
-	});
-
-
-
-	// Translate filter
-	eleventyConfig.addFilter("translate", function(key) {		
-		const currentLang = this.ctx.page.lang; // Получаем текущий язык из контекста страницы
-		const translations = this.ctx.i18n[currentLang]; // Получение переводов для текущего языка
-		return translations ? translations[key] || key : key; // Возвращение перевода или ключа, если перевод отсутствует
-	});
 	
-	// Dates
-	eleventyConfig.addFilter("readableDate", (value) => {
-		return value.toLocaleString("ru", {
-			year: "numeric",
-			month: "long",
-			day: "numeric"
-		}).replace(" г.", "");
-		return value;
-	});
 
-	eleventyConfig.addFilter("htmlDateString", (value) => {
-		return value.toISOString();
-	});
+	///// Plugins
+	eleventyConfig.addPlugin(pluginShortcodes);
+	eleventyConfig.addPlugin(pluginFilters);
+	eleventyConfig.addPlugin(pluginI18n);
+	eleventyConfig.addPlugin(pluginNavigation);	
+	eleventyConfig.addPlugin(pluginRss);
+	eleventyConfig.addPlugin(pluginTransforms);
 
 
-
-	// Collections
+	///// Collections
 	eleventyConfig.addCollection("postsEn", (collectionApi) => {
 		return collectionApi.getFilteredByGlob("./src/en/posts/**/*.md").reverse();
 	});
 	eleventyConfig.addCollection("postsRu", (collectionApi) => {
 		return collectionApi.getFilteredByGlob("./src/ru/posts/**/*.md").reverse();
 	});
-
-
-	// Get the first `n` elements of a collection.
-	eleventyConfig.addFilter("slice", (array, n) => {
-		if( n < 0 ) {
-			return array.slice(n);
-		}
-
-		return array.slice(0, n);
-	});
-
-	// Return the smallest number argument
-	eleventyConfig.addFilter("min", (...numbers) => {
-		return Math.min.apply(null, numbers);
-	});
-
-
-
-	// Shortcodes
-	eleventyConfig.addShortcode("note", function(content) {
-		return `
-			<aside class="note"><span class="note__emoji" aria-hidden="true">📌</span><p class="note__text">${content}</p></aside>
-		`;
-	});
-
-	eleventyConfig.addShortcode("hiddenSpan", function(content) {
-		return `<span aria-hidden="true">${content}</span>`;
-	});
-
-	// currentYear
-	eleventyConfig.addShortcode("currentYear", () => `${new Date().getFullYear()}`);
-
 
 
 	return {
