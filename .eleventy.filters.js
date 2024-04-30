@@ -1,3 +1,7 @@
+const fs = require("node:fs");
+const path = require("node:path");
+const crypto = require("node:crypto");
+
 module.exports = eleventyConfig => {
 
 	// Dates
@@ -28,6 +32,25 @@ module.exports = eleventyConfig => {
 	// Return the smallest number argument
 	eleventyConfig.addFilter("min", (...numbers) => {
 		return Math.min.apply(null, numbers);
+	});
+
+
+	// filehash
+	const assetHashes = {};
+	eleventyConfig.addFilter("filehash", (url) => {
+		if (process.env.ELEVENTY_ENV !== 'production') {
+			return url;
+		}
+
+		const filePath = path.join(eleventyConfig.dir.output, url);	
+		if (!assetHashes[url]) {
+			const fileBuffer = fs.readFileSync(filePath);
+			const hashSum = crypto.createHash("md5");
+			hashSum.update(fileBuffer);
+			assetHashes[url] = hashSum.digest("hex").substring(0, 8);
+		}
+
+		return `${url}?v=${assetHashes[url]}`;
 	});
 	
 }
