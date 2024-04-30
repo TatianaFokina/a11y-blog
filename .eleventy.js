@@ -15,7 +15,7 @@ eleventyConfig.addPassthroughCopy('src/manifest.json');
 	eleventyConfig.addPassthroughCopy("src/scripts");
 	eleventyConfig.addPassthroughCopy({ "src/assets/*.{svg,jpg,png}": "assets" });
 	eleventyConfig.addPassthroughCopy({ "src/assets/favicons/*.{svg,jpg,png,ico}": "assets/favicons" });
-	eleventyConfig.addPassthroughCopy( "src/posts/**/*.(gif|jpg|png|webp|svg)");
+	eleventyConfig.addPassthroughCopy( "src/(en|ru)/posts/**/*.(gif|jpg|png|webp|svg)");
 	eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents));
 	
 
