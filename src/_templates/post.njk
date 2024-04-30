@@ -13,7 +13,7 @@ layout: _base.njk
 
 	<span class="post-date">
 		<span aria-hidden="true">🕠</span>
-		Опубликовано: <time datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
+		{{ 'published' | translate }}: <time datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
 	</span>
 </div>
 
@@ -22,6 +22,6 @@ layout: _base.njk
 </div>
 
 <section aria-labelledby="heading">
-	<h2 id="heading" class="second-heading">Другие посты</h2>
+	<h2 id="heading" class="second-heading">{{ 'other articles' | translate }}</h2>
 	{% include "post-navigation.njk" %}
 </section>

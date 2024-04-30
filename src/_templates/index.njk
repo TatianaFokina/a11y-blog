@@ -7,9 +7,8 @@ layout: _base.njk
 </div>
 
 <section aria-labelledby="heading">
-	{{ 'text' | translate }}
 	
-	<h2 id="heading" class="second-heading">Последние посты</h2>
+	<h2 id="heading" class="second-heading">{{ 'latest (heading)' | translate }}</h2>
 	
 	{%- set langCollection = 'posts' + page.lang.charAt(0).toUpperCase() + page.lang.slice(1) -%}
 	{%- set postslist = collections[langCollection] | slice(-3) -%}
@@ -21,6 +20,6 @@ layout: _base.njk
 
 	{% set maxPosts = postslist.length | min(3) %}
 	{% if maxPosts === 3 %}
-		<a class="all-posts-link" href="/{{ page.lang }}/posts/">Все посты</a>
+		<a class="all-posts-link" href="/{{ page.lang }}/posts/">{{ 'all posts (link)' | translate }}</a>
 	{% endif %}
 </section>
