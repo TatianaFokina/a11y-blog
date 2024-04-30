@@ -1,14 +1,15 @@
 module.exports = eleventyConfig => {
 
 	// Dates
-	eleventyConfig.addFilter("readableDate", (value) => {
-		return value.toLocaleString("ru", {
+	eleventyConfig.addFilter("readableDate", function(value) {
+		// Предполагаем, что page.lang доступен глобально
+		const currentLang = this.page.lang; // Используем this.page.lang, если доступно
+		return new Date(value).toLocaleString(currentLang, {
 			year: "numeric",
 			month: "long",
 			day: "numeric"
 		}).replace(" г.", "");
-		return value;
-	});
+	  });
 
 	eleventyConfig.addFilter("htmlDateString", (value) => {
 		return value.toISOString();
