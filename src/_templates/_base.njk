@@ -15,6 +15,17 @@
 	{% include "open-graph.njk" %}
 	<script defer src="/scripts/bundle.js"></script>
 	<link rel="stylesheet" href="/styles/styles.css">
+
+	<link rel="alternate" hreflang="{{ page.lang }}" href="{{ site.url }}{{ page.url }}" />
+	{% for link in page.url | locale_links %}
+		{% if link.url %}
+			<link 
+				rel="alternate"
+				hreflang="{{ link.lang }}"
+				href="{{ site.url }}{{ link.url }}">
+		{% endif %}		
+	{% endfor %}
+
 	{#Favicons#}
 	<link rel="icon" sizes="32x32" href="/assets/favicons/favicon.ico" type="image/png" >
 	<link rel="icon" href="/assets/favicons/icon.svg" type="image/svg+xml">
