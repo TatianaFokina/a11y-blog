@@ -2,35 +2,26 @@
 layout: _base.njk
 ---
 
-<div class="container">
-	<div class="content">
-		<main class="main">
+<div class="post-inf">
+	<h1 class="post-name">{{ title }}</h1>
 
-			<div class="post-inf">
-				<h1 class="post-name">{{ title }}</h1>
+	<ul class="tags-list tags-list--post">
+		{%- for tag in keyTheme -%}
+			<li class="tag">{{ tag }}</li>
+		{%- endfor -%}
+	</ul>
 
-				<ul class="tags-list tags-list--post">
-					{%- for tag in keyTheme -%}
-						<li class="tag">{{ tag }}</li>
-					{%- endfor -%}
-				</ul>
-
-				<span class="post-date">
-					<span aria-hidden="true">🕠</span>
-					Опубликовано: <time datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
-				</span>
-			</div>
-
-			<div class="post">
-				{{ content | safe }}
-			</div>
-
-			<section aria-labelledby="heading">
-				<h2 id="heading" class="second-heading">Другие посты</h2>
-				{% include "post-navigation.njk" %}
-			</section>
-
-		</main>
-
-	</div>
+	<span class="post-date">
+		<span aria-hidden="true">🕠</span>
+		Опубликовано: <time datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
+	</span>
 </div>
+
+<div class="post">
+	{{ content | safe }}
+</div>
+
+<section aria-labelledby="heading">
+	<h2 id="heading" class="second-heading">Другие посты</h2>
+	{% include "post-navigation.njk" %}
+</section>

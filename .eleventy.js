@@ -26,7 +26,6 @@ eleventyConfig.addPassthroughCopy('src/manifest.json');
 
 
 
-
 	// Markdown
 	let options = {
 		html: true,
@@ -57,15 +56,14 @@ eleventyConfig.addPassthroughCopy('src/manifest.json');
 		const translations = this.ctx.i18n[currentLang]; // Получение переводов для текущего языка
 		return translations ? translations[key] || key : key; // Возвращение перевода или ключа, если перевод отсутствует
 	});
-
+	
 	// Dates
 	eleventyConfig.addFilter("readableDate", (value) => {
-		// TODO Не работает с антернализацией, починить
-		// return value.toLocaleString("ru", {
-		// 	year: "numeric",
-		// 	month: "long",
-		// 	day: "numeric"
-		// }).replace(" г.", "");
+		return value.toLocaleString("ru", {
+			year: "numeric",
+			month: "long",
+			day: "numeric"
+		}).replace(" г.", "");
 		return value;
 	});
 
@@ -76,11 +74,11 @@ eleventyConfig.addPassthroughCopy('src/manifest.json');
 
 
 	// Collections
-	eleventyConfig.addCollection("postsEn", (collection) => {
-		return collection.getFilteredByGlob("./src/en/posts/**/*.md");
+	eleventyConfig.addCollection("postsEn", (collectionApi) => {
+		return collectionApi.getFilteredByGlob("./src/en/posts/**/*.md").reverse();
 	});
-	eleventyConfig.addCollection("postsRu", (collection) => {
-		return collection.getFilteredByGlob("./src/ru/posts/**/*.md");
+	eleventyConfig.addCollection("postsRu", (collectionApi) => {
+		return collectionApi.getFilteredByGlob("./src/ru/posts/**/*.md").reverse();
 	});
 
 

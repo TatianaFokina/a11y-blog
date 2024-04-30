@@ -1,0 +1,26 @@
+---
+layout: _base.njk
+---
+
+<div class="about-blog">
+	{{ content | safe }}
+</div>
+
+<section aria-labelledby="heading">
+	{{ 'text' | translate }}
+	
+	<h2 id="heading" class="second-heading">Последние посты</h2>
+	
+	{%- set langCollection = 'posts' + page.lang.charAt(0).toUpperCase() + page.lang.slice(1) -%}
+	{%- set postslist = collections[langCollection] | slice(-3) -%}
+	<div class="cards cards--w-margin">
+		{%- for post in postslist -%}
+			{% include "card.njk" %}
+		{%- endfor -%}
+	</div>
+
+	{% set maxPosts = postslist.length | min(3) %}
+	{% if maxPosts === 3 %}
+		<a class="all-posts-link" href="/{{ page.lang }}/posts/">Все посты</a>
+	{% endif %}
+</section>

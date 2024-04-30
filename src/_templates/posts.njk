@@ -2,7 +2,11 @@
 layout: _base.njk
 ---
 
-{% set postslist = collections.post %}
+{%- set langCollection = 'posts' + page.lang.charAt(0).toUpperCase() + page.lang.slice(1) -%}
+{%- set postslist = collections[langCollection] -%}
 <div class="cards">
-	{% include "card.njk" %}
+	{{ [page.lang] }}
+	{%- for post in collections[langCollection] -%}
+		{% include "card.njk" %}
+	{%- endfor -%}
 </div>
