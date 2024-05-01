@@ -2,14 +2,14 @@
 	<h3 class="third-heading card__title">
 		<a class="card__title-link" href="{{ article.url }}">{{ article.data.title }}</a>
 	</h3>
-	<p class="card__description">{{ article.data.description }}</p>
-	<span class="card__article-date">
-		<span aria-hidden="true">🕠</span>
-		<time datetime="{{ article.date | htmlDateString }}">{{ article.data.date | readableDate }}</time>
-	</span>
 	<ul class="tags-list tags-list--card">
 		{%- for tag in article.data.keyTheme -%}
 			<li class="tag">{{ tag }}</li>
 		{%- endfor -%}
 	</ul>
+	<p class="card__description">{{ article.data.description }}</p>
+	<span class="card__article-date">
+		<span aria-hidden="true">🕠</span>
+		<time datetime="{{ article.date | htmlDateString }}">{{ article.data.date | readableDate }}</time>
+	</span>
 </article>
