@@ -1,6 +1,6 @@
 ---
-title: About the blog and latest posts
-description: ___
+title: About the blog and latest articles
+description: DESCRIPTION
 layout: index.njk
 ---
 

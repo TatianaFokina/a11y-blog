@@ -15,7 +15,7 @@ eleventyConfig.addPassthroughCopy('src/manifest.json');
 	eleventyConfig.addPassthroughCopy("src/scripts");
 	eleventyConfig.addPassthroughCopy({ "src/assets/*.{svg,jpg,png}": "assets" });
 	eleventyConfig.addPassthroughCopy({ "src/assets/favicons/*.{svg,jpg,png,ico}": "assets/favicons" });
-	eleventyConfig.addPassthroughCopy( "src/(en|ru)/posts/**/*.(gif|jpg|png|webp|svg)");
+	eleventyConfig.addPassthroughCopy( "src/(en|ru)/articles/**/*.(gif|jpg|png|webp|svg)");
 	eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents));
 	
 
@@ -29,11 +29,11 @@ eleventyConfig.addPassthroughCopy('src/manifest.json');
 
 
 	///// Collections
-	eleventyConfig.addCollection("postsEn", (collectionApi) => {
-		return collectionApi.getFilteredByGlob("./src/en/posts/**/*.md").reverse();
+	eleventyConfig.addCollection("articlesEn", (collectionApi) => {
+		return collectionApi.getFilteredByGlob("./src/en/articles/**/*.md").reverse();
 	});
-	eleventyConfig.addCollection("postsRu", (collectionApi) => {
-		return collectionApi.getFilteredByGlob("./src/ru/posts/**/*.md").reverse();
+	eleventyConfig.addCollection("articlesRu", (collectionApi) => {
+		return collectionApi.getFilteredByGlob("./src/ru/articles/**/*.md").reverse();
 	});
 
 

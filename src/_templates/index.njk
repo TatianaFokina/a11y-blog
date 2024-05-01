@@ -10,16 +10,16 @@ layout: _base.njk
 	
 	<h2 id="heading" class="second-heading">{{ 'latest (heading)' | translate }}</h2>
 	
-	{%- set langCollection = 'posts' + page.lang.charAt(0).toUpperCase() + page.lang.slice(1) -%}
-	{%- set postslist = collections[langCollection] | slice(-3) -%}
+	{%- set collectionName = 'articles' + page.lang.charAt(0).toUpperCase() + page.lang.slice(1) -%}
+	{%- set articleslist = collections[collectionName] | slice(3) -%}
 	<div class="cards cards--w-margin">
-		{%- for post in postslist -%}
+		{%- for article in articleslist -%}
 			{% include "card.njk" %}
 		{%- endfor -%}
 	</div>
 
-	{% set maxPosts = postslist.length | min(3) %}
-	{% if maxPosts === 3 %}
-		<a class="all-posts-link" href="/{{ page.lang }}/posts/">{{ 'all posts (link)' | translate }}</a>
+	{% set maxArticles = articleslist.length | min(3) %}
+	{% if maxArticles === 3 %}
+		<a class="all-articles-link" href="/{{ page.lang }}/articles/">{{ 'all articles (link)' | translate }}</a>
 	{% endif %}
 </section>

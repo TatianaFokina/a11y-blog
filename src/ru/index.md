@@ -1,6 +1,6 @@
 ---
 title: О блоге и ппоследние публикации
-description: ___
+description: ОПИСАНИЕ
 layout: index.njk
 ---
 

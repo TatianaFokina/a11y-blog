@@ -5,7 +5,7 @@
 	margin-top: $gap-8x;
 }
 
-.cards--in-post {
+.cards--in-article {
 	margin: 0;
 	padding: 0;
 }
@@ -84,11 +84,11 @@
 	}
 }
 
-.card__description--in-post {
+.card__description--in-article {
 	margin-top: $gap-7x;
 }
 
-.card__post-date {
+.card__article-date {
 	margin-bottom: $gap-3x;
 	
 	font-size: var(--step--1);
