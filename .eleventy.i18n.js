@@ -13,8 +13,8 @@ module.exports = eleventyConfig => {
 	});
 
 	// Translate filter
-	eleventyConfig.addFilter("translate", function(key) {		
-		const currentLang = this.ctx.page.lang; // Get the current language from the page context
+	eleventyConfig.addFilter("translate", function(key, lang = null) {	
+		const currentLang = lang || this.ctx.page.lang || 'ru'; // Get the current language from the page context
 		const translations = this.ctx.i18n[currentLang]; // Get translations for the current language
 		return translations[key] || key; // Return translation or key if translation is missing
 	});
