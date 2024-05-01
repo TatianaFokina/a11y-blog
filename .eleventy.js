@@ -10,7 +10,7 @@ const pluginTransforms= require("./.eleventy.transforms.js");
 
 
 module.exports = function(eleventyConfig) {
-eleventyConfig.addPassthroughCopy('src/manifest.json');
+	eleventyConfig.addPassthroughCopy('src/manifest.json');
 	eleventyConfig.addPassthroughCopy("src/fonts");
 	eleventyConfig.addPassthroughCopy("src/scripts");
 	eleventyConfig.addPassthroughCopy({ "src/assets/*.{svg,jpg,png}": "assets" });
