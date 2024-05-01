@@ -1,6 +1,8 @@
 ru:
   site name: "Блог Татьяны Фокиной"
   site description: "Блог о доступной разработке"
+  og image: "https://tatiana-fokina-blog.ru/assets/og-image.jpg"
 en:
   site name: "Tatyana Fokina's blog"
   site description: "Blog about accessible development"
+  og image: "https://tatiana-fokina-blog.ru/assets/og-image-en.jpg"
