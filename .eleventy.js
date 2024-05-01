@@ -30,10 +30,10 @@ eleventyConfig.addPassthroughCopy('src/manifest.json');
 
 	///// Collections
 	eleventyConfig.addCollection("articlesEn", (collectionApi) => {
-		return collectionApi.getFilteredByGlob("./src/en/articles/**/*.md").reverse();
+		return collectionApi.getFilteredByGlob("src/en/articles/*/*.md").reverse();
 	});
 	eleventyConfig.addCollection("articlesRu", (collectionApi) => {
-		return collectionApi.getFilteredByGlob("./src/ru/articles/**/*.md").reverse();
+		return collectionApi.getFilteredByGlob("src/ru/articles/*/*.md").reverse();
 	});
 
 
