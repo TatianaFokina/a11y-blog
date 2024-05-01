@@ -6,8 +6,7 @@ module.exports = eleventyConfig => {
 
 	// Dates
 	eleventyConfig.addFilter("readableDate", function(value) {
-		// Предполагаем, что page.lang доступен глобально
-		const currentLang = this.page.lang; // Используем this.page.lang, если доступно
+		const currentLang = this.page.lang;
 		return new Date(value).toLocaleString(currentLang, {
 			year: "numeric",
 			month: "long",
