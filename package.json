@@ -6,7 +6,7 @@
   "scripts": {
     "_watch": "npm-run-all --parallel watch:*",
     "watch:js": "rollup -c -w",
-    "_build": "npm-run-all build:* && eleventy && pnpm build:html",
+    "_build": "cross-env-shell ELEVENTY_ENV=production \"npm-run-all build:* && eleventy && pnpm build:html\"",
     "_deploy": "type nul > ./dist/.nojekyll && gh-pages --dist dist --dotfiles true",
     "_build+deploy": "npm-run-all _build _deploy",
     "watch:11ty": "eleventy --serve",
@@ -25,6 +25,8 @@
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
+    "cross-env": "^7.0.3",
+    "fs": "0.0.1-security",
     "gh-pages": "^6.1.1",
     "html-minifier": "^4.0.0",
     "js-yaml": "^4.1.0",
@@ -32,9 +34,10 @@
     "markdown-it": "^14.1.0",
     "npm-run-all": "^4.1.5",
     "nunjucks": "^3.2.4",
+    "path": "^0.12.7",
     "pretty-data": "^0.40.0",
     "rimraf": "^5.0.5",
-    "rollup": "^4.14.1",
-    "sass": "^1.74.1"
+    "rollup": "^4.17.2",
+    "sass": "^1.76.0"
   }
 }

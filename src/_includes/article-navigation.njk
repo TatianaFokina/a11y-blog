@@ -1,0 +1,25 @@
+{%- set collectionName = 'articles' + page.lang.charAt(0).toUpperCase() + page.lang.slice(1) -%}
+{%- set articleslist = collections[collectionName] -%}
+
+{%- set nextArticle = articleslist| getNextCollectionItem(page) %}
+{%- set previousArticle = articleslist | getPreviousCollectionItem(page) %}
+{%- if nextArticle or previousArticle %}
+	<ul class="cards cards--in-article">
+		{%- if nextArticle %}
+			<li class="card card--short">
+				<a href="{{ nextArticle.url | url }}" class="card__title-link" >{{ nextArticle.data.title }}</a>
+				<span class="card__description card__description--in-article">
+					{{ 'next article' | translate }} →
+				</span>
+			</li>
+		{% endif %}
+		{%- if previousArticle %}
+			<li class="card card--short">
+				<a href="{{ previousArticle.url | url }}" class="card__title-link">{{ previousArticle.data.title }}</a>
+				<span class="card__description card__description--in-article">
+					← {{ 'previous article' | translate }}
+				</span>
+			</li>
+		{% endif %}
+	</ul>
+{%- endif %}

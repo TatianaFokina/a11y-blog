@@ -1,0 +1,43 @@
+@import "../_variables.scss";
+@import "../mixins-and-functions";
+
+.article-inf {
+	margin-bottom: $gap-29x;
+	
+	text-align: center;
+}
+
+.article-date {
+	display: inline-block;
+	
+	margin-top: $gap-7x;
+	
+	font-size: var(--step--1);
+}
+
+.note {
+	position: relative;
+	display: flex;
+	
+	margin: $gap-5x 0;
+	padding: $gap-5x;
+	
+	font-size: var(--step--1);
+	
+	background: var(--bg-part-color);
+	border-radius: 4px;
+}
+
+.note .note__text {
+	margin: 0;
+	padding-left: $gap-8x;
+	
+	font-size: var(--step--1);
+	word-break: break-word;
+}
+
+.note__emoji {
+	display: block;
+	position: absolute;
+	top: $gap-5x;
+}

@@ -1,0 +1,11 @@
+---
+layout: _base.njk
+---
+
+{%- set collectionName = 'articles' + page.lang.charAt(0).toUpperCase() + page.lang.slice(1) -%}
+{%- set articleslist = collections[collectionName] -%}
+<div class="cards">
+	{%- for article in collections[collectionName] -%}
+		{% include "card.njk" %}
+	{%- endfor -%}
+</div>

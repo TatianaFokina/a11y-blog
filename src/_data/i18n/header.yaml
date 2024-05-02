@@ -1,0 +1,8 @@
+ru:
+  feedUrl: "/ru/feed.xml"
+  light: "Светлая"
+  dark: "Тёмная"
+en:
+  feedUrl: "/en/feed.xml"
+  light: "Light"
+  dark: "Dark"

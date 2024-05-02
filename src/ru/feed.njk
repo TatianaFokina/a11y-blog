@@ -1,0 +1,29 @@
+---
+eleventyExcludeFromCollections: true
+permalink: /ru/feed.xml
+---
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+	<channel>
+		<title>{{ "site name" | translate("ru") | safe }}</title>
+		<description>{{ "site description" | translate("ru") | safe }}</description>
+		<language>{{ ru }}</language>
+		<link>{{ site.url }}/</link>
+
+		{% set lastArticle = collections.articlesRu | first %}
+		<lastBuildDate>{{ lastArticle.date.toUTCString() }}</lastBuildDate>
+
+		<atom:link href="{{ site.url }}{{ "feedUrl" | translate }}" rel="self" type="application/rss+xml"/>
+
+		{%- for article in collections.articlesRu  %}
+			<item>
+				<title>{{ article.data.title }}</title>
+				<description>{{ article.data.description }}</description>
+				<link>{{ site.url }}{{ article.url }}</link>
+				<pubDate>{{ article.date.toUTCString() }}</pubDate>
+				<guid isPermaLink="true">{{ site.url }}{{ article.url }}</guid>
+			</item>
+		{%- endfor %}
+
+	</channel>
+</rss>

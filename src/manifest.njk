@@ -4,9 +4,9 @@ eleventyExcludeFromCollections: true
 
 ---
 {
-    "name": "{{ site.title }}",
-    "description": "{{ site.description }}",
-    "lang": "{{ site.lang }}",
+    "name": "{{ "site name" | translate("ru") | safe }}",
+    "description": "{{ "site description" | translate("ru") | safe }}",
+    "lang": "en",
     "dir": "ltr",
     "id": "/",
     "start_url": "/",

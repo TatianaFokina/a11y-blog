@@ -1,82 +1,40 @@
+const yaml = require("js-yaml");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginNavigation = require("@11ty/eleventy-navigation");
-const markdownIt = require("markdown-it");
-const prettyData = require("pretty-data");
+
+// 11ty config files
+const pluginShortcodes = require("./.eleventy.shortcodes.js");
+const pluginFilters= require("./.eleventy.filters.js");
+const pluginI18n= require("./.eleventy.i18n.js");
+const pluginTransforms= require("./.eleventy.transforms.js");
+
 
 module.exports = function(eleventyConfig) {
-eleventyConfig.addPassthroughCopy('src/manifest.json');
+	eleventyConfig.addPassthroughCopy('src/manifest.json');
 	eleventyConfig.addPassthroughCopy("src/fonts");
 	eleventyConfig.addPassthroughCopy("src/scripts");
 	eleventyConfig.addPassthroughCopy({ "src/assets/*.{svg,jpg,png}": "assets" });
 	eleventyConfig.addPassthroughCopy({ "src/assets/favicons/*.{svg,jpg,png,ico}": "assets/favicons" });
-	eleventyConfig.addPassthroughCopy( "src/posts/**/*.(gif|jpg|png|webp|svg)");
+	eleventyConfig.addPassthroughCopy( "src/(en|ru)/articles/**/*.(gif|jpg|png|webp|svg)");
+	eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents));
+	
 
-
-	// Markdown
-	let options = {
-		html: true,
-		breaks: true,
-		linkify: true
-	};
-	eleventyConfig.setLibrary("md", markdownIt(options).disable("code"));
-
-	// Navigation
-	eleventyConfig.addPlugin(pluginNavigation);
-
-	// RSS
+	///// Plugins
+	eleventyConfig.addPlugin(pluginShortcodes);
+	eleventyConfig.addPlugin(pluginFilters);
+	eleventyConfig.addPlugin(pluginI18n);
+	eleventyConfig.addPlugin(pluginNavigation);	
 	eleventyConfig.addPlugin(pluginRss);
+	eleventyConfig.addPlugin(pluginTransforms);
 
-	eleventyConfig.addTransform("xmlmin", function(content, outputPath) {
-		if(outputPath && outputPath.endsWith(".xml")) {
-			let result = prettyData.pd.xmlmin(content);
-			return result;
-		}
-		return content;
+
+	///// Collections
+	eleventyConfig.addCollection("articlesEn", (collectionApi) => {
+		return collectionApi.getFilteredByGlob("src/en/articles/*/*.md").reverse();
 	});
-
-	// Dates
-	eleventyConfig.addFilter("readableDate", (value) => {
-		return value.toLocaleString("ru", {
-			year: "numeric",
-			month: "long",
-			day: "numeric"
-		}).replace(" г.", "");
+	eleventyConfig.addCollection("articlesRu", (collectionApi) => {
+		return collectionApi.getFilteredByGlob("src/ru/articles/*/*.md").reverse();
 	});
-
-	eleventyConfig.addFilter("htmlDateString", (value) => {
-		return value.toISOString();
-	});
-
-	// Get the first `n` elements of a collection.
-	eleventyConfig.addFilter("slice", (array, n) => {
-		if( n < 0 ) {
-			return array.slice(n);
-		}
-
-		return array.slice(0, n);
-	});
-
-	// Return the smallest number argument
-	eleventyConfig.addFilter("min", (...numbers) => {
-		return Math.min.apply(null, numbers);
-	});
-
-
-
-	// Shortcodes
-	eleventyConfig.addShortcode("note", function(content) {
-		return `
-			<aside class="note"><span class="note__emoji" aria-hidden="true">📌</span><p class="note__text">${content}</p></aside>
-		`;
-	});
-
-	eleventyConfig.addShortcode("hiddenSpan", function(content) {
-		return `<span aria-hidden="true">${content}</span>`;
-	});
-
-	// currentYear
-	eleventyConfig.addShortcode("currentYear", () => `${new Date().getFullYear()}`);
-
 
 
 	return {

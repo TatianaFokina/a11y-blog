@@ -1,0 +1,25 @@
+---
+layout: _base.njk
+---
+
+<div class="about-blog">
+	{{ content | safe }}
+</div>
+
+<section aria-labelledby="heading">
+	
+	<h2 id="heading" class="second-heading">{{ 'latest (heading)' | translate }}</h2>
+	
+	{%- set collectionName = 'articles' + page.lang.charAt(0).toUpperCase() + page.lang.slice(1) -%}
+	{%- set articleslist = collections[collectionName] | slice(3) -%}
+	<div class="cards cards--w-margin">
+		{%- for article in articleslist -%}
+			{% include "card.njk" %}
+		{%- endfor -%}
+	</div>
+
+	{% set maxArticles = articleslist.length | min(3) %}
+	{% if maxArticles === 3 %}
+		<a class="all-articles-link" href="/{{ page.lang }}/articles/">{{ 'all articles (link)' | translate }}</a>
+	{% endif %}
+</section>
