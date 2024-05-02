@@ -4,8 +4,9 @@
 	{% include "head_seo.njk" %}
 	{% include "head_open-graph.njk" %}
 	<script defer src="{{ "/scripts/bundle.js" | filehash }}"></script>
-	<link rel="stylesheet" href="{{ "/styles/styles.css" | filehash }}">
+	<link rel="stylesheet" href="{{ "/styles/styles.css" | filehash }}">	
 	{% include "head_favicons.njk" %}
+	<link rel="alternate" type="application/rss+xml" title="{{ "site description" | translate("ru") | safe }}" href="{{ site.url }}{{ "feedUrl" | translate }}">
 
 	{% if env === "production" %}
 		{#Yandex.Metrika#}
