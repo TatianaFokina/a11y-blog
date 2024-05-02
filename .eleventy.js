@@ -10,12 +10,6 @@ const pluginTransforms= require("./.eleventy.transforms.js");
 
 
 module.exports = function(eleventyConfig) {
-	eleventyConfig.addPassthroughCopy('src/manifest.json');
-	eleventyConfig.addPassthroughCopy("src/fonts");
-	eleventyConfig.addPassthroughCopy("src/scripts");
-	eleventyConfig.addPassthroughCopy({ "src/assets/*.{svg,jpg,png}": "assets" });
-	eleventyConfig.addPassthroughCopy({ "src/assets/favicons/*.{svg,jpg,png,ico}": "assets/favicons" });
-	eleventyConfig.addPassthroughCopy( "src/(en|ru)/articles/**/*.(gif|jpg|png|webp|svg)");
 	eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents));
 	eleventyConfig.addGlobalData("env", process.env.ELEVENTY_ENV);
 	
@@ -37,6 +31,15 @@ module.exports = function(eleventyConfig) {
 		return collectionApi.getFilteredByGlob("src/ru/articles/*/*.md").reverse();
 	});
 
+
+	///// Build options
+	eleventyConfig.addPassthroughCopy('src/manifest.json');
+	eleventyConfig.addPassthroughCopy("src/fonts");
+	eleventyConfig.addPassthroughCopy("src/scripts");
+	eleventyConfig.addPassthroughCopy({ "src/assets/*.{svg,jpg,png}": "assets" });
+	eleventyConfig.addPassthroughCopy({ "src/assets/favicons/*.{svg,jpg,png,ico}": "assets/favicons" });
+	eleventyConfig.addPassthroughCopy( "src/(en|ru)/articles/**/*.(gif|jpg|png|webp|svg)");
+	
 
 	return {
 		dir: {
