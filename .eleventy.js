@@ -17,6 +17,7 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy({ "src/assets/favicons/*.{svg,jpg,png,ico}": "assets/favicons" });
 	eleventyConfig.addPassthroughCopy( "src/(en|ru)/articles/**/*.(gif|jpg|png|webp|svg)");
 	eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents));
+	eleventyConfig.addGlobalData("env", process.env.ELEVENTY_ENV);
 	
 
 	///// Plugins
