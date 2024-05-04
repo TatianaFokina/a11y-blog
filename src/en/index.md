@@ -1,12 +1,11 @@
 ---
 title: About the blog and latest articles
-description: DESCRIPTION
 layout: index.njk
 ---
+Hi, my name is Tatiana Fokina. I'm a front-end developer who likes to make stuff for the web, and digital accessibility and tell others about it. 
 
+I write and translate articles and also edit at [Doka]({{ links.public.doka }}) - a developer friendly directory. I organised [St. Petersburg pitera11y_meetup]({{ links.public.pitera11y }}), 
 
-Hello my name is Tanya. I'm a front-end developer who loves making stuff for the web, digital accessibility, and telling others about it. In addition, I organized [Petersburg pitera11y_meetup]({{ links.public.pitera11y }}), write and translate articles, and also edit in [Doka]({{ links.public.doka }}) - a reference for developers.
+In this blog, I share practical tips, useful links, my thoughts and just interesting findings about accessible development ✨
 
-In this blog I share tips, useful links, my thoughts and simply interesting finds about affordable development ✨
-
-If you have any questions about the blog or accessibility, you can ask me on [Twitter]({{ links.social.twitter }}).
+If there are any questions about my articles or accessibility, you are welcome to ask me on [Twitter]({{ links.social.twitter }}).
