@@ -1,4 +1,4 @@
-# Tatyana Fokina's blog
+# Tatiana Fokina's blog
 
 ## About the project
 
