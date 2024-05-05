@@ -219,7 +219,7 @@ templateEngineOverride: md, njk
 - Найдите все декоративные картинки в CSS. Можно найти их в коде (`background`, `background-image`, `content`) или закрасьте одним цветом.
 - Найдите в коде `<img>`, `type="image"`, `role="img"` и `<area>` и проверьте их описания. Это можно сделать поиском по проекту, инструментом для автоматического тестирования или отключив картинки в браузере.
 
-Отсутствующий `alt` находят все популярные автоматические инcтрументы — [Deque Axe](https://www.deque.com/axe/), [IBM Accessibility Assessment](https://www.ibm.com/able/toolkit/tools/), [tota11y](https://khan.github.io/tota11y/) и другими. Однако в критерии про текстовую альтернативу также важно то, как именно описан нетекстовый контент. Поэтому можно сразу проверять `alt` в букмарклетах [ANDI](https://www.ssa.gov/accessibility/andi/help/install.html), [Images Bookmarklet](https://pauljadam.com/bookmarklets/images.html) или любым другим похожим скриптом.
+Отсутствующий `alt` находят все популярные автоматические инcтрументы — [Deque Axe](https://www.deque.com/axe/), [IBM Accessibility Assessment](https://www.ibm.com/able/toolkit/tools/) и другими. Однако в критерии про текстовую альтернативу также важно то, как именно описан нетекстовый контент. Поэтому можно сразу проверять `alt` в букмарклетах [ANDI](https://www.ssa.gov/accessibility/andi/help/install.html), [Images Bookmarklet](https://pauljadam.com/bookmarklets/images.html) или любым другим похожим скриптом.
 
 Ещё один способ проверить описание картинок — расширение [Web Developer extension](https://chrispederick.com/work/web-developer/). В нём можно удалить картинки со страницы. Для этого выберите опцию «Отключить все стили и картинки» («Disable All Styles and Images») → «Скрыть картинки» («Hide Images»).
 

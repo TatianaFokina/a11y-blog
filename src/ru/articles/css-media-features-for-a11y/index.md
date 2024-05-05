@@ -595,9 +595,9 @@ CSS-медиафичи дают нам возможность учитывать
 
 - [CSS Color Adjustment Module Level 1](https://www.w3.org/TR/css-color-adjust-1/).
 - [Media Queries Level 5](https://www.w3.org/TR/mediaqueries-5/).
-- [Operating System and Browser Accessibility Display Modes](https://www.a11yproject.com/articles/2020-01-23-operating-system-and-browser-accessibility-display-modes/), Эрик Бейли.
+- [Operating System and Browser Accessibility Display Modes](https://www.a11yproject.com/posts/operating-system-and-browser-accessibility-display-modes/), Эрик Бейли.
 - [A Complete Guide to CSS Media Queries](https://css-tricks.com/a-complete-guide-to-css-media-queries/?utm_source=pocket_mylist), Андрес Галанте.
-- [Revisiting prefers-reduced-motion, the reduced motion media query](https://css-tricks.com/revisiting-prefers-reduced-motion-the-reduced-motion-media-query/), Эрик Бейли.
+- [Revisiting prefers-reduced-motion, the reduced motion media query](https://css-tricks.com/revisiting-prefers-reduced-motion/), Эрик Бейли.
 - [Respecting Users’ Motion Preferences](https://www.smashingmagazine.com/2021/10/respecting-users-motion-preferences/), Мишель Баркер.
 - [Reduced motion auto-playing videos and background animations](https://www.scottohara.me/note/2019/07/12/reduced-motion-video.html), Скотт О’Хара.
 - [thoughtbot.com, dark mode, and other user preferences](https://ericwbailey.design/writing/thoughtbot-com-dark-mode-and-other-user-preferences/), Эрик Бейли.
@@ -613,7 +613,6 @@ CSS-медиафичи дают нам возможность учитывать
 - [Styling for Windows high contrast with new standards for forced colors](https://blogs.windows.com/msedgedev/2020/09/17/styling-for-windows-high-contrast-with-new-standards-for-forced-colors/), Мелани Ричардс и Элисон Махер.
 - [Quick Tips for High Contrast Mode](https://sarahmhigley.com/writing/whcm-quick-tips/), Сара Хигли.
 - [CurrentColor SVG in forced colors modes](https://melanie-richards.com/blog/currentcolor-svg-hcm/), Мелани Ричардс.
-- [ms-high-contrast](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/-ms-high-contrast), MDN.
 
 ***
 

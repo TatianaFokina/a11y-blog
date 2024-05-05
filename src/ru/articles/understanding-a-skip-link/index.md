@@ -354,7 +354,7 @@ templateEngineOverride: md, njk
 - [Bypass Blocks. Understanding SC 2.4.1](https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-skip.html), W3C.
 - [Accessibility Skip links](https://www.w3schools.com/accessibility/accessibility_skip_links.php), W3C School.
 - [«Skip Navigation» Links](https://webaim.org/techniques/skipnav/), WebAIM.
-- [Use skip navigation links](https://www.a11yproject.com/articles/2013-05-11-skip-nav-links/), Камерон Кандифф.
+- [Use skip navigation links](https://www.a11yproject.com/posts/skip-nav-links/), Камерон Кандифф.
 - [A Deep Dive on Skipping to Content](https://css-tricks.com/a-deep-dive-on-skipping-to-content/), Пол Рэдклифф.
 - [Some thoughts on CSS Tricks' «Deep Dive on Skipping to Content»](https://plousia.com/blog/some-thoughts-css-tricks-deep-dive-skipping-content), Сюзанна Чельсо.
 - [How to Create a «Skip to Content» Link](https://css-tricks.com/how-to-create-a-skip-to-content-link/), Пол Райан.

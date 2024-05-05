@@ -117,7 +117,7 @@ templateEngineOverride: md, njk
 }
 ```
 
-[Вариант 2](https://css-tricks.com/revisiting-prefers-reduced-motion-the-reduced-motion-media-query/#taking-it-to-code) с&nbsp;`prefers-reduced-motion` и&nbsp;`update`:
+[Вариант 2](https://css-tricks.com/revisiting-prefers-reduced-motion/#taking-it-to-code) с&nbsp;`prefers-reduced-motion` и&nbsp;`update`:
 
 ```CSS
 @media screen and
@@ -136,7 +136,7 @@ templateEngineOverride: md, njk
 
 {% note "Для работы с&nbsp;этой и&nbsp;другими медиафичами можно использовать набор утилит [Magica11y](https://magica11y.github.io)." %}
 
-[Вариант 3](https://css-tricks.com/revisiting-prefers-reduced-motion-the-reduced-motion-media-query/#reduce-isnt-necessarily-remove), в котором есть всё:
+[Вариант 3](https://css-tricks.com/revisiting-prefers-reduced-motion/#reduce-isnt-necessarily-remove), в котором есть всё:
 
 ```CSS
 :root {
@@ -209,7 +209,7 @@ templateEngineOverride: md, njk
 
 {% hiddenSpan "👉" %} Больше всего неприятностей доставляют гифки. Пользователи не могут управлять их скоростью или&nbsp;отключать.
 
-Хороший вариант заменить гифки на видео с атрибутом `loop` или&nbsp;на SVG-анимацию. Используйте скрипты, чтобы&nbsp;добавить для них элементы управления. Например, [gifplayer на jQuery](https://rubentd.com/gifplayer/). А&nbsp;можно добавить [веб-компонент `<x-gif>`](https://github.com/geelen/x-gif).
+Хороший вариант заменить гифки на видео с атрибутом `loop` или&nbsp;на SVG-анимацию. Используйте скрипты, чтобы&nbsp;добавить для них элементы управления. Например, [gifplayer на jQuery](https://github.com/rubentd/gifplayer). А&nbsp;можно добавить [веб-компонент `<x-gif>`](https://github.com/geelen/x-gif).
 
 {% hiddenSpan "👉" %} Анимированный текст также&nbsp;не самая безобидная часть интерфейса. Пока нет стандартных возможностей настроить его анимацию. Если он сильно смещается в&nbsp;сторону или&nbsp;ощутимо увеличивается/уменьшается, то&nbsp;это тоже&nbsp;может вызвать приступ или головокружение. Так что&nbsp;лучше либо&nbsp;совсем отказаться от&nbsp;этой идеи, либо&nbsp;изменять контент незначительно и&nbsp;плавно.
 
@@ -239,7 +239,7 @@ templateEngineOverride: md, njk
 - [Web accessibility for seizures and physical reactions](https://developer.mozilla.org/en-US/docs/Web/Accessibility/Seizure_disorders), MDN.
 - [Seizure and Vestibular Disorders](https://webaim.org/articles/seizure), WebAIM.
 - [Your Interactive Makes Me Sick](https://source.opennews.org/articles/motion-sick), Эйлин Уэбб.
-- [Revisiting prefers-reduced-motion, the reduced motion media query](https://css-tricks.com/revisiting-prefers-reduced-motion-the-reduced-motion-media-query), Эрик Бэйли.
+- [Revisiting prefers-reduced-motion, the reduced motion media query](https://css-tricks.com/revisiting-prefers-reduced-motion/), Эрик Бэйли.
 - [Accessibility for Vestibular Disorders: How My Temporary Disability Changed My Perspective](https://alistapart.com/article/accessibility-for-vestibular), Факундо Коррадини.
 - [Accessible Web Animation: The WCAG on Animation Explained](https://css-tricks.com/accessible-web-animation-the-wcag-on-animation-explained), Вал Хед.
 - [Designing Safer Web Animation For Motion Sensitivity](https://alistapart.com/article/designing-safer-web-animation-for-motion-sensitivity), Вал Хед.
