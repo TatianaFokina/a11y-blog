@@ -29,6 +29,9 @@
 	<div class="container">
 		<div class="content">
 			<main class="main">
+				{% if layout !== "article.njk" %}
+					<h1>{{ title }}</h1>
+				{% endif %}
 				{{ content | safe }}
 			</main>
 		</div>
