@@ -25,6 +25,9 @@
 	list-style: none;
 
 	@include media(sm) {
+		display: flex;
+		align-items: center;
+		gap: 8px;
 		margin: 0;
 	}
 }
