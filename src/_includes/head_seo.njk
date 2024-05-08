@@ -6,9 +6,9 @@
 {% set isHomePage = page.url === '/' %}
 <title>
 	{% if isHomePage %}
-		{{ 'site name' | translate }}
+		{{ 'site name' | translate | safe }}
 	{% else %}
-		{{ title }} — {{ 'site name' | translate }}
+		{{ title }} — {{ 'site name' | translate | safe }}
 	{% endif %}
 </title>
 
