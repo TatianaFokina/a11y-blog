@@ -5,6 +5,7 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
+	flex-wrap: wrap;
 	
 	width: 100%;
 	padding-right: 0;
@@ -19,13 +20,13 @@
 }
 
 .nav__list {
-	margin: 0 0 0 $gap-7x;
-	padding: 0;
-	
+	display: flex;
+	flex-direction: row;
+	margin: 0;
+	padding: 0;	
 	list-style: none;
 
-	@include media(sm) {
-		display: flex;
+	@include media(sm) {		
 		align-items: center;
 		gap: 8px;
 		margin: 0;
