@@ -3,6 +3,7 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 
 // 11ty config files
+const pluginMd = require("./.eleventy.md.js");
 const pluginShortcodes = require("./.eleventy.shortcodes.js");
 const pluginFilters= require("./.eleventy.filters.js");
 const pluginI18n= require("./.eleventy.i18n.js");
@@ -15,6 +16,7 @@ module.exports = function(eleventyConfig) {
 	
 
 	///// Plugins
+	eleventyConfig.addPlugin(pluginMd);
 	eleventyConfig.addPlugin(pluginShortcodes);
 	eleventyConfig.addPlugin(pluginFilters);
 	eleventyConfig.addPlugin(pluginI18n);
