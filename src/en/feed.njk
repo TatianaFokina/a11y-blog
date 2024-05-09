@@ -15,7 +15,7 @@ permalink: /en/feed.xml
 
 		<atom:link href="{{ site.url }}{{ "feedUrl" | translate }}" rel="self" type="application/rss+xml"/>
 
-		{%- for article in collections.articlesRu  %}
+		{% for article in collections.articlesRu  %}
 			<item>
 				<title>{{ article.data.title }}</title>
 				<description>{{ article.data.description }}</description>
@@ -23,7 +23,7 @@ permalink: /en/feed.xml
 				<pubDate>{{ article.date.toUTCString() }}</pubDate>
 				<guid isPermaLink="true">{{ site.url }}{{ article.url }}</guid>
 			</item>
-		{%- endfor %}
+		{% endfor %}
 
 	</channel>
 </rss>

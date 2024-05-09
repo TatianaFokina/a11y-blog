@@ -3,9 +3,9 @@
 		<a class="card__title-link" href="{{ article.url }}">{{ article.data.title }}</a>
 	</h3>
 	<ul class="tags-list tags-list--card">
-		{%- for tag in article.data.keyTheme -%}
+		{% for tag in article.data.keyTheme %}
 			<li class="tag">{{ tag }}</li>
-		{%- endfor -%}
+		{% endfor %}
 	</ul>
 	<p class="card__description">{{ article.data.description }}</p>
 	<span class="card__article-date">

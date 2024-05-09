@@ -10,12 +10,12 @@ layout: _base.njk
 	
 	<h2 id="heading" class="second-heading">{{ 'latest (heading)' | translate }}</h2>
 	
-	{%- set collectionName = 'articles' + page.lang.charAt(0).toUpperCase() + page.lang.slice(1) -%}
-	{%- set articleslist = collections[collectionName] | slice(3) -%}
+	{% set collectionName = 'articles' + page.lang.charAt(0).toUpperCase() + page.lang.slice(1) %}
+	{% set articleslist = collections[collectionName] | slice(3) %}
 	<div class="cards cards--w-margin">
-		{%- for article in articleslist -%}
+		{% for article in articleslist %}
 			{% include "card.njk" %}
-		{%- endfor -%}
+		{% endfor %}
 	</div>
 
 	{% set maxArticles = articleslist.length | min(3) %}
