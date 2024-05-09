@@ -1,25 +1,40 @@
 {%- set collectionName = 'articles' + page.lang.charAt(0).toUpperCase() + page.lang.slice(1) -%}
 {%- set articleslist = collections[collectionName] -%}
 
-{%- set nextArticle = articleslist| getNextCollectionItem(page) %}
-{%- set previousArticle = articleslist | getPreviousCollectionItem(page) %}
+{%- set nextArticle = null -%}
+{%- set previousArticle = null -%}
+
+{# Loop through articles to determine next and previous article #}}
+{%- for article in articleslist %}
+    {%- if article.url == page.url %}
+        {# Checking for the next article #}}
+        {%- if loop.index < articleslist | length %}
+            {%- set nextArticle = articleslist[loop.index] %}
+        {%- endif %}
+        {# Checking for previous article #}}
+        {%- if loop.index0 > 0 %}
+            {%- set previousArticle = articleslist[loop.index0 - 1] %}
+        {%- endif %}
+    {%- endif %}
+{%- endfor %}
+
 {%- if nextArticle or previousArticle %}
-	<ul class="cards cards--in-article">
-		{%- if nextArticle %}
-			<li class="card card--short">
-				<a href="{{ nextArticle.url | url }}" class="card__title-link" >{{ nextArticle.data.title }}</a>
-				<span class="card__description card__description--in-article">
-					{{ 'next article' | translate }} →
-				</span>
-			</li>
-		{% endif %}
-		{%- if previousArticle %}
-			<li class="card card--short">
-				<a href="{{ previousArticle.url | url }}" class="card__title-link">{{ previousArticle.data.title }}</a>
-				<span class="card__description card__description--in-article">
-					← {{ 'previous article' | translate }}
-				</span>
-			</li>
-		{% endif %}
-	</ul>
+    <ul class="cards cards--in-article">
+        {%- if nextArticle %}
+            <li class="card card--short">
+                <a href="{{ nextArticle.url | url }}" class="card__title-link">{{ nextArticle.data.title }}</a>
+                <span class="card__description card__description--in-article">
+                    {{ 'next article' | translate }} →
+                </span>
+            </li>
+        {%- endif %}
+        {%- if previousArticle %}
+            <li class="card card--short">
+                <a href="{{ previousArticle.url | url }}" class="card__title-link">{{ previousArticle.data.title }}</a>
+                <span class="card__description card__description--in-article">
+                    ← {{ 'previous article' | translate }}
+                </span>
+            </li>
+        {%- endif %}
+    </ul>
 {%- endif %}
