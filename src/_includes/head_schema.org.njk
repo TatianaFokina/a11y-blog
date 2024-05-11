@@ -1,0 +1,31 @@
+{% if layout == "article.njk" %}
+	{% set ogImageDefault = "og image" | translate %}
+	{% set ogImage = page.ogImage or ogImageDefault %}
+
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Article",
+			"headline": "{{ title }}",
+			"description": "{{ description | safe }}",
+			"keywords": "{{ keyTheme | join(", ") }}",
+			"image": "{{ ogImage }}",
+			"author": {
+				"@type": "Person",
+				"name": "{{ 'name' | translate | safe }}",
+				"url": "{{ links.social.linkedin }}"
+			},
+			"publisher": {
+				"@type": "Organization",
+				"name": "{{ 'name' | translate | safe }}",
+				"url": "{{ links.social.linkedin }}",
+				"logo": {
+					"@type": "ImageObject",
+					"url": "{{ ogImage }}"
+				}
+			},
+			"datePublished": "{{ date | dateFormat("ISO") }}",
+			"dateModified": "{{ updated | dateFormat("ISO") or date | dateFormat("ISO") }}"
+		}
+	</script>
+{% endif %}

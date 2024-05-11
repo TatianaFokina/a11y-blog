@@ -21,8 +21,6 @@ module.exports = eleventyConfig => {
 				}).replace(" г.", "");
 			case "ISO":
 				return date.toISOString();
-			case "simple":
-				return date.toISOString().split('T')[0];
 		}
 	});
 
