@@ -10,6 +10,6 @@
 	<p class="card__description">{{ article.data.description }}</p>
 	<span class="card__article-date">
 		<span aria-hidden="true">🕠</span>
-		<time datetime="{{ article.date | htmlDateString }}">{{ article.data.date | readableDate }}</time>
+		<time datetime="{{ article.date | dateFormat("ISO") }}">{{ article.data.date | dateFormat("readable") }}</time>
 	</span>
 </article>

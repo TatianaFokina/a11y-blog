@@ -5,17 +5,25 @@ const crypto = require("node:crypto");
 module.exports = eleventyConfig => {
 
 	// Dates
-	eleventyConfig.addFilter("readableDate", function(value) {
-		const currentLang = this.page.lang;
-		return new Date(value).toLocaleString(currentLang, {
-			year: "numeric",
-			month: "long",
-			day: "numeric"
-		}).replace(" г.", "");
-	  });
-
-	eleventyConfig.addFilter("htmlDateString", (value) => {
-		return value.toISOString();
+	eleventyConfig.addFilter("dateFormat", function(value, format) {
+		const date = new Date(value);
+		if (isNaN(date.getTime())) {
+            // Если строка не может быть преобразована в дату, возвращаем ее как есть
+            return value;
+        }
+		switch (format) {
+			case "readable":
+				const currentLang = this.page.lang;
+				return date.toLocaleString(currentLang, {
+					year: "numeric",
+					month: "long",
+					day: "numeric"
+				}).replace(" г.", "");
+			case "ISO":
+				return date.toISOString();
+			case "simple":
+				return date.toISOString().split('T')[0];
+		}
 	});
 
 

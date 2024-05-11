@@ -13,7 +13,7 @@ layout: _base.njk
 
 	<span class="article-date">
 		<span aria-hidden="true">🕠</span>
-		{{ 'published' | translate }}: <time datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
+		{{ 'published' | translate }}: <time datetime="{{ date | dateFormat("ISO") }}">{{ date | dateFormat("readable") }}</time>
 	</span>
 </div>
 
