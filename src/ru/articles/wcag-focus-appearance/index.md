@@ -11,7 +11,7 @@ layout: article.njk
 templateEngineOverride: md, njk
 ogImage: cover.jpg
 ---
-В этом посте из серии про разбор Руководств по доступности веб-контента (Web Content Accessibility Guidelines, коротко WCAG) расскажу про новый критерий из WCAG 2.2 — [2.4.11: внешний вид фокуса](https://www.w3.org/TR/WCAG22/#focus-appearance). Он связан с другим [критерием про видимый фокус](https://tatiana-fokina-blog.ru/articles/wcag-focus-visible/), про который уже рассказывала раньше.
+В этом посте из серии про разбор Руководств по доступности веб-контента (Web Content Accessibility Guidelines, коротко WCAG) расскажу про новый критерий из WCAG 2.2 — [2.4.11: внешний вид фокуса](https://www.w3.org/TR/WCAG22/#focus-appearance). Он связан с другим <a href="/ru/articles/wcag-focus-visible/">критерием про видимый фокус</a>, про который уже рассказывала раньше.
 
 Критерий про внешний вид фокуса уровня AA. Он относится к принципу управляемости и к руководству про доступность с клавиатуры.
 

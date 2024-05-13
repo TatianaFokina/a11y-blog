@@ -222,7 +222,7 @@ Parallax often makes users feel nauseous and vertigo. To make sure no one gets s
 
 Animation can also be an important part of a website. Therefore, it is better to build off the content. You can always slow down animations so that they are not dangerous for users or distracting.
 
-I wrote more about this media feature and animation requirements in [post about accessibility for people with vestibular disorders and epileptic seizures](https://tatiana-fokina-blog.ru/articles/how-to-protect-users-with-epilepsy-and-vd/).
+I wrote more about this media feature and animation requirements in my <a href="/ru/articles/how-to-protect-users-with-epilepsy-and-vd">article about accessibility for people with vestibular disorders and epileptic seizures</a>.
 
 
 #### Preference-reduced-motion testing
