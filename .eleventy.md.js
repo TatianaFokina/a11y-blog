@@ -16,7 +16,7 @@ module.exports = eleventyConfig => {
         return self.renderToken(tokens, idx, options);
     };
     markdownLib.renderer.rules.link_open = function(tokens, idx, options, env, self) {
-        tokens[idx].attrPush(['rel', 'nofollow noreferrer noopener']);
+        tokens[idx].attrPush(['rel', 'noopener']);
         // Call the original renderer
         return defaultRender(tokens, idx, options, env, self);
     };
