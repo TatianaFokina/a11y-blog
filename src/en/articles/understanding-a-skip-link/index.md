@@ -349,7 +349,7 @@ Often the simpler something seems, the more complicated it is in reality. This h
 
 There are quite a few ways to make a skip link for such a small element. They have pros and cons. I would go for the classic implementation with the link that leads to `<main>` or `<h1>` with `tabindex="-1"` from the third option. As for styles for hiding the link, all the options are good. You can choose whichever one suits the project best. I mostly use absolute positioning and negative `left` value.
 
-## What to read
+## Further reading
 
 - [Bypass Blocks. Understanding SC 2.4.1](https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-skip.html), W3C.
 - [Accessibility Skip links](https://www.w3schools.com/accessibility/accessibility_skip_links.php), W3C School.
