@@ -2,30 +2,30 @@
 
 // Light theme
 body[data-theme="light"] {
-	--decorative-el-color: #{$transperent-beige};
-	--bg-color: #{$light-beige};
-	--bg-part-color: #{$dark-beige};
-	--text-color: #{$midnight-purple};
-	--code-color: #{$dust-storm};
-	--border-color: #{$midnight-purple};
-	--color-hover: #{$dust-storm};
-	--menu-elements-color-hover: #{$light-purple};
-	--button-bg-color: #{$midnight-purple};
-	--button-text-color: #{$light-beige};
+	--decorative-el-color: #{$beige-alpha};
+	--bg-color: #{$beige-2};
+	--bg-part-color: #{$beige-1};
+	--text-color: #{$purple-5};
+	--code-color: #{$beige-3};
+	--border-color: #{$purple-5};
+	--color-hover: #{$beige-3};
+	--menu-elements-color-hover: #{$purple-2};
+	--button-bg-color: #{$purple-5};
+	--button-text-color: #{$beige-2};
 	--img-filter: #{$img-filter};
 }
 
 // Dark theme
 body[data-theme="dark"] {
-	--decorative-el-color: #{$transperent-purple};
-	--bg-color: #{$midnight-purple};
-	--bg-part-color: #{$approx-indigo};
-	--text-color: #{$light-beige};
-	--code-color: #{$purple};
-	--border-color: #{$light-beige};
-	--color-hover: #{$purple};
-	--menu-elements-color-hover: #{$light-sky-blue};
-	--button-bg-color: #{$light-beige};
-	--button-text-color: #{$midnight-purple};
+	--decorative-el-color: #{$purple-alpha};
+	--bg-color: #{$purple-5};
+	--bg-part-color: #{$purple-4};
+	--text-color: #{$beige-2};
+	--code-color: #{$purple-3};
+	--border-color: #{$beige-2};
+	--color-hover: #{$purple-3};
+	--menu-elements-color-hover: #{$purple-1};
+	--button-bg-color: #{$beige-2};
+	--button-text-color: #{$purple-5};
 	--img-filter: #{$img-filter--dark};
 }
