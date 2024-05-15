@@ -10,7 +10,7 @@ date: 2024-05-16
 layout: article.njk
 templateEngineOverride: md, njk
 ---
-Accessibility helps people not only to use interfaces without issues, but also not to feel literally sick. People with epilepsy and vestibular impairment can struggle with this. In this article, I want to discuss what accessibility means for them.
+Accessibility helps people not only to use interfaces without issues but also not to feel literally sick. People with epilepsy and vestibular impairment can struggle with this. In this article, I want to discuss what accessibility means for them.
 
 Let's start by talking about vestibular impairments, epilepsy, and epileptic seizures.
 
@@ -39,7 +39,7 @@ Seizures can occur on their own or be part of entire illnesses. If they recur fr
 
 Some statistics. [About 8-10% of people in the world](https://books.google.ru/books?id=-L5dDwAAQBAJ&pg=PA959&redir_esc=y#v=onepage&q&f=false) have had at least one epileptic seizure. In 3% they have resulted in epilepsy.
 
-Seizures can be influenced not only by internal factors, but also by external factors. For example, light or sounds.
+Seizures can be influenced not only by internal factors but also by external factors. For example, light or sounds.
 
 Seizures triggered by light, sounds and even reading are called reflex seizures. When there are many such seizures, a person has reflex epilepsy (RE).
 
@@ -67,7 +67,7 @@ There are more examples of problematic interfaces in ["Your Interactive Makes Me
 
 <figure>
 
-> You don't even need an image or video to cause harm. A <div> element set to change color and luminosity at high frequency, easily done via JavaScript, can cause real harm. And, flickering can occur everywhere. For example, "spinners" commonly used to display while pages load can easily "flicker" while spinning.
+> You don't even need an image or video to cause harm. A <div> element set to change colour and luminosity at high frequency, easily done via JavaScript, can cause real harm. And, flickering can occur everywhere. For example, "spinners" commonly used to display while pages load can easily "flicker" while spinning.
 <figcaption>MDN.</figcaption>
 
 </figure>
@@ -106,14 +106,14 @@ There're no ironclad values for speed, smoothness and other animation properties
 
 ```CSS
 @media (prefers-reduced-motion: reduce) {
-    *:not(.safe-animation),
-    *:not(.safe-animation)::before,
-    *:not(.safe-animation)::after {
-        animation-duration: 0.01s !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0s !important;
-        scroll-behavior: auto !important;
-    }
+    *:not(.safe-animation),
+    *:not(.safe-animation)::before,
+    *:not(.safe-animation)::after {
+        animation-duration: 0.01s !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0s !important;
+        scroll-behavior: auto !important;
+    }
 }
 ```
 
@@ -121,13 +121,13 @@ There're no ironclad values for speed, smoothness and other animation properties
 
 ```CSS
 @media screen and
-    (prefers-reduced-motion: reduce), 
-    (update: slow) {
-    * {
-        animation-duration: 0.001ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.001ms !important;
-    }
+    (prefers-reduced-motion: reduce), 
+    (update: slow) {
+    * {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+    }
 }
 ```
 An `update` media feature from the [Media Queries Level 4](https://www.w3.org/TR/mediaqueries-4/#update) specification, which is now in candidate recommendation status. `update` determines whether the output device can change an appearance of content once it has been rendered. There are three values: `none`, `slow` and `fast`.
@@ -140,32 +140,32 @@ The snippet below uses `low`. It is suitable for situations where the layout cha
 
 ```CSS
 :root {
-    --animation-duration: 250ms;
-    --transition-duration: 250ms;
+    --animation-duration: 250ms;
+    --transition-duration: 250ms;
 }
 
 @media screen and (prefers-reduced-motion: reduce), (update: slow) {
-    :root {
-        --animation-duration: 0.001ms !important;
-        --transition-duration: 0.001ms !important;
-    }
+    :root {
+        --animation-duration: 0.001ms !important;
+        --transition-duration: 0.001ms !important;
+    }
 }
 
 @media screen and (prefers-reduced-motion: reduce), (update: slow) {
-    * {
-        animation-duration: var(--animation-duration);
-        animation-iteration-count: 1 !important;
-        transition-duration: var(--animation-duration);
-    }
+    * {
+        animation-duration: var(--animation-duration);
+        animation-iteration-count: 1 !important;
+        transition-duration: var(--animation-duration);
+    }
 }
 
 @media screen and (prefers-reduced-motion: reduce), (update: fast) {
-    .c-educational-concept {
-        --animation-duration: 6000ms !important;
-        ...
-        animation-name: educational-concept;
-        animation-duration: var(--animation-duration);
-    }
+    .c-educational-concept {
+        --animation-duration: 6000ms !important;
+        ...
+        animation-name: educational-concept;
+        animation-duration: var(--animation-duration);
+    }
 }
 ```
 
@@ -173,17 +173,17 @@ The snippet below uses `low`. It is suitable for situations where the layout cha
 
 ```CSS
 @media (prefers-reduced-motion: reduce) {
-    *,
-    ::before,
-    ::after {
-        animation-delay: -1ms !important;
-        animation-duration: 1ms !important;
-        animation-iteration-count: 1 !important;
-        background-attachment: initial !important;
-        scroll-behavior: auto !important;
-        transition-duration: 0s !important;
-        transition-delay: 0s !important;
-    }
+    *,
+    ::before,
+    ::after {
+        animation-delay: -1ms !important;
+        animation-duration: 1ms !important;
+        animation-iteration-count: 1 !important;
+        background-attachment: initial !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0s !important;
+        transition-delay: 0s !important;
+    }
 }
 ```
 
@@ -203,7 +203,7 @@ Automatic video playback can be stopped by removing `autoplay` in `<video contro
 
 For all animated elements, you can set `animation-play-state: paused;`. This will pause an animation by default.
 
-This requirement does not apply to loading animations. Users might think the loading is paused or canceled. The same goes for ads, as they are sometimes necessary for accessing content. Hello, YouTube.
+This requirement does not apply to loading animations. Users might think the loading is paused or cancelled. The same goes for ads, as they are sometimes necessary for accessing content. Hello, YouTube.
 
 {% hiddenSpan "👉" %} Set a short `animation-duration` and `transition-duration` instead of `animation: none` or `transition: none`.
 
@@ -221,11 +221,11 @@ A good option is to replace GIFs with videos using the `loop` attribute or with 
 
 Accessibility criteria for people with epileptic seizures and vestibular impairment are collected in two guidelines:
 - Guideline 2.2. Sufficient time.
-    - [Criterion 2.2.2. Pause, stop, and hide](https://www.w3.org/TR/WCAG21/#pause-stop-hide) (A).
+    - [Criterion 2.2.2. Pause, stop, and hide](https://www.w3.org/TR/WCAG21/#pause-stop-hide) (A).
 - [Guideline 2.3. Epileptic seizures and physical reactions](https://www.w3.org/TR/WCAG21/#seizures-and-physical-reactions).
-    - Criterion 2.3.1 Three Flashes or Below Threshold (A).
-    - Criterion 2.3.2 Three Flashes (AAA).
-    - Criterion 2.3.3 Animation during interaction (AAA).
+    - Criterion 2.3.1 Three Flashes or Below Threshold (A).
+    - Criterion 2.3.2 Three Flashes (AAA).
+    - Criterion 2.3.3 Animation during interaction (AAA).
 
 ***
 
