@@ -320,9 +320,6 @@ For a timer, counter or stopwatch set `role="timer"`. Don't forget `aria-live="o
 Another optional attribute is `aria-relevant=""`. It is needed to define the type of content changes. It has several values, which can be listed with a space. There are few real-world usage scenarios (deleting or adding a friend to your friend list), and many A screen readers ignore it.
 
 The last optional attribute is `aria-busy=""`. Tells assistive technologies whether the element's content is currently being updated or not. By default, elements are set to `aria-busy="false"`. Screen readers announce changes without waiting for them to complete. In some cases, you can use `aria-busy="true"` when you want to wait for all updates. May be useful for sports statistics or a text document in group edit mode.
-*** Translated with www.DeepL.com/Translator (free version) ***
-
-
 
 ## Further reading
 
