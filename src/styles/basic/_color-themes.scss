@@ -2,15 +2,15 @@
 
 // Light theme
 body[data-theme="light"] {
-	--decorative-el-color: #{$beige-alpha};
+	--decorative-el-color: #{$purple-alpha};
 	--bg-color: #{$beige-2};
 	--bg-part-color: #{$beige-1};
-	--text-color: #{$purple-5};
-	--code-color: #{$beige-3};
-	--border-color: #{$purple-5};
+	--text-color: #{$purple-8};
+	--code-color: #{$purple-2};
+	--border-color: #{$purple-6};
 	--color-hover: #{$beige-3};
-	--menu-elements-color-hover: #{$purple-2};
-	--button-bg-color: #{$purple-5};
+	--menu-elements-color-hover: #{$purple-5};
+	--button-bg-color: #{$purple-8};
 	--button-text-color: #{$beige-2};
 	--img-filter: #{$img-filter};
 }
@@ -18,14 +18,14 @@ body[data-theme="light"] {
 // Dark theme
 body[data-theme="dark"] {
 	--decorative-el-color: #{$purple-alpha};
-	--bg-color: #{$purple-5};
-	--bg-part-color: #{$purple-4};
-	--text-color: #{$beige-2};
-	--code-color: #{$purple-3};
+	--bg-color: #{$purple-10};
+	--bg-part-color: #{$purple-8};
+	--text-color: #{$beige-3};
+	--code-color: #{$purple-8};
 	--border-color: #{$beige-2};
-	--color-hover: #{$purple-3};
-	--menu-elements-color-hover: #{$purple-1};
+	--color-hover: #{$purple-9};
+	--menu-elements-color-hover: #{$purple-4};
 	--button-bg-color: #{$beige-2};
-	--button-text-color: #{$purple-5};
+	--button-text-color: #{$purple-7};
 	--img-filter: #{$img-filter--dark};
 }
