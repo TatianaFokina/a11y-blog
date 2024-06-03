@@ -86,7 +86,13 @@ The markup I will be testing might be scary. This is a test of the single attrib
 ### Two valid values
 
 ```html
-<div role="button link" aria-label="This is not a button" tabindex="1">Something criminal is going on here</div>
+<div
+  role="button link"
+  aria-label="This is not a button"
+  tabindex="1"
+>
+  Something criminal is going on here
+</div>
 ```
 
 - NVDA with Chrome: "Button, this is not a button"
@@ -102,7 +108,13 @@ In all three browsers, `aria-label` provides the accessibility name "This is not
 ### One invalid value, one valid value
 
 ```html
-<div role="opossum button" aria-label="This is not a button" tabindex="1">Something criminal is going on here</div>
+<div
+  role="opossum button"
+  aria-label="This is not a button"
+  tabindex="1"
+>
+  Something criminal is going on here
+</div>
 ```
 
 - NVDA with Chrome: "Button, this is not a button"
@@ -118,7 +130,13 @@ Again, the element name is "This is not a button". Its calculated roles are `but
 ### One abstract role, one non-abstract
 
 ```html
-<div role="widget button" aria-label="This is not a button" tabindex="1">Something criminal is going on here</div>
+<div
+  role="widget button"
+  aria-label="This is not a button"
+  tabindex="1"
+>
+  Something criminal is going on here
+</div>
 ```
 
 - NVDA with Chrome: "Button, this is not a button"
@@ -136,7 +154,13 @@ In all three browsers, `aria-label` provides the accessibility name "This is not
 ### Two wrong values
 
 ```html
-<div role="tapir opossum" aria-label="This is not a button" tabindex="1">Something criminal is going on here</div>
+<div
+  role="tapir opossum"
+  aria-label="This is not a button"
+  tabindex="1"
+>
+  Something criminal is going on here
+</div>
 ```
 
 - NVDA with Chrome has nothing to announced

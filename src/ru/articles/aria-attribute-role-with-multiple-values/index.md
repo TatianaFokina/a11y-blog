@@ -87,7 +87,13 @@ Core Accessibility API Mappings (Core-AAM для краткости) — это 
 ### Оба значения существуют
 
 ```html
-<div role="button link" aria-label="Это не кнопка" tabindex="1">Что-то преступное</div>
+<div
+  role="button link"
+  aria-label="Это не кнопка"
+  tabindex="1"
+>
+  Что-то преступное
+</div>
 ```
 
 - NVDA и Chrome: «Это не кнопка, кнопка».
@@ -103,7 +109,13 @@ Core Accessibility API Mappings (Core-AAM для краткости) — это 
 ### Одно значение существует, другое нет
 
 ```html
-<div role="opossum button" aria-label="Это не кнопка" tabindex="1">Что-то преступное</div>
+<div
+  role="opossum button"
+  aria-label="Это не кнопка"
+  tabindex="1"
+>
+  Что-то преступное
+</div>
 ```
 
 - NVDA и Chrome: «Это не кнопка, кнопка».
@@ -119,7 +131,13 @@ Core Accessibility API Mappings (Core-AAM для краткости) — это 
 ### Одно значение абстрактное, другое нет
 
 ```html
-<div role="widget button" aria-label="Это не кнопка" tabindex="1">Что-то преступное</div>
+<div
+  role="widget button"
+  aria-label="Это не кнопка"
+  tabindex="1"
+>
+  Что-то преступное
+</div>
 ```
 
 - NVDA и Chrome: «Это не кнопка, кнопка».
@@ -135,7 +153,13 @@ Core Accessibility API Mappings (Core-AAM для краткости) — это 
 ### Обоих значений не существует
 
 ```html
-<div role="tapir opossum" aria-label="Это не кнопка" tabindex="1">Что-то преступное</div>
+<div
+  role="tapir opossum"
+  aria-label="Это не кнопка"
+  tabindex="1"
+>
+  Что-то преступное
+</div>
 ```
 
 - NVDA и Chrome: ничего не объявляет.
@@ -168,4 +192,4 @@ Core Accessibility API Mappings (Core-AAM для краткости) — это 
 
 ***
 
-Спасибо [Василию Дудину](https://twitter.com/vasiliy_dudin) за помощь с редактированием ❤️
+Тысяча благодарностей [Василию Дудину](https://twitter.com/vasiliy_dudin) за помощь с редактированием ❤️
