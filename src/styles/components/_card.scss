@@ -15,14 +15,11 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	width: 100%;
-	
-	padding: $gap-4x;
-	
+	width: 100%;	
+	padding: $gap-4x;	
 	background: var(--bg-part-color);
-	border-radius: 4px;
-	
-	transition: background .2s;
+	border-radius: 26px;	
+	transition: background .3s;
 	
 	&:not(:last-of-type) {
 		margin-bottom: $gap-5x;
@@ -50,7 +47,7 @@
 	margin: 0 0 $gap-2x 0;
 }
 
-.card:focus-within {
+.card:focus-within:has(:focus-visible) {
 	outline: 2px solid var(--border-color);
 	outline-offset: 3px;
 }
@@ -84,12 +81,15 @@
 	}
 }
 
+p.card__description {
+	margin: 0 0 16px;
+}
+
+
 .card__description--in-article {
 	margin-top: $gap-7x;
 }
 
 .card__article-date {
-	margin-bottom: $gap-3x;
-	
 	font-size: var(--step--1);
 }

@@ -4,8 +4,8 @@
 .tags-list {
 	display: flex;
 	flex-wrap: wrap;
-	
-	margin: 0 (-$gap-2x) (-$gap-2x) 0;
+	gap: $gap-1x;
+	margin: 0;
 	padding: 0;
 	
 	list-style: none;
@@ -16,16 +16,13 @@
 }
 
 .tags-list--card {
-	margin-top: $gap-2x;
+	margin: 0 0 $gap-3x;
 }
 
 .tag {
-	margin: 0 $gap-2x $gap-2x 0;
-	padding: $gap-1x;
-	
+	padding: 4px 8px;	
 	font-size: var(--step--2);
-	color: var(--text-color);
-	
+	color: var(--text-color);	
 	border: 1px solid var(--border-color);
-	border-radius: 4px;
+	border-radius: 10px;
 }

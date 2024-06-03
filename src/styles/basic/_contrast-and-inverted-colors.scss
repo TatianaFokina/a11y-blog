@@ -7,7 +7,7 @@
 		border: 2px solid transparent;
 	}
 
-	.card:focus-within {
+	.card:focus-within:has(:focus-visible) {
 		outline: 2px solid transparent;
 	}
 	

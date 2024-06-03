@@ -5,16 +5,15 @@
 	display: flex;
     padding: $gap-1x;
     border: 2px solid var(--border-color);
-    border-radius: 11px;
+    border-radius: 32px;
 	padding-inline: $gap-1x;
 }
 
 .theme-switcher__button {
 	margin: 0;
-    padding: $gap-2x $gap-4x;
-    
+    padding: $gap-2x $gap-4x;    
 	border: 0;
-    border-radius: 11px;
+    border-radius: 32px;
     
     color: var(--text-color);
 	background: transparent;
@@ -22,7 +21,7 @@
 
     transition: background .2s;
 
-    &:focus {
+    &:focus-visible {
         outline: 2px solid var(--border-color);
         outline-offset: 1px;
     }
@@ -35,10 +34,6 @@
 .theme-switcher__button[aria-pressed="true"] {
     color: var(--button-text-color);
 	background: var(--button-bg-color);
-
-    &:hover {
-        background: var(--menu-elements-color-hover);
-    }
 }
 
 .theme-switcher__button[aria-pressed="false"] {
