@@ -1,10 +1,13 @@
 ru:
   published: "Опубликовано"
+  updated: "обновлено"
   other articles: "Другие статьи"
   previous article: "Предыдущая статья"
   next article: "Следующая статья"
 en:
   published: "Published"
+  updated: "updated"
   other articles: "Other articles"
   previous article: "Previous article"
   next article: "Next article"
+  

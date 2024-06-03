@@ -8,9 +8,9 @@ module.exports = eleventyConfig => {
 	eleventyConfig.addFilter("dateFormat", function(value, format) {
 		const date = new Date(value);
 		if (isNaN(date.getTime())) {
-            // Если строка не может быть преобразована в дату, возвращаем ее как есть
-            return value;
-        }
+		// If the string cannot be converted to a date, return it as is
+		return value;
+		}
 		switch (format) {
 			case "readable":
 				const currentLang = this.page.lang;
@@ -23,7 +23,6 @@ module.exports = eleventyConfig => {
 				return date.toISOString();
 		}
 	});
-
 
 	// Get the first `n` elements of a collection.
 	eleventyConfig.addFilter("slice", (array, n) => {
@@ -40,7 +39,7 @@ module.exports = eleventyConfig => {
 	});
 
 
-	// filehash
+	// Filehash
 	const assetHashes = {};
 	eleventyConfig.addFilter("filehash", (url) => {
 		if (process.env.ELEVENTY_ENV !== 'production') {
@@ -59,4 +58,3 @@ module.exports = eleventyConfig => {
 	});
 	
 }
-
