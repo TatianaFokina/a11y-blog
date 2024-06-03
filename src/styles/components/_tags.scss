@@ -1,7 +1,7 @@
 @import "../_variables.scss";
 @import "../mixins-and-functions";
 
-.tags-list {
+.topic-list {
 	display: flex;
 	flex-wrap: wrap;
 	gap: $gap-1x;
@@ -11,15 +11,15 @@
 	list-style: none;
 }
 
-.tags-list--article {
+.topic-list--article {
 	justify-content: center;
 }
 
-.tags-list--card {
+.topic-list--card {
 	margin: 0 0 $gap-3x;
 }
 
-.tag {
+.topic-list__item {
 	padding: 4px 8px;	
 	font-size: var(--step--2);
 	color: var(--text-color);	
