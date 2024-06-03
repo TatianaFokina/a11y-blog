@@ -1,6 +1,6 @@
 ---
 title: role attribute with multiple values
-description: In what cases set multiple values for a role attribute may be necessary, and how browsers and screen readers deal with this.
+description: In what cases may be necessary to set multiple values for a role attribute, and how browsers and screen readers deal with this.
 keyTheme:
     - ARIA
     - HTML
@@ -16,7 +16,7 @@ So, I wrote this post out of research interest, so it doesn't contain much pract
 
 [Roles](https://www.w3.org/TR/wai-aria-1.2/#dfn-role) contain information on functions of elments, and how it can be interacted with. For example, screen readers will announce that a `button` element has a `button` role which means that this element is clicable.
 
-Elements can have either implicit or explicit roles. The latter are specified in the role attribute.
+Elements can have either implicit or explicit roles. The latter are specified in the `role` attribute.
 
 There are many [categories of roles](https://www.w3.org/TR/wai-aria-1.2/#role_definitions), each with clear rules for their explicit usage. For instance, you can't change roles during interaction with an element, or set [abstract roles](https://www.w3.org/TR/wai-aria-1.2/#abstract_roles), such as `landmark`, `section`, `widget`, etc. There are also roles that assume nested elements. For example, an element with `role="menu"` must have at least one `menuitem` element nested within it. However, the main rule is to set roles explicitly as rarely as possible, especially to avoid overriding semantics of elements.
 
@@ -31,13 +31,13 @@ In WAI-ARIA (Web Accessibility Initiative - Accessible Rich Internet Application
 > - The attribute name MUST be `role`;
 > - The attribute value MUST allow a token list as the value;
 > - The appearance of the name literal of any concrete WAI-ARIA [role](https://www.w3.org/TR/wai-aria-1.1/#dfn-role) as one of these tokens MUST NOT in and of itself make the attribute value illegal in the host-language syntax; and
-> - The first name literal of a non-abstract WAI-ARIA role in the list of tokens in the role attribute defines the role according to which the user agent MUST process the element. User Agent processing for roles is defined in the [Core Accessibility API Mappings](https://www.w3.org/TR/core-aam-1.1/).
+> - The first name literal of a non-abstract WAI-ARIA role in the list of tokens in the role attribute defines the role according to which the user agent MUST process the element. User Agent processing for roles is defined in the [Core Accessibility API Mappings 1.1](https://www.w3.org/TR/core-aam-1.1/).
 
-Clauses 8.1 Role Attribute of WAI-ARIA versions 1.2 and 1.3 provides almost the similar description:
+Clauses 8.1 Role Attribute of WAI-ARIA versions 1.2 and 1.3 provides almost the same description:
 
 > - The attribute value MUST allow a token list as the value;
 > - The appearance of the name literal of any concrete WAI-ARIA [role](https://www.w3.org/TR/wai-aria-1.2/#dfn-role) as one of these tokens MUST NOT in and of itself make the attribute value illegal in the host-language syntax; and
-> - The first name literal of a non-abstract WAI-ARIA role in the list of tokens in the role attribute defines the role according to which the user agent MUST process the element. User Agent processing for roles is defined in the Core Accessibility API Mappings [CORE-AAM-1.2](https://www.w3.org/TR/core-aam-1.2/).
+> - The first name literal of a non-abstract WAI-ARIA role in the list of tokens in the role attribute defines the role according to which the user agent MUST process the element. User Agent processing for roles is defined in the [Core Accessibility API Mappings 1.2](https://www.w3.org/TR/core-aam-1.2/).
 
 Since all versions of WAI-ARIA refers to other documentation, let is read it now.
 
