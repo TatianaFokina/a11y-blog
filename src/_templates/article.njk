@@ -5,9 +5,9 @@ layout: _base.njk
 <div class="article-inf">
 	<h1>{{ title }}</h1>
 
-	<ul class="topic-list topic-list--article">
+	<ul class="topics topics--in-article">
 		{% for tag in keyTheme %}
-			<li class="topic-list__item">{{ tag }}</li>
+			<li class="topics__item">{{ tag }}</li>
 		{% endfor %}
 	</ul>
 

@@ -3,11 +3,11 @@
 
 // High contrast mode
 @media (forced-colors) {
-	.card {
+	.cards__item {
 		border: 2px solid transparent;
 	}
 
-	.card:focus-within:has(:focus-visible) {
+	.cards__item:focus-within:has(:focus-visible) {
 		outline: 2px solid transparent;
 	}
 }

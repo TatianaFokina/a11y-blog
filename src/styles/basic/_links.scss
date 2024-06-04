@@ -1,22 +1,16 @@
 @import "../_variables.scss";
 
-.wrapper a {
-    text-decoration: none;
-    color: var(--text-color);    
-    border-bottom: 2px solid var(--border-color);    
-    &:hover {
-        background: var(--color-hover);
-    }
+a {
+	text-decoration: none;
+	color: var(--text-color);
+	border-bottom: 2px solid var(--border-color);
+
+	&:hover {
+		background: var(--color-hover);
+	}
 }
 
-.wrapper a:focus-visible {
-    outline: 2px solid var(--border-color);
-    outline-offset: 2px;
-}
-
-// Main page link "See all articles"
-.all-articles-link {
-    display: inline-block;
-    
-    margin-top: $gap-6x;
+a:focus-visible {
+	outline: 2px solid var(--border-color);
+	outline-offset: 2px;
 }

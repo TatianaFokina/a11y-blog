@@ -1,29 +1,41 @@
 @import "../_variables.scss";
 @import "../mixins-and-functions";
 
+.cards {
+	display: inline-flex;
+	flex-direction: column;
+
+	width: 100%;
+	gap: $gap-5x;
+}
+
 .cards--w-margin {
 	margin-top: $gap-8x;
+	margin-bottom: $gap-6x;
 }
 
 .cards--in-article {
 	margin: 0;
 	padding: 0;
+
+	@include media(md) {
+		flex-direction: row;
+	}
 }
 
-.card {
+.cards__item {
 	position: relative;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	width: 100%;	
-	padding: $gap-4x;	
-	background: var(--bg-part-color);
-	border-radius: 26px;	
-	transition: background .3s;
 
-	&:not(:last-of-type) {
-		margin-bottom: $gap-5x;
-	}
+	width: 100%;
+	padding: $gap-4x;
+	gap: $gap-4x;
+
+	background: var(--bg-part-color);
+	border-radius: 26px;
+	transition: background .3s;
 
 	&:before {
 		content: "";
@@ -39,24 +51,26 @@
 	}
 }
 
-.card--short {
+.cards__item--compact {
 	display: inline-flex;
 }
 
-.card__title {
+.cards__item-heading {
 	margin-top: 0;
 }
 
-.card:focus-within:has(:focus-visible) {
+.cards__item:focus-within:has(:focus-visible) {
 	outline: 2px solid var(--border-color);
 	outline-offset: 3px;
 }
 
-.card a:focus {
+.cards__item-heading-link:focus,
+.cards__item-link:focus {
 	outline: 0;
 }
 
-a.card__title-link {
+.cards__item-heading-link,
+.cards__item-link {
 	font-weight: bold;
 	color: inherit;
 
@@ -81,14 +95,10 @@ a.card__title-link {
 	}
 }
 
-p.card__description {
-	margin: 0 0 16px;
+.cards__item-description {
+	margin: 0;
 }
 
-.card__description--in-article {
-	margin-top: $gap-7x;
-}
-
-.card__article-date {
+.cards__item-date {
 	font-size: var(--step--1);
 }
