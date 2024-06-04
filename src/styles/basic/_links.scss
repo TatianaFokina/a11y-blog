@@ -1,6 +1,6 @@
 @import "../_variables.scss";
 
-.content a {
+.wrapper a {
     text-decoration: none;
     color: var(--text-color);    
     border-bottom: 2px solid var(--border-color);    
@@ -9,7 +9,7 @@
     }
 }
 
-.content a:focus-visible {
+.wrapper a:focus-visible {
     outline: 2px solid var(--border-color);
     outline-offset: 2px;
 }

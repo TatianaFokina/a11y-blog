@@ -5,22 +5,20 @@
 	{% include "head_open-graph.njk" %}
 	{% include "head_schema.org.njk" %}
 	<script defer src="{{ "/scripts/bundle.js" | filehash }}"></script>
-	<link rel="stylesheet" href="{{ "/styles/styles.css" | filehash }}">	
+	<link rel="stylesheet" href="{{ "/styles/styles.css" | filehash }}">
 	{% include "head_favicons.njk" %}
 	<link rel="alternate" type="application/rss+xml" title="{{ "site description" | translate("ru") | safe }}" href="{{ site.url }}{{ "feedUrl" | translate }}">
 </head>
 
-<body class="body" data-theme="light">
+<body class="base" data-theme="light">
 	{% include "header.njk" %}
-	<div class="container">
-		<div class="content">
-			<main class="main">
-				{% if layout !== "article.njk" %}
-					<h1>{{ title }}</h1>
-				{% endif %}
-				{{ content | safe }}
-			</main>
-		</div>
+	<div class="base__body wrapper">
+		<main>
+			{% if layout !== "article.njk" %}
+				<h1 class="heading heading--first">{{ title }}</h1>
+			{% endif %}
+			{{ content | safe }}
+		</main>
 	</div>
 	{% include "footer.njk" %}
 

@@ -10,10 +10,6 @@
 	.card:focus-within:has(:focus-visible) {
 		outline: 2px solid transparent;
 	}
-	
-	.footer .footer__wave {
-		fill: Window;
-	}
 }
 
 
@@ -21,8 +17,8 @@
 
 // Inverted colors mode
 @media (inverted-colors) {
-	.content img,
-	.content video {
+	.wrapper img,
+	.wrapper video {
 		filter: invert(100%);
 	}
 }

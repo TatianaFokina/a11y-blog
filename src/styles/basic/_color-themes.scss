@@ -1,7 +1,7 @@
 @import "../_variables.scss";
 
 // Light theme
-body[data-theme="light"] {
+.base[data-theme="light"] {
 	--decorative-el-color: #{$purple-alpha};
 	--bg-color: #{$beige-2};
 	--bg-part-color: #{$beige-1};
@@ -16,7 +16,7 @@ body[data-theme="light"] {
 }
 
 // Dark theme
-body[data-theme="dark"] {
+.base[data-theme="dark"] {
 	--decorative-el-color: #{$purple-alpha};
 	--bg-color: #{$purple-10};
 	--bg-part-color: #{$purple-8};

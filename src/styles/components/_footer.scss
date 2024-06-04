@@ -4,35 +4,14 @@
 .footer {
 	display: flex;
 	flex-direction: column;
-	
-	margin-top: $gap-29x;
-	
-	color: var(--text-color);
+
+	padding-top: $gap-29x;
+	padding-bottom: $gap-12x;
 }
 
-.footer__wave {
-	fill: var(--bg-part-color);
-}
+.footer__content {
+	display: inline-block;
 
-.content__footer {
-	max-width: 100%;	
-	padding: 0;
-	margin-top: -1px;
-}
-
-.footer__copyright {
-	padding: $gap-7x 0 $gap-13x;
-	
-	font-size: var(--step-0);
-	text-align: center;
-	
-	background: var(--bg-part-color);
-	
-}
-
-.footer__info {
-	display: block;
-	
 	&:not(:last-of-type) {
 		margin-bottom: $gap-2x;
 	}

@@ -8,7 +8,7 @@ layout: _base.njk
 
 <section aria-labelledby="heading">
 	
-	<h2 id="heading" class="second-heading">{{ 'latest (heading)' | translate }}</h2>
+	<h2 id="heading" class="heading heading--second">{{ 'latest (heading)' | translate }}</h2>
 	
 	{% set collectionName = 'articles' + page.lang.charAt(0).toUpperCase() + page.lang.slice(1) %}
 	{% set articleslist = collections[collectionName] | slice(3) %}

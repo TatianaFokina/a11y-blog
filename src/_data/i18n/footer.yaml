@@ -1,8 +1,8 @@
 ru:
-  developed with: "Разработано на"
-  incons from: "иконки с"
-  github repo: "репозитории на GitHub"
+  developed: "Разработано на"
+  icons from: "Иконки с"
+  github repo: "Нашли ошибку? Расскажите мне на"
 en:
-  developed with: "Developed with"
-  incons from: "icons from"
-  github repo: "GitHub repository"
+  developed: "Build on"
+  icons from: "Icons are from"
+  github repo: "Find an issue? Let me know on"

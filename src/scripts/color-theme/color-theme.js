@@ -1,5 +1,5 @@
 export function colorTheme() {
-	const bodyClass = document.querySelector('.body');
+	const bodyClass = document.querySelector('.base');
 	const storageKey = 'theme-preference';
 	const switchers = document.querySelectorAll('.theme-switcher__button');
 

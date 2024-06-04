@@ -3,7 +3,7 @@ layout: _base.njk
 ---
 
 <div class="article-inf">
-	<h1 class="article-name">{{ title }}</h1>
+	<h1 class="heading heading--first">{{ title }}</h1>
 
 	<ul class="topic-list topic-list--article">
 		{% for tag in keyTheme %}
@@ -22,6 +22,6 @@ layout: _base.njk
 </div>
 
 <section aria-labelledby="heading">
-	<h2 id="heading" class="second-heading">{{ 'other articles' | translate }}</h2>
+	<h2 id="heading" class="heading heading--second">{{ 'other articles' | translate }}</h2>
 	{% include "article-navigation.njk" %}
 </section>

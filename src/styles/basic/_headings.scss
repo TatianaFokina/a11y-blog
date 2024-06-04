@@ -7,42 +7,46 @@ $h4-margin-top: 28px;
 $h4-margin-bottom: 14px;
 $h2-h3-margin-bottom: 16px;
 
-.content h1,
-.first-heading {
-    margin-top: 0;
-    margin-bottom: $h1-margin-bottom;
-    
-    font-size: var(--step-3);
-    line-height: $line-height-h1;
+.heading {
+	font-family: inherit;
 }
 
-.content h2,
-.second-heading {
-    margin-top: $h2-margin-top;
-    
-    font-size: var(--step-2);
-    line-height: $line-height-h2;
+.heading--first {
+	margin-top: 0;
+	margin-bottom: $h1-margin-bottom;
+
+	font-size: var(--step-3);
+	line-height: $line-height-h1;
 }
 
-.content h3,
-.third-heading {
-    margin-top: $h3-margin-top;
-    
-    font-size: var(--step-1);
-    line-height: $line-height-h3;
+// .wrapper h2,
+.heading--second {
+	margin-top: $h2-margin-top;
+
+	font-size: var(--step-2);
+	line-height: $line-height-h2;
 }
 
-.content h4 {
-    margin-top: $h4-margin-top;
-    margin-bottom: $h4-margin-bottom;
-    
-    font-size: var(--step-0);
-    line-height: $line-height-h4;
+// .wrapper h3,
+.heading--third {
+	margin-top: $h3-margin-top;
+
+	font-size: var(--step-1);
+	line-height: $line-height-h3;
 }
 
-.content h2,
-.content h3,
-.second-heading,
-.third-heading {
-    margin-bottom: $h2-h3-margin-bottom;
+.wrapper h4,
+.heading--fourth {
+	margin-top: $h4-margin-top;
+	margin-bottom: $h4-margin-bottom;
+
+	font-size: var(--step-0);
+	line-height: $line-height-h4;
+}
+
+.wrapper h2,
+.wrapper h3,
+.heading--second,
+.heading--third {
+	margin-bottom: $h2-h3-margin-bottom;
 }

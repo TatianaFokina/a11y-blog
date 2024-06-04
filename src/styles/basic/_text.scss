@@ -3,7 +3,7 @@
 
 $code-padding: 2px;
 
-.content p {
+.wrapper p {
     margin: $gap-5x 0;
     
     font-size: var(--step-0);
@@ -18,7 +18,7 @@ $code-padding: 2px;
     }
 }
 
-.content hr {
+.wrapper hr {
     border: 0;
     display: block;
     height: 2px;
@@ -35,11 +35,11 @@ $code-padding: 2px;
 
 
 // Figure and figcaption
-.content figure {
+.wrapper figure {
     margin: 0;
 }
 
-.content figcaption {
+.wrapper figcaption {
     margin: $gap-2x 0 $gap-5x;
     
     font-size: var(--step--1);
@@ -49,11 +49,11 @@ $code-padding: 2px;
 
 
 // Small, code, pre and kbd
-.content small {
+.wrapper small {
     font-size: var(--step--1);
 }
 
-.content code {
+.wrapper code {
     padding: $code-padding;
     
     font-family: $code-font-family;
@@ -65,7 +65,7 @@ $code-padding: 2px;
     border-radius: 4px;
 }
 
-.content pre code {
+.wrapper pre code {
     display: block;
     
     padding: $gap-9x;
@@ -74,25 +74,25 @@ $code-padding: 2px;
 }
 
 // Kbd
-.content kbd {
+.wrapper kbd {
     font-family: $code-font-family;
 }
 
 // Samp
-.content samp {
+.wrapper samp {
     font-family: $text-font-family;
 }
 
 // Blockquote
-.content blockquote {
+.wrapper blockquote {
     border-left: 4px solid var(--border-color);
     
     word-wrap: break-word;
 }
 
-.content blockquote,
-.content blockquote ol,
-.content blockquote ul {
+.wrapper blockquote,
+.wrapper blockquote ol,
+.wrapper blockquote ul {
     margin: 0;
     padding-left: $gap-6x;
 }

@@ -1,14 +1,10 @@
-<footer class="footer">
-	{% include "../assets/footer-wave.svg" %}
-
-	<div class="content content__footer">
-		<div class="footer__copyright">
-			<small class="footer__info">© {{ 'name' | translate }}, 2021–{% currentYear %}</small>
-			<small class="footer__info">
-				{{ 'developed with' | translate }} <a href="{{ links.copyright.eleventy }}">11ty</a>, 
-				{{ 'incons from' | translate }} <a href="{{ links.copyright.iconfinder}}">Iconfinder</a>, 
-				<a href="{{ links.public.github }}">{{ 'github repo' | translate }}</a>
-			</small>
-		</div>
+<footer>
+	<div class="footer wrapper">
+		<small class="footer__content">© {{ "name" | translate }}, 2021–{% currentYear %}</small>
+		<small class="footer__content">
+			{{ "icons from" | translate }} <a href="{{ links.copyright.iconfinder }}">Iconfinder</a>.
+			{{ "developed" | translate }} <a href="{{ links.copyright.eleventy }}">11ty</a>.
+			{{ "github repo" | translate }} <a href="{{ links.public.github }}">GitHub</a>
+		</small>
 	</div>
 </footer>
