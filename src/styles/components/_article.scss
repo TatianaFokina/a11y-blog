@@ -1,40 +1,40 @@
 @import "../_variables.scss";
 @import "../mixins-and-functions";
 
-.article-inf {
+.article-header {
 	margin-bottom: 64px;
-	
+
 	text-align: center;
 }
 
-.article-date {
-	display: inline-block;	
-	margin-top: $gap-3x;	
+.article-header__date {
+	display: inline-block;
+	margin-top: $gap-3x;
 	font-size: var(--step--1);
 }
 
-.note {
+.article__note {
 	position: relative;
 	display: flex;
-	
+
 	margin: $gap-5x 0;
 	padding: $gap-5x;
-	
+
 	font-size: var(--step--1);
-	
+
 	background: var(--bg-part-color);
 	border-radius: 4px;
 }
 
-.note .note__text {
+.article__note-text {
 	margin: 0;
 	padding-left: $gap-8x;
-	
+
 	font-size: var(--step--1);
 	word-break: break-word;
 }
 
-.note__emoji {
+.article__note-icon {
 	display: block;
 	position: absolute;
 	top: $gap-5x;
