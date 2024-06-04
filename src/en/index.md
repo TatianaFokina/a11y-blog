@@ -1,5 +1,5 @@
 ---
-title: About this blog
+title: About a blog
 layout: index.njk
 ---
 Hi, my name is Tatiana Fokina, or just Tanya for short. Who am I? I am a web accessibility specialist and enthusiast who likes developing user-friendly interfaces and discussing digital accessibility with others (sometimes in the middle of the night).
