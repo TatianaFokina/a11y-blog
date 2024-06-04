@@ -1,8 +1,10 @@
 <footer>
 	<div class="footer wrapper">
-		<small class="footer__content">© {{ "name" | translate }}, 2021–{% currentYear %}</small>
+		<small class="footer__content">{{ "name" | translate }}, 2021–{% currentYear %}</small>
 		<small class="footer__content">
-			{{ "icons from" | translate }} <a href="{{ links.copyright.iconfinder }}">Iconfinder</a>.
+			© {{ "icons from" | translate }} <a href="{{ links.copyright.lucide }}">Cole Bemis & Lucide Contributors</a>
+		</small>
+		<small class="footer__content">
 			{{ "developed" | translate }} <a href="{{ links.copyright.eleventy }}">11ty</a>.
 			{{ "github repo" | translate }} <a href="{{ links.public.github }}">GitHub</a>
 		</small>

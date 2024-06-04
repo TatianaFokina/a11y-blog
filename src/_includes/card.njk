@@ -9,9 +9,9 @@
 				<li class="topics__item">{{ tag }}</li>
 			{% endfor %}
 		</ul>
-		<span class="cards__item-date">
-			<span aria-hidden="true">🕠</span>
+		<div class="cards__item-date">
+			{% include "../assets/ico-published.svg" %}
 			<time datetime="{{ article.date | dateFormat("ISO") }}">{{ article.data.date | dateFormat("readable") }}</time>
-		</span>
+		</div>
 	</footer>
 </article>

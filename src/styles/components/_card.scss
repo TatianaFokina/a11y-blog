@@ -101,5 +101,10 @@
 }
 
 .cards__item-date {
+	display: inline-flex;
+	align-items: center;
+
+	gap: $gap-1x;
+
 	font-size: var(--step--1);
 }

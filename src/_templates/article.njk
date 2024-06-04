@@ -11,10 +11,15 @@ layout: _base.njk
 		{% endfor %}
 	</ul>
 
-	<span class="article-header__date">
-		<span aria-hidden="true">🕠</span>
-		{{ 'published' | translate }} — <time datetime="{{ date | dateFormat("ISO") }}">{{ date | dateFormat("readable") }}</time>{% if updated %}, {{ 'updated' | translate }} — <time datetime="{{ updated | dateFormat("ISO") }}">{{ updated | dateFormat("readable") }}</time>{% endif %}
-	</span>
+	<div class="article-header__date">
+		{% include "../assets/ico-published.svg" %}
+		{{ 'published' | translate }}
+		<time datetime="{{ date | dateFormat("ISO") }}">{{ date | dateFormat("readable") }}</time>
+		{% if updated %},
+			{{ 'updated' | translate }}
+			<time datetime="{{ updated | dateFormat("ISO") }}">{{ updated | dateFormat("readable") }}</time>
+		{% endif %}
+	</div>
 </header>
 
 <div class="article">

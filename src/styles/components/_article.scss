@@ -8,8 +8,12 @@
 }
 
 .article-header__date {
-	display: inline-block;
-	margin-top: $gap-3x;
+	display: inline-flex;
+	align-items: center;
+
+	margin-top: $gap-4x;
+	gap: $gap-1x;
+
 	font-size: var(--step--1);
 }
 
