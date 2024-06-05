@@ -1,46 +1,46 @@
 @import "../_variables.scss";
 @import "../mixins-and-functions";
 
-.theme-switcher {
+.header__switcher {
 	display: flex;
-    padding: $gap-1x;
-    border: 2px solid var(--border-color);
-    border-radius: 32px;
+	padding: $gap-1x;
+	border: 2px solid var(--border-color);
+	border-radius: 32px;
 	padding-inline: $gap-1x;
 }
 
-.theme-switcher__button {
+.header__switcher-button {
 	margin: 0;
-    padding: $gap-2x $gap-4x;    
+	padding: $gap-2x $gap-4x;
 	border: 0;
-    border-radius: 32px;
-    
-    color: var(--text-color);
+	border-radius: 32px;
+
+	color: var(--text-color);
 	background: transparent;
-    cursor: pointer;
+	cursor: pointer;
 
-    transition: background .2s;
+	transition: background .2s;
 
-    &:focus-visible {
-        outline: 2px solid var(--border-color);
-        outline-offset: 1px;
-    }
+	&:first-child {
+		margin-right: $gap-1x;
+	}
+
+	&:focus-visible {
+		outline: 2px solid var(--border-color);
+		outline-offset: 1px;
+	}
 }
 
-.theme-switcher__button:first-child {
-    margin-right: $gap-1x;
-}
-
-.theme-switcher__button[aria-pressed="true"] {
-    color: var(--button-text-color);
+.header__switcher-button[aria-pressed="true"] {
+	color: var(--button-text-color);
 	background: var(--button-bg-color);
 }
 
-.theme-switcher__button[aria-pressed="false"] {
+.header__switcher-button[aria-pressed="false"] {
 	color: inherit;
 
-    &:hover {
-        color: var(--button-text-color);
-        background: var(--menu-elements-color-hover);
-    }
+	&:hover {
+		color: var(--button-text-color);
+		background: var(--menu-elements-color-hover);
+	}
 }

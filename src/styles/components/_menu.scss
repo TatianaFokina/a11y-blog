@@ -1,54 +1,40 @@
 @import "../_variables.scss";
 @import "../mixins-and-functions";
 
-.nav {
+.navigation {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	flex-wrap: wrap;
-	
-	width: 100%;
-	padding-right: 0;
-	margin-bottom: $gap-5x;
+
+	gap: $gap-4x;
 
 	@include media(sm) {
 		justify-content: space-between;
-
-		margin-bottom: 0;
-		padding-right: $gap-4x;
 	}
 }
 
-.nav__list {
+.navigation__list {
 	display: flex;
 	flex-direction: row;
-	margin: 0;
 	padding: 0;	
 	list-style: none;
 
-	@include media(sm) {		
+	@include media(sm) {
 		align-items: center;
-		gap: 8px;
-		margin: 0;
 	}
 }
 
-.nav__list-img {
-	fill: currentColor;
-	// Fix for high contrast mode
-	forced-color-adjust: auto;
-}
-
-.nav .nav__list-link {
+.navigation__list-item-link {
 	display: inline-flex;
 	align-items: center;
 	position: relative;
-	
+
 	width: 100%;
 	padding: $gap-5x;
-	
+	gap: $gap-2x;
+
 	line-height: $line-height-menu-link;
-	
 	border-bottom: 0;
 
 	transition: color .2s;
@@ -59,6 +45,8 @@
 	}
 }
 
-.nav__list-text {
-	padding-left: $gap-2x;
-}
+// .nav__list-img {
+// 	fill: currentColor;
+// 	// Fix for high contrast mode
+// 	forced-color-adjust: auto;
+// }
