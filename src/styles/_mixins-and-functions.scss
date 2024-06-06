@@ -9,9 +9,6 @@
 	}
 }
 
-
-
-
 // Fluid typography
 // Round Function
 @function decimal-round($number, $digits: 0, $mode: round) {
@@ -48,21 +45,21 @@
 @function fluid-type($minWidthPx, $maxWidthPx, $minFontSizePx, $maxFontSizePx) {
 	// Root font-size
 	$pixelsPerRem: $font-size-base;
-	
+
 	//Converts width to rem
 	$minWidth: math.div($minWidthPx, $pixelsPerRem);
 	$maxWidth: math.div($maxWidthPx, $pixelsPerRem);
-	
+
 	// Converts font size to rem
 	$minFontSize: decimal-round(math.div($minFontSizePx, $pixelsPerRem), 3);
 	$maxFontSize: decimal-round(math.div($maxFontSizePx, $pixelsPerRem), 3);
-	
+
 	$slope: (math.div(($maxFontSize - $minFontSize), ($maxWidth - $minWidth)));
 	$yAxisIntersection: (-1 * $minWidth) * $slope + $minFontSize;
-	
+
 	$min: #{decimal-round($minFontSize, 3)}rem;
 	$calc-value: #{decimal-round($yAxisIntersection, 3)}rem "+" #{decimal-round($slope * 100, 3)}vw;
 	$max: #{decimal-round($maxFontSize, 3)}rem;
-	
+
 	@return clamp(#{$min, $calc-value, $max});
 }
