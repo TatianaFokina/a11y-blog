@@ -4,15 +4,18 @@
 .header__switcher {
 	display: flex;
 	padding: $gap-1x;
-	border: 2px solid var(--border-color);
-	border-radius: 32px;
 	padding-inline: $gap-1x;
+
+	border: 3px solid var(--border-color);
+	border-radius: 32px;
+
+	user-select: none;
 }
 
 .header__switcher-button {
 	margin: 0;
-	padding: $gap-2x $gap-4x;
-	border: 0;
+	padding: $gap-3x $gap-4x;
+	border: 2px solid transparent;
 	border-radius: 32px;
 
 	color: var(--text-color);
@@ -21,8 +24,12 @@
 
 	transition: background .2s;
 
-	&:first-child {
-		margin-right: $gap-1x;
+	&:nth-last-child(1) {
+		border-radius: 3px 32px 32px 3px;
+	}
+
+	&:nth-last-child(2) {
+		border-radius: 32px 3px 3px 32px;
 	}
 
 	&:focus-visible {
