@@ -4,15 +4,24 @@
 .footer {
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-start;
 
 	padding-top: $gap-29x;
 	padding-bottom: $gap-12x;
+	gap: $gap-2x;
+
+	@include media(lg) {
+		flex-direction: row;
+		align-items: flex-end;
+	}
 }
 
-.footer__content {
-	display: inline-block;
+.footer__column {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	flex-basis: 35%;
 
-	&:not(:last-of-type) {
-		margin-bottom: $gap-2x;
-	}
+	gap: $gap-2x;
 }
