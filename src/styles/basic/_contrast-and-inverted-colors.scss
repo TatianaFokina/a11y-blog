@@ -2,7 +2,16 @@
 @import "../mixins-and-functions";
 
 // High contrast mode
-@media (forced-colors) {
+@media (forced-colors: active) {
+	::selection {
+		background: Highlight;
+	}
+
+	a:hover {
+		color: Canvas;
+		background-color: CanvasText;
+	}
+
 	.cards__item {
 		border: 2px solid transparent;
 	}
@@ -10,10 +19,11 @@
 	.cards__item:focus-within:has(:focus-visible) {
 		outline: 2px solid transparent;
 	}
+
+	.logo__link-svg-path {
+		fill: none;
+	}
 }
-
-
-
 
 // Inverted colors mode
 @media (inverted-colors) {
