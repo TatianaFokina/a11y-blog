@@ -7,7 +7,7 @@
 	align-items: center;
 	justify-content: space-between;
 
-	gap: $gap-3x;
+	gap: $gap-4x;
 
 	@include media(md) {
 		flex-direction: row;

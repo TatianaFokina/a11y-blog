@@ -10,7 +10,7 @@ $logo-width-small: 54px;
 }
 
 .logo__link-svg {
-	width: 269px;
+	width: 250px;
 	height: 158px;
 
 	fill: none;
@@ -20,11 +20,9 @@ $logo-width-small: 54px;
 	}
 }
 
-// .logo__link-svg {
-// 	fill: currentColor;
-// 	// Fix for high contrast mode
-// 	forced-color-adjust: auto;
-// }
+.logo__link-svg-path {
+	fill: #c7759e;
+}
 
 .logo__link {
 	display: inline-flex;
@@ -37,7 +35,7 @@ $logo-width-small: 54px;
 	&:hover {
 		background: inherit;
 	}
-	
+
 	&:hover .logo__image {
 		fill: var(--menu-elements-color-hover);
 	}

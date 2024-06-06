@@ -17,7 +17,7 @@
 .navigation__list {
 	display: flex;
 	flex-direction: row;
-	padding: 0;	
+	padding: 0;
 	list-style: none;
 
 	@include media(sm) {
@@ -44,9 +44,3 @@
 		color: var(--menu-elements-color-hover);
 	}
 }
-
-// .nav__list-img {
-// 	fill: currentColor;
-// 	// Fix for high contrast mode
-// 	forced-color-adjust: auto;
-// }
