@@ -7,11 +7,17 @@
 	text-align: center;
 }
 
-.article-header__date {
-	display: inline-flex;
+.article-header__dates {
+	display: flex;
+	margin-top: $gap-4x;
+
+	gap: $gap-4x;
+}
+
+.article-header__dates-item {
+	display: flex;
 	align-items: center;
 
-	margin-top: $gap-4x;
 	gap: $gap-1x;
 
 	font-size: var(--step--1);
