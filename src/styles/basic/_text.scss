@@ -2,97 +2,119 @@
 @import "../mixins-and-functions";
 
 $code-padding: 2px;
+$hr-height: 15px;
 
 p {
-    margin: $gap-5x 0;
-    
-    font-size: var(--step-0);
-    line-height: $line-height-base;
-    
-    &:first-child {
-        margin-top: 0;
-    }
-    
-    &:last-child {
-        margin-bottom: 0;
-    }
+	margin: $gap-5x 0;
+
+	font-size: var(--step-0);
+	line-height: $line-height-base;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
 }
 
-.wrapper hr {
-    border: 0;
-    display: block;
-    height: 2px;
-    width: 20%;
-    margin: $gap-12x auto;
-    background: var(--text-color);
+hr {
+	--dfdf:  var(--text-color);
+
+	position: relative;
+	display: inline-block;
+
+	width: 100%;
+    height: $hr-height;
+
+	margin: $gap-10x auto;
+
+	border: 0;
+
+	&:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+	
+		width: 100%;
+		height: $hr-height;
+	
+		background-image: url("../assets/wave.svg");
+		background-repeat: no-repeat;
+		background-position: center;
+
+		.article__hr-path {
+			stroke: var(--dfdf);
+		}
+	}
+}
+
+hr + p {
+	margin-top: 0;
 }
 
 ::selection {
-    background: var(--decorative-el-color);
+	background: var(--decorative-el-color);
 }
 
-
-
-
-// Figure and figcaption
-.wrapper figure {
-    margin: 0;
+figure {
+	margin: 0;
 }
 
-.wrapper figcaption {
-    margin: $gap-2x 0 $gap-5x;
-    
-    font-size: var(--step--1);
+figcaption {
+	margin: $gap-2x 0 $gap-5x;
+
+	font-size: var(--step--1);
 }
 
-
-
-
-// Small, code, pre and kbd
-.wrapper small {
-    font-size: var(--step--1);
+small {
+	font-size: var(--step--1);
 }
 
-.wrapper code {
-    padding: $code-padding;
-    
-    font-family: $code-font-family;
-    font-size: var(--step--1);
-    word-wrap: break-word;
-    color: var(--text-color);
-    
-    background: var(--code-color);
-    border-radius: 4px;
+code {
+	padding: $code-padding;
+
+	font-family: $code-font-family;
+	font-size: var(--step--1);
+	word-wrap: break-word;
+	color: var(--text-color);
+
+	background: var(--code-color);
+	border-radius: 4px;
 }
 
-.wrapper pre code {
-    display: block;
-    
-    padding: $gap-9x;
-    
-    overflow-x: auto;
+pre code {
+	display: block;
+
+	padding: $gap-9x;
+
+	overflow-x: auto;
 }
 
-// Kbd
-.wrapper kbd {
-    font-family: $code-font-family;
+pre + ul {
+	padding-top: $gap-5x;
 }
 
-// Samp
-.wrapper samp {
-    font-family: $text-font-family;
+kbd {
+	font-family: $code-font-family;
 }
 
-// Blockquote
-.wrapper blockquote {
-    border-left: 4px solid var(--border-color);
-    
-    word-wrap: break-word;
+samp {
+	font-family: $text-font-family;
 }
 
-.wrapper blockquote,
-.wrapper blockquote ol,
-.wrapper blockquote ul {
-    margin: 0;
-    padding-left: $gap-6x;
+blockquote {
+	border-left: 4px solid var(--border-color);
+
+	word-wrap: break-word;
+}
+
+blockquote,
+blockquote ol,
+blockquote ul {
+	margin: 0;
+	padding-left: $gap-6x;
 }
