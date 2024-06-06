@@ -1,13 +1,16 @@
 ---
-title: role attribute with multiple values
+title: Role attribute with multiple values
 description: In what cases may be necessary to set multiple values for a role attribute, and how browsers and screen readers deal with this.
 keyTheme:
     - ARIA
     - HTML
-date: 2024-06-03
+date: 2022-01-24
+updated: 2024-06-03
+translated: 2024-06-03
 layout: article.njk
 templateEngineOverride: md, njk
 ---
+
 Recently, I discovered by chance that an `role` attribute may contain more than one value. This was very unexpected, at least for me.
 
 So, I wrote this post out of research interest, so it doesn't contain much practical advice. In fact, some of it is better not put into practice.
@@ -123,7 +126,7 @@ In all three browsers, `aria-label` provides the accessibility name "This is not
 
 Again, the element name is "This is not a button". Its calculated roles are `button` in Chrome and Safari and `pushbutton` in Firefox.
 
-[Invalid and valid values for role attribute from accessibility tree preview in Chrome, Firefox and Safari DevTools.](images/one-wrong-token.png)
+![Invalid and valid values for role attribute from accessibility tree preview in Chrome, Firefox and Safari DevTools.](images/one-wrong-token.png)
 
 **Conclusion**: When one of values are invalid and the second one is valid, the valid value is included into accessibility tree.
 
@@ -191,4 +194,4 @@ I do not think this is a terrible oversight in the specification. It is hard to 
 - [Core Accessibility API Mappings 1.1](https://www.w3.org/TR/core-aam-1.1/)
 - [Core Accessibility API Mappings 1.2](https://www.w3.org/TR/core-aam-1.2/)
 - [`role` attribute has valid value](https://act-rules.github.io/rules/674b10), ACT-Rules Community
-- [Notes on use of multiple ARIA `role` attribute values](https://www.tpgi.com/notes-on-use-of-multiple-aria-role-attribute-values/), Steve Faulkner
+- [Notes on use of multiple ARIA `role` attribute values](https://www.tpgi.com/notes-on-use-of-multiple-aria-role-attribute-values/) by Steve Faulkner
