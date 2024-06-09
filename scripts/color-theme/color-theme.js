@@ -1,7 +1,7 @@
 export function colorTheme() {
 	const bodyClass = document.querySelector('.base');
 	const storageKey = 'theme-preference';
-	const switchers = document.querySelectorAll('.theme-switcher__button');
+	const switchers = document.querySelectorAll('.header__switcher-button');
 
 	const getThemePreference = () => {
 		if (localStorage.getItem(storageKey))
@@ -23,7 +23,7 @@ export function colorTheme() {
 	// Find a pressed switcher and find the currunt theme value
 	const restore = () => {
 		let savedTheme = getThemePreference();
-		const savedSwitcher = document.querySelector(`.theme-switcher__button[value=${savedTheme}]`);
+		const savedSwitcher = document.querySelector(`.header__switcher-button[value=${savedTheme}]`);
 
 		pressSwither(savedSwitcher);
 	};
