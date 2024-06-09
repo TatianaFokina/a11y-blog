@@ -4,9 +4,7 @@ description: In what cases may be necessary to set multiple values for a role at
 keyTheme:
     - ARIA
     - HTML
-date: 2022-01-24
-updated: 2024-06-03
-translated: 2024-06-03
+date: 2024-06-03
 layout: article.njk
 templateEngineOverride: md, njk
 ---

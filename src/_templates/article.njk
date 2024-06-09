@@ -14,7 +14,6 @@ layout: _base.njk
 	<div class="article-header__dates">
 		<div class="article-header__dates-item">
 			{% include "../assets/ico-published.svg" %}
-			{{ 'published' | translate }}
 			<time datetime="{{ date | dateFormat("ISO") }}">{{ date | dateFormat("readable") }}</time>
 		</div>
 		{% if updated %}
@@ -22,13 +21,6 @@ layout: _base.njk
 				{% include "../assets/ico-updated.svg" %}
 				{{ 'updated' | translate }}
 				<time datetime="{{ updated | dateFormat("ISO") }}">{{ updated | dateFormat("readable") }}</time>
-			</div>
-		{% endif %}
-		{% if translated %}
-			<div class="article-header__dates-item">
-				{% include "../assets/ico-translated.svg" %}
-				{{ 'translated' | translate }}
-				<time datetime="{{ translated | dateFormat("ISO") }}">{{ translated | dateFormat("readable") }}</time>
 			</div>
 		{% endif %}
 	</div>
