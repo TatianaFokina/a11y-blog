@@ -20,8 +20,6 @@ p {
 }
 
 hr {
-	--dfdf:  var(--text-color);
-
 	position: relative;
 	display: inline-block;
 
@@ -37,18 +35,12 @@ hr {
 		position: absolute;
 		top: 0;
 		left: 0;
-		display: block;
-	
+		display: block;	
 		width: 100%;
-		height: $hr-height;
-	
+		height: $hr-height;	
 		background-image: url("../assets/wave.svg");
 		background-repeat: no-repeat;
 		background-position: center;
-
-		.article__hr-path {
-			stroke: var(--dfdf);
-		}
 	}
 }
 
