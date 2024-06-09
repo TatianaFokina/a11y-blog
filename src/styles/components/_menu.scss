@@ -2,11 +2,11 @@
 @import "../mixins-and-functions";
 
 .navigation {
+	width: 100%;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 	flex-wrap: wrap;
-
 	gap: $gap-4x;
 
 	@include media(sm) {
@@ -17,30 +17,28 @@
 .navigation__list {
 	display: flex;
 	flex-direction: row;
+	align-items: center;
 	padding: 0;
 	list-style: none;
-
-	@include media(sm) {
-		align-items: center;
-	}
 }
 
 .navigation__list-item-link {
 	display: inline-flex;
 	align-items: center;
 	position: relative;
-
 	width: 100%;
-	padding: $gap-5x;
+	padding: $gap-3x;
 	gap: $gap-2x;
-
 	line-height: $line-height-menu-link;
 	border-bottom: 0;
-
 	transition: color .2s;
 
 	&:hover {
 		background: inherit;
 		color: var(--menu-elements-color-hover);
+	}
+
+	@include media(lg) {
+		padding: $gap-5x;
 	}
 }

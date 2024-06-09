@@ -5,12 +5,13 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-between;
-
 	gap: $gap-4x;
 
-	@include media(md) {
+	@include media(sm) {
+		justify-content: space-between;
 		flex-direction: row;
-		gap: 0;
+	}
+	@include media(lg) {
+		gap: $gap-8x;
 	}
 }

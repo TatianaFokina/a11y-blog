@@ -1,42 +1,31 @@
 @import "../_variables.scss";
 @import "../mixins-and-functions";
 
-$logo-width-big: 62px;
-$logo-width-small: 54px;
-
 .logo {
-	position: relative;
-	display: flex;
-}
-
-.logo__link-svg {
-	width: 250px;
-	height: 158px;
-
-	fill: none;
-
-	@include media(lg) {
-		height: 198px;
-	}
-}
-
-.logo__link-svg-path {
-	fill: #c7759e;
-}
-
-.logo__link {
 	display: inline-flex;
 	align-items: flex-end;
-
-	height: 150px;
-
+	height: 80px;
 	border-bottom: 0;
 
 	&:hover {
 		background: inherit;
 	}
-
 	&:hover .logo__image {
 		fill: var(--menu-elements-color-hover);
 	}
+	@include media(lg) {
+		height: 120px;
+	}
+}
+
+.logo__svg {
+	height: calc(100% + 20px);
+	fill: none;
+	@include media(lg) {
+		height: calc(100% + 40px);
+	}
+}
+
+.logo__svg-path {
+	fill: #c7759e;
 }

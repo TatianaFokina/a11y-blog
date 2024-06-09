@@ -1,39 +1,37 @@
-<nav>
-	<div class="navigation">
-		{% include "logo.njk" %}
+<nav class="navigation">
+	{% include "logo.njk" %}
 
-		<ul class="navigation__list">
-			<li class="navigation__list-item">
-				{# Path and other language and text for reference #}
-				{% if page.lang == "ru" %}
-					{% set targetLang = "ru" %}
-					{% set langLabel = "Русский" %}
-				{% else %}
-					{% set targetLang = "en" %}
-					{% set langLabel = "English" %}
+	<ul class="navigation__list">
+		<li class="navigation__list-item">
+			{# Path and other language and text for reference #}
+			{% if page.lang == "ru" %}
+				{% set targetLang = "ru" %}
+				{% set langLabel = "Русский" %}
+			{% else %}
+				{% set targetLang = "en" %}
+				{% set langLabel = "English" %}
+			{% endif %}
+
+			{# If we have such a page in another language, then we set the value of the variable #}
+			{% set targetURL = null %}
+			{% for link in page.url | locale_links %}
+				{% if link.url %}
+					{% set targetURL = link.url %}
 				{% endif %}
+			{% endfor %}
 
-				{# If we have such a page in another language, then we set the value of the variable #}
-				{% set targetURL = null %}
-				{% for link in page.url | locale_links %}
-					{% if link.url %}
-						{% set targetURL = link.url %}
-					{% endif %}
-				{% endfor %}
-
-				<a class="navigation__list-item-link" href="{{ targetURL if targetURL else ("/" ~ targetLang ~ "/") }}">
-					{% include "../assets/ico-language.svg" %}
-					<span lang="{{ targetLang }}">{{ langLabel }}</span>
-				</a>
-			</li>
-			<li class="navigation__list-item">
-				<a class="navigation__list-item-link" href="{{ links.social.rss }}">
-					{% include "../assets/ico-rss.svg" %}
-					RSS
-				</a>
-			</li>
-		</ul>
-	</div>
+			<a class="navigation__list-item-link" href="{{ targetURL if targetURL else ("/" ~ targetLang ~ "/") }}">
+				{% include "../assets/ico-language.svg" %}
+				<span lang="{{ targetLang }}">{{ langLabel }}</span>
+			</a>
+		</li>
+		<li class="navigation__list-item">
+			<a class="navigation__list-item-link" href="{{ links.social.rss }}">
+				{% include "../assets/ico-rss.svg" %}
+				RSS
+			</a>
+		</li>
+	</ul>
 </nav>
 
 {% include "theme-switcher.njk" %}

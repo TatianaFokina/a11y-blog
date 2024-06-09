@@ -14,27 +14,27 @@
 
 .header__switcher-button {
 	margin: 0;
-	padding: $gap-3x $gap-4x;
+	padding: $gap-2x $gap-1x;
 	border: 2px solid transparent;
 	border-radius: 32px;
-
 	color: var(--text-color);
 	background: transparent;
 	cursor: pointer;
-
 	transition: background .2s;
 
 	&:nth-last-child(1) {
 		border-radius: 3px 32px 32px 3px;
 	}
-
 	&:nth-last-child(2) {
 		border-radius: 32px 3px 3px 32px;
 	}
-
 	&:focus-visible {
 		outline: 2px solid var(--border-color);
 		outline-offset: 1px;
+	}
+
+	@include media(lg) {
+		padding: $gap-3x $gap-4x;
 	}
 }
 
