@@ -19,11 +19,11 @@ pnpm i
 Running a test build for local development:
 
 ```
-pnpm _watch
+pnpm watch
 ```
 
 Build and deployment:
 
 ```
-pnpm _build+deploy
+pnpm build+deploy
 ```
