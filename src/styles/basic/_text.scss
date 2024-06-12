@@ -1,7 +1,8 @@
 @import "../_variables.scss";
 @import "../mixins-and-functions";
 
-$code-padding: 2px;
+$code-padding-big: .15rem;
+$code-padding-small: 0.03rem;
 $hr-height: 15px;
 
 p {
@@ -24,7 +25,7 @@ hr {
 	display: inline-block;
 
 	width: 100%;
-    height: $hr-height;
+	height: $hr-height;
 
 	margin: $gap-10x auto;
 
@@ -67,7 +68,7 @@ small {
 }
 
 code {
-	padding: $code-padding;
+	padding: $code-padding-big;
 
 	font-family: $code-font-family;
 	font-size: var(--step--1);
@@ -76,6 +77,10 @@ code {
 
 	background: var(--code-color);
 	border-radius: 4px;
+}
+
+a > code {
+	padding: $code-padding-small;
 }
 
 pre code {
