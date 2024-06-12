@@ -5,11 +5,11 @@
 		<li class="navigation__list-item">
 			{# Path and other language and text for reference #}
 			{% if page.lang == "ru" %}
-				{% set targetLang = "ru" %}
-				{% set langLabel = "Русский" %}
-			{% else %}
 				{% set targetLang = "en" %}
 				{% set langLabel = "English" %}
+			{% else %}
+				{% set targetLang = "ru" %}
+				{% set langLabel = "Русский" %}
 			{% endif %}
 
 			{# If we have such a page in another language, then we set the value of the variable #}
@@ -22,7 +22,9 @@
 
 			<a class="navigation__list-item-link" href="{{ targetURL if targetURL else ("/" ~ targetLang ~ "/") }}">
 				{% include "../assets/ico-language.svg" %}
-				<span lang="{{ targetLang }}">{{ langLabel }}</span>
+				<span lang="{{ targetLang }}">
+					{{ langLabel }}
+				</span>
 			</a>
 		</li>
 		<li class="navigation__list-item">

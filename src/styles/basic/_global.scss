@@ -4,13 +4,10 @@
 .visually-hidden {
 	position: absolute;
 	left: 0;
-	
 	width: 1px;
 	height: 1px;
 	padding: 0;
-	
 	list-style: none;
-	
 	overflow: hidden;
 	clip: rect(1px, 1px, 1px, 1px);
 }
@@ -18,7 +15,7 @@
 .invisible-anchor {
 	position: relative;
 	top: 0;
-	
+
 	@include media(md) {
 		top: -$gap-10x;
 	}

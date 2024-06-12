@@ -15,9 +15,9 @@
 <link rel="alternate" hreflang="{{ page.lang }}" href="{{ site.url }}{{ page.url }}" />
 {% for link in page.url | locale_links %}
 	{% if link.url %}
-		<link 
+		<link
 			rel="alternate"
 			hreflang="{{ link.lang }}"
 			href="{{ site.url }}{{ link.url }}">
-	{% endif %}		
+	{% endif %}
 {% endfor %}

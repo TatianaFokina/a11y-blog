@@ -1,8 +1,10 @@
 ru:
   feedUrl: "/ru/feed.xml"
+  groupLabel: "Тема"
   light: "Светлая"
   dark: "Тёмная"
 en:
   feedUrl: "/en/feed.xml"
+  groupLabel: "Color scheme"
   light: "Light"
   dark: "Dark"

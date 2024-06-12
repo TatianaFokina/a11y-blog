@@ -1,9 +1,6 @@
 @import "../_variables.scss";
 @import "../mixins-and-functions";
 
-$container-margin-top: 60px;
-$container-margin-top-mobile: 60px;
-
 *, *::before, *::after {
 	margin: 0;
 	box-sizing: border-box;
@@ -17,14 +14,11 @@ $container-margin-top-mobile: 60px;
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
-
 	margin: 0;
-
 	font-family: $text-font-family;
 	font-size: var(--step-0);
 	line-height: $line-height-base;
 	color: var(--text-color);
-
 	background: var(--bg-color);
 	transition: all 1s;
 }
@@ -32,7 +26,6 @@ $container-margin-top-mobile: 60px;
 .wrapper {
 	width: 100%;
 	max-width: map-get($container-widths, md);
-
 	margin: 0 auto;
 	padding-top: 0;
 	padding-bottom: 0;
@@ -42,6 +35,5 @@ $container-margin-top-mobile: 60px;
 
 .base__body {
 	flex: 1 0 auto;
-
-	padding-top: $container-margin-top;
+	padding-top: 60px;
 }

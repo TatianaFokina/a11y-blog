@@ -20,7 +20,7 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPlugin(pluginShortcodes);
 	eleventyConfig.addPlugin(pluginFilters);
 	eleventyConfig.addPlugin(pluginI18n);
-	eleventyConfig.addPlugin(pluginNavigation);	
+	eleventyConfig.addPlugin(pluginNavigation);
 	eleventyConfig.addPlugin(pluginRss);
 	eleventyConfig.addPlugin(pluginTransforms);
 	eleventyConfig.addPlugin(syntaxHighlight);

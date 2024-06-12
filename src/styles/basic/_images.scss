@@ -1,11 +1,9 @@
 @import "../_variables.scss";
 @import "../mixins-and-functions";
 
-.wrapper img {
+img {
 	display: block;
-	
 	max-width: 100%;
 	height: auto;
-
 	filter: var(--img-filter);
 }

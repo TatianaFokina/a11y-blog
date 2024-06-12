@@ -4,7 +4,6 @@
 .cards {
 	display: inline-flex;
 	flex-direction: column;
-
 	width: 100%;
 	gap: $gap-5x;
 }
@@ -28,11 +27,9 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-
 	width: 100%;
 	padding: $gap-4x;
 	gap: $gap-4x;
-
 	background: var(--bg-part-color);
 	border-radius: 26px;
 	transition: background .3s;
@@ -74,9 +71,7 @@
 .cards__item-link {
 	font-weight: bold;
 	color: inherit;
-
 	border-bottom: 0;
-
 	transition: none;
 
 	&:after {
@@ -91,9 +86,14 @@
 	&:hover {
 		color: inherit;
 		background: inherit;
-
 		border-bottom: 0;
 	}
+}
+
+.cards__item-details {
+	display: inline-flex;
+	align-items: center;
+	gap: $gap-2x;
 }
 
 .cards__item-description {
@@ -103,8 +103,6 @@
 .cards__item-date {
 	display: inline-flex;
 	align-items: center;
-
 	gap: $gap-1x;
-
 	font-size: var(--step--1);
 }

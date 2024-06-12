@@ -23,16 +23,44 @@
 		{% if previousArticle %}
 			<li class="cards__item cards__item--compact">
 				<a href="{{ previousArticle.url | url }}" class="cards__item-link">{{ previousArticle.data.title }}</a>
-				<span>
-					← {{ 'previous article' | translate }}
+				<span class="cards__item-details">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="16"
+						height="16"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						aria-hidden="true"
+					>
+						<path d="m12 19-7-7 7-7"/>
+						<path d="M19 12H5"/>
+					</svg>
+					{{ 'previous article' | translate }}
 				</span>
 			</li>
 		{% endif %}
 		{% if nextArticle %}
 			<li class="cards__item cards__item--compact">
 				<a href="{{ nextArticle.url | url }}" class="cards__item-link">{{ nextArticle.data.title }}</a>
-				<span>
-					{{ 'next article' | translate }} →
+				<span class="cards__item-details">
+					{{ 'next article' | translate }}
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="16"
+						height="16"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						aria-hidden="true"
+					>
+						<path d="M5 12h14"/>
+						<path d="m12 5 7 7-7 7"/>
+					</svg>
 				</span>
 			</li>
 		{% endif %}

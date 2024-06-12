@@ -3,7 +3,6 @@
 
 .article-header {
 	margin-bottom: 64px;
-
 	text-align: center;
 }
 
@@ -17,21 +16,16 @@
 .article-header__dates-item {
 	display: flex;
 	align-items: center;
-
 	gap: $gap-1x;
-
 	font-size: var(--step--1);
 }
 
 .article__note {
 	position: relative;
 	display: flex;
-
 	margin: $gap-5x 0;
 	padding: $gap-5x;
-
 	font-size: var(--step--1);
-
 	background: var(--bg-part-color);
 	border-radius: 4px;
 }
@@ -39,7 +33,6 @@
 .article__note-text {
 	margin: 0;
 	padding-left: $gap-8x;
-
 	font-size: var(--step--1);
 	word-break: break-word;
 }

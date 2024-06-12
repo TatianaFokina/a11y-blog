@@ -9,10 +9,6 @@
 	gap: $gap-2x $gap-4x;
 	padding-top: $gap-29x;
 	padding-bottom: $gap-12x;
-
-	@include media(sm) {
-		align-items: flex-end;
-	}
 }
 
 .footer__column {
@@ -20,6 +16,7 @@
 	flex-direction: column;
 	justify-content: space-between;
 	gap: $gap-2x;
+
 	@include media(sm) {
 		gap: unset;
 	}

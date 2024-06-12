@@ -10,9 +10,11 @@
 	&:hover {
 		background: inherit;
 	}
+
 	&:hover .logo__image {
 		fill: var(--menu-elements-color-hover);
 	}
+
 	@include media(lg) {
 		height: 120px;
 	}
@@ -21,6 +23,7 @@
 .logo__svg {
 	height: calc(100% + 20px);
 	fill: none;
+
 	@include media(lg) {
 		height: calc(100% + 40px);
 	}
