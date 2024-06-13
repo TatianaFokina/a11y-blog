@@ -1,367 +1,369 @@
 ---
-title: Understanding skip link
-description: How to skip large navigation with skip link, who needs it and what are the approaches to implementing skip content pattern.
+title: Understanding skip links
+description: How to help users to skip large chank of a page content, whose these users are, and how to implement it on your website.
 keyTheme:
-    - Patterns
-    - HTML
-    - CSS
+  - Patterns
+  - HTML
+  - CSS
 date: 2024-05-05
+updated: 2024-06-13
 layout: article.njk
 templateEngineOverride: md, njk
 ---
-There are many small but useful patterns available on the web. One of them is the content skip link or skip link. This is a hyperlink that leads to the main content of the page and helps to skip through lengthy, repetitive content. Its main purpose is to save users' time.
 
-What kind of content is considered bulky? A navigation menu with a logo and a lot of links, a bulky complex table, letter indexes, and lists with chapters or technical specifications. Most often skip link is useful for skipping site navigation in the header.
+There are many small but useful patterns available on the web. One of them is a _content skip link_ or _skip link_. This is a hyperlink that leads to the main content of a page and helps to skip through lengthy, repetitive content. Its main purpose is to save users' time.
 
-Exceptions are the menu in the footer and small navigation in the header, which consists of a couple of links and a logo. In the case of the footer, you can return to the top of the page using keys, gestures and other in-built browser' features. And the small navigation won't take up much time for users.
+What kind of content is considered bulky? A navigation menu with a logo and a lot of links, a complex table, letter indexes, and lists with chapters or technical specifications. Most often, the skip link is useful for skipping site navigation from a header.
 
-In theory, everything is simple, but in practice, it is a bit more complicated. Let's try to deal with everything in order.
+Exceptions are a footer menu and a brief header navigation, which consists of a couple of links and a site logo. In the case of footers, you can return to the top of a page using keyboard keys, gestures, and other in-built browser features. So, a brief navigation won't take up much time for users.
+
+In theory, everything is simple. In practice, it's a bit more complicated. Let's learn step by steps.
 
 ## Theory
 
-### What WCAG 2.1 says about this.
+### What WCAG 2.2 says
 
-In the accessibility guidelines, there are two criterions related to skip links. The first deals with them indirectly and the second directly.
+In the accessibility guidelines, there are two criteria related to skip links.
 
-- [Criterion 2.1.1 Keyboard](https://www.w3.org/TR/WCAG21/#keyboard) (A). All functionality of the content is operable through a keyboard interface without requiring specific timings for individual keystrokes.
-- [Criterion 2.4.1 Block Skipping](https://www.w3.org/TR/WCAG21/#bypass-blocks) (A). A mechanism is available to bypass blocks of content that are repeated on multiple web pages.
+- [Criterion 2.1.1 Keyboard](https://www.w3.org/TR/WCAG22/#keyboard) (A). All functionality of the content is operable through a keyboard interface without requiring specific timings for individual keystrokes.
+- [Criterion 2.4.1 Block Skipping](https://www.w3.org/TR/WCAG22/#bypass-blocks) (A). A mechanism is available to bypass blocks of content that are repeated on multiple web pages.
 
 #### Mechanics for skipping blocks
 
-There are two mechanics:
+There are two mechanics for skipping content on a web page:
 
-- landmark navigation (landmarks);
-- skip link.
+- Landmark navigation (landmarks)
+- Skip link.
 
-The first method is available for screen reader users. Landmarks are added using semantic tags or thanks to ARIA. The second mechanic has a larger audience. It is not only users with visual impairments.
+The first method is available for screen reader users. Landmarks are created using semantic tags, thanks to ARIA. The second mechanic has a larger audience. It's not only for users with visual impairments.
 
-You can meet the advice that skip link is not needed on a site with a good semantic layout. This is not quite true. Not all screen reader users know about shortcuts to open a menu with landmarks, and other keyboard users don't have this option. Also, the more navigation options, the better.
+You can find advice that the skip link isn't necessary for websites with a good layouts. This isn't quite true. Not all screen reader users know about shortcuts for landmarks. Other keyboard users don't have this option at all. Also, the more options for navigation, the better.
 
-### Who needs a skip link
+### Who needs it
 
-In short, anyone who consistently navigates pages and can't skip content quickly. In a nutshell, four categories of users. These are:
+In short, anyone who consistently navigates through pages and can't skip content quickly. In a nutshell, there are four (4) categories of users.
 
-- Screen reader users, who navigate desktop sites with a keyboard and mobile sites with taps and swipes.
-- Users with motor impairments who use a keyboard, remote computer buttons, and [other switches](https://axesslab.com/switches/).
-- Any other keyboard users. They may be advanced level or have a temporarily broken mouse.
+- Screen reader users, who navigate through websites with a keyboard and mobile versions of websites by taps and swipes
+- Users with motor impairments who use a keyboard, remote computer buttons, and [other switch devices](https://axesslab.com/switches/)
+- Any other keyboard users. They may be of an advanced level or have temporarily broken devices, such as a computer mouse, etc.
 - Screen magnifier users who use the keyboard to navigate.
 
-Imagine that you are using a keyboard for navigation and you have entered the site of an online shop, for example, Ozon. You found the product you wanted, navigated to it and found yourself back at the beginning of the page. About 40 tabs and finally you can find out more about your favourite backpack. With skip link you would be in the right place in one click and not fall asleep on the way.
+Imagine that you're using a keyboard for navigation and open any online shopping platform. You found the product you wanted, navigated to it, and found yourself on the top of the page. About forty (40) tabs later, you can finally find out more about your perfect backpack. With the skip link, you would be in the right part of a page in one tab and not fall asleep on the way 😴.
 
-### Requirements for skip link
+### List of requirements
 
-- Located in the first place in tab order.
-- Leads directly to the main content and sets the focus on it. It is more effective if the page has one main area, `<main>`.
-- It can be located in the main area of the page. In this case, it skips the necessary block and leads to the beginning of the next.
-- It has a clear name and a good description of where it leads.
-- It can be always visible, or it can appear at the keyboard focus. In both cases, it meets WCAG criteria.
-- You can add more than one of these links. For example, one leads to the main content, and the second - to the search bar. You should not overdo the number, otherwise there is no point in links.
-- Should not interfere with the mouse users. This is a controversial requirement, but it has a grain of truth. If such a link is always visible, it may confuse mouse users. They aren't familiar with the pattern, and they don't need another way to scroll to the main content.
+- Located in tab order first
+- Leads directly to the main content and sets the focus on it. It's more effective if the page has one main area
+- It can be located in the main part of the page. In this case, it skips the necessary block and leads to the beginning of the next part of a web page
+- It has a clear name and a good description of where it leads
+- It can always be visible, or it can appear when a person uses a keyboard. In both cases, it meets WCAG criteria
+- You can add more than one of the skip links. For example, one leads to the main content, and the second to the search bar. It's better don't overdo the number. Otherwise, there is no point in the skip-link pattern
+- It shouldn't interfere with mouse users. This is a controversial requirement, but it has a grain of truth. If such a link is always visible, it may confuse mouse users. They aren't familiar with this pattern, and don't need another way to scroll to the main content.
 
 ## Practice
 
-A project should already support keyboard focus and use a semantic layout. Without this, skip link is useless.
+You need to support keyboard navigation from the start. In other cases, the skip link is useless by default.
 
 ### Marking up the page
 
-Before we move on to markup, a couple of words about the link text. On English websites, "Skip to main content" or "Skip to content" is most often used.
+Before we move on to HTML and CSS, I want to say a couple of words about skip link names. On English-language websites, ″Skip to main content″ or ″Skip to content″ is most often used. There are a few more options:
 
-A few more variations on the title:
-
-- Skip navigation;
-- Skip main navigation;
+- Skip navigation
+- Skip main navigation
 - Skip navigation links.
 
-Now let's talk about markup.
+Finally, let's talk about HTML.
 
-The practical implementation of skip link is an anchor link. It is better to add it to the beginning of `<body>` or `<header>` if it is the first element on the page. In the examples, I will add it to the beginning of the header.
+The practical implementation of the skip link is an anchor link. It's better to add it at start of a page, before other HTML elements. The best parts of HTML code for that reason are `<header>` if it's the first element on the page or `<body>`. I'm going to use the link as the first child element for the header one.
 
 ```html
 <header>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-     <!-- Enormous navigation -->
+  <a href="#main-content" class="skip-link">
+    Skip to content
+  </a>
+  <!-- Enormous navigation -->
 </header>
 ```
 
-But where it should lead is the main sticking point. There are several answers to that question.
+But where the skip link should lead? There are several answers to that question.
 
-**Option 1**, the classic one. The link leads directly to ``<main>``.
+**Option 1**: The classic one, the anchor link leads directly to the `<main>` element.
 
-``html
-<!-- Option 1 -->
-
+```html
 <header>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    <!-- Enormous navigation -->
+  <a href="#main-content" class="skip-link">
+    Skip to content
+  </a>
+  <!-- Enormous navigation -->
 </header>
 
 <main id="main-content">
-    <!-- Main Block Content -->
+  <!-- Main page content -->
 </main>
 ```
 
-This option works more or less well in modern browsers, but there is one "but". [There may be problems](https://axesslab.com/skip-links/) in all mobile browsers on older versions of iOS and Android, in older Chrome and even in Safari 14. Every place has its bugs.
+The first option works more or less well in modern browsers, but there is one ″but″. There may be problems with [old versions of browsers on iOS and Android and in old Chrome](https://axesslab.com/skip-links/).
 
-- **iOS + VoiceOver**. 
-When skip linking, scrolling is visually triggered, but after swiping, the focus moves to a different area rather than the content of the main block. Another bug returns to the beginning of the page when you try to go to the next item in the main block.
-- **Android + TalkBack**. Hidden links just don't get focus. This is a system-wide bug that causes the focus event to not fire on such items.
-- **Chrome**. Focus stays on the skip link and moves to the next element after the link after clicking on <kbd>Tab</kbd>.
+**Mobile VoiceOver**: When you scroll to the anchor element after pressing on, focus set to a different area rather than the content of the main block. The second bug returns you to the top part of a page when to go to the next item in the main block.
 
-[The bug on iOS](https://bugs.webkit.org/show_bug.cgi?id=179011) was fixed in April 2020, on [Android](https://bugs.chromium.org/p/chromium/issues/detail?id=657157) in February 2021 and in [Chrome](https://bugs.chromium.org/p/chromium/issues/detail?id=37721) back in 2017. Hence, they don't occur with iOS 13+, at least not with Android 10+ and in older versions of Chrome. However, a part of screen reader users don't update browsers and operating systems for a long time, so fixing bugs doesn't make it any better.
+**Desktop VoiceOver with Safari**: Focus stuck in the top banner when VoiceOver users set focus on an anchor elements and press right arrow key. Take a look at [the issue from GOV.UK repo on GitHub](https://github.com/alphagov/govuk-frontend/issues/2187).
 
-**Option 2**, where the link leads to `<h1>` inside `<main>`.
+**TalkBack**: You just can't set focus on visually hidden links. This is one of the system bug on Android that causes the focus event not to fire on this type of element.
+
+**Chrome blowser**: The skip link doesn't send focus to the anchor element via the <kbd>Tab</kbd> key, and moves to the next element after the link.
+
+[The bug on the iOS platform](https://bugs.webkit.org/show_bug.cgi?id=179011) was fixed in April 2020. [Chromium team fixed bug](https://bugs.chromium.org/p/chromium/issues/detail?id=37721) back in 2017. [The bug on Android](https://bugs.chromium.org/p/chromium/issues/detail?id=657157) haven't been fixed yet. [The bug on Android](https://bugs.chromium.org/p/chromium/issues/detail?id=657157) hasn't been fixed yet. Hence, these bugs don't occur with iOS 13+ or older versions of Chrome. However, some screen reader users don't update versions of browsers and operating systems frequently.
+
+**Option 2**: The skip link refers to the `<h1>` element as a child of the `<main>` one.
 
 ```html
-<!-- Option 2 -->
-
 <header>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    <!-- Enormous navigation -->
+  <a href="#main-content" class="skip-link">
+    Skip to content
+  </a>
+  <!-- Enormous navigation -->
 </header>
 
 <main>
-    <h1 id="main-content">Main heading</h1>
-    <!-- The rest of the content of the main block -->
+  <h1 id="main-content">Main heading</h1>
+  <!-- Another page content -->
 </main>
 ```
 
 It differs from the first option in that screen readers will announce the header text rather than the entire `<main>` text content. This will give users more control, as they don't have to interrupt the automatic announcement manually.
 
-This markup has the same bugs as the previous option with `<main>` with the `id` attribute.
+This markup has the same bugs as the previous option with the `id` attribute of the `<main>` element.
 
-**Option 3**, which solves the problem of the previous two.
+**Option 3**: The solution that fixes the problems with the previous examples.
+
+The `tabindex` HTML attribute with a negative value removes the element from the sequential navigation order.
 
 ```html
-<!-- Option 3 -->
-
 <header>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    <!-- Enormous navigation -->
+  <a href="#main-content" class="skip-link">
+    Skip to content
+  </a>
+  <!-- Enormous navigation -->
 </header>
 
 <main id="main-content" tabindex="-1">
-    <!-- Main block content -->
+  <!-- Main page content -->
 </main>
 ```
 
-A `tabindex` attribute with a negative value removes the element from the sequential navigation.
+This hack works well with older versions of Chrome and on iOS. Again, one ″but″. In other browsers, this can lead to new bugs:
 
-This hack works well with older versions of Chrome and on iOS. Again, a "but". In other browsers, this can lead to new bugs:
+- When a user navigating to the main block, the entire area with a negative value for `tabindex` is highlighted
+- When you click on a page, focus will return to the top part of a page.
 
-- When navigating to the main block, the entire area with a negative `tabindex` is highlighted.
-- When you click on the page, the focus will return to the beginning of the page.
+This is where JavaScript comes to help us. We need a script that move focus on the `main` element. After click event on the skip link, we also want to set `tabindex="-1"` for the main block. When focus is lost, the HTML attribute is removed. You can sneak a peek at [the Mike Foskett's implementation](https://codepen.io/2kool2/pen/bxdzEJ). Anika Henke offers a more generic [jQuery solution](https://github.com/selfthinker/dokuwiki_template_writr/blob/master/js/skip-link-focus-fix.js) that fixes all links and also removes `tabindex` when focus isn't on the anchor element anymore.
 
-This is where JavaScript comes to the rescue. We need a script that sets the focus on `main` and adds the attribute `tabindex="-1"` to it after the click event of the skip link. When focus is lost, this attribute is removed. You can sneak a peek at the implementation in [Mike Foskett's demo](https://codepen.io/2kool2/pen/bxdzEJ), also for Android. Anika Henke offers a more generic [jQuery solution](https://github.com/selfthinker/dokuwiki_template_writr/blob/master/js/skip-link-focus-fix.js) that fixes all links and also removes `tabindex` when the focus is lost.
-
-**Option 4**, where skip link leads to another link before `<main>`.
+**Option 4**: The skip link leads to another link before the `<main>` element.
 
 ```html
-<!-- Option 4 -->
-
 <header>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    <!-- Enormous navigation -->
+  <a href="#main-content" class="skip-link">
+    Skip to content
+  </a>
+  <!-- Enormous navigation -->
 </header>
 
-<a href="#main-content" id="main-content" class="skip-link skip-link-target">Beginning of the main content</a>
+<a
+  href="#main-content"
+  id="main-content"
+  class="skip-link skip-link-target"
+>
+  Beginning of the main content
+</a>
 
 <main>
-    <!-- Main block content -->
+  <!-- Main page content -->
 </main>
 ```
 
-The solution was proposed by Paul Radcliffe in [«A Deep Dive on Skipping to Content»](https://css-tricks.com/a-deep-dive-on-skipping-to-content/). He did a [demo](https://rpress.io/examples/skip-to-content/skip-to-content-additional-in-content-skip-link.html) for more clarity.
+The solution was proposed by Paul Ratcliffe in ″[A Deep Dive on Skipping to Content](https://css-tricks.com/a-deep-dive-on-skipping-to-content/)″. He made [a demo for more clarity](https://rpress.io/examples/skip-to-content/skip-to-content-additional-in-content-skip-link.html).
 
-In this case, the screen reader will announce that we have navigated to the " Beginning of the main content" link.
+In this case, the screen reader will announce that we have navigated to the ″Beginning of the main content″ link.
 
-Markup solves the problem of users who don't realise whether the link worked or not. It also helps to avoid bugs with incorrect keyboard focus behaviour in some browsers.
+The last markup example solves the problem for users who don't realise whether the link worked or not. It also helps to avoid bugs with incorrect keyboard focus behavior in some browsers.
 
 This method is new and interesting, but I see a few problems.
 
-1. The second link can be confusing for screenreader users. It doesn't lead anywhere, but it makes you want to click on it.
-2. If a user without visual impairments tabs through the entire navigation, they will see an incomprehensible link "Start of main content".
-3. You'll definitely catch the Android bug from the first option because these are still visually hidden elements.
+- The second link can be confusing for screen reader users. It doesn't lead anywhere, but it makes you want to click on it
+- If a user without visual impairments tabbing through an entire navigation, they will see an incomprehensible link ″Start of main content″
+- You'll definitely face with the Android bug because these are still visually hidden elements.
 
-**Option 5** where the second link is without text inside `<main>`, with or without `href`.
+**Option 5**: The second link doesn't contain text, with or without the `href` attribute.
 
 ```html
-<!-- Option 5 -->
-
 <header>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    <!-- Enormous navigation -->
-</header>s
+  <a href="#main-content" class="skip-link">
+    Skip to content
+  </a>
+  <!-- Enormous navigation -->
+</header>
 
 <main>
-    <a id="main-content" class="visually-hidden-link"></a>
-    <!-- The rest of the content of the main block -->
+  <a id="main-content" class="visually-hidden-link"></a>
+  <!-- The rest of the content of the main block -->
 </main>
 ```
 
-It's used on [Deque](https://www.deque.com). And it seems to be the most problematic option.
+A link without `href` is considered [a placeholder link](https://www.scottohara.me//note/2019/07/17/placeholder-link.html). It can be used in some situations, but only if it's not supposed to work as a link. This is because it doesn't get keyboard focus.
 
-A link without `href` is considered a [placeholder link](https://www.scottohara.me//note/2019/07/17/placeholder-link.html). It can be used for some situations, but only if it is not supposed to work as a link. This is because it doesn't get keyboard focus.
+If it's an unnamed link but with `href`, screen readers will announce a value of the HTML attribute. For instance, `"#main-content"`. For NVDA, `aria-hidden="true"` may fix this issue.
 
-If it's an untitled link but with `href`, screen readers will read the contents of that attribute. For example, `"#main-content"`. For NVDA, `aria-hidden="true"` will fix this problem.
+**Option 6**: Multiple references, which is suitable for rare cases.
 
-**Option 6** with multiple references, which is suitable for rare cases.
+In this code snippet, both links are wrapped with the extra `<nav>` container with `aria-label`. Screen readers will announce about the navigation contains links for skipping the website menu. You can also use the `<ul>` element to make it easier for screen readers users to navigate throug a page.
 
 ```html
-<!-- Option 6 -->
-
 <header>
-    <nav aria-label="Ссылки для пропуска меню">
-        <a href="#search" class="skip-link">Jump to site search</a>
-        <a href="#main-content" class="skip-link">Skip to main content</a>
-    </nav>
-    <!-- Enormous navigation -->
-    <form id="search">
-        <!-- Site search -->
-    </form>
+  <nav aria-label="Skip links">
+    <a href="#search" class="skip-link">
+      Jump to search
+    </a>
+    <a href="#main-content" class="skip-link">
+      Skip to content
+    </a>
+  </nav>
+  <!-- Enormous navigation -->
+  <form id="search">
+    <!-- Searching elements -->
+  </form>
 </header>
 
 <main id="main-content">
-    <!-- Main block content -->
+  <!-- Main page content -->
 </main>
 ```
 
-In this example, both links are wrapped in an extra `<nav>` with `aria-label`. Screen readers will declare that this is navigation with links to skip the menu. You can wrap them in `<ul>` additionally to make it easier for users to navigate.
+You may also have issues in old and some modern versions of browsers without the hack with `tabindex="-1"`.
 
-Without the hack with `tabindex="-1"` from the third option, you may also have issues in old and some new browsers.
+## Hide the link
 
-## Hide a link
+It's possible to hide the link visually and show it in different ways. There are a couple of basic rules:
 
-Visually hiding a link and showing it when in focus can also be done in different ways. There are a couple of basic rules:
+- Don't use `display: none`, `visibility: hidden` or the `hidden` HTML attribute. We only need to hide the link visually
+- Don't set the value for `width` and `height` to `0`.
 
-- Don't use the `display: none`, `visibility: hidden` properties or the `hidden` attribute. We only need to hide the link visually.
-- Don't set the `width` and `height` to 0. Then the focus will simply not be set on such an element.
+Let's take a look at a few examples with styles.
 
-Let's take a look at a couple of specific examples with styles.
-
-**Option 1** with `position: absolute` and an insanely large negative `left` value.
+**Option 1**: `position: absolute` and an insanely large negative value for the `left` property.
 
 We just absolutely position the element, move it outside the visible area, and return it to where we want it when the focus is set.
 
 ```css
-/* Option 1 */
-
 .skip-link {
-    position: absolute;
-    top: auto;
-    left: -999px;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
+  position: absolute;
+  top: auto;
+  left: -999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
-/* Show on focus */
-.skip-link:focus {
-    top: 0;
-    left: 0;
-    width: auto;
-    height: auto;
-    overflow: visible;
+/* Show keyboard focus */
+.skip-link:focus-visible {
+  top: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  overflow: visible;
 }
 ```
 
-**Вариант 2** с `clip` или `clip-path`. Старый-добрый visually-hidden способ.
+**Option 2**: `clip` or `clip-path` CSS properties.
 
-You can use them at the same time for better compatibility. I also met an option with `clip-path: inset(50%)`.
+You can use both properties for better compatibility. I've also found an implementation with `clip-path: inset(50%)`.
 
 ```css
-/* Option 2 */
-
 .skip-link {
-    position: absolute;
-    margin: 0;
-    padding: 0;
+   position: absolute;
+  margin: 0;
+  padding: 0;
 
-    /* For all browsers */
-    clip: rect(0 0 0 0);
+  /* For all browsers */
+  clip: rect(0 0 0 0);
 
-    /* A more modern way. Supported with prefix */
-    -webkit-clip-path: polygon(0 0, 0 0, 0 0, 0 0);
-    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  /* The modern way */
+  -webkit-clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  clip-path: polygon(0 0, 0 0, 0 0, 0 0);
 }
 
-/* Show on focus */
-.skip-link:focus {
-    top: 0;
-    left: 0;
-    width: auto;
-    height: auto;
+/* Show keyboard focus */
+.skip-link:focus-visible {
+  top: 0;
+  left: 0;
+  width: auto;
+  height: auto;
 
-    /* If you use clip */
-    clip: auto;
+  /* If you use the clip property */
+  clip: auto;
 
-    /* If you use clip-path */
-    -webkit-clip-path: none;
-    clip-path: none;
+  /* If you use the clip-path property */
+  -webkit-clip-path: none;
+  clip-path: none;
 }
 ```
 
-The `clip` property is deprecated and should be replaced by `clip-path`, it is supported in [most modern browsers](https://caniuse.com/css-clip-path).
+The `clip` property is deprecated and should be replaced by the `clip-path` one. Currently, in 2024, [`clip-path` supported by modern browsers with vendor prefix or just partly](https://caniuse.com/css-clip-path) (`-webkit-clip-path`).
 
-**Вариант 3** с `transform`.
+**Option 3**: Let's use the `transform` property now.
 
-Position the link absolutely again and hide it outside the visible area with `transform`. When the focus is on it, we bring it back.
+Again, the link is positioning absolutely and placed somewhere outside the visible area via the `transform` property. When we set focus on the link, it comes back.
 
 ```css
-/* Option 3 */
-
 .skip-link {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translateY(-100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-100%);
 }
 
-/* Show on focus */
-.skip-link:focus {
-    transform: translateY(0%);
+/* Show keyboard focus */
+.skip-link:focus-visible {
+  transform: translateY(0%);
 }
 ```
 
-## Putting the final touches
+## The final touches
 
-The rest of skip link styling depends on your design vision. The most important thing is that it should be clearly visible when on keyboard focus.
+The rest of the skip link styles depends on your design vision. The most important thing is the link should be clearly visible in keyboard focus state.
 
-[WebAIM](https://webaim.org) recommends not to show the link unexpectedly. This can confuse keyboard users who are seeing the interface. A smooth animation will fix this. Then the link will move out from behind the edge of the screen and move back in when there's no longer focus on it.
+WebAIM recommends not to show the link unexpectedly. This can confuse keyboard users who are seeing the interface. A smooth animation will fix this. Then the link will move out from behind the edge of the screen and move back in when there's no longer any focus on it.
 
-You can place the links in any top part of the screen. They are often placed in the top left corner, but this isn't an ironclad rule.
+You can place the links on any part of the screen. They're often placed in the top left corner, but this isn't an ironclad rule.
 
-I've put together a small list of sites with skip link where you can see how it works and looks. Use <kbd>Tab</kbd> for navigation on Windows and <kbd>Tab</kbd> or <kbd><kbd>Option</kbd>+<kbd>Tab</kbd></kbd> on macOS.
+I've created a list of sites where the skip-link pattern is used. Press <kbd>Tab</kbd> for navigation on Windows and <kbd>Tab</kbd> or <kbd>Option Tab</kbd> on macOS.
 
-- [The New York Times](https://www.nytimes.com).
-- [BBC](https://www.bbc.com).
-- [GOV.UK](https://www.gov.uk).
-- [Deque](https://www.deque.com).
-- [WebAIM](https://webaim.org).
-- [Amazon](https://www.amazon.com).
-- [PlayStation](https://www.playstation.com).
-- [Microsoft](https://www.microsoft.com/).
-- [World of Warcraft](https://worldofwarcraft.com/en-gb/).
+- [The New York Times](https://www.nytimes.com)
+- [BBC](https://www.bbc.com)
+- [GOV.UK](https://www.gov.uk)
+- [Deque](https://www.deque.com)
+- [WebAIM](https://webaim.org)
+- [Amazon](https://www.amazon.com)
+- [PlayStation](https://www.playstation.com)
+- [Microsoft](https://www.microsoft.com/)
+- [World of Warcraft](https://worldofwarcraft.com/en-gb/)
 - [Reddit](https://www.reddit.com).
 
-## A few last words
+## Wrapping up
 
-Often the simpler something seems, the more complicated it is in reality. This happened with skip link.
+Often, the simpler something seems, the more complicated it's in reality. This happened with the skip link too.
 
-There are quite a few ways to make a skip link for such a small element. They have pros and cons. I would go for the classic implementation with the link that leads to `<main>` or `<h1>` with `tabindex="-1"` from the third option. As for styles for hiding the link, all the options are good. You can choose whichever one suits the project best. I mostly use absolute positioning and negative `left` value.
+There are quite a few ways to develop the skip link. All of them have pros and cons. I would go for the classic implementation with the link leading to the main block or the `<h1>` element with `tabindex="-1"`. As for styles for hiding the link, all the options are good. You can choose whichever one suits your project best. I prefer to use absolute positioning and the `left` property with a negative value.
 
 ## Further reading
 
-- [Bypass Blocks. Understanding SC 2.4.1](https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-skip.html), W3C.
-- [Accessibility Skip links](https://www.w3schools.com/accessibility/accessibility_skip_links.php), W3C School.
-- [«Skip Navigation» Links](https://webaim.org/techniques/skipnav/), WebAIM.
-- [Use skip navigation links](https://www.a11yproject.com/posts/skip-nav-links/), Cameron Cundiff.
-- [A Deep Dive on Skipping to Content](https://css-tricks.com/a-deep-dive-on-skipping-to-content/), Paul Ratcliffe.
-- [Some thoughts on CSS Tricks' «Deep Dive on Skipping to Content»](https://plousia.com/blog/some-thoughts-css-tricks-deep-dive-skipping-content), Susanna Celso.
-- [How to Create a «Skip to Content» Link](https://css-tricks.com/how-to-create-a-skip-to-content-link/), Paul Ryan.
-- [Implement a Skip Link for Navigation-Heavy Sites](https://benmyers.dev/blog/skip-links/), Ben Myers.
-- [Your skip links are broken](https://axesslab.com/skip-links/), Hampus Sethfors.
-- [Skip links: the 5 most common mistakes](https://www.system-concepts.com/insights/skip-links-the-5-most-common-mistakes/), System Concepts.
+- [″Skip Navigation″ Links](https://webaim.org/techniques/skipnav/)
+- [Use skip navigation links](https://www.a11yproject.com/posts/skip-nav-links/) by Cameron Cundiff
+- [A Deep Dive on Skipping to Content](https://css-tricks.com/a-deep-dive-on-skipping-to-content/) by Paul Ratcliffe
+- [Some thoughts on CSS Tricks' ″Deep Dive on Skipping to Content″](https://plousia.com/blog/some-thoughts-css-tricks-deep-dive-skipping-content) by Susanna Celso
+- [How to Create a ″Skip to Content″ Link](https://css-tricks.com/how-to-create-a-skip-to-content-link/) by Paul Ryan
+- [Implement a Skip Link for Navigation-Heavy Sites](https://benmyers.dev/blog/skip-links/) by Ben Myers
+- [Your skip links are broken](https://axesslab.com/skip-links/) by Hampus Sethfors.
 
 ***
 
-Thanks to [Vasily Dudin](https://twitter.com/vasiliy_dudin) for help with editing.
+Thanks to [Vasily Dudin](https://twitter.com/vasiliy_dudin) for help with editing ❤️

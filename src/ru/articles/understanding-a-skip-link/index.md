@@ -1,15 +1,17 @@
 ---
 title: Разбираемся со skip link
-description: Как пропустить большую навигацию с помощью skip link, кому это нужно и какие есть подходы к реализации паттерна пропуска контента.
+description: Как пропустить большую навигацию с помощью skip link, кому нужны такие ссылки и как их добавить на свой сайт.
 keyTheme:
-    - Паттерны
-    - HTML
-    - CSS
+  - Паттерны
+  - HTML
+  - CSS
 date: 2021-08-23
+updated: 2024-06-13
 layout: article.njk
 templateEngineOverride: md, njk
 ---
-В вебе есть много небольших, но полезных доступных паттернов. И один из них — ссылка для пропуска контента или скип линк (skip link). Это гиперссылка, которая ведёт к основному содержанию страницы и помогает пропустить объёмный, часто повторяющийся контент. Её главная цель — экономия времени пользователей.
+
+В вебе есть много небольших, но полезных доступных паттернов. И один из них — _ссылка для пропуска контента_ или _скип линк (skip link)_. Это гиперссылка, которая ведёт к основному содержанию страницы и помогает пропустить объёмный, часто повторяющийся контент. Её главная цель — экономия времени пользователей.
 
 Какой контент считается объёмным? Навигационное меню с логотипом и кучей ссылок, громоздкая сложная таблица, буквенные указатели, списки с главами или техническими характеристиками. Чаще всего skip link полезна для пропуска навигации по сайту в хедере.
 
@@ -19,14 +21,14 @@ templateEngineOverride: md, njk
 
 ## Теория
 
-### Что говорит про это WCAG 2.1
+### Послушаем WCAG 2.2
 
 В руководстве по доступности есть два критерия, связанные со skip link. Первый касается их косвенно, а второй напрямую.
 
-- [Критерий 2.1.1. Клавиатура](https://www.w3.org/TR/WCAG21/#keyboard) (A). Вся функциональность контента доступна для клавиатуры и не зависит от пауз между нажатиями клавиш.
-- [Критерий 2.4.1. Пропуск блоков](https://www.w3.org/TR/WCAG21/#bypass-blocks) (А). Доступен механизм пропуска блоков контента, которые повторяются на нескольких страницах.
+- [Критерий 2.1.1. Клавиатура](https://www.w3.org/TR/WCAG22/#keyboard) (A). Вся функциональность контента доступна для клавиатуры и не зависит от пауз между нажатиями клавиш.
+- [Критерий 2.4.1. Пропуск блоков](https://www.w3.org/TR/WCAG22/#bypass-blocks) (А). Доступен механизм пропуска блоков контента, которые повторяются на нескольких страницах.
 
-### Механизмы для пропуска блоков
+### Механизмы пропуска блоков
 
 Есть два механизма:
 
@@ -37,7 +39,7 @@ templateEngineOverride: md, njk
 
 Можно встретить совет о том, что skip link не нужна на сайте с хорошей семантической вёрсткой. Это не совсем верно. Не все пользователи скринридеров знают о шорткатах для открытия меню с ориентирами, а у других пользователей клавиатуры такой возможности нет. К тому же, чем больше вариантов навигации, тем лучше.
 
-### Кому нужна skip link
+### Кому это нужно
 
 Если коротко, то всем, кто последовательно навигируется по страницам и не может быстро пропустить контент. Если развёрнуто, то четырём категориям пользователей. Это:
 
@@ -64,7 +66,7 @@ templateEngineOverride: md, njk
 
 ### Размечаем страницу
 
-Перед тем, как перейти к разметке, пара слов про текст ссылки. На англоязычных сайтах чаще всего используют «Skip to main content» или «Skip to content». Кажется, что самые подходящие эквиваленты в русском — «Перейти к основному контенту» или более краткое «К основному контенту». «Cодержание» — широкое понятие и означает содержимое страницы или оглавление. «Контент» лучше отражает, куда ведёт ссылка.
+Перед тем, как перейти к разметке, пара слов про текст ссылки. На англоязычных сайтах чаще всего используют «Skip to main content» или «Skip to content». Кажется, что самые подходящие эквиваленты в русском — «Перейти к основному контенту» или более краткое «К основному контенту». «Содержание» — широкое понятие и означает содержимое страницы или оглавление. «Контент» лучше отражает, куда ведёт ссылка.
 
 Ещё несколько вариантов названия:
 
@@ -78,8 +80,10 @@ templateEngineOverride: md, njk
 
 ```html
 <header>
-    <a href="#main-content" class="skip-link">Перейти к основному контенту</a>
-    <!-- Внушительная навигация -->
+  <a href="#main-content" class="skip-link">
+    К основному контенту
+  </a>
+  <!-- Внушительная навигация -->
 </header>
 ```
 
@@ -88,40 +92,45 @@ templateEngineOverride: md, njk
 **Вариант 1**, классический. Ссылка ведёт прямо к `<main>`.
 
 ```html
-<!-- Вариант 1 -->
-
 <header>
-    <a href="#main-content" class="skip-link">Перейти к основному контенту</a>
-    <!-- Внушительная навигация -->
+  <a href="#main-content" class="skip-link">
+    К основному контенту
+  </a>
+  <!-- Внушительная навигация -->
 </header>
 
 <main id="main-content">
-    <!-- Контент основного блока -->
+  <!-- Контент основного блока -->
 </main>
 ```
 
 Этот вариант более-менее хорошо работает в современных браузерах, но есть одно «но». [Могут возникнуть проблемы](https://axesslab.com/skip-links/) во всех мобильных браузерах на старых версиях iOS и Android, в старых Chrome и даже в Safari 14. Баги везде разные.
 
-- **iOS + VoiceOver**. При переходе по skip link визуально срабатывает прокрутка, но, после свайпа, фокус перемещается на другую область, а не на содержимое основного блока. Другой баг возвращает в начало страницы, когда пытаешься перейти к следующему элементу в основном блоке.
-- **Android + TalkBack**. Скрытые ссылки просто не получают фокус. Это ошибка всей системы, из-за которой на таких элементах не запускается событие фокуса.
-- **Chrome**. Фокус остаётся на skip link и перемещается к следующему элементу после ссылки после нажатия на <kbd>Tab</kbd>.
-- **Safari + VoiceOver**. В ишьюс [GOV.UK](http://gov.UK) нашла [свежий баг](https://github.com/alphagov/govuk-frontend/issues/2187) с десктопным Safari 14 и VoiceOver. Если нажать на skip link, а потом на клавишу со стрелкой, то фокус переместится на следующий элемент после ссылки.
+**iOS и VoiceOver**. При переходе по skip link визуально срабатывает прокрутка, но, после свайпа, фокус перемещается на другую область, а не на содержимое основного блока. Другой баг возвращает в начало страницы, когда пытаешься перейти к следующему элементу в основном блоке.
 
-[Баг на iOS](https://bugs.webkit.org/show_bug.cgi?id=179011) исправлен в апреле 2020, на [Android](https://bugs.chromium.org/p/chromium/issues/detail?id=657157) — в феврале 2021 и в [Chrome](https://bugs.chromium.org/p/chromium/issues/detail?id=37721) — ещё в 2017. Следовательно, они не встречаются с iOS 13+, как минимум с Android 10+ и в старых версиях Chrome. Только часть пользователей скринридеров долго не обновляет браузеры и операционные системы, так что от фикса багов не становится легче.
+**Safari и VoiceOver**. [В ишьюс GOV.UK найдёте баг](https://github.com/alphagov/govuk-frontend/issues/2187) с десктопным Safari 14 и VoiceOver. Если нажать на skip link, а потом на клавишу со стрелкой, то фокус переместится на следующий элемент после ссылки.
 
-**Вариант 2**, в котором ссылка ведёт к `<h1>` внутри `<main>`.
+**Android и TalkBack**. Скрытые ссылки просто не получают фокус. Это ошибка всей операционной системы, из-за которой на таких элементах не запускается событие фокуса.
+
+**Chrome**. Фокус остаётся на skip link и перемещается к следующему элементу после ссылки после нажатия на <kbd>Tab</kbd>.
+
+[Баг на iOS](https://bugs.webkit.org/show_bug.cgi?id=179011) исправлен в апреле 2020, а [баг в Chrome](https://bugs.chromium.org/p/chromium/issues/detail?id=37721) — ещё в 2017. [Баг в Android](https://bugs.chromium.org/p/chromium/issues/detail?id=657157) воспроизводился в 2022, и пока нет обновлений. Итого, с этими багами столкнётесь в iOS старше 13 версии и в старых версиях Chrome. К сожалению, часть пользователей скринридеров не часто обновляет браузеры и операционные системы.
+
+**Вариант 2**, в котором ссылка ведёт к `<h1>` в `<main>`.
 
 ```html
-<!-- Вариант 2 -->
-
 <header>
-    <a href="#main-content" class="skip-link">Перейти к основному контенту</a>
-    <!-- Внушительная навигация -->
+  <a href="#main-content" class="skip-link">
+    К основному контенту
+  </a>
+  <!-- Внушительная навигация -->
 </header>
 
 <main>
-    <h1 id="main-content">Основной заголовок</h1>
-    <!-- Остальной контент основного блока -->
+  <h1 id="main-content">
+    Основной заголовок
+  </h1>
+  <!-- Остальной контент -->
 </main>
 ```
 
@@ -131,20 +140,20 @@ templateEngineOverride: md, njk
 
 **Вариант 3**, который решает проблему двух предыдущих.
 
-```html
-<!-- Вариант 3 -->
+Атрибут `tabindex` с отрицательным значением удаляет элемент из последовательной навигации.
 
+```html
 <header>
-    <a href="#main-content" class="skip-link">Перейти к основному контенту</a>
-    <!-- Внушительная навигация -->
+  <a href="#main-content" class="skip-link">
+    К основному контенту
+  </a>
+  <!-- Внушительная навигация -->
 </header>
 
 <main id="main-content" tabindex="-1">
-    <!-- Контент основного блока -->
+  <!-- Контент основного блока -->
 </main>
 ```
-
-Атрибут `tabindex` с отрицательным значением удаляет элемент из последовательной навигации.
 
 Этот хак хорошо работает со старыми версиями Chrome и на iOS. И снова «но». В других браузерах это может привести к новым багам:
 
@@ -156,21 +165,27 @@ templateEngineOverride: md, njk
 **Вариант 4**, в котором skip link ведёт к другой ссылке перед `<main>`.
 
 ```html
-<!-- Вариант 4 -->
-
 <header>
-    <a href="#main-content" class="skip-link">Перейти к основному контенту</a>
-    <!-- Внушительная навигация -->
+  <a href="#main-content" class="skip-link">
+    К основному контенту
+  </a>
+  <!-- Внушительная навигация -->
 </header>
 
-<a href="#main-content" id="main-content" class="skip-link skip-link-target">Начало основного контента</a>
+<a
+  href="#main-content"
+  id="main-content"
+  class="skip-link skip-link-target"
+  >
+    Начало основного контента
+</a>
 
 <main>
-    <!-- Контент основного блока -->
+  <!-- Контент основного блока -->
 </main>
 ```
 
-Решение предложил Пол Рэдклифф в [«A Deep Dive on Skipping to Content»](https://css-tricks.com/a-deep-dive-on-skipping-to-content/). Он сделал [демо](https://rpress.io/examples/skip-to-content/skip-to-content-additional-in-content-skip-link.html) для большей наглядности.
+Решение предложил Пол Рэдклифф в «[A Deep Dive on Skipping to Content](https://css-tricks.com/a-deep-dive-on-skipping-to-content/)». Он сделал [демо для большей наглядности](https://rpress.io/examples/skip-to-content/skip-to-content-additional-in-content-skip-link.html).
 
 В этом случае скринридер объявит, что мы перешли к ссылке «Начало основного контента».
 
@@ -178,54 +193,54 @@ templateEngineOverride: md, njk
 
 Этот способ новый и интересный, но вижу несколько проблем.
 
-1. Вторая ссылка может сбить с толку пользователей скринридеров. Она никуда не ведёт, а так и хочется нажать на неё.
-2. Если пользователь без особенностей зрения протабает всю навигацию, то увидит непонятную ссылку «Начало основного контента».
-3. Точно поймаешь баг на Android из первого варианта, ведь это всё ещё визуально скрытые элементы.
+- Вторая ссылка может сбить с толку пользователей скринридеров. Она никуда не ведёт, а так и хочется нажать на неё.
+- Если пользователь без особенностей зрения протабает всю навигацию, то увидит непонятную ссылку «Начало основного контента».
+- Точно поймаешь баг на Android, ведь это всё ещё визуально скрытые элементы.
 
 **Вариант 5**, когда вторая ссылка без текста внутри `<main>`, с `href` или без него.
 
 ```html
-<!-- Вариант 5 -->
-
 <header>
-    <a href="#main-content" class="skip-link">Перейти к основному контенту</a>
-    <!-- Внушительная навигация -->
+  <a href="#main-content" class="skip-link">
+    К основному контенту
+  </a>
+  <!-- Внушительная навигация -->
 </header>
 
 <main>
-    <a id="main-content" class="visually-hidden-link"></a>
-    <!-- Остальной контент основного блока -->
+  <a id="main-content" class="visually-hidden-link"></a>
+  <!-- Остальной контент -->
 </main>
 ```
 
-Его используют на сайте [Deque](https://www.deque.com). И, кажется, это самый проблемный вариант.
+Ссылка без `href` — [ссылка-плейсхолдер](https://www.scottohara.me//note/2019/07/17/placeholder-link.html). Её можно использовать для некоторых ситуаций, только если она не должна работать как ссылка. Дело в том, что на неё не устанавливается фокус с клавиатуры.
 
-Ссылка без `href` считается [ссылкой-плейсхолдером](https://www.scottohara.me//note/2019/07/17/placeholder-link.html). Её можно использовать для некоторых ситуаций, только если она не должна работать как ссылка. Дело в том, что на неё не устанавливается фокус с клавиатуры.
+Если это ссылка без названия, но с атрибутом `href`, то скринридеры будут зачитывать содержимое этого атрибута. Например, `"#main-content"`. Для NVDA эту проблему исправит `aria-hidden="true"`.
 
-Если это ссылка без названия, но с `href`, то скринридеры будут зачитывать содержимое этого атрибута. Например, `"#main-content"`. Для NVDA эту проблему исправит `aria-hidden="true"`.
+**Вариант 6** с несколькими ссылками, который подходит для редких случаев.
 
-**Вариант 6** с несколькими ссылками, который подходит для редких кейсов.
+В этом примере обе ссылки обёрнуты в дополнительный `<nav>` с `aria-label`. Скринридеры объявят, что это навигация со ссылками для пропуска меню. Можно дополнительно обернуть их в `<ul>`, чтобы пользователям было проще навигироваться.
 
 ```html
-<!-- Вариант 6 -->
-
 <header>
-    <nav aria-label="Ссылки для пропуска меню">
-        <a href="#search" class="skip-link">Перейти к поиску по сайту</a>
-        <a href="#main-content" class="skip-link">Перейти к основному контенту</a>
-    </nav>
-    <!-- Внушительная навигация -->
-    <form id="search">
-        <!-- Поиск по сайту -->
-    </form>
+  <nav aria-label="Ссылки для пропуска меню">
+    <a href="#search" class="skip-link">
+      Перейти к поиску по сайту
+    </a>
+    <a href="#main-content" class="skip-link">
+      Перейти к основному контенту
+    </a>
+  </nav>
+  <!-- Внушительная навигация -->
+  <form id="search">
+    <!-- Поиск по сайту -->
+  </form>
 </header>
 
 <main id="main-content">
-    <!-- Контент основного блока -->
+  <!-- Контент основного блока -->
 </main>
 ```
-
-В этом примере обе ссылки обёрнуты в дополнительный `<nav>` с `aria-label`. Скринридеры объявят, что это навигация со ссылками для пропуска меню. Можно дополнительно обернуть их в `<ul>`, чтобы пользователям было проще навигироваться.
 
 Без хака с `tabindex="-1"` из третьего варианта тоже могут возникнуть проблемы в старых и некоторых новых браузерах.
 
@@ -234,91 +249,85 @@ templateEngineOverride: md, njk
 Визуально скрывать ссылку и показывать её при фокусе тоже можно разными способами. Есть несколько основных правил:
 
 - Не используйте свойства `display: none`, `visibility: hidden` или атрибут `hidden`. Нам надо скрыть ссылку только визуально.
-- Не устанавливайте значение 0 для `width` и `height`. Тогда фокус просто не установится на таком элементе.
+- Не устанавливайте значение `0` для `width` и `height`. Такой элемент просто не попадёт в фокус.
 
-Давайте рассмотрим пару конкретных примеров со стилями.
+Давайте посмотрим на пару примеров со стилями.
 
-**Вариант 1** с `position: absolute` и безумным отрицательным значением `left`.
+**Вариант 1** с `position: absolute` и безумным отрицательным значением у `left`.
 
 Мы просто абсолютно позиционируем элемент, выносим его за видимую область, а при фокусе возвращаем туда, куда нужно.
 
 ```css
-/* Вариант 1 */
-
 .skip-link {
-    position: absolute;
-    top: auto;
-    left: -999px;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
+  position: absolute;
+  top: auto;
+  left: -999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
 /* Показываем при фокусе */
-.skip-link:focus {
-    top: 0;
-    left: 0;
-    width: auto;
-    height: auto;
-    overflow: visible;
+.skip-link:focus-visible {
+  top: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  overflow: visible;
 }
 ```
 
-**Вариант 2** с `clip` или `clip-path`. Старый-добрый visually-hidden способ.
+**Вариант 2** с `clip` или `clip-path`. Старый добрый visually-hidden способ.
 
 Можно использовать их одновременно для большей совместимости. Ещё встречала вариант с `clip-path: inset(50%)`.
 
 ```css
-/* Вариант 2 */
-
 .skip-link {
-    position: absolute;
-    margin: 0;
-    padding: 0;
+  position: absolute;
+  margin: 0;
+  padding: 0;
 
-    /* Для всех браузеров */
-    clip: rect(0 0 0 0);
+  /* Для всех браузеров */
+  clip: rect(0 0 0 0);
 
-    /* Более современный способ. Поддерживается с префиксом */
-    -webkit-clip-path: polygon(0 0, 0 0, 0 0, 0 0);
-    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  /* Современный способ */
+  -webkit-clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  clip-path: polygon(0 0, 0 0, 0 0, 0 0);
 }
 
 /* Показываем при фокусе */
-.skip-link:focus {
-    top: 0;
-    left: 0;
-    width: auto;
-    height: auto;
+.skip-link:focus-visible {
+  top: 0;
+  left: 0;
+  width: auto;
+  height: auto;
 
-    /* Если используете clip */
-    clip: auto;
+  /* Если используете clip */
+  clip: auto;
 
-    /* Если используете clip-path */
-    -webkit-clip-path: none;
-    clip-path: none;
+  /* Если используете clip-path */
+  -webkit-clip-path: none;
+  clip-path: none;
 }
 ```
 
-Свойство `clip` устарело, и ему на смену должно прийти `clip-path`. Пока будущее не наступило окончательно, и `clip-path` в большинстве браузеров [поддерживается с префиксом](https://caniuse.com/css-clip-path).
+Свойство `clip` устарело, и ему на смену должно прийти `clip-path`. Пока будущее не наступило окончательно, поэтому [`clip-path` поддерживается с префиксом или частично](https://caniuse.com/css-clip-path) (`-webkit-clip-path`).
 
 **Вариант 3** с `transform`.
 
 Снова позиционируем ссылку абсолютно и прячем её за пределы видимой области с помощью `transform`. Когда на ней фокус, то возвращаем обратно.
 
 ```css
-/* Вариант 3 */
-
 .skip-link {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translateY(-100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-100%);
 }
 
 /* Показываем при фокусе */
-.skip-link:focus {
-    transform: translateY(0%);
+.skip-link:focus-visible {
+  transform: translateY(0%);
 }
 ```
 
@@ -326,24 +335,24 @@ templateEngineOverride: md, njk
 
 Остальная стилизация skip link зависит от вашего дизайнерского видения. Самое главное, чтобы она была хорошо видна при фокусе с клавиатуры.
 
-[WebAIM](https://webaim.org) рекомендует не показывать ссылку неожиданно. Это может сбить с толку пользователей клавиатуры, которые видят интерфейс. Это исправит плавная анимация. Тогда ссылка будет выезжать из-за края экрана и уезжать обратно, когда на ней больше нет фокуса.
+WebAIM рекомендует не показывать ссылку неожиданно. Это может сбить с толку пользователей клавиатуры, которые видят интерфейс. Это исправит плавная анимация. Тогда ссылка будет выезжать из-за края экрана и уезжать обратно, когда на ней больше нет фокуса.
 
 Размещать ссылки можно в любой верхней части экрана. Очень часто их располагают в левом верхнем углу, но это не железное правило.
 
-Собрала небольшой список сайтов со skip link, где можно посмотреть, как они задизайнены у других. Используйте для навигации <kbd>Tab</kbd> на Windows и <kbd>Tab</kbd> или <kbd><kbd>Option</kbd>+<kbd>Tab</kbd></kbd> на macOS.
+Собрала небольшой список сайтов со skip link, где можно посмотреть, как они задизайнены у других. Используйте для навигации <kbd>Tab</kbd> на Windows, <kbd>Tab</kbd> или <kbd>Option Tab</kbd> на macOS.
 
-- [The New York Times](https://www.nytimes.com).
-- [BBC](https://www.bbc.com).
-- [GOV.UK](https://www.gov.uk).
-- [Deque](https://www.deque.com).
-- [WebAIM](https://webaim.org).
-- [Amazon](https://www.amazon.com).
-- [PlayStation](https://www.playstation.com).
-- [Microsoft](https://www.microsoft.com/).
-- [World of Warcraft](https://worldofwarcraft.com/en-gb/).
-- [Reddit](https://www.reddit.com).
+- [The New York Times](https://www.nytimes.com)
+- [BBC](https://www.bbc.com)
+- [GOV.UK](https://www.gov.uk)
+- [Deque](https://www.deque.com)
+- [WebAIM](https://webaim.org)
+- [Amazon](https://www.amazon.com)
+- [PlayStation](https://www.playstation.com)
+- [Microsoft](https://www.microsoft.com/)
+- [World of Warcraft](https://worldofwarcraft.com/en-gb/)
+- [Reddit](https://www.reddit.com)
 
-## Пара слов напоследок
+## Пара финальных слов
 
 Часто, чем что-то кажется проще, тем оно сложнее на самом деле. Это произошло и со skip link.
 
@@ -351,17 +360,14 @@ templateEngineOverride: md, njk
 
 ## Что почитать
 
-- [Bypass Blocks. Understanding SC 2.4.1](https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-skip.html), W3C.
-- [Accessibility Skip links](https://www.w3schools.com/accessibility/accessibility_skip_links.php), W3C School.
-- [«Skip Navigation» Links](https://webaim.org/techniques/skipnav/), WebAIM.
-- [Use skip navigation links](https://www.a11yproject.com/posts/skip-nav-links/), Камерон Кандифф.
-- [A Deep Dive on Skipping to Content](https://css-tricks.com/a-deep-dive-on-skipping-to-content/), Пол Рэдклифф.
-- [Some thoughts on CSS Tricks' «Deep Dive on Skipping to Content»](https://plousia.com/blog/some-thoughts-css-tricks-deep-dive-skipping-content), Сюзанна Чельсо.
-- [How to Create a «Skip to Content» Link](https://css-tricks.com/how-to-create-a-skip-to-content-link/), Пол Райан.
-- [Implement a Skip Link for Navigation-Heavy Sites](https://benmyers.dev/blog/skip-links/), Бен Майерс.
-- [Your skip links are broken](https://axesslab.com/skip-links/), Хампус Сетфош.
-- [Skip links: the 5 most common mistakes](https://www.system-concepts.com/insights/skip-links-the-5-most-common-mistakes/), System Concepts.
+- [«Skip Navigation» Links](https://webaim.org/techniques/skipnav/)
+- [Use skip navigation links](https://www.a11yproject.com/posts/skip-nav-links/), Камерон Кандифф
+- [A Deep Dive on Skipping to Content](https://css-tricks.com/a-deep-dive-on-skipping-to-content/), Пол Рэдклифф
+- [Deep Dive on Skipping to Content](https://plousia.com/blog/some-thoughts-css-tricks-deep-dive-skipping-content), Сюзанна Чельсо
+- [How to Create a «Skip to Content» Link](https://css-tricks.com/how-to-create-a-skip-to-content-link/), Пол Райан
+- [Implement a Skip Link for Navigation-Heavy Sites](https://benmyers.dev/blog/skip-links/), Бен Майерс
+- [Your skip links are broken](https://axesslab.com/skip-links/), Хампус Сетфош
 
 ***
 
-Спасибо [Василию Дудину](https://twitter.com/vasiliy_dudin) за помощь с редактированием.
+Спасибо [Василию Дудину](https://twitter.com/vasiliy_dudin) за помощь с редактированием ❤️
