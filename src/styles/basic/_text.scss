@@ -6,7 +6,7 @@ $code-padding-small: 0.03rem;
 $hr-height: 15px;
 
 ::selection {
-	background: var(--decorative-el-color);
+	background: var(--select-color);
 }
 
 p {
@@ -65,6 +65,10 @@ figure + figure {
 ul + figure,
 ol + figure {
 	margin-top: $gap-5x;
+}
+
+ul:has(a) li {
+	padding: 3px 0;
 }
 
 small {

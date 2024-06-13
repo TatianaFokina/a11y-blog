@@ -15,6 +15,10 @@
 		fill: var(--menu-elements-color-hover);
 	}
 
+	&:focus-visible {
+		outline-offset: -2px;
+	}
+
 	@include media(lg) {
 		height: 120px;
 	}
@@ -30,5 +34,5 @@
 }
 
 .logo__svg-path {
-	fill: #c7759e;
+	fill: #{$fuchsia};
 }
