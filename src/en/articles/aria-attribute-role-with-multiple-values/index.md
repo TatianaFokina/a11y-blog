@@ -52,7 +52,7 @@ Clause [5.4 Role mapping](https://www.w3.org/TR/core-aam-1.1/#mapping_role) of C
 
 This part of the document collects rules for roles themselves.
 
-> 1. The user agent MUST use the first token in the sequence of tokens in the role [attribute](https://www.w3.org/TR/core-aam-1.1/#dfn-attribute) value which matches the name of any non-abstract WAI-ARIA role according to rules that are specified in the [Role Mapping Table](https://www.w3.org/TR/core-aam-1.1/#mapping_role_table) below. Note that when WAI-ARIA roles override host language semantics, there are no changes in the DOM, only in the[accessibility tree](https://www.w3.org/TR/core-aam-1.1/#dfn-accessibility-tree).
+> 1. The user agent MUST use the first token in the sequence of tokens in the role [attribute](https://www.w3.org/TR/core-aam-1.1/#dfn-attribute) value which matches the name of any non-abstract WAI-ARIA role according to rules that are specified in the [Role Mapping Table](https://www.w3.org/TR/core-aam-1.1/#mapping_role_table) below. Note that when WAI-ARIA roles override host language semantics, there are no changes in the DOM, only in the [accessibility tree](https://www.w3.org/TR/core-aam-1.1/#dfn-accessibility-tree).
 > 2. User agents MUST NOT map roles defined in the WAI-ARIA specification as "abstract" via the standard role mechanism of the accessibility API.
 
 In [Core-AAM 1.2](https://www.w3.org/TR/core-aam-1.2/#mapping_role) you find almost the same information, but also more details about roles supporting by different Accessibility APIs.
