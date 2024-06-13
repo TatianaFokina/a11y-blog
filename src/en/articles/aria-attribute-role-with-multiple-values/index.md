@@ -2,20 +2,20 @@
 title: Role attribute with multiple values
 description: In what cases may be necessary to set multiple values for a role attribute, and how browsers and screen readers deal with this.
 keyTheme:
-    - ARIA
-    - HTML
+  - ARIA
+  - HTML
 date: 2024-06-03
 layout: article.njk
 templateEngineOverride: md, njk
 ---
 
-Recently, I discovered by chance that an `role` attribute may contain more than one value. This was very unexpected, at least for me.
+Recently, I discovered by chance that the `role` attribute may contain more than one value. This was very unexpected, at least for me.
 
-So, I wrote this post out of research interest, so it doesn't contain much practical advice. In fact, some of it is better not put into practice.
+So, I wrote this post out of research interest, so it doesn't contain much practical advice. In fact, some of it's better not put into practice.
 
 ## Background on roles
 
-[Roles](https://www.w3.org/TR/wai-aria-1.2/#dfn-role) contain information on functions of elments, and how it can be interacted with. For example, screen readers will announce that a `button` element has a `button` role which means that this element is clicable.
+_[Roles](https://www.w3.org/TR/wai-aria-1.2/#dfn-role)_ contain information on functions of elments, and how it can be interacted with. For example, screen readers will announce that the `button` element has the `button` role which means that this element is clicable.
 
 Elements can have either implicit or explicit roles. The latter are specified in the `role` attribute.
 
@@ -71,18 +71,18 @@ This clause doesn't exist anymore, but [the Internet never forgets](https://www.
 
 What conclusions can be drawn after exploring the specifications?
 
-- Multiple values can be specified for the `role` attribute
+- Multiple values can be specified for `role`
 - Multiple values are listed with spaces between them
-- Multiple roles are needed for fallback. If the first role is not supported or does not exist, the second one is applied, and so on
+- Multiple roles are needed for fallback. If the first role isn't supported or doesn't exist, the second one is applied, and so on
 - If it is an abstract role, browsers and screen readers will ignore it.
 
 ## Let is testing
 
-Now we are going to check what browsers and screen readers will do with two values for the `role`. We will experiment in Chrome 97, Firefox 96, and Safari 14 with NVDA 2021.2 and desktop version of VoiceOver.
+Now we are going to check what browsers and screen readers will do with two values for `role`. We will experiment in Chrome 97, Firefox 96, and Safari 14 with NVDA 2021.2 and desktop version of VoiceOver.
 
 By the way, [in old browsers and screen readers](https://act-rules.github.io/rules/674b10#accessibility-support), this cannot be tested. They simply ignore `role=""` with multiple values. Keep this in mind.
 
-The markup I will be testing might be scary. This is a test of the single attribute, so I decided to use forbidden techniques at least once in my life 😀 In real projects, it is better never to do this. It is a terrible anti-pattern (and can be consider as a crime, ha-ha.)
+The markup I will be testing might be scary. This is a test of the single attribute, so I decided to use forbidden techniques at least once in my life 😀. In real projects, it's better never to do this. This is a terrible anti-pattern (and can be consider as a crime, ha-ha.)
 
 ### Two valid values
 
@@ -96,11 +96,11 @@ The markup I will be testing might be scary. This is a test of the single attrib
 </div>
 ```
 
-- NVDA with Chrome: "Button, this is not a button"
-- NVDA with Firefox: "Button"
-- VoiceOver with Safari: "This is not a button".
+- NVDA with Chrome: ″Button, this is not a button″
+- NVDA with Firefox: ″Button″
+- VoiceOver with Safari: ″This is not a button″.
 
-In all three browsers, `aria-label` provides the accessibility name "This is not a button". In Chrome and Safari, a `<div>` element with `role="button link"` received the `button` role, while in Firefox it received the `pushbutton` one.
+In all three browsers, `aria-label` provides the accessibility name ″This is not a button″. In Chrome and Safari, the `div` element with `role="button link"` received the `button` role, while in Firefox it received the `pushbutton` one.
 
 ![Two existing roles as a value from accessibility tree preview in Chrome, Firefox and Safari DevTools.](images/two-existing-tokens.png)
 
@@ -118,11 +118,11 @@ In all three browsers, `aria-label` provides the accessibility name "This is not
 </div>
 ```
 
-- NVDA with Chrome: "Button, this is not a button"
-- NVDA with Firefox: "Button"
-- VoiceOver with Safari: "This is not a button".
+- NVDA with Chrome: ″Button, this is not a button″
+- NVDA with Firefox: ″Button″
+- VoiceOver with Safari: ″This is not a button″.
 
-Again, the element name is "This is not a button". Its calculated roles are `button` in Chrome and Safari and `pushbutton` in Firefox.
+Again, the element name is ″This is not a button″. Its calculated roles are `button` in Chrome and Safari and `pushbutton` in Firefox.
 
 ![Invalid and valid values for role attribute from accessibility tree preview in Chrome, Firefox and Safari DevTools.](images/one-wrong-token.png)
 
@@ -140,17 +140,17 @@ Again, the element name is "This is not a button". Its calculated roles are `but
 </div>
 ```
 
-- NVDA with Chrome: "Button, this is not a button"
-- NVDA with Firefox: "Button"
-- VoiceOver with Safari: "This is not a button".
+- NVDA with Chrome: ″Button, this is not a button″
+- NVDA with Firefox: ″Button″
+- VoiceOver with Safari: ″This is not a button″.
 
-In Chrome and Safari, the `div` element with `role="widget button"` attribute received the non-abstract `button` role, while in Firefox, it received `pushbutton` role.
+In Chrome and Safari, `<div>` with `role="widget button"` attribute received the non-abstract `button` role, while in Firefox, it received the `pushbutton` role.
 
-In all three browsers, `aria-label` provides the accessibility name "This is not a button". The computed roles for it are `button` and `pushbutton`.
+In all three browsers, `aria-label` provides the accessibility name ″This is not a button″. The computed roles for it are `button` and `pushbutton`.
 
 ![Role attribute with the abstract role as the one of the value from accessibility tree preview in Chrome, Firefox and Safari DevTools.](images/one-abstract-token.png)
 
-**Conclusion**: When there is an abstract role, it is ignored. The other (non-abstract) role is applied.
+**Conclusion**: When there is an abstract role, it's ignored. The other (non-abstract) role is applied.
 
 ### Two wrong values
 
@@ -166,13 +166,13 @@ In all three browsers, `aria-label` provides the accessibility name "This is not
 
 - NVDA with Chrome has nothing to announced
 - NVDA with Firefox has nothing to announced
-- VoiceOver with Safari announced "This is not a button". So, only the content of the `aria-label` attribute is announced.
+- VoiceOver with Safari announced ″This is not a button″. So, only the content of the `aria-label` attribute is announced.
 
-In Chrome, for the `div` element with `role="tapir opossum"`, the computed role is `generic`. In Firefox, it is a `leaf` role. In Safari, no suitable role is found.
+In Chrome, for the `div` element with `role="tapir opossum"`, the computed role is `generic`. In Firefox, it's the `leaf` role. In Safari, no suitable role is found.
 
-`generic` is the implicit role of any `div`s. This means it is a nameless container for elements without semantic meaning. A `text leaf` role indicates some kind of textual content.
+`generic` is the implicit role of any `div`s. This means it's a nameless container for elements without semantic meaning. A `text leaf` role indicates some kind of textual content.
 
-In all three browsers, `aria-label` provides the accessibility name "This is not a button", the computed roles are `generic`, `text leaf`, in one case "No suitable ARIA roles".
+In all three browsers, `aria-label` provides the accessibility name ″This is not a button″, the computed roles are `generic`, `text leaf`, in one case ″No suitable ARIA roles″.
 
 ![Role attribute with two wrong values from accessibility tree preview in Chrome, Firefox and Safari DevTools.](images/two-wrong-tokens.png)
 
@@ -182,7 +182,7 @@ In all three browsers, `aria-label` provides the accessibility name "This is not
 
 All this time, WAI-ARIA has allowed the role attribute to have more than one value, but it has not particularly advertised this feature.
 
-I do not think this is a terrible oversight in the specification. It is hard to imagine which roles would need fallbacks in all modern browsers. Moreover, the `role` attribute is already easy to get confused with. When you have the ability to assign an infinite number of roles, it further complicates the markup and can lead to unexpected errors.
+I don't think this is a terrible oversight in the specification. It's hard to imagine which roles would need fallbacks in all modern browsers. Moreover, the `role` attribute is already easy to get confused with. When you have the ability to assign an infinite number of roles, it further complicates the markup and can lead to unexpected errors.
 
 ## Read more
 
@@ -191,5 +191,5 @@ I do not think this is a terrible oversight in the specification. It is hard to 
 - [WAI-ARIA 1.3](https://www.w3.org/TR/wai-aria-1.3/)
 - [Core Accessibility API Mappings 1.1](https://www.w3.org/TR/core-aam-1.1/)
 - [Core Accessibility API Mappings 1.2](https://www.w3.org/TR/core-aam-1.2/)
-- [`role` attribute has valid value](https://act-rules.github.io/rules/674b10), ACT-Rules Community
+- [`role` attribute has valid value](https://act-rules.github.io/rules/674b10) by ACT-Rules Community
 - [Notes on use of multiple ARIA `role` attribute values](https://www.tpgi.com/notes-on-use-of-multiple-aria-role-attribute-values/) by Steve Faulkner

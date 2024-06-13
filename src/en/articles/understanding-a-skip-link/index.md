@@ -87,7 +87,7 @@ The practical implementation of the skip link is an anchor link. It's better to 
 
 But where the skip link should lead? There are several answers to that question.
 
-**Option 1**: The classic one, the anchor link leads directly to the `<main>` element.
+**Option 1**: The classic one, the anchor link leads directly to the `main` element.
 
 ```html
 <header>
@@ -114,7 +114,7 @@ The first option works more or less well in modern browsers, but there is one â€
 
 [The bug on the iOS platform](https://bugs.webkit.org/show_bug.cgi?id=179011) was fixed in April 2020. [Chromium team fixed bug](https://bugs.chromium.org/p/chromium/issues/detail?id=37721) back in 2017. [The bug on Android](https://bugs.chromium.org/p/chromium/issues/detail?id=657157) haven't been fixed yet. [The bug on Android](https://bugs.chromium.org/p/chromium/issues/detail?id=657157) hasn't been fixed yet. Hence, these bugs don't occur with iOS 13+ or older versions of Chrome. However, some screen reader users don't update versions of browsers and operating systems frequently.
 
-**Option 2**: The skip link refers to the `<h1>` element as a child of the `<main>` one.
+**Option 2**: The skip link refers to the `h1` element as a child of the `main` one.
 
 ```html
 <header>
@@ -132,7 +132,7 @@ The first option works more or less well in modern browsers, but there is one â€
 
 It differs from the first option in that screen readers will announce the header text rather than the entire `<main>` text content. This will give users more control, as they don't have to interrupt the automatic announcement manually.
 
-This markup has the same bugs as the previous option with the `id` attribute of the `<main>` element.
+This markup has the same bugs as the previous option with the `id` attribute of the `main` element.
 
 **Option 3**: The solution that fixes the problems with the previous examples.
 
@@ -158,7 +158,7 @@ This hack works well with older versions of Chrome and on iOS. Again, one â€³but
 
 This is where JavaScript comes to help us. We need a script that move focus on the `main` element. After click event on the skip link, we also want to set `tabindex="-1"` for the main block. When focus is lost, the HTML attribute is removed. You can sneak a peek at [the Mike Foskett's implementation](https://codepen.io/2kool2/pen/bxdzEJ). Anika Henke offers a more generic [jQuery solution](https://github.com/selfthinker/dokuwiki_template_writr/blob/master/js/skip-link-focus-fix.js) that fixes all links and also removes `tabindex` when focus isn't on the anchor element anymore.
 
-**Option 4**: The skip link leads to another link before the `<main>` element.
+**Option 4**: The skip link leads to another link before the `main` element.
 
 ```html
 <header>
@@ -215,7 +215,7 @@ If it's an unnamed link but with `href`, screen readers will announce a value of
 
 **Option 6**: Multiple references, which is suitable for rare cases.
 
-In this code snippet, both links are wrapped with the extra `<nav>` container with `aria-label`. Screen readers will announce about the navigation contains links for skipping the website menu. You can also use the `<ul>` element to make it easier for screen readers users to navigate throug a page.
+In this code snippet, both links are wrapped with the extra `<nav>` container with `aria-label`. Screen readers will announce about the navigation contains links for skipping the website menu. You can also use the `ul` element to make it easier for screen readers users to navigate throug a page.
 
 ```html
 <header>
@@ -352,7 +352,7 @@ I've created a list of sites where the skip-link pattern is used. Press <kbd>Tab
 
 Often, the simpler something seems, the more complicated it's in reality. This happened with the skip link too.
 
-There are quite a few ways to develop the skip link. All of them have pros and cons. I would go for the classic implementation with the link leading to the main block or the `<h1>` element with `tabindex="-1"`. As for styles for hiding the link, all the options are good. You can choose whichever one suits your project best. I prefer to use absolute positioning and the `left` property with a negative value.
+There are quite a few ways to develop the skip link. All of them have pros and cons. I would go for the classic implementation with the link leading to the main block or the `h1` element with `tabindex="-1"`. As for styles for hiding the link, all the options are good. You can choose whichever one suits your project best. I prefer to use absolute positioning and the `left` property with a negative value.
 
 ## Further reading
 
