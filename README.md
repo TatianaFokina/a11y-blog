@@ -38,5 +38,5 @@ pnpm build+deploy
 
 ## License
 
-- Code is licensed under MIT
-- Content is licensed under CC BY-NC-SA 4.0.
+- Code is licensed under [MIT](https://github.com/TatianaFokina/a11y-blog/blob/main/MIT.md)
+- Content is licensed under [CC BY-NC-SA 4.0](https://github.com/TatianaFokina/a11y-blog/blob/main/CC.md).
