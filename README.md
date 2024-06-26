@@ -1,22 +1,30 @@
-# Tatiana Fokina's blog
+# My blog on accessibility
 
-## About the project
+## About project
 
-A blog about accessible development.
+A personal blog about all aspect of accessible web development. Was created and developed by Tatiana Fokina in 2022.
 
 ## Technologies
 
-The project runs on [11ty](https://www.11ty.dev). [Nunjucks](https://mozilla.github.io/nunjucks/) is used for templates, SCSS is used for styles, scripts are written in vanilla JavaScript.
+There is a list of technologies what you can deal in tis project:
+
+- [11ty](https://www.11ty.dev/) as a static site generator
+- [Nunjucks](https://mozilla.github.io/nunjucks/) for templates
+- Markdown for content
+- [Yaml](https://yaml.org/)
+- [SCSS](https://sass-lang.com/) for styles
+- Vanilla JavaScript
+- [Gulp](https://gulpjs.com/) as a builder.
 
 ## Development
 
-Dependency Installation:
+Install dependencies:
 
 ```
 pnpm i
 ```
 
-Running a test build for local development:
+Run a test build for local development:
 
 ```
 pnpm watch
