@@ -32,7 +32,6 @@
 	gap: $gap-4x;
 	background: var(--bg-part-color);
 	border-radius: 26px;
-	transition: background .3s;
 
 	&:before {
 		content: "";
@@ -74,7 +73,6 @@
 	font-weight: bold;
 	color: inherit;
 	border-bottom: 0;
-	transition: none;
 
 	&:after {
 		content: "";

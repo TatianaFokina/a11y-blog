@@ -1,0 +1,17 @@
+@media (prefers-reduced-motion: no-preference) {
+	a {
+		transition: background .2s;
+	}
+
+	.header__switcher-button {
+		transition: background .2s;
+	}
+
+	.navigation__list-item-link {
+		transition: color .2s;
+	}
+
+	.cards__item {
+		transition: background .3s;
+	}
+}
