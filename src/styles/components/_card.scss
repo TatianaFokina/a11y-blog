@@ -57,13 +57,15 @@
 	margin-top: 0;
 }
 
-.cards__item:focus-within:has(:focus-visible) {
-	outline: 2px solid var(--border-color);
-	outline-offset: 4px;
+.cards__item:focus-within {
+	@include focus (
+		$width: 4px,
+		$offset: 2px
+	);
 }
 
-.cards__item-heading-link:focus,
-.cards__item-link:focus {
+.cards__item-heading-link:focus-visible,
+.cards__item-link:focus-visible {
 	outline: 0;
 }
 

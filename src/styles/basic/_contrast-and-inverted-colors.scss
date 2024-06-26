@@ -16,8 +16,12 @@
 		border: 2px solid transparent;
 	}
 
-	.cards__item:focus-within:has(:focus-visible) {
-		outline: 2px solid transparent;
+	.cards__item:focus-within {
+		@include focus (
+			$width: 4px,
+			$offset: 2px,
+			$color: transparent
+		);
 	}
 
 	.logo__svg-path {

@@ -6,17 +6,13 @@
 	box-sizing: border-box;
 }
 
-.page {
-	font-size: $font-size-base;
-}
-
 .base {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
 	margin: 0;
-	font-family: $text-font-family;
 	font-size: var(--step-0);
+	font-family: $text-font-family;
 	line-height: $line-height-base;
 	color: var(--text-color);
 	background: var(--bg-color);

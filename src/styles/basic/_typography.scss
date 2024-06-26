@@ -1,14 +1,20 @@
 @import "../_variables.scss";
 @import "../mixins-and-functions";
 
-$min-width: 320px;
-$max-width: map-get($container-widths, xl);
-
 :root {
-	--step-3: #{fluid-type($min-width, $max-width, 29px, 44px)};
-	--step-2: #{fluid-type($min-width, $max-width, 25px, 38px)};
-	--step-1: #{fluid-type($min-width, $max-width, 21px, 28px)};
-	--step-0: #{fluid-type($min-width, $max-width, 16px, $font-size-base)};
-	--step--1: #{fluid-type($min-width, $max-width, 14px, 16px)};
-	--step--2: #{fluid-type($min-width, $max-width, 12px, 14px)};
+	--step-3: #{toRem(32px)};
+	--step-2: #{toRem(28px)};
+	--step-1: #{toRem(23px)};
+	--step-0: #{toRem(17px)};
+	--step--1: #{toRem(15px)};
+	--step--2: #{toRem(10px)};
+
+	@include media(md) {
+		--step-3: #{toRem(44px)};
+		--step-2: #{toRem(38px)};
+		--step-1: #{toRem(28px)};
+		--step-0: #{toRem(20px)};
+		--step--1: #{toRem(16px)};
+		--step--2: #{toRem(14px)};
+	}
 }

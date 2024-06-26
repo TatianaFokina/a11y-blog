@@ -25,8 +25,6 @@ $img-filter--dark: brightness(.8) contrast(1.2);
 $text-font-family: "IBM Plex Sans", "Arial", "Helvetica", sans-serif;
 $code-font-family: "IBM Plex Mono", "Courier New", monospace;
 
-$font-size-base: 20px;
-
 $line-height-base: 1.6; // 32px
 $line-height-h1: 1.318; // 58px
 $line-height-h2: 1.263; // 48px
@@ -66,6 +64,3 @@ $container-widths: (
 	xl: 1020px,
 	xxl: 1320px
 );
-
-// Z-index
-$z-index: 1;

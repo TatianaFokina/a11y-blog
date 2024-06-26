@@ -12,8 +12,9 @@
 
 .header__switcher-button {
 	margin: 0;
-	padding: $gap-2x $gap-3x;
+	padding: $gap-3x $gap-4x;
 	border: 2px solid transparent;
+	font-size: var(--step--2);
 	border-radius: 32px;
 	color: var(--text-color);
 	background: transparent;
@@ -28,23 +29,21 @@
 		border-radius: 32px 3px 3px 32px;
 	}
 
-	&:focus-visible {
-		outline-width: 2px;
-		outline-style: solid;
+	&[aria-pressed="true"]:focus-visible {
+		@include focus (
+			$offset: -7px,
+			$color: var(--button-text-color)
+		);
 	}
 
 	&[aria-pressed="false"]:focus-visible {
-		outline-color: var(--border-color);
-		outline-offset: -2px;
-	}
-
-	&[aria-pressed="true"]:focus-visible {
-		outline-color: var(--button-text-color);
-		outline-offset: -7px;
+		@include focus (
+			$offset: -3px,
+		);
 	}
 
 	@include media(lg) {
-		padding: $gap-3x $gap-4x;
+		padding: $gap-2x $gap-3x;
 	}
 }
 

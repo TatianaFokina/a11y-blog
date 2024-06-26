@@ -9,57 +9,22 @@
 	}
 }
 
-// Fluid typography
-// Round Function
-@function decimal-round($number, $digits: 0, $mode: round) {
-	$n: 1;
-	// $number must be a number
-	@if type-of($number) != number {
-		@warn '#{ $number } is not a number.';
-		@return $number;
-	}
-	// $digits must be a unitless number
-	@if type-of($digits) != number {
-		@warn '#{ $digits } is not a number.';
-		@return $number;
-	} @else if not unitless($digits) {
-		@warn '#{ $digits } has a unit.';
-		@return $number;
-	}
-	@for $i from 1 through $digits {
-		$n: $n * 10;
-	}
-	@if $mode == round {
-		@return math.div(math.round($number * $n), $n);
-	} @else if $mode == ceil {
-		@return math.div(math.ceil($number * $n), $n);
-	} @else if $mode == floor {
-		@return math.div(math.floor($number * $n), $n);
-	} @else {
-		@warn '#{ $mode } is undefined keyword.';
-		@return $number;
-	}
+// Outline styles
+@mixin focus($width: 3px, $offset, $color: var(--border-color), $style: dotted) {
+	outline-width: $width;
+	outline-offset: $offset;
+	outline-style: $style;
+	outline-color: $color;
 }
 
-// Usage example: --step-4: #{fluid-type(320px, 1110px, 14px, 16px)};
-@function fluid-type($minWidthPx, $maxWidthPx, $minFontSizePx, $maxFontSizePx) {
-	// Root font-size
-	$pixelsPerRem: $font-size-base;
+// Typography
+// Usage example: --step-4: #{toRem(14px)};
+$font-size-base: 16px;
 
-	//Converts width to rem
-	$minWidth: math.div($minWidthPx, $pixelsPerRem);
-	$maxWidth: math.div($maxWidthPx, $pixelsPerRem);
+@function fromPx($value) {
+	@return math.div($value, $value * 0 + 1);
+}
 
-	// Converts font size to rem
-	$minFontSize: decimal-round(math.div($minFontSizePx, $pixelsPerRem), 3);
-	$maxFontSize: decimal-round(math.div($maxFontSizePx, $pixelsPerRem), 3);
-
-	$slope: (math.div(($maxFontSize - $minFontSize), ($maxWidth - $minWidth)));
-	$yAxisIntersection: (-1 * $minWidth) * $slope + $minFontSize;
-
-	$min: #{decimal-round($minFontSize, 3)}rem;
-	$calc-value: #{decimal-round($yAxisIntersection, 3)}rem "+" #{decimal-round($slope * 100, 3)}vw;
-	$max: #{decimal-round($maxFontSize, 3)}rem;
-
-	@return clamp(#{$min, $calc-value, $max});
+@function toRem($size) {
+	@return #{math.div(fromPx($size), fromPx($font-size-base))}rem;
 }

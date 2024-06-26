@@ -16,7 +16,9 @@
 	}
 
 	&:focus-visible {
-		outline-offset: -2px;
+		@include focus (
+			$offset: -2px
+		);
 	}
 
 	@include media(lg) {
