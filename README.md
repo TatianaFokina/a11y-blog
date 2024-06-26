@@ -2,7 +2,7 @@
 
 ## About project
 
-A personal blog about all aspect of accessible web development. Was created and developed by Tatiana Fokina in 2022.
+A personal blog about all aspect of accessible web development. Was created and developed by Tatiana Fokina in 2021.
 
 ## Technologies
 
@@ -35,3 +35,8 @@ Build and deployment:
 ```
 pnpm build+deploy
 ```
+
+## License
+
+- Code is licensed under MIT
+- Content is licensed under CC BY-NC-SA 4.0.
