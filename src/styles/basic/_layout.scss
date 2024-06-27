@@ -22,13 +22,10 @@
 	width: 100%;
 	max-width: map-get($container-widths, md);
 	margin: 0 auto;
-	padding-top: 0;
-	padding-bottom: 0;
-	padding-left: $gap-5x;
-	padding-right: $gap-5x;
+	padding: 0 $gap-5x;
 }
 
 .base__body {
 	flex: 1 0 auto;
-	padding-top: 60px;
+	margin-top: $gap-15x;
 }

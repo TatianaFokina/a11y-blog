@@ -1,15 +1,15 @@
 @import "../variables";
 
 .article-header {
-	margin-bottom: 64px;
+	display: flex;
+	flex-direction: column;
 	text-align: center;
+	gap: $gap-6x;
 }
 
 .article-header__dates {
 	display: flex;
 	justify-content: center;
-	margin-top: $gap-4x;
-	gap: $gap-4x;
 }
 
 .article-header__dates-item {
@@ -17,6 +17,10 @@
 	align-items: center;
 	gap: $gap-1x;
 	font-size: var(--step--1);
+}
+
+.article {
+	margin-top: $gap-15x;
 }
 
 .article__note {

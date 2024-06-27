@@ -18,8 +18,14 @@
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+	margin: 0;
 	padding: 0;
 	list-style: none;
+}
+
+.navigation__list-item {
+	margin: 0;
+	padding: 0;
 }
 
 .navigation__list-item-link {

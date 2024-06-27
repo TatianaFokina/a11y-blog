@@ -11,14 +11,6 @@ $hr-height: 15px;
 p {
 	margin: $gap-5x 0;
 	line-height: $line-height-base;
-
-	&:first-child {
-		margin-top: 0;
-	}
-
-	&:last-child {
-		margin-bottom: 0;
-	}
 }
 
 hr {
@@ -48,25 +40,26 @@ hr + p {
 }
 
 figure {
-	margin: 0;
-}
-
-figcaption {
-	padding-top: $gap-2x;
-	font-size: var(--step--1);
+	display: block;
+	margin: $gap-5x 0;
 }
 
 figure + figure {
-	margin-top: $gap-10x;
+	margin-top: $gap-8x;
 }
 
-ul + figure,
-ol + figure {
-	margin-top: $gap-5x;
+figcaption {
+	font-size: var(--step--1);
+	gap: $gap-2x;
+}
+
+ul,
+ol {
+	margin: $gap-5x 0;
 }
 
 ul:has(a) li {
-	padding: 3px 0;
+	margin: 3px 0;
 }
 
 small {
@@ -89,12 +82,9 @@ a > code {
 
 pre code {
 	display: block;
+	margin: $gap-5x 0;
 	padding: $gap-9x;
 	overflow-x: auto;
-}
-
-pre + ul {
-	padding-top: $gap-5x;
 }
 
 kbd {
@@ -106,13 +96,11 @@ samp {
 }
 
 blockquote {
+	margin: $gap-5x 0;
 	border-left: 4px solid var(--border-color);
 	word-wrap: break-word;
 }
 
-blockquote,
-blockquote ol,
-blockquote ul {
-	margin: 0;
+blockquote p {
 	padding-left: $gap-6x;
 }
