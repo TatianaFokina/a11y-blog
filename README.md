@@ -40,4 +40,4 @@ pnpm build+deploy
 
 Code is licensed under [MIT](https://github.com/TatianaFokina/a11y-blog/blob/main/MIT.md), content is licensed under [CC BY-NC-SA 4.0](https://github.com/TatianaFokina/a11y-blog/blob/main/CC.md).
 
-Icons are from [Lucide](https://lucide.dev) and licensed under [the ISC License](https://lucide.dev/license). The font? IBM Plex, is licensed under [OFL](https://github.com/IBM/plex/blob/master/LICENSE.txt).
+Icons are from [Lucide](https://lucide.dev) and licensed under [the ISC License](https://lucide.dev/license). The font, IBM Plex, is licensed under [OFL](https://github.com/IBM/plex/blob/master/LICENSE.txt).
