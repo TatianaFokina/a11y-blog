@@ -1,9 +1,33 @@
 @import "../variables";
 
+figure {
+	display: inline-flex;
+	flex-direction: column;
+	gap: $gap-6x;
+	margin: $gap-5x 0;
+	padding: $gap-9x;
+	background-color: #EFEFEF;
+	border-radius: 16px;
+}
+
+figure + figure {
+	margin-top: $gap-8x;
+}
+
+figcaption {
+	font-size: var(--step--1);
+	gap: $gap-2x;
+}
+
 img {
 	display: block;
 	max-width: 100%;
 	height: auto;
-	border-radius: 4px;
+	border-radius: 3px;
+	
 	filter: var(--img-filter);
+}
+
+figure img {
+	box-shadow: 17px 14px 24px -26px $blue-8;
 }

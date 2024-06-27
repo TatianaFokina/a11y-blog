@@ -39,20 +39,6 @@ hr + p {
 	margin-top: 0;
 }
 
-figure {
-	display: block;
-	margin: $gap-5x 0;
-}
-
-figure + figure {
-	margin-top: $gap-8x;
-}
-
-figcaption {
-	font-size: var(--step--1);
-	gap: $gap-2x;
-}
-
 ul,
 ol {
 	margin: $gap-5x 0;
