@@ -10,6 +10,7 @@
 .article-header__dates {
 	display: flex;
 	justify-content: center;
+	gap: $gap-6x;
 }
 
 .article-header__dates-item {
