@@ -1,27 +1,17 @@
 @import "../variables";
 
-figure {
-	display: inline-flex;
-	flex-direction: column;
-	gap: $gap-6x;
-	margin: $gap-5x 0;
-	padding: $gap-9x;
-	background-color: #EFEFEF;
-	border-radius: 16px;
-	width: calc(100% + 60px);
-    margin-left: -40px;
-    margin-right: -40px;
-}
-
 .article__image {
 	display: inline-flex;
 	flex-direction: column;
-	width: calc(100% + 60px);
-	margin: $gap-5x -40px $gap-5x -40px;
 	padding: $gap-9x;
 	gap: $gap-4x;
 	border-radius: 16px;
 	filter: var(--img-filter);
+
+	@include media(lg) {
+		width: calc(100% + 60px);
+		margin: $gap-5x -40px $gap-5x -40px;
+	}
 }
 
 .article__image--grey {
