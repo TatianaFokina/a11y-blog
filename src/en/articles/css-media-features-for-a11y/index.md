@@ -57,9 +57,15 @@ Inverted colours mode replaces the system colours with opposite colours, as in t
 
 Colours are changed not only in the system but also in browser tabs. So users can choose this mode instead of dark theme.
 
-<figure>
-	<img src="images/invert-colors.png" alt="In inversion mode, yellow shades became blue, green became crimson, and white became black.">
-	<figcaption>Doka guide with inversion in Vivaldi on Windows 10.</figcaption>
+<figure class="article__image article__image--grey">
+  <img
+    class="article__image-item"
+    src="images/invert-colors.png"
+    alt="In inversion mode, yellow shades became blue, green became crimson, and white became black."
+  >
+  <figcaption class="article__image-caption">
+    Doka guide with inversion in Vivaldi on Windows 10.
+  </figcaption>
 </figure>
 
 Who uses the setting:
@@ -91,14 +97,26 @@ High Contrast Mode has several ready-made colour sets:
 
 The colour palette replacement technology depends on the browser. It differs in Chromium, Firefox (Quantum), Internet Explorer (Trident) and older versions of Edge (EdgeHTML).
 
-<figure>
-	<img src="images/black-whcm-vivaldi.png" alt="Section with podcast episodes from the Web Standards home page with system colours. White background became black, links and borders are bright yellow, and plain text is white instead of dark grey.">
-	<figcaption>"Web Standards" with high contrast black mode in Vivaldi on Windows 10.</figcaption>
+<figure class="article__image article__image--grey">
+  <img
+    class="article__image-item"
+    src="images/black-whcm-vivaldi.png"
+    alt="Section with podcast episodes from the Web Standards home page with system colours. White background became black, links and borders are bright yellow, and plain text is white instead of dark grey."
+  >
+  <figcaption class="article__image-caption">
+    "Web Standards" with high contrast black mode in Vivaldi on Windows 10.
+  </figcaption>
 </figure>
 
-<figure>
-	<img src="images/black-whcm-firefox.png" alt="Section with podcast episodes from the Web Standards home page with system colours. The white background remains the same colour, the links and borders are now bright blue, and the plain text is black instead of dark grey.">
-	<figcaption>This is how Firefox's default high-contrast black mode on Windows 10 is interpreted. The default behaviour can be changed. You need to select the "Use system colours" option in the Language and Appearance settings.</figcaption>
+<figure class="article__image article__image--grey">
+  <img
+    class="article__image-item"
+    src="images/black-whcm-firefox.png"
+    alt="Section with podcast episodes from the Web Standards home page with system colours. The white background remains the same colour, the links and borders are now bright blue, and the plain text is black instead of dark grey."
+  >
+  <figcaption class="article__image-caption">
+    This is how Firefox's default high-contrast black mode on Windows 10 is interpreted. The default behaviour can be changed. You need to select the "Use system colours" option in the Language and Appearance settings.
+  </figcaption>
 </figure>
 
 In Windows 11, the set of contrasting themes has changed:
@@ -108,9 +126,15 @@ In Windows 11, the set of contrasting themes has changed:
 - Dusk.
 - Night sky.
 
-<figure>
-	<img src="images/night-sky-vivaldi.png" alt="Section with podcast episodes from the Web Standards home page with system colours. White background became black, links and borders are purple, and plain text is white instead of dark grey.">
-	<figcaption>"Web Standards" in Night Sky Mode in Vivaldi on Windows 11.</figcaption>
+<figure class="article__image article__image--grey">
+  <img
+    class="article__image-item"
+    src="images/night-sky-vivaldi.png"
+    alt="Section with podcast episodes from the Web Standards home page with system colours. White background became black, links and borders are purple, and plain text is white instead of dark grey."
+  >
+  <figcaption class="article__image-caption">
+    "Web Standards" in Night Sky Mode in Vivaldi on Windows 11.
+  </figcaption>
 </figure>
 
 If the ready-made themes are not suitable, you can customise them yourself. This includes reducing the contrast.
@@ -130,9 +154,15 @@ macOS and iOS have an Increased Contrast Mode. It increases the difference betwe
 
 Settings affect the appearance of the system and web interfaces. Unlike system windows, only the contrast level is changed on websites. Of course, the borders of elements do not become clearer by themselves.
 
-<figure>
-	<img src="images/increase-contrast-mode.png" alt="Comparing windows in normal mode and contrast-enhanced mode in macOS. In both windows, a picture of a screaming cat called «cute-cat.jpeg» is open. You can see controls for closing, expanding, zooming in and out, as well as additional settings.">
-	<figcaption>In the high contrast mode, strangely enough, everything became more contrasty. Black frames appeared around the window and controls.</figcaption>
+<figure class="article__image article__image--grey">
+  <img
+    class="article__image-item"
+    src="images/increase-contrast-mode.png"
+    alt="Comparing windows in normal mode and contrast-enhanced mode in macOS. In both windows, a picture of a screaming cat called «cute-cat.jpeg» is open. You can see controls for closing, expanding, zooming in and out, as well as additional settings."
+  >
+  <figcaption class="article__image-caption">
+    In the high contrast mode, strangely enough, everything became more contrasty. Black frames appeared around the window and controls.
+  </figcaption>
 </figure>
 
 ### Transparency
@@ -149,9 +179,15 @@ Transparency is customisable on Windows and macOS.
 
 These settings only affect transparency in the system interface.
 
-<figure>
-	<img src="images/transparency-mode.png" alt="Comparison of windows with and without transparency setting enabled in Windows. Both with system screen settings. The window has a navigation bar on the left and settings on the right.">
-	<figcaption>This is how the transparency setting works in Windows 10. The navigation background of the first window is semi-transparent, and the second one is opaque and monochrome.</figcaption>
+<figure class="article__image article__image--grey">
+  <img
+    class="article__image-item"
+    src="images/transparency-mode.png"
+    alt="Comparison of windows with and without transparency setting enabled in Windows. Both with system screen settings. The window has a navigation bar on the left and settings on the right."
+  >
+  <figcaption class="article__image-caption">
+    This is how the transparency setting works in Windows 10. The navigation background of the first window is semi-transparent, and the second one is opaque and monochrome.
+  </figcaption>
 </figure>
 
 ## A word about media types

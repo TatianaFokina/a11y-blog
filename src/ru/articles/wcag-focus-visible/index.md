@@ -67,9 +67,15 @@ button:focus {
 
 На [сайте Xbox](https://www.xbox.com/en-us/) у всех интерактивных элементов есть стили фокуса, хотя они не очень констистентные. В каки-то случаях это жирная пунктирная линия, в каких-то двойная сплошная рамка. Внутри она синяя, снаружи белая.
 
-<figure>
-	<img src="images/xbox-site.png" alt="В фокусе ссылка на Elden Ring Deluxe Edition. Видна цена и скидка в 20%. После ссылки в фокусе идёт блок с похожими играми — Thymesia, Cult Lamb, Isaac, Diablo 2 и другими.">
-	<figcaption>Страница игры Elden Ring на сайте Xbox.</figcaption>
+<figure class="article__image article__image--grey">
+  <img
+    class="article__image-item"
+    src="images/xbox-site.png"
+    alt="В фокусе ссылка на Elden Ring Deluxe Edition. Видна цена и скидка в 20%. После ссылки в фокусе идёт блок с похожими играми — Thymesia, Cult Lamb, Isaac, Diablo 2 и другими."
+  >
+  <figcaption class="article__image-caption">
+    Страница игры Elden Ring на сайте Xbox.
+  </figcaption>
 </figure>
 
 ## Примеры барьеров
@@ -81,9 +87,15 @@ button:focus {
 
 На [сайте PlayStation](https://www.playstation.com/en-us/) у элементов есть стили фокуса, но некоторые элементы в неинтерактивном состоянии выглядят как будто они в фокусе. Например, на скриншоте фокус сделан на кнопке «Learn More» («Узнать больше»). Это видно благодаря синей рамке вокруг неё. У ссылки «PS5 Console» точно такая же синяя рамка в неактивном состоянии. Из-за этого трудно понять, где на самом деле сейчас фокус.
 
-<figure>
-	<img src="images/playstation-site.png" alt="Выделена кнопка и ссылка. На кнопке «Узнать больше» сделан фокус. Он выглядит как синяя рамка со скруглёнными углами. После кнопки располодена ссылка «PS5 Console» c текстом и изображением с белой консолью и контролом, который лежит перед ней. Вокруг ссылки видна синяя рамка со скруглёнными углами, которая похожа на фокус у кнопки.">
-	<figcaption>Главная страница сайта PlayStation.</figcaption>
+<figure class="article__image article__image--grey">
+  <img
+    class="article__image-item"
+    src="images/playstation-site.png"
+    alt="Выделена кнопка и ссылка. На кнопке «Узнать больше» сделан фокус. Он выглядит как синяя рамка со скруглёнными углами. После кнопки располодена ссылка «PS5 Console» c текстом и изображением с белой консолью и контролом, который лежит перед ней. Вокруг ссылки видна синяя рамка со скруглёнными углами, которая похожа на фокус у кнопки."
+   >
+  <figcaption class="article__image-caption">
+    Главная страница сайта PlayStation.
+  </figcaption>
 </figure>
 
 ## Как тестировать

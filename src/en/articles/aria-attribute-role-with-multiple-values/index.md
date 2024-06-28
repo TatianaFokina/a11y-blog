@@ -5,6 +5,7 @@ keyTheme:
   - ARIA
   - HTML
 date: 2024-06-03
+updated: 2024-06-28
 layout: article.njk
 templateEngineOverride: md, njk
 ---
@@ -102,7 +103,16 @@ The markup I will be testing might be scary. This is a test of the single attrib
 
 In all three browsers, `aria-label` provides the accessibility name ″This is not a button″. In Chrome and Safari, the `div` element with `role="button link"` received the `button` role, while in Firefox it received the `pushbutton` one.
 
-![Two existing roles as a value from accessibility tree preview in Chrome, Firefox and Safari DevTools.](images/two-existing-tokens.png)
+<figure class="article__image article__image--grey">
+  <img
+    class="article__image-item"
+    src="images/two-existing-tokens.png"
+    alt="Two existing roles as a value"
+  >
+  <figcaption class="article__image-caption">
+    Accessibility tree preview in Chrome, Firefox and Safari.
+  </figcaption>
+</figure>
 
 **Conclusion**: When two values are valid, the first one is included into accessibility tree.
 
@@ -124,7 +134,16 @@ In all three browsers, `aria-label` provides the accessibility name ″This is n
 
 Again, the element name is ″This is not a button″. Its calculated roles are `button` in Chrome and Safari and `pushbutton` in Firefox.
 
-![Invalid and valid values for role attribute from accessibility tree preview in Chrome, Firefox and Safari DevTools.](images/one-wrong-token.png)
+<figure class="article__image article__image--grey">
+  <img
+    class="article__image-item"
+    src="images/one-wrong-token.png"
+    alt="Invalid and valid values"
+  >
+  <figcaption class="article__image-caption">
+    Accessibility tree preview in Chrome, Firefox and Safari.
+  </figcaption>
+</figure>
 
 **Conclusion**: When one of values are invalid and the second one is valid, the valid value is included into accessibility tree.
 
@@ -148,7 +167,16 @@ In Chrome and Safari, `<div>` with `role="widget button"` attribute received the
 
 In all three browsers, `aria-label` provides the accessibility name ″This is not a button″. The computed roles for it are `button` and `pushbutton`.
 
-![Role attribute with the abstract role as the one of the value from accessibility tree preview in Chrome, Firefox and Safari DevTools.](images/one-abstract-token.png)
+<figure class="article__image article__image--grey">
+  <img
+    class="article__image-item"
+    src="images/one-abstract-token.png"
+    alt="Role attribute with the abstract role as the one of the value"
+  >
+  <figcaption class="article__image-caption">
+    Chrome, Firefox and Safari.
+  </figcaption>
+</figure>
 
 **Conclusion**: When there is an abstract role, it's ignored. The other (non-abstract) role is applied.
 
@@ -174,7 +202,16 @@ In Chrome, for the `div` element with `role="tapir opossum"`, the computed role 
 
 In all three browsers, `aria-label` provides the accessibility name ″This is not a button″, the computed roles are `generic`, `text leaf`, in one case ″No suitable ARIA roles″.
 
-![Role attribute with two wrong values from accessibility tree preview in Chrome, Firefox and Safari DevTools.](images/two-wrong-tokens.png)
+<figure class="article__image article__image--grey">
+  <img
+    class="article__image-item"
+    src="images/two-wrong-tokens.png"
+    alt="The attribute with two wrong values"
+  >
+  <figcaption class="article__image-caption">
+    DevTools accessibility tree preview from Chrome, Firefox and Safari.
+  </figcaption>
+</figure>
 
 **Conclusion**: If both values are invalid, either the element's implicit role is a part of accessibility tree, or nothing is computed. It depends on the browser.
 

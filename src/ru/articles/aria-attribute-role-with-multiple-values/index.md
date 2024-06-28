@@ -1,11 +1,11 @@
 ---
 title: role с несколькими значениями
-description: Разберёмся с несколькими значениями для атрибута роли. В каких случаях это пригодится, и какие отношения с двумя ролями у браузеров и скринридеров.
+description: Разберёмся с несколькими значениями у атрибута для роли. В каких случаях это пригодится, и какие отношения с двумя ролями у браузеров и скринридеров.
 keyTheme:
-    - ARIA
-    - HTML
+  - ARIA
+  - HTML
 date: 2022-01-24
-updated: 2024-06-03
+updated: 2024-06-28
 layout: article.njk
 templateEngineOverride: md, njk
 ---
@@ -103,7 +103,16 @@ Core Accessibility API Mappings (Core-AAM для краткости) — это 
 
 Во всех трёх браузерах `aria-label` содержит текст «Это не кнопка». В Chrome и Safari `<div>` c `role="button link"` получил роль `button`, в Firefox — `pushbutton`.
 
-![role с двумя существующими ролями из превью доступного дерева в инструментах разработчика Chrome, Firefox и Safari.](images/two-existing-tokens.png)
+<figure class="article__image article__image--grey">
+  <img
+    class="article__image-item"
+    src="images/two-existing-tokens.png"
+    alt="Атрибут с двумя существующими ролями"
+  >
+  <figcaption class="article__image-caption">
+    Превью дерева дорступности в Chrome, Firefox и Safari.
+  </figcaption>
+</figure>
 
 **Вывод**: когда два значения валидные, то в дерево попадает самое первое.
 
@@ -125,7 +134,16 @@ Core Accessibility API Mappings (Core-AAM для краткости) — это 
 
 В Chrome и Safari `<div>` c `role="opossum button"` получил роль `button`, в Firefox — `pushbutton`. Во всех трёх случаях имя «Это не кнопка» взялось из `aria-label`.
 
-![role с существующей и выдуманной ролями из превью доступного дерева в инструментах разработчика.](images/one-wrong-token.png)
+<figure class="article__image article__image--grey">
+  <img
+    class="article__image-item"
+    src="images/one-wrong-token.png"
+    alt="Атрибут с существующей и выдуманной ролями"
+  >
+  <figcaption class="article__image-caption">
+    Chrome, Firefox и Safari.
+  </figcaption>
+</figure>
 
 **Вывод**: если одно значение невалидное, а второе валидное, то в дерево попадает существующее.
 
@@ -147,7 +165,16 @@ Core Accessibility API Mappings (Core-AAM для краткости) — это 
 
 В Chrome и Safari `<div>` c `role="widget button"` получил неабстрактную роль `button`, в Firefox — `pushbutton`. Имя всё такое же — «Это не кнопка».
 
-![Элемент с абстрактной и обычной ролями в превью доступного дерева из трёх браузеров.](images/one-abstract-token.png)
+<figure class="article__image article__image--grey">
+  <img
+    class="article__image-item"
+    src="images/one-abstract-token.png"
+    alt="Элемент с абстрактной и обычной ролями"
+  >
+  <figcaption class="article__image-caption">
+    Информация о доступном объекте в Chrome, Firefox и Safari.
+  </figcaption>
+</figure>
 
 **Вывод**: когда есть абстрактная роль, то она игнорируется и применяется неабстрактная.
 
@@ -171,7 +198,16 @@ Core Accessibility API Mappings (Core-AAM для краткости) — это 
 
 `generic` — это встроенная роль `<div>`. Это значит, что перед нами безымянный элемент-контейнер без семантического значения. А `text leaf` означает какой-то текстовый контент. Как думаете, что стало с именем элемента? Правильно, оно не изменилось и берётся из `aria-label`.
 
-![Элемент с двумя выдуманными ролями в превью доступного дерева из трёх браузеров.](images/two-wrong-tokens.png)
+<figure class="article__image article__image--grey">
+  <img
+    class="article__image-item"
+    src="images/two-wrong-tokens.png"
+    alt="Два выдуманных значения у роли"
+  >
+  <figcaption class="article__image-caption">
+    Превью в Chrome, Firefox и Safari.
+  </figcaption>
+</figure>
 
 **Вывод**: если оба значения невалидные, то в дерево доступности или попадает встроенная роль элемента, или ничего не вычисляется. Зависит от браузера.
 
