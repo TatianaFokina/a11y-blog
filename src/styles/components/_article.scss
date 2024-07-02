@@ -1,4 +1,5 @@
 @import "../variables";
+@import "../mixins-and-functions";
 
 .article-header {
 	display: flex;
@@ -17,11 +18,10 @@
 	display: flex;
 	align-items: center;
 	gap: $gap-1x;
-	font-size: var(--step--1);
 }
 
 .article {
-	margin-top: $gap-15x;
+	margin-top: fluidSizes($gap-52, $gap-60);
 }
 
 .article__note {
@@ -29,7 +29,6 @@
 	display: flex;
 	margin: $gap-5x 0;
 	padding: $gap-5x;
-	font-size: var(--step--1);
 	background: var(--bg-part-color);
 	border-radius: 4px;
 }
@@ -37,7 +36,6 @@
 .article__note-text {
 	margin: 0;
 	padding-left: $gap-8x;
-	font-size: var(--step--1);
 	word-break: break-word;
 }
 

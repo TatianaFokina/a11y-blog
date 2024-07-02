@@ -1,6 +1,5 @@
 @import "../variables";
 
-// Light theme
 .base[data-theme="light"] {
 	--select-color: #{$fuchsia-alpha};
 	--bg-color: #{$beige-2};
@@ -15,7 +14,6 @@
 	--img-filter: #{$img-filter};
 }
 
-// Dark theme
 .base[data-theme="dark"] {
 	--select-color: #{fuchsia-alpha};
 	--bg-color: #{$blue-9};

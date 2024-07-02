@@ -1,33 +1,20 @@
 @import "../variables";
+@import "../mixins-and-functions";
 
 .article__image {
 	display: inline-flex;
 	flex-direction: column;
-	padding: $gap-9x;
+	padding: fluidSizes($gap-8, $gap-32);
 	gap: $gap-4x;
+	background: $accent-color-2;
 	border-radius: 16px;
 	filter: var(--img-filter);
 
 	@include media(lg) {
-		width: calc(100% + 60px);
-		margin: $gap-5x -40px $gap-5x -40px;
+		width: calc(100% + 150px);
+		margin: 0 -10% 0;
+		border-radius: 24px;
 	}
-}
-
-.article__image--grey {
-	background-color: #EFEFEF;
-}
-
-.article__image--green {
-	background-color: #B0C9A1;
-}
-
-.article__image--purple {
-	background-color: #B3A8DB;
-}
-
-.article__image--pink {
-	background-color: #DBA8C3;
 }
 
 .article__image + .article__image {
@@ -36,12 +23,11 @@
 
 .article__image-item {
 	box-shadow: 9px 11px 24px -26px $blue-8;
-	border-radius: 3px;
+	border-radius: 8px;
 }
 
 .article__image-caption {
 	gap: $gap-2x;
-	font-size: var(--step--1);
 	color: $blue-7;
 }
 

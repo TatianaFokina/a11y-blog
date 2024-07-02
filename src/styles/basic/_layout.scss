@@ -1,5 +1,5 @@
-@import "../variables";
 @import "../mixins-and-functions";
+@import "../variables";
 
 *, *::before, *::after {
 	margin: 0;
@@ -11,21 +11,18 @@
 	flex-direction: column;
 	min-height: 100vh;
 	margin: 0;
-	font-size: var(--step-0);
-	font-family: $text-font-family;
-	line-height: $line-height-base;
 	color: var(--text-color);
 	background: var(--bg-color);
 }
 
 .wrapper {
-	width: 100%;
 	max-width: map-get($container-widths, md);
+	width: 100%;
 	margin: 0 auto;
 	padding: 0 $gap-5x;
 }
 
 .base__body {
 	flex: 1 0 auto;
-	margin-top: $gap-15x;
+	margin-top: fluidSizes($gap-52, $gap-60);
 }

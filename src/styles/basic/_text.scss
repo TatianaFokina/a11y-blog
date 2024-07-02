@@ -1,4 +1,5 @@
 @import "../variables";
+@import "../mixins-and-functions";
 
 $code-padding-big: .15rem;
 $code-padding-small: 0.03rem;
@@ -10,7 +11,6 @@ $hr-height: 15px;
 
 p {
 	margin: $gap-4x 0;
-	line-height: $line-height-base;
 }
 
 hr {
@@ -48,18 +48,12 @@ ul:has(a) li {
 	margin: 3px 0;
 }
 
-small {
-	font-size: var(--step--1);
-}
-
 code {
 	padding: $code-padding-big;
-	font-family: $code-font-family;
-	font-size: var(--step--1);
 	word-wrap: break-word;
 	color: var(--text-color);
 	background: var(--code-color);
-	border-radius: 4px;
+	border-radius: 8px;
 }
 
 a > code {
@@ -71,14 +65,6 @@ pre code {
 	margin: $gap-5x 0;
 	padding: $gap-9x;
 	overflow-x: auto;
-}
-
-kbd {
-	font-family: $code-font-family;
-}
-
-samp {
-	font-family: $text-font-family;
 }
 
 figure {
@@ -95,4 +81,21 @@ blockquote {
 
 blockquote p {
 	padding-left: $gap-6x;
+}
+
+h1 {
+	margin-top: 0;
+	margin-bottom: fluidSizes($gap-14, $gap-24);
+}
+
+h2 {
+	margin: fluidSizes($gap-36, $gap-44) 0 fluidSizes($gap-15, $gap-16);
+}
+
+h3 {
+	margin: fluidSizes($gap-32, $gap-28) 0 fluidSizes($gap-14, $gap-15);
+}
+
+h4 {
+	margin: fluidSizes($gap-24, $gap-28) 0 fluidSizes($gap-12, $gap-14);
 }

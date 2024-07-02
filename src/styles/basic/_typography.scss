@@ -1,19 +1,71 @@
 @import "../mixins-and-functions";
+@import "../variables";
 
-:root {
-	--step-3: #{toRem(32px)};
-	--step-2: #{toRem(28px)};
-	--step-1: #{toRem(23px)};
-	--step-0: #{toRem(17px)};
-	--step--1: #{toRem(15px)};
-	--step--2: #{toRem(10px)};
+// Font family
+$sans-font-family: "IBM Plex Sans", "Arial", "Helvetica", sans-serif;
+$mono-font-family: "IBM Plex Mono", "Courier New", monospace;
 
-	@include media(md) {
-		--step-3: #{toRem(44px)};
-		--step-2: #{toRem(38px)};
-		--step-1: #{toRem(28px)};
-		--step-0: #{toRem(20px)};
-		--step--1: #{toRem(16px)};
-		--step--2: #{toRem(14px)};
-	}
+// Base and headings line height
+$line-height-base: 1.6;
+$line-height-h1: 1.318;
+$line-height-h2: 1.263;
+$line-height-h3: 1.285;
+$line-height-h4: 1.5;
+
+// Font sizes
+$font-3xLarge: 44px;
+$font-2xLarge: 38px;
+$font-xLarge: 34px;
+$font-large: 28px;
+$font-big: 24px;
+$font-base: 20px;
+$font-medium: 18px;
+$font-small: 16px;
+$font-xSmall: 14px;
+
+h1 {
+	font-size: fluidSizes($font-2xLarge, $font-3xLarge);
+	line-height: $line-height-h1;
+}
+
+h2 {
+	font-size: fluidSizes($font-large, $font-xLarge);
+	line-height: $line-height-h2;
+}
+
+h3 {
+	font-size: fluidSizes($font-big, $font-large);
+	line-height: $line-height-h3;
+}
+
+h4 {
+	line-height: $line-height-h4;
+}
+
+samp {
+	font-family: $sans-font-family;
+}
+
+small,
+.cards__item-date,
+.article-header__dates-item,
+.article__note-text,
+.article__image-caption {
+	font-size: fluidSizes($font-xSmall, $font-small);
+}
+
+code,
+kbd {
+	font-family: $mono-font-family;
+	font-size: $font-xSmall;
+}
+
+.topics__item {
+	font-size: $font-xSmall;
+}
+
+.base {
+	font-family: $sans-font-family;
+	font-size: fluidSizes($font-medium, $font-base);
+	line-height: $line-height-base;
 }

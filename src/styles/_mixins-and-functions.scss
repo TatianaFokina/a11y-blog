@@ -18,13 +18,21 @@
 }
 
 // Typography
-// Usage example: --step-4: #{toRem(14px)};
-$font-size-base: 16px;
+$font-size-default: 16px;
+$preferredValCalc: calc(1.25rem + 4.2254 * (1vw - 6px));
 
 @function fromPx($value) {
 	@return math.div($value, $value * 0 + 1);
 }
 
 @function toRem($size) {
-	@return #{math.div(fromPx($size), fromPx($font-size-base))}rem;
+	@return #{math.div(fromPx($size), fromPx($font-size-default))}rem;
+}
+
+@function fluidSizes($minVal, $maxVal, $preferredVal: $preferredValCalc) {
+	@return clamp(
+		toRem($minVal), 
+		$preferredVal, 
+		toRem($maxVal)
+	);
 }

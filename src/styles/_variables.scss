@@ -14,23 +14,13 @@ $blue-7: #2f445d;
 $blue-8: #1b2c41;
 $blue-9: #14202f;
 
-$fuchsia: #c7759e;
+$accent-color-1: #c7759e;
+$accent-color-2: #b3a8db;
 $fuchsia-alpha: #c7759e3a;
 
 // Images
 $img-filter: unset;
 $img-filter--dark: brightness(.8) contrast(1.2);
-
-// Font
-$text-font-family: "IBM Plex Sans", "Arial", "Helvetica", sans-serif;
-$code-font-family: "IBM Plex Mono", "Courier New", monospace;
-
-$line-height-base: 1.6; // 32px
-$line-height-h1: 1.318; // 58px
-$line-height-h2: 1.263; // 48px
-$line-height-h3: 1.285; // 36px
-$line-height-h4: 1.5; // 24px
-$line-height-menu-link: 1.7;
 
 // Gaps
 $gap-1x: 4px;
@@ -48,6 +38,25 @@ $gap-13x: $gap-1x * 13; // 52px
 $gap-14x: $gap-1x * 14; // 56px
 $gap-15x: $gap-1x * 15; // 60px
 $gap-29x: $gap-1x * 29; // 116px
+
+$gap-4: 4px;
+$gap-8: 8px;
+$gap-12: 12px;
+$gap-14: 14px;
+$gap-15: 15px;
+$gap-16: 16px;
+$gap-20: 20px;
+$gap-24: 24px;
+$gap-28: 28px;
+$gap-32: 32px;
+$gap-36: 36px;
+$gap-40: 40px;
+$gap-44: 44px;
+$gap-48: 48px;
+$gap-52: 52px;
+$gap-56: 56px;
+$gap-60: 60px;
+$gap-116: 116px;
 
 // Grid breakpoints and container min-widths
 $breakpoints: (
