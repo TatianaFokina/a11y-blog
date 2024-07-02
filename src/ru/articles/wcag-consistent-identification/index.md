@@ -58,7 +58,7 @@ templateEngineOverride: md, njk
 
 На [сайте gov.uk](http://gov.uk/) есть поиск с кнопкой с иконкой лупы на отдельных страницах и в меню. Иконки и сами кнопки выглядят одинаково, у них везде одно и то же название «Search GOV.UK».
 
-<figure class="article__image article__image--grey">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/govuk-first-page.png"
@@ -69,7 +69,7 @@ templateEngineOverride: md, njk
   </figcaption>
 </figure>
 
-<figure class="article__image article__image--grey">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/govuk-second-page.png"
@@ -82,7 +82,7 @@ templateEngineOverride: md, njk
 
 На [сайте Amazon](https://www.amazon.com/) на страницах с категориями товаров есть пагинация. В ней одинаковые по функциональности элементы с одинаковыми названиями в `aria-label` — «Current page, page 1», «Current page, page 2» и так далее.
 
-<figure class="article__image article__image--grey">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/amazon-first-page.png"
@@ -93,7 +93,7 @@ templateEngineOverride: md, njk
   </figcaption>
 </figure>
 
-<figure class="article__image article__image--green">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/amazon-second-page.png"

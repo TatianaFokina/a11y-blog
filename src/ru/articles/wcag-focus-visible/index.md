@@ -67,7 +67,7 @@ button:focus {
 
 На [сайте Xbox](https://www.xbox.com/en-us/) у всех интерактивных элементов есть стили фокуса, хотя они не очень констистентные. В каки-то случаях это жирная пунктирная линия, в каких-то двойная сплошная рамка. Внутри она синяя, снаружи белая.
 
-<figure class="article__image article__image--grey">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/xbox-site.png"
@@ -87,7 +87,7 @@ button:focus {
 
 На [сайте PlayStation](https://www.playstation.com/en-us/) у элементов есть стили фокуса, но некоторые элементы в неинтерактивном состоянии выглядят как будто они в фокусе. Например, на скриншоте фокус сделан на кнопке «Learn More» («Узнать больше»). Это видно благодаря синей рамке вокруг неё. У ссылки «PS5 Console» точно такая же синяя рамка в неактивном состоянии. Из-за этого трудно понять, где на самом деле сейчас фокус.
 
-<figure class="article__image article__image--grey">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/playstation-site.png"

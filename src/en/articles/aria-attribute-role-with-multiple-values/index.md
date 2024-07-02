@@ -103,7 +103,7 @@ The markup I will be testing might be scary. This is a test of the single attrib
 
 In all three browsers, `aria-label` provides the accessibility name ″This is not a button″. In Chrome and Safari, the `div` element with `role="button link"` received the `button` role, while in Firefox it received the `pushbutton` one.
 
-<figure class="article__image article__image--grey">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/two-existing-tokens.png"
@@ -134,7 +134,7 @@ In all three browsers, `aria-label` provides the accessibility name ″This is n
 
 Again, the element name is ″This is not a button″. Its calculated roles are `button` in Chrome and Safari and `pushbutton` in Firefox.
 
-<figure class="article__image article__image--grey">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/one-wrong-token.png"
@@ -167,7 +167,7 @@ In Chrome and Safari, `<div>` with `role="widget button"` attribute received the
 
 In all three browsers, `aria-label` provides the accessibility name ″This is not a button″. The computed roles for it are `button` and `pushbutton`.
 
-<figure class="article__image article__image--grey">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/one-abstract-token.png"
@@ -202,7 +202,7 @@ In Chrome, for the `div` element with `role="tapir opossum"`, the computed role 
 
 In all three browsers, `aria-label` provides the accessibility name ″This is not a button″, the computed roles are `generic`, `text leaf`, in one case ″No suitable ARIA roles″.
 
-<figure class="article__image article__image--grey">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/two-wrong-tokens.png"

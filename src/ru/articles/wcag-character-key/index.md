@@ -59,7 +59,7 @@ templateEngineOverride: md, njk
 
 В [Gmail много клавиатурных сокращений из одного символа или знака](https://support.google.com/mail/answer/6594). Например, <kbd>/</kbd> (косая черта) для поиска по письмам или <kbd>g</kbd> для перехода к следующей странице. Эти сокращения можно отключить и настроить. В списке всех настроек откройте вкладку с продвинутыми настройками (advanced) и включите кастомные клавиатурные сокращения (custom keyboard shortcuts). После появится отдельная вкладка «Клавиатурные сокращения» («Keyboard Shortcuts»), в которой можно переназначить клавиши для разных команд.
 
-<figure class="article__image article__image--grey">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/gmail-keyboard-settings.png"
@@ -72,7 +72,7 @@ templateEngineOverride: md, njk
 
 В [GitHub тоже есть команды, которые выполняются одной клавишей с буквой или знаком](https://docs.github.com/en/get-started/using-github/keyboard-shortcuts). Например, <kbd>s</kbd> делает фокус на поле поиска, а <kbd>.</kbd> (точка) открывает редактор кода. В настройках профиля можно отключить клавиатурные сокращения или изменить их. Для этого зайдите в настройки профиля, выберите вкладку «Accessibility» («Доступность») и отожмите чекбокс «Character Keys» («Клавиши символов»). Теперь можно настроить клавиши-модификаторы для клавиатурных сокращений в подразделе «Command Palette» («Палитра команд»). Для этого надо выбрать из выпадающих списков «Search mode» («Режим поиска») и «Command mode» («Режим команд») подходящую опцию.
 
-<figure class="article__image article__image--grey">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/github-keyboard-settings.png"
@@ -90,7 +90,7 @@ templateEngineOverride: md, njk
 
 В [десктопной версии YouTube есть много клавиатурных сокращений](https://support.google.com/youtube/answer/7631406). Например, <kbd>F</kbd> раскрывает видео на весь экран, <kbd>k</kbd> ставит видео на паузу или продолжает воспроизведение, <kbd>c</kbd> включает или выключает субтитры, а <kbd>,</kbd> (запятая) перематывает к следующему кадру, когда видео на паузе. Однако на сайте нельзя отключить клавиатурные сокращения или переназначить клавиши.
 
-<figure class="article__image article__image--grey">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/youtube-shortcuts.png"

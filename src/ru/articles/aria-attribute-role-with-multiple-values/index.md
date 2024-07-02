@@ -103,7 +103,7 @@ Core Accessibility API Mappings (Core-AAM для краткости) — это 
 
 Во всех трёх браузерах `aria-label` содержит текст «Это не кнопка». В Chrome и Safari `<div>` c `role="button link"` получил роль `button`, в Firefox — `pushbutton`.
 
-<figure class="article__image article__image--grey">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/two-existing-tokens.png"
@@ -134,7 +134,7 @@ Core Accessibility API Mappings (Core-AAM для краткости) — это 
 
 В Chrome и Safari `<div>` c `role="opossum button"` получил роль `button`, в Firefox — `pushbutton`. Во всех трёх случаях имя «Это не кнопка» взялось из `aria-label`.
 
-<figure class="article__image article__image--grey">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/one-wrong-token.png"
@@ -165,7 +165,7 @@ Core Accessibility API Mappings (Core-AAM для краткости) — это 
 
 В Chrome и Safari `<div>` c `role="widget button"` получил неабстрактную роль `button`, в Firefox — `pushbutton`. Имя всё такое же — «Это не кнопка».
 
-<figure class="article__image article__image--grey">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/one-abstract-token.png"
@@ -198,7 +198,7 @@ Core Accessibility API Mappings (Core-AAM для краткости) — это 
 
 `generic` — это встроенная роль `<div>`. Это значит, что перед нами безымянный элемент-контейнер без семантического значения. А `text leaf` означает какой-то текстовый контент. Как думаете, что стало с именем элемента? Правильно, оно не изменилось и берётся из `aria-label`.
 
-<figure class="article__image article__image--grey">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/two-wrong-tokens.png"

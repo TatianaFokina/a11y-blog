@@ -53,7 +53,7 @@ templateEngineOverride: md, njk
 
 Посмотрим на что-то более наглядное. На картинке показаны достаточно большие кнопки и ссылки, которые проходят критерий. Кнопка «Настройки» шириной 115 пикселей и высотой 44 пикселя, а кнопка с иконкой лупы — 44 на 44. Другая кнопка с иконкой со стрелкой вниз минимального размера 24 на 24 пикселя. Группа из двух кнопок, размер которых 44 на 44 пикселя, находятся друг от друга на расстоянии в 22 пикселя. Ну и что касается списков, то размеры ссылок «Гёзда», «Хинкали», «Равиоли» — 20 пикселей, а высота строки — 27. Высота ссылок в другом, выпадающем списке — 24 пикселя.
 
-<figure class="article__image article__image--grey">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/pass.png"
@@ -66,7 +66,7 @@ templateEngineOverride: md, njk
 
 Теперь посмотрим на картинку с плохими, небольшими элементами. Кнопка с иконкой со стрелкой вниз всего 23 пикселя в ширину и 23 пикселя в высоту. В группе кнопок, размером 22 на 22 пикселя, между ними нет пустого пространства. Размеры пунктов ссылок в списке — 20 пикселей, а вот высота строки всего 21. Наконец, в выпадающем списке высота ссылок — 21 пиксель.
 
-<figure class="article__image article__image--grey">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/fail.png"
@@ -127,7 +127,7 @@ ul li {
 
 На [сайте Pocket](https://getpocket.com/) в меню несколько кнопок. Их размер `44px` на `44.06px`. Это соответствует максимальному требованию к размеру целей.
 
-<figure class="article__image article__image--grey">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/pocket-site.png"
@@ -140,7 +140,7 @@ ul li {
 
 На [сайте NRK](https://www.nrk.no) есть блок с информацией об авторе текста и его контактами. В нём ссылка на почту, её размер `196.18px` на `41px`. Это соответствует максимальным требованиям о размере цели, так как между ссылкой и другими интерактивными элементами большое расстояние.
 
-<figure class="article__image article__image--pink">
+<figure class="article__image">
   <img
     class="article__image-item"
     class="article__image-item"
@@ -154,7 +154,7 @@ ul li {
 
 На [сайте Chanel](https://www.chanel.com/us/) есть слайдеры с кнопками для переключения к конкретным слайдам и для перехода к следующему или предыдущему. Размер кнопок для перехода к нужному слайду всего `20px` на `20px`. Кнопки для пролистывания слайдов — `40px` на `40px`. Получается, что размеры элементов отвечают минимальному требованию, но не проходят максимальное.
 
-<figure class="article__image article__image--green">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/chanel-site.png"
@@ -172,7 +172,7 @@ ul li {
 
 На [сайте Zara](https://www.zara.com) в выпадающем списке меню со ссылками небольшое расстояние между элементами, а их высота всего `16px`. Так что они не соответствуют минимальному требованию.
 
-<figure class="article__image article__image--purple">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/zara-site.png"
@@ -185,7 +185,7 @@ ul li {
 
 На [сайте Mango](https://shop.mango.com/) под фотографиями товаров есть кнопки для выбора цвета. Их размер всего `16px` на `16px`, поэтому они не соответствуют минимальному требованию.
 
-<figure class="article__image article__image--pink">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/mango-site.png"

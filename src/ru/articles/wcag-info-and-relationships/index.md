@@ -74,7 +74,7 @@ ogImage: cover.jpg
 
 На [главной Apple Store](https://www.apple.com/store) есть большие разделы с заголовками. Например, «Help is here. Whenever and however you need it» («Помощь рядом. Когда и каким бы образом она ни была нужна»). Оба предложения находятся на отдельной строке, они одинакового размера и расположены друг за другом. Единственное различие — первое предложение тёмно-серого цвета, а второе светло-серого. В коде только «Help is here» — это `<h2>`. Второе предложение обёрнуто в `<span>`, который расположен рядом с `<h2>`.
 
-<figure class="article__image article__image--grey">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/apple-store-heading.png"
@@ -89,7 +89,7 @@ ogImage: cover.jpg
 
 Визуально это выглядит как параграф текста, перед которым салатовая иконка с грузовиком. Некоторые ключевые слова выделены таким же салатовым цветом — «two-hour delivery», «free delivery» и «easy pickup». В коде весь текст обёрнут в `<p>`, который вложен внутрь `<a>`.
 
-<figure class="article__image article__image--green">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/apple-store-link.png"

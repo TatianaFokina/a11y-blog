@@ -64,7 +64,7 @@ templateEngineOverride: md, njk
 
 На [сайте Vimeo](https://vimeo.com) есть форма регистрации нового пользователя. Если ввёл неправильные данные в поле, под ним появится текст об ошибке, а в поле красная иконка с восклицательным знаком.
 
-<figure class="article__image article__image--green">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/vimeo-site.png"
@@ -85,7 +85,7 @@ templateEngineOverride: md, njk
 
 В [десктопной версии TikTok](https://www.tiktok.com/) есть инструкция о том, как войти в личный аккаунт с помощью QR-кода. В ней используют изображения с иконками кнопок, они никак не подписаны.
 
-<figure class="article__image article__image--pink">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/tiktok-site.png"

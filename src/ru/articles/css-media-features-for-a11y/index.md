@@ -57,7 +57,7 @@ templateEngineOverride: md, njk
 
 Цвета изменяются не только в системе, но и во вкладках браузера. Так что пользователи могут выбрать этот режим вместо тёмной темы.
 
-<figure class="article__image article__image--grey">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/invert-colors.png"
@@ -97,7 +97,7 @@ templateEngineOverride: md, njk
 
 Технология замены цветовой палитры зависит от браузера. Она отличается в браузерах на Chromium, Firefox (Quantum), Internet Explorer (Trident) и в старых версиях Edge (EdgeHTML).
 
-<figure class="article__image article__image--grey">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/black-whcm-vivaldi.png"
@@ -108,7 +108,7 @@ templateEngineOverride: md, njk
   </figcaption>
 </figure>
 
-<figure class="article__image article__image--grey">
+<figure class="article__image">
   <img
     class=""
     src="images/black-whcm-firefox.png"
@@ -126,7 +126,7 @@ templateEngineOverride: md, njk
 - Сумерки (Dusk).
 - Ночное небо (Night sky).
 
-<figure class="article__image article__image--grey">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/night-sky-vivaldi.png"
@@ -154,7 +154,7 @@ templateEngineOverride: md, njk
 
 Настройки влияют на внешний вид системы и веб-интерфейсов. В отличие от системных окон, на сайтах изменяется только уровень контрастности. Границы элементов, конечно, чётче сами по себе не становятся.
 
-<figure class="article__image article__image--grey">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/increase-contrast-mode.png"
@@ -179,7 +179,7 @@ templateEngineOverride: md, njk
 
 Эти настройки влияют только на прозрачность в интерфейсе системе.
 
-<figure class="article__image article__image--grey">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/transparency-mode.png"
@@ -418,7 +418,7 @@ templateEngineOverride: md, njk
 
 Если поверх картинки размещён текст, то под ним появится чёрная подложка (backplate). Её стилями управлять нельзя.
 
-<figure class="article__image article__image--grey">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/whcm-blackplates.png"
@@ -435,7 +435,7 @@ templateEngineOverride: md, njk
 
 Кнопки и ссылки с SVG-иконками сливаются с фоном или становятся менее контрастными. Чёрный логотип или тёмная картинка с прозрачным фоном тоже могут слиться с фоном. В случае чекбокса или радиокнопки непонятно, выбраны они или нет.
 
-<figure class="article__image article__image--grey">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/whcm-problems.png"

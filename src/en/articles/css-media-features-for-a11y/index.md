@@ -57,7 +57,7 @@ Inverted colours mode replaces the system colours with opposite colours, as in t
 
 Colours are changed not only in the system but also in browser tabs. So users can choose this mode instead of dark theme.
 
-<figure class="article__image article__image--grey">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/invert-colors.png"
@@ -97,7 +97,7 @@ High Contrast Mode has several ready-made colour sets:
 
 The colour palette replacement technology depends on the browser. It differs in Chromium, Firefox (Quantum), Internet Explorer (Trident) and older versions of Edge (EdgeHTML).
 
-<figure class="article__image article__image--grey">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/black-whcm-vivaldi.png"
@@ -108,7 +108,7 @@ The colour palette replacement technology depends on the browser. It differs in 
   </figcaption>
 </figure>
 
-<figure class="article__image article__image--grey">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/black-whcm-firefox.png"
@@ -126,7 +126,7 @@ In Windows 11, the set of contrasting themes has changed:
 - Dusk.
 - Night sky.
 
-<figure class="article__image article__image--grey">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/night-sky-vivaldi.png"
@@ -154,7 +154,7 @@ macOS and iOS have an Increased Contrast Mode. It increases the difference betwe
 
 Settings affect the appearance of the system and web interfaces. Unlike system windows, only the contrast level is changed on websites. Of course, the borders of elements do not become clearer by themselves.
 
-<figure class="article__image article__image--grey">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/increase-contrast-mode.png"
@@ -179,7 +179,7 @@ Transparency is customisable on Windows and macOS.
 
 These settings only affect transparency in the system interface.
 
-<figure class="article__image article__image--grey">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/transparency-mode.png"

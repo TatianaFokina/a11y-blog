@@ -74,7 +74,7 @@ ogImage: cover.jpg
 
 Обычная тень с одним цветом тоже должна быть контрастной в соотношении 3:1, а вот для градиентной тени это не важно.
 
-<figure class="article__image article__image--grey">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/pass-focus-appearence.png"
@@ -142,7 +142,7 @@ ogImage: cover.jpg
 
 Кнопки с белым фоном при фокусе обводятся рамкой внутри, толщина которой тоже 3 пикселя. Кнопки с розовым фоном при фокусе меняют свой фон на белый, они обводятся розовой рамкой, а снаружи появляется ещё одна рамка толщиной 3 пикселя.
 
-<figure class="article__image article__image--grey">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/fable-focus-style.png"
@@ -161,7 +161,7 @@ ogImage: cover.jpg
 
 У некоторых кнопок при фокусе фон с серого меняется на жёлтый, а более жирная нижняя граница увеличивается где-то на 3 пикселя.
 
-<figure class="article__image article__image--pink">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/govuk-focus-style.png"
@@ -179,7 +179,7 @@ ogImage: cover.jpg
 
 На [сайте музея Ikea](https://ikeamuseum.com/en/) при фокусе на ссылках вокруг них появляется тонкая пунктирная рамка светло-серого цвета или тёмно-серого цвета в зависимости от цвета текста. Для неё используется свойство `outline` со значением `1px dotted currentColor`.
 
-<figure class="article__image article__image--purple">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/ikea-museum-focus-style.png"

@@ -182,7 +182,7 @@ templateEngineOverride: md, njk
 
 На [сайте MDN](https://developer.mozilla.org/ru/) в некоторых кнопках и ссылках используются картинки. При этом у всех них есть текстовые альтернативы. Например, ссылка с логотипом MDN в главном меню в хедере страницы подписана с помощью `aria-label` как «MDN homepage».
 
-<figure class="article__image article__image--grey">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/mdn-svg-logo.png"
@@ -206,7 +206,7 @@ templateEngineOverride: md, njk
 
 Во-первых, `alt` полностью повторяет текст подписи к картинке в `<figcaption>`. Во-вторых, в боковом меню есть плавающая ссылка на подборку новостей и историй про Штаты. У картинки в ссылке нет `alt` или другой текстовой альтернативы.
 
-<figure class="article__image article__image--grey">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/fox-news-animation-and-link.png"
@@ -219,7 +219,7 @@ templateEngineOverride: md, njk
 
 На [сайте The Row](https://www.therow.com/) есть много проблем с текстовыми альтернативами для нетекстового контента. На странице с новинками одежды в новом зимнем сезоне у смысловых картинок вообще нет `alt`.
 
-<figure class="article__image article__image--purple">
+<figure class="article__image">
   <img
     class="article__image-item"
     src="images/the-row-images.png"
