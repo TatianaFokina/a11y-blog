@@ -110,7 +110,7 @@ templateEngineOverride: md, njk
 
 <figure class="article__image">
   <img
-    class=""
+    class="article__image-item"
     src="images/black-whcm-firefox.png"
     alt="Раздел с подкастами с главной страницы «Веб-стандарты» с системными цветами. Белый фон остался того же цвета, ссылки и границы теперь ярко-синие, а обычный текст чёрный вместо тёмно-серого."
   >
@@ -321,17 +321,29 @@ templateEngineOverride: md, njk
 
 В Firefox темы находятся в первой вкладке с инспектором. Переключатели расположены над стилями. Переключатель с иконкой луны включает имитацию тёмной схемы, с солнцем — имитацию светлой.
 
-<img
-  src="images/firefox-inspector.png"
-  alt="Вкладка «Инспектор» в Firefox. Видна панель со стилями. Сверху расположены поиск стилей, :hov, .cls, кнопка для добавления нового селектора, переключатель светлой и тёмной схем и стилей для печати."
->
+<figure class="article__image">
+  <img
+    class="article__image-item"
+    src="images/firefox-inspector.png"
+    alt="Видна панель со стилями. Сверху расположены поиск стилей, :hov, .cls, кнопка для добавления нового селектора, переключатель светлой и тёмной схем и стилей для печати."
+  >
+  <figcaption class="article__image-caption">
+    Вкладка «Инспектор» в Firefox.
+  </figcaption>
+</figure>
 
 В Safari эмуляция тёмной схемы включается в веб-инспекторе во вкладке «Элементы» (Elements). Переключатель называется «Force Dark Appearance» и находится в панели под вкладками.
 
-<img
-  src="images/safari-web-inspector.png"
-  alt="Вкладка с элементами в веб-инспекторе Safari. Видны переключатель для режима печати, тёмной схемы и другие настройки."
->
+<figure class="article__image">
+  <img
+    class="article__image-item"
+    src="images/safari-web-inspector.png"
+    alt="Видны переключатель для режима печати, тёмной схемы и другие настройки."
+  >
+  <figcaption class="article__image-caption">
+    Вкладка с элементами в веб-инспекторе Safari.
+  </figcaption>
+</figure>
 
 Можно переключить схему и вручную.
 
