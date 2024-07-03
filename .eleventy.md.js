@@ -8,18 +8,17 @@ module.exports = eleventyConfig => {
 	};
 
 	let markdownLib = markdownIt(options).disable("code");
-  	eleventyConfig.setLibrary("md", markdownLib);
+	eleventyConfig.setLibrary("md", markdownLib);
 
-	// Adds attributes for a links
 	// Save the original renderer
-    const defaultRender = markdownLib.renderer.rules.link_open || function(tokens, idx, options, env, self) {
-        return self.renderToken(tokens, idx, options);
-    };
-    markdownLib.renderer.rules.link_open = function(tokens, idx, options, env, self) {
-        tokens[idx].attrPush(['rel', 'noopener']);
-        // Call the original renderer
-        return defaultRender(tokens, idx, options, env, self);
-    };
+	const defaultRender = markdownLib.renderer.rules.link_open || function(tokens, idx, options, env, self) {
+		return self.renderToken(tokens, idx, options);
+	};
+
+	// Add attributes for a links
+	markdownLib.renderer.rules.link_open = function(tokens, idx, options, env, self) {
+		tokens[idx].attrPush(["rel", "noopener"]);
+		// Call the original renderer
+		return defaultRender(tokens, idx, options, env, self);
+	};
 }
-
-

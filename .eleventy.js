@@ -1,5 +1,5 @@
 const yaml = require("js-yaml");
-const markdownIt = require('markdown-it');
+const markdownIt = require("markdown-it");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
@@ -30,7 +30,7 @@ module.exports = function(eleventyConfig) {
 		html: false,
 		breaks: true,
 	};
-	eleventyConfig.setLibrary('md', markdownIt(markdownItOptions));
+	eleventyConfig.setLibrary("md", markdownIt(markdownItOptions));
 
 	// Collections
 	eleventyConfig.addCollection("articlesEn", (collectionApi) => {
@@ -41,8 +41,8 @@ module.exports = function(eleventyConfig) {
 	});
 
 	// Build options
-	eleventyConfig.addPassthroughCopy('src/manifest.json');
-	eleventyConfig.addPassthroughCopy('src/robots.txt');
+	eleventyConfig.addPassthroughCopy("src/manifest.json");
+	eleventyConfig.addPassthroughCopy("src/robots.txt");
 	eleventyConfig.addPassthroughCopy("src/fonts");
 	eleventyConfig.addPassthroughCopy("src/scripts");
 	eleventyConfig.addPassthroughCopy({ "src/assets/*.{svg,jpg,png}": "assets" });

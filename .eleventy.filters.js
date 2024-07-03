@@ -3,7 +3,6 @@ const path = require("node:path");
 const crypto = require("node:crypto");
 
 module.exports = eleventyConfig => {
-
 	// Dates
 	eleventyConfig.addFilter("dateFormat", function(value, format) {
 		const date = new Date(value);
@@ -56,5 +55,4 @@ module.exports = eleventyConfig => {
 
 		return `${url}?v=${assetHashes[url]}`;
 	});
-	
 }
