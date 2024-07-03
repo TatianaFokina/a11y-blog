@@ -49,3 +49,9 @@ $line-height-menu-link: 1.7;
 		padding: $gap-5x;
 	}
 }
+
+.navigation__list-item-ico {
+	width: 2rem;
+	height: auto;
+	stroke: currentColor;
+}

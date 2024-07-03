@@ -52,16 +52,25 @@ small,
 .article__note-text,
 .article__image-caption {
 	font-size: fluidSizes($font-xSmall, $font-small);
+	
 }
 
+small,
+.cards__item-date,
+.article__note-text,
+.article__image-caption {
+	line-height: $line-height-h4;
+}
+
+pre,
 code,
 kbd {
 	font-family: $mono-font-family;
-	font-size: $font-xSmall;
+	font-size: fluidSizes($font-small, $font-small);
 }
 
 .topics__item {
-	font-size: $font-xSmall;
+	font-size: fluidSizes($font-xSmall, $font-xSmall);
 }
 
 .base {

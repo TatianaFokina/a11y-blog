@@ -33,7 +33,7 @@ h2:has(+ .cards) {
 	padding: $gap-4x;
 	gap: $gap-4x;
 	background: var(--bg-part-color);
-	border-radius: 26px;
+	border-radius: $radius-26;
 
 	&:before {
 		content: "";
@@ -96,6 +96,12 @@ h2:has(+ .cards) {
 	display: inline-flex;
 	align-items: center;
 	gap: $gap-2x;
+}
+
+.cards__item-details__ico {
+	width: 1rem;
+	height: auto;
+	stroke: currentColor;
 }
 
 .cards__item-description {

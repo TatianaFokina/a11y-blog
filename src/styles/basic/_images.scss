@@ -1,36 +1,3 @@
-@import "../variables";
-@import "../mixins-and-functions";
-
-.article__image {
-	display: inline-flex;
-	flex-direction: column;
-	padding: fluidSizes($gap-8, $gap-32);
-	gap: $gap-4x;
-	background: $accent-color-2;
-	border-radius: 16px;
-	filter: var(--img-filter);
-
-	@include media(lg) {
-		width: calc(100% + 150px);
-		margin: 0 -10% 0;
-		border-radius: 24px;
-	}
-}
-
-.article__image + .article__image {
-	margin-top: $gap-8x;
-}
-
-.article__image-item {
-	box-shadow: 9px 11px 24px -26px $blue-8;
-	border-radius: 8px;
-}
-
-.article__image-caption {
-	gap: $gap-2x;
-	color: $blue-7;
-}
-
 img {
 	display: block;
 	max-width: 100%;

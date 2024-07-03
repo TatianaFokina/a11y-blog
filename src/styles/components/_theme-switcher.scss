@@ -6,7 +6,7 @@
 	padding: $gap-1x;
 	padding-inline: $gap-1x;
 	border: 3px solid var(--border-color);
-	border-radius: 32px;
+	border-radius: $radius-32;
 	user-select: none;
 }
 
@@ -14,17 +14,17 @@
 	margin: 0;
 	padding: $gap-3x $gap-4x;
 	border: 2px solid transparent;
-	border-radius: 32px;
+	border-radius: $radius-32;
 	color: var(--text-color);
 	background: transparent;
 	cursor: pointer;
 
 	&:nth-last-child(1) {
-		border-radius: 3px 32px 32px 3px;
+		border-radius: 3px $radius-32 $radius-32 3px;
 	}
 
 	&:nth-last-child(2) {
-		border-radius: 32px 3px 3px 32px;
+		border-radius: $radius-32 3px 3px $radius-32;
 	}
 
 	&[aria-pressed="true"]:focus-visible {

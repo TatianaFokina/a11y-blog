@@ -19,7 +19,7 @@ layout: _base.njk
 		{% if updated %}
 			<div class="article-header__dates-item">
 				{% include "../assets/ico-updated.svg" %}
-				{{ 'updated' | translate }}
+				{{ "updated" | translate }}
 				<time datetime="{{ updated | dateFormat("ISO") }}">{{ updated | dateFormat("readable") }}</time>
 			</div>
 		{% endif %}
@@ -31,6 +31,6 @@ layout: _base.njk
 </div>
 
 <section aria-labelledby="heading">
-	<h2 id="heading">{{ 'other articles' | translate }}</h2>
+	<h2 id="heading">{{ "other articles" | translate }}</h2>
 	{% include "article-navigation.njk" %}
 </section>
