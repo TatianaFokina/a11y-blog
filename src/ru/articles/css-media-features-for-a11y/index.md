@@ -5,7 +5,7 @@ keyTheme:
   - CSS
   - Юзабилити
 date: 2021-11-01
-update: 2024-03-07
+updated: 2024-08-07
 layout: article.njk
 templateEngineOverride: md, njk
 ---
