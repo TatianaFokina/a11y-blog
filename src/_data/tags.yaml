@@ -1,0 +1,22 @@
+ru:
+  html: "HTML"
+  wcag: "WCAG"
+  css: "CSS"
+  aria: "ARIA"
+  nav: "Навигация"
+  design: "Дизайн"
+  strategies: "Стратегии"
+  ux: UX
+  components: Компоненты
+  content: Контент
+en:
+  html: "HTML"
+  wcag: "WCAG"
+  css: "CSS"
+  aria: "ARIA"
+  nav: "Navigation"
+  design: "Design"
+  strategies: "Strategies"
+  ux: UX
+  components: Сomponents
+  content: Content
