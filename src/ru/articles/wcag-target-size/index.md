@@ -213,11 +213,11 @@ ul li {
 
 ## Что почитать
 
-- [Success Criterion 2.5.5 Target Size (Enhanced)](https://www.w3.org/TR/WCAG22/#target-size-enhanced), WCAG 2.2.
-- [Success Criterion 2.5.8 Target Size (Minimum)](https://www.w3.org/TR/WCAG22/#target-size-minimum), WCAG 2.2.
-- [Understanding Success Criterion 2.5.5: Target Size (Enhanced)](https://www.w3.org/WAI/WCAG22/Understanding/target-size-enhanced.html), WCAG 2.2.
-- [Understanding Success Criterion 2.5.8: Target Size (Minimum)](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html), WCAG 2.2.
-- [Provide buttons with a large target size](https://www.accessguide.io/guide/large-target-size), Access Guide.
-- [Touch Targets on Touchscreens](https://www.nngroup.com/articles/touch-target-size/), Аврора Харли.
-- [Fitts's Law](https://www.nngroup.com/videos/fittss-law/) (видео), Лекси Кейн.
+- [Success Criterion 2.5.5 Target Size (Enhanced)](https://www.w3.org/TR/WCAG22/#target-size-enhanced), WCAG 2.2
+- [Success Criterion 2.5.8 Target Size (Minimum)](https://www.w3.org/TR/WCAG22/#target-size-minimum), WCAG 2.2
+- [Understanding Success Criterion 2.5.5: Target Size (Enhanced)](https://www.w3.org/WAI/WCAG22/Understanding/target-size-enhanced.html), WCAG 2.2
+- [Understanding Success Criterion 2.5.8: Target Size (Minimum)](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html), WCAG 2.2
+- [Provide buttons with a large target size](https://www.accessguide.io/guide/large-target-size)
+- [Touch Targets on Touchscreens](https://www.nngroup.com/articles/touch-target-size/), Аврора Харли
+- [Fitts's Law](https://www.nngroup.com/videos/fittss-law/) (видео), Лекси Кейн
 - [Finger-Friendly Design: Ideal Mobile Touchscreen Target Sizes](https://www.smashingmagazine.com/2012/02/finger-friendly-design-ideal-mobile-touchscreen-target-sizes/), Энтони Т.

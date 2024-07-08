@@ -4,6 +4,7 @@ description: Какие пользовательские настройки бы
 keyTheme:
   - CSS
   - Юзабилити
+  - Стратегии
 date: 2021-11-01
 updated: 2024-08-07
 layout: article.njk
