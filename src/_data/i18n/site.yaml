@@ -1,10 +1,10 @@
 ru:
   site name: "Блог о цифровой доступности"
   site description: "Практические советы по цифровой доступности для фронтенд-разработчиков, QA тестировщиков и дизайнеров. Тут вы узнаете о методах создания доступных и удобных интерфейсов, стандартах, ассистивных технологиях и законах."
-  og image: "https://tatiana-fokina-blog.ru/assets/og-image.jpg"
+  og image: "https://a11y-blog.dev/assets/og-image.jpg"
   name: "Татьяна Фокина"
 en:
   site name: "Blog on Digital Accessibility"
   site description: "Practical advice on digital accessibility for frontend developers, QA testers and designers. Here you'll learn about methods of creating accessible and user-friendly interfaces, standards, assistive technologies and laws."
-  og image: "https://tatiana-fokina-blog.ru/assets/og-image.jpg"
+  og image: "https://a11y-blog.dev/assets/og-image.jpg"
   name: "Tatiana Fokina"
