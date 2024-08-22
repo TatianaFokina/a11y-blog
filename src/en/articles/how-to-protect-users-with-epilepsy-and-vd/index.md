@@ -1,6 +1,6 @@
 ---
-title: How to avoid harming users with epilepsy and vestibular impairment
-description: What if the user gets motion sickness because of a website? What if he or she has an epileptic seizure? Let's look at what interfaces for users with epilepsy and vestibular impairment should look like.
+title: Thinking about users with seizures and vestibular conditions
+description: What if the user gets motion sickness because of a website? What if he or she has an epileptic seizure? Let's look at what interfaces for users with seizures and vestibular conditions should look like.
 ogImage: cover.png
 keyTheme:
     - Usability
@@ -11,6 +11,7 @@ date: 2024-05-16
 layout: article.njk
 templateEngineOverride: md, njk
 ---
+
 Accessibility helps people not only to use interfaces without issues but also not to feel literally sick. People with epilepsy and vestibular impairment can struggle with this. In this article, I want to discuss what accessibility means for them.
 
 Let's start by talking about vestibular impairments, epilepsy, and epileptic seizures.
@@ -22,6 +23,7 @@ Many people know the feeling of motion sickness, dizziness, and nausea. It could
 **Vestibular Disorders** are related to the inner ear and the part of the brain that controls balance and eye movement.
 
 This is a large group of disorders. It includes head injuries, vestibular migraine or migraine with aura, brain tumours and more. They often have similar symptoms:
+
 - dizziness;
 - nausea;
 - blurred vision;
@@ -68,7 +70,7 @@ There are more examples of problematic interfaces in ["Your Interactive Makes Me
 
 <figure>
 
-> You don't even need an image or video to cause harm. A <div> element set to change colour and luminosity at high frequency, easily done via JavaScript, can cause real harm. And, flickering can occur everywhere. For example, "spinners" commonly used to display while pages load can easily "flicker" while spinning.
+> You don't even need an image or video to cause harm. A `<div>` element set to change colour and luminosity at high frequency, easily done via JavaScript, can cause real harm. And, flickering can occur everywhere. For example, "spinners" commonly used to display while pages load can easily "flicker" while spinning.
 <figcaption>MDN.</figcaption>
 
 </figure>
