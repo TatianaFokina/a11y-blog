@@ -6,9 +6,9 @@ ru:
   nav: "Навигация"
   design: "Дизайн"
   strategies: "Стратегии"
-  ux: UX
-  components: Компоненты
-  content: Контент
+  ux: "UX"
+  components: "Компоненты"
+  content: "Контент"
 en:
   html: "HTML"
   wcag: "WCAG"
@@ -17,6 +17,6 @@ en:
   nav: "Navigation"
   design: "Design"
   strategies: "Strategies"
-  ux: UX
-  components: Сomponents
-  content: Content
+  ux: "UX"
+  components: "Сomponents"
+  content: "Content"
