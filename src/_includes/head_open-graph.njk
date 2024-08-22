@@ -1,15 +1,20 @@
 {% set ogImageDefault = "og image" | translate %}
-{% set ogImage = page.ogImage or ogImageDefault %}
+
+{% if ogImage %}
+	{% set ogImagePath = site.url + page.url + "images/" + ogImage %}
+{% elif ogImageDefault %}
+	{% set ogImagePath = site.url + "/assets/" + ogImageDefault %}
+{% endif %}
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ site.url }}{{ page.url }}">
 <meta property="og:title" content="{{ title }}">
 <meta property="og:description" content="{{ description or 'site description' | translate | safe }}">
-<meta property="og:image" content="{{ ogImage }}">
+<meta property="og:image" content="{{ ogImagePath }}">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="{{ site.url }}{{ page.url }}">
 <meta name="twitter:title" content="{{ title }}">
 <meta name="twitter:description" content="{{ description or 'site description' | translate | safe }}">
 <meta name="twitter:site" content="{{ site.url }}{{ page.url }}">
-<meta name="twitter:image" content="{{ ogImage }}">
+<meta name="twitter:image" content="{{ ogImagePath }}">
