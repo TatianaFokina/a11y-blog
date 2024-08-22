@@ -1,6 +1,7 @@
 ---
 title: Understanding skip links
 description: How to help users to skip large chank of a page content, whose these users are, and how to implement it on your website.
+ogImage: cover.png
 keyTheme:
   - Patterns
   - HTML

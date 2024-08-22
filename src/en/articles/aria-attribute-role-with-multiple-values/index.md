@@ -1,6 +1,7 @@
 ---
 title: Role attribute with multiple values
 description: In what cases may be necessary to set multiple values for a role attribute, and how browsers and screen readers deal with this.
+ogImage: cover.png
 keyTheme:
   - ARIA
   - HTML

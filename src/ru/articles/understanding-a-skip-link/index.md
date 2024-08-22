@@ -1,6 +1,7 @@
 ---
 title: Разбираемся со skip link
 description: Как пропустить большую навигацию с помощью skip link, кому нужны такие ссылки и как их добавить на свой сайт.
+ogImage: cover.png
 keyTheme:
   - Паттерны
   - HTML
