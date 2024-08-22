@@ -1,6 +1,7 @@
 ---
 title: How to avoid harming users with epilepsy and vestibular impairment
 description: What if the user gets motion sickness because of a website? What if he or she has an epileptic seizure? Let's look at what interfaces for users with epilepsy and vestibular impairment should look like.
+ogImage: cover.png
 keyTheme:
     - Usability
     - Design
