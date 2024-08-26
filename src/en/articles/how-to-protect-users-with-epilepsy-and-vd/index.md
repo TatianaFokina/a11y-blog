@@ -42,7 +42,7 @@ There are indeed many such users. Worldwide, [about 15% of people experience mig
 
 _A seizure_ is uncontrolled increased or synchronized activity of neurons in the brain. Its effects can include dizziness, paralysis, temporary failure of internal organs, loss of consciousness, confusion, partial memory loss, and outbreaks of fear and anxiety.
 
-Seizures can occur on their own or be part of a disability. If they recur frequently, more than three times, they are considered _epilepsy_. Globally, [about 6.5% of people have epilepsy](https://www.who.int/news-room/fact-sheets/detail/epilepsy) (statistics as of 2019).
+Seizures can occur on their own or be part of a disability. If they recur frequently, more than three times, they are considered _epilepsy_. Globally, [about 6,5% of people have epilepsy](https://www.who.int/news-room/fact-sheets/detail/epilepsy) (statistics as of 2019).
 
 Seizures can be influenced not only by internal factors but also by external ones, such as light or sounds. Seizures triggered by light, sounds, and even reading are called _reflex seizures_. When there are many such seizures, a person has _reflex epilepsy (RE)_.
 
@@ -200,7 +200,7 @@ Option fourth (4) what is suitable for your browser CSS-extension.
 **Give people control over video and animation**. Users should have the ability to pause, stop, or completely hide any content that:
 
 - automatically scrolls, moves, or blinks
-- updates for more than 5 seconds
+- updates for more than five (5) seconds
 - is displayed parallel to other content.
 
 These could be parallax scrolling effects, videos, hover animations on buttons, carousels, and so on.
@@ -235,7 +235,7 @@ Another solution with GIFs is to give users a choice between video, .gif, or a s
     type="image/gif"
     media="(prefers-reduced-motion: no-preference)"
   >
-  <img src="pic.png" alt="Tex alternative">
+  <img src="pic.png" alt="Text alternative">
 </picture>
 ```
 
