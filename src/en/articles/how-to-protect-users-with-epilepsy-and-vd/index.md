@@ -3,247 +3,271 @@ title: Thinking about users with seizures and vestibular conditions
 description: What if the user gets motion sickness because of a website? What if he or she has an epileptic seizure? Let's look at what interfaces for users with seizures and vestibular conditions should look like.
 ogImage: cover.png
 keyTheme:
-    - Usability
-    - Design
-    - Animation
-    - CSS
+  - Design
+  - Animation
+  - CSS
 date: 2024-05-16
+updated: 2024-08-26
 layout: article.njk
 templateEngineOverride: md, njk
 ---
 
-Accessibility helps people not only to use interfaces without issues but also not to feel literally sick. People with epilepsy and vestibular impairment can struggle with this. In this article, I want to discuss what accessibility means for them.
+Accessibility helps users not only use interfaces without trouble but also avoid feeling physically unwell. Here, I want to discuss what accessibility means for people with seizures and vestibular conditions.
 
-Let's start by talking about vestibular impairments, epilepsy, and epileptic seizures.
+Vestibular conditions can appear spontaneously. For example, they may occur due to side effects from medications, head injuries, and even hot weather. A similar situation applies to seizures. While we are somewhat prepared for screen reader users, we cannot predict what will make a person feel unwell. Therefore, it's crucial to avoid creating barriers from the start.
 
-## Vestibular Disorders
+Let's start with the definitions of vestibular disorders, seizures, and epilepsy.
 
-Many people know the feeling of motion sickness, dizziness, and nausea. It could be happening to you because of poor sleep, a cold, and a bunch of other reasons.
+## Vestibular disorders
 
-**Vestibular Disorders** are related to the inner ear and the part of the brain that controls balance and eye movement.
+It's likely that you have experienced motion sickness, dizziness, or nausea at least once in your life. The reason could be lack of sleep, a cold, a long car journey, or various other factors.
 
-This is a large group of disorders. It includes head injuries, vestibular migraine or migraine with aura, brain tumours and more. They often have similar symptoms:
+_Vestibular disorders_ are related to the inner ear and the part of the brain that controls balance and eye movement.
 
-- dizziness;
-- nausea;
-- blurred vision;
-- headaches;
-- trouble concentrating.
+This is a large group of medical conditions, including head injuries, vestibular migraine or migraine with aura, and brain tumors. They often have similar symptoms:
 
-And the trigger can be inaccessible interfaces. Facundo Corradini in [an article on A List Apart](https://alistapart.com/article/accessibility-for-vestibular/) described how he lay in bed for hours with severe vertigo after encounters with parallax.
+- dizziness (vertigo)
+- nausea
+- blurred vision
+- eye strain
+- headaches
+- trouble concentrating
+- confusion.
 
-There are indeed many such users. There are [about 15%](https://en.wikipedia.org/wiki/Migraine#Epidemiology) of the world's people with chronic migraines alone.
+One of the triggers can be inaccessible user interfaces. Facundo Corradini, in [an article on A List Apart](https://alistapart.com/article/accessibility-for-vestibular/), described how he lay in bed for hours with severe vertigo after encountering parallax scrolling effects.
 
-## Epilepsy and seizures
+There are indeed many such users. Worldwide, [about 15% of people experience migraines](https://pubmed.ncbi.nlm.nih.gov/36693999/) (statistics as of 2023).
 
-**Epileptic seizure** is uncontrolled increased or synchronised activity of neurons in the brain. It results in seizures, paralysis, temporary failure of internal organs, loss or confusion, partial amnesia, and outbreaks of fear and anxiety.
+## Seizures and epilepsy
 
-Seizures can occur on their own or be part of entire illnesses. If they recur frequently, they are considered **epilepsy**.
+_A seizure_ is uncontrolled increased or synchronized activity of neurons in the brain. Its effects can include dizziness, paralysis, temporary failure of internal organs, loss of consciousness, confusion, partial memory loss, and outbreaks of fear and anxiety.
 
-Some statistics. [About 8-10% of people in the world](https://books.google.ru/books?id=-L5dDwAAQBAJ&pg=PA959&redir_esc=y#v=onepage&q&f=false) have had at least one epileptic seizure. In 3% they have resulted in epilepsy.
+Seizures can occur on their own or be part of a disability. If they recur frequently, more than three times, they are considered _epilepsy_. Globally, [about 6.5% of people have epilepsy](https://www.who.int/news-room/fact-sheets/detail/epilepsy) (statistics as of 2019).
 
-Seizures can be influenced not only by internal factors but also by external factors. For example, light or sounds.
+Seizures can be influenced not only by internal factors but also by external ones, such as light or sounds. Seizures triggered by light, sounds, and even reading are called _reflex seizures_. When there are many such seizures, a person has _reflex epilepsy (RE)_.
 
-Seizures triggered by light, sounds and even reading are called reflex seizures. When there are many such seizures, a person has reflex epilepsy (RE).
+Reflex epilepsy comes in several types. I am going to focus only on _photosensitive epilepsy (PSE)_. It's triggered by intense flickering light or movement. [PSE occurs in 3–5% of all people with epilepsy](https://www.epilepsy.com/what-is-epilepsy/seizure-triggers/photosensitivity/). The condition manifest between the ages of 7 and 19, but people can experience it in their adult life as well.
 
-Reflex epilepsy comes in several types. We are most interested in photosensitive epilepsy (PSE). It is triggered by intense flickering light or movement. It occurs in [5% of all people with epilepsy](https://www.seizure-journal.com/article/S1059-1311(17)30252-2/fulltext). It occurs most often between the ages of 7 and 19.
+Content that flashes, flickers, or blinks can lead to an epileptic seizure. These triggers seriously increase electrical activity in neurons.
 
-So content that flashes, flickers and flashes can lead to an epileptic seizure. It seriously increases electrical activity in neurons.
+{% note "The most dangerous spectra for people with photosensitive epilepsy are red and blue." %}
 
-{% note "The most dangerous spectra for people with light-sensitive epilepsy are red and blue-red." %}
+## Problematic content
 
-## What are the threats
+Several elements in web interfaces can potentially cause seizures or other adverse physical reactions:
 
-So who can cause an epileptic seizure or other negative physical reaction?
+- media content such as videos and GIFs
+- animated scrolling that lasts longer than 1/4 second
+- web canvas animations
+- graphics with contrasting stripes, squares, spirals, and concentric circles
+- SVG, CSS, and JavaScript animations. E.g., moving images next to text or parallax scrolling effects where foreground and background scroll simultaneously in different directions
+high contrast elements and interfaces.
 
-- Video.
-- Gifs.
-- Canvas.
-- SVG, CSS, and JS animations. For example, when there are moving images next to the text or the foreground and background are simultaneously scrolling in different directions - parallax effects.
-- Animated scrolling that lasts longer than 1/4 second.
-- Graphics with contrasting stripes, squares, spirals and concentric circles.
-- High contrast.
+I have personally experienced eye strain and nausea due to such visual elements. In my case, it was caused by [the splash screen in WebStorm 2021.1](http://mikeozornin.ru/blog/all/jetbrains-ide-splashscreens/), which was just a static image. I'm grateful to the JetBrains team for listening to feedback and reducing the saturation of the images.
 
-Not too long ago, I faced eye strain and feelings of nausea because of [splash screen in WebStorm 2021.1](http://mikeozornin.ru/blog/all/jetbrains-ide-splashscreens/) myself. It's just a static image though. Thanks to a JetBrains team for listening to the feedback and reduced the saturation of the images.
-
-There are more examples of problematic interfaces in ["Your Interactive Makes Me Sick"](https://source.opennews.org/articles/motion-sick/) by Eileen Webb. I hope your vestibular system handles this challenge better than mine.
+For more examples of problematic interfaces, I recommend reading ″[Your Interactive Makes Me Sick](https://source.opennews.org/articles/motion-sick/)″ by Eileen Webb. It provides valuable insights into this issue, though I hope your vestibular system handles the challenge better than mine did.
 
 <figure>
 
-> You don't even need an image or video to cause harm. A `<div>` element set to change colour and luminosity at high frequency, easily done via JavaScript, can cause real harm. And, flickering can occur everywhere. For example, "spinners" commonly used to display while pages load can easily "flicker" while spinning.
+> You don't even need an image or video to cause harm. A `<div>` element set to change colour and luminosity at high frequency, easily done via JavaScript, can cause real harm. And, flickering can occur everywhere. For example, ″spinners″ commonly used to display while pages load can easily ″flicker″ while spinning.
 <figcaption>MDN.</figcaption>
 
 </figure>
 
-## Tips & Tricks
+## How to protect users?
 
-It is dangerous to involve people with epilepsy and vestibular impairment in testing. So the only thing left to do is to be proactive and take into account the advice given by experts.
+It's crucial to note that directly involving people with epilepsy and vestibular disorders in testing can be potentially dangerous. Therefore, the most responsible approach is to be proactive and implement expert recommendations.
 
-So what can we do to avoid harming users?
+To ensure we don`t inadvertently harm users, consider the guidelines below.
 
-{% hiddenSpan "👉" %} The frequency of normal and red flashes is no more than 3 times per second (3 Hz). This is the minimum accessibility requirement for people with epileptic seizures.
+**Monitor flash frequency**. The rapid appearance of bright light is called _flashes_. They can be either general or red. Flashes are common in videos and animations.
 
-**A general flash** is a pair of opposite states of relative brightness when it changes by 10% or more. In this case, the relative brightness of the dark image is less than 0.8. And **red flash** is a pair of opposite transitions where there is a saturated red colour in between.
+_A general flash_ is a rapid increase in brightness by 10% or more, followed by a decrease to 0,8% or less.
 
-{% note "In addition to flashes, there are blinks. Blinking content switches between two states. It is usually needed to draw attention to an element. If the blinks don't last long and stop automatically, it's fine. If not, the requirements are the same as for flashes: no more than 3 times per second." %}
+_A red flash_ is a pair of opposite transitions involving a saturated red color.
 
-You can check video and animations with the free software [Photosensitive Epilepsy Analysis Tool (PEAT)](https://trace.umd.edu/peat/). However, it is only suitable for non-commercial purposes. For commercial purposes, there is a paid [Harding Test](https://www.hardingfpa.com).
+Besides flashes, there are also _blinks_. Blinking content switches between two states. It's usually used to draw attention to specific elements on a page.
 
-{% hiddenSpan "👉" %} If the frequency of flashes is more than 3 times per second, you can reduce their area and make it a "Small safe area". This is less than 10% of the centre of the field of view or less than 25% of the screen size. This is because the central part of the eye consists of a large number of sensors. They are more active than others in transmitting signals to the visual cortex and can overload neurons.
+The frequency of general and red flashes, as well as blinks, should not exceed 3 times per second or 3 hertz (Hz). This is the minimum accessibility requirement for people with photosensitive epilepsy.
 
-{% note "The recommended flash area for a 1024x768 ratio display with a 15-17 inch diagonal at standard eye distance (58-68 cm) is **341x256 pixels**." %}
+The best solution to the problem of flashes and blinks is to avoid them altogether. Another approach is the small safe area technique, where you reduce the size of the video or the part of the page with potentially dangerous animation. The area should occupy less than 10% of the central field of vision or less than 25% of the screen size. This is because the central part of the eye consists of a large number of sensors that more actively transmit signals to the visual cortex and can overload neurons.
 
-This isn't the most reliable solution. A user could visit the site from a mobile device and bring it too close to their eyes.
+Reducing the area of flashes and blinks is not the best solution, as users may access the site from a mobile device and hold it too close to their eyes.
 
-{% hiddenSpan "👉" %} If possible, it's best to avoid red flashes or saturated shades of red in videos and animations altogether.
+{% note "The recommended flash area for a display with a 1024 by 768 aspect ratio and a 15-17 inch diagonal at a standard viewing distance (58-68 centimeters) is 341 by 256 pixels." %}
 
-{% hiddenSpan "👉" %} Watch the contrast of the animation and do not make it too high.
+Regarding blinks, if they are short-lived and stop automatically, that's generally acceptable.
+You can check videos and animations using the free [Photosensitive Epilepsy Analysis Tool (PEAT)](https://trace.umd.edu/peat/). However, it's only suitable for non-commercial purposes. For commercial use, there's the paid [Harding Test](https://www.hardingfpa.com).
 
-{% hiddenSpan "👉" %} You can switch off the animation if it's not a key functionality. The `prefers-reduced-motion` media feature comes in handy for this.
+**Turn off animation**. You can disable animation if it's not a key functionality. The `prefers-reduced-motion` media feature is useful for this. It checks the ″Reduce Motion″ setting in macOS or the ″Show Animations″ setting in Windows. You can see how this media feature works in [W3C demo](https://www.w3.org/WAI/WCAG21/working-examples/css-reduced-motion-query/).
 
-It checks a selection of "Reduce Motion" on macOS or "Show animations" on Windows. Right now [its global support is 96.75%](https://caniuse.com/?search=prefers-reduced-motion). There's an example of how it works in the [W3C demo](https://www.w3.org/WAI/WCAG21/working-examples/css-reduced-motion-query/).
+There are no absolute values for speed, smoothness, and other animation properties. So you can rely on the experience of other developers or ask for advice from users.
 
-There're no ironclad values for speed, smoothness and other animation properties. So you can use the experience of other developers or ask users about their experience.
+Option 1: Only `prefers-reduced-motion` ([suggested by Val Head](https://github.com/jensimmons/cssremedy/issues/11#issuecomment-462867630)).
 
-[Option 1](https://github.com/jensimmons/cssremedy/issues/11#issuecomment-462867630) with `prefers-reduced-motion` only:
-
-```CSS
+```css
 @media (prefers-reduced-motion: reduce) {
-    *:not(.safe-animation),
-    *:not(.safe-animation)::before,
-    *:not(.safe-animation)::after {
-        animation-duration: 0.01s !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0s !important;
-        scroll-behavior: auto !important;
-    }
+  *:not(.safe-animation),
+  *:not(.safe-animation)::before,
+  *:not(.safe-animation)::after {
+    animation-duration: 0.01s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0s !important;
+    scroll-behavior: auto !important;
+  }
 }
 ```
 
-[Option 2](https://css-tricks.com/revisiting-prefers-reduced-motion/#taking-it-to-code) with `advantages of reduced motion' and `upgrade':
+Option 2: Combining `prefers-reduced-motion` and `update`.
 
-```CSS
+[The `update` media feature](https://www.w3.org/TR/mediaqueries-4/#update) determines whether the device can change the appearance of the site's content once it has been rendered. There are three values: `none`, `slow`, and `fast`.
+
+In this example, the `slow` value is used. It triggers when the layout changes according to normal CSS rules, but the device doesn't display changes smoothly. For example, e-ink screens or low-end smartphones.
+
+```css
 @media screen and
-    (prefers-reduced-motion: reduce), 
-    (update: slow) {
-    * {
-        animation-duration: 0.001ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.001ms !important;
-    }
+(prefers-reduced-motion: reduce),
+(update: slow) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }
 ```
-An `update` media feature from the [Media Queries Level 4](https://www.w3.org/TR/mediaqueries-4/#update) specification, which is now in candidate recommendation status. `update` determines whether the output device can change an appearance of content once it has been rendered. There are three values: `none`, `slow` and `fast`.
-
-The snippet below uses `low`. It is suitable for situations where the layout changes dynamically according to normal CSS rules, but the device doesn't display the changes smoothly. For example, e-ink screens or cheap smartphones.
 
 {% note "You can use the [Magica11y](https://magica11y.github.io) suite of utilities to work with this and other media features." %}
 
-[Option 3](https://css-tricks.com/revisiting-prefers-reduced-motion/#reduce-isnt-necessarily-remove), which has everything:
+Option 3 what has everything.
 
-```CSS
+```css
 :root {
-    --animation-duration: 250ms;
-    --transition-duration: 250ms;
+  --animation-duration: 250ms;
+  --transition-duration: 250ms;
 }
 
-@media screen and (prefers-reduced-motion: reduce), (update: slow) {
-    :root {
-        --animation-duration: 0.001ms !important;
-        --transition-duration: 0.001ms !important;
-    }
+@media screen and
+(prefers-reduced-motion: reduce),
+(update: slow) {
+  :root {
+    --animation-duration: 0.001ms !important;
+    --transition-duration: 0.001ms !important;
+  }
 }
 
-@media screen and (prefers-reduced-motion: reduce), (update: slow) {
-    * {
-        animation-duration: var(--animation-duration);
-        animation-iteration-count: 1 !important;
-        transition-duration: var(--animation-duration);
-    }
+@media screen and
+(prefers-reduced-motion: reduce),
+(update: slow) {
+  * {
+    animation-duration: var(--animation-duration);
+    animation-iteration-count: 1 !important;
+    transition-duration: var(--animation-duration);
+  }
 }
 
-@media screen and (prefers-reduced-motion: reduce), (update: fast) {
-    .c-educational-concept {
-        --animation-duration: 6000ms !important;
-        ...
-        animation-name: educational-concept;
-        animation-duration: var(--animation-duration);
-    }
+@media screen and
+(prefers-reduced-motion: reduce),
+(update: fast) {
+  .safe-animation {
+    --animation-duration: 6000ms !important;
+    animation-name: educational-concept;
+    animation-duration: var(--animation-duration);
+  }
 }
 ```
 
-[Option 4](https://web.dev/prefers-reduced-motion/#(bonus)-forcing-reduced-motion-on-all-websites), which can be added to a browser extension for personal use:
+Option 4 what is suitable for your browser CSS-extension.
 
-```CSS
+```css
 @media (prefers-reduced-motion: reduce) {
-    *,
-    ::before,
-    ::after {
-        animation-delay: -1ms !important;
-        animation-duration: 1ms !important;
-        animation-iteration-count: 1 !important;
-        background-attachment: initial !important;
-        scroll-behavior: auto !important;
-        transition-duration: 0s !important;
-        transition-delay: 0s !important;
-    }
+  *,
+  ::before,
+  ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
 }
 ```
 
-{% hiddenSpan "👉" %} If possible, add alternative styles without animation and dangerous images or give a link to a text version from pages with parallax.
+**Allow users to disable animation**. Not all users are tech-savvy and know where to find animation settings. You can add a special button in the menu or on the page that enables safe animation. This is what the developers team did on [the Animal Crossing website](https://animal-crossing.com/).
 
-{% hiddenSpan "👉" %} Not all users are advanced and know where the animation settings are. If you consider the human factor, you can add a special button in the menu. It will enable safer animations. This is what they did on an [Animal Crossing website](https://animal-crossing.com/).
+**Give people control over video and animation**. Users should have the ability to pause, stop, or completely hide any content that:
 
-{% hiddenSpan "👉" %} It should be possible to pause, stop or generally hide any information that:
+- automatically scrolls, moves, or blinks
+- updates for more than 5 seconds
+- is displayed parallel to other content.
 
-- automatically scrolls, moves, and blinks;
-- refreshes for more than 5 seconds;
-- displayed in parallel with other content.
+These could be parallax scrolling effects, videos, hover animations on buttons, carousels, and so on.
 
-For example, parallax effects or carousels. Usually, pause and stop buttons handle this.
+When a parallax scrolling is absolutely crucial, you can add alternative styles without animation and dangerous images, or provide a link to a text version of the page without parallax.
 
-Automatic video playback can be stopped by removing `autoplay` in `<video controls>`. Sound can be muted with the `muted` attribute.
+Pause, stop, or slide-switching buttons work well for controlling videos and carousels.
 
-For all animated elements, you can set `animation-play-state: paused;`. This will pause an animation by default.
+Automatic video playback can be disabled by removing `autoplay` from `<video controls>`. Sound is muted by default with the `muted` attribute.
 
-This requirement does not apply to loading animations. Users might think the loading is paused or cancelled. The same goes for ads, as they are sometimes necessary for accessing content. Hello, YouTube.
+For all elements with animation, you can set `animation-play-state: paused`. This pauses the animation by default. By the way, you can leave loading animations alone. Without them, users might think the loading is paused or canceled. The same applies to ads, as they are sometimes a necessary part of functionality for accessing content. Hello, YouTube.
 
-{% hiddenSpan "👉" %} Set a short `animation-duration` and `transition-duration` instead of `animation: none` or `transition: none`.
+Alternatively, you can set a short animation duration using `animation-duration` and `transition-duration` instead of `animation: none` or `transition: none`.
 
-{% hiddenSpan "👉" %} GIFs cause the most trouble. Users cannot control their speed or turn them off.
+**Tame GIFs**. GIFs cause the most trouble. Users can't control their speed or turn them off.
 
-A good option is to replace GIFs with videos using the `loop` attribute or with SVG animation. Use scripts to add control elements for them. For example, [gifplayer on jQuery](https://github.com/rubentd/gifplayer). Or you can add the [web component `<x-gif>`](https://github.com/geelen/x-gif).
+The best way to deal with GIFs replace them with videos or SVG animations. If you absolutely can't get rid of GIFs, add control elements using scripts. For example, [gifplayer on jQuery](https://github.com/rubentd/gifplayer/). You can even make the GIF a separate [web component `<x-gif>`](https://github.com/geelen/x-gif/).
 
-{% hiddenSpan "👉" %} Animated text is also not the most harmless part of the interface. There are no standard ways to adjust its animation yet. If it moves significantly to the side or noticeably increases/decreases in size, it can also cause seizures or dizziness. So, it's better to either completely abandon this idea or change the content slightly and smoothly.
+Another solution with GIFs is to give users a choice between video, .gif, or a static image for when animation is turn off or reduced.
 
-{% hiddenSpan "👉" %} Place a warning about dangerous content if you're unsure and can't do anything else.
+```html
+<picture>
+  <!-- For video -->
+  <source
+    srcset="animation.mp4"
+    type="video/mp4"
+    media="(prefers-reduced-motion: no-preference)"
+  >
+  <!-- For GIFs -->
+  <source
+    srcset="animation.gif"
+    type="image/gif"
+    media="(prefers-reduced-motion: no-preference)"
+  >
+  <img src="pic.png" alt="Текстовое описание">
+</picture>
+```
 
-{% hiddenSpan "👉" %} Follow a couple of simple recommendations about patterns and images. If they consist of straight contrasting lines, it's better to stop at 8. If they are waves, then place no more than 5 next to each other.
+**Animate text wisely**. Animated text is also not the most harmless part of an interface. There are no standard ways to adjust its animation yet. If it shifts significantly to the side, noticeably increases or decreases in size, it can also trigger a seizure or dizziness. So it's better to either abandon this idea altogether or change the content minimally and smoothly.
 
-## What to refer to in WCAG 2.1
+**Don't burn users' eyes**. High contrast isn't always good, especially with animation. It's best when the contrast is neither too high nor too low, or when there are color theme settings on a site itself.
 
-Accessibility criteria for people with epileptic seizures and vestibular impairment are collected in two guidelines:
-- Guideline 2.2. Sufficient time.
-    - [Criterion 2.2.2. Pause, stop, and hide](https://www.w3.org/TR/WCAG21/#pause-stop-hide) (A).
-- [Guideline 2.3. Epileptic seizures and physical reactions](https://www.w3.org/TR/WCAG21/#seizures-and-physical-reactions).
-    - Criterion 2.3.1 Three Flashes or Below Threshold (A).
-    - Criterion 2.3.2 Three Flashes (AAA).
-    - Criterion 2.3.3 Animation during interaction (AAA).
+**Check images**. Follow a couple of simple recommendations about patterns and images. If graphics consist of straight contrasting lines, it's better to stop at 8. If they're waves, place no more than 5 next to each other.
+
+**Warn about risks**. Place a warning about dangerous content if you're unsure and can't do anything else. This is often done with videos and games.
+
+## What WCAG 2.2 say?
+
+Accessibility criteria for people with seizures and vestibular conditions are presented in two guidelines:
+
+- Guideline 2.2. Sufficient time
+  - [Criterion 2.2.2. Pause, stop, and hide](https://www.w3.org/TR/WCAG22/#pause-stop-hide) (level A)
+- [Guideline 2.3. Epileptic seizures and physical reactions](https://www.w3.org/TR/WCAG22/#seizures-and-physical-reactions)
+  - Criterion 2.3.1 Three Flashes or Below Threshold (level A)
+  - Criterion 2.3.2 Three Flashes (level AAA)
+  - Criterion 2.3.3 Animation during interaction (level AAA).
 
 ***
 
 Making an interface safe is not that hard, but very important. When people with epilepsy or vestibular impairment visit a website, it's not just about being able to read a text. An inaccessible interface can make them feel worse and sometimes pose a threat to life.
 
-Vestibular impairment can appear spontaneously. For example, due to side effects from medications, head injuries, and even hot weather. The same situation applies to epileptic seizures. We are somewhat prepared for users with screen readers, but we cannot predict what will make a person feel unwell. Therefore, it is so important not to create barriers from the start.
-
 ## Further reading
 
-- [WCAG 2.1](https://www.w3.org/TR/WCAG21).
-- [Web accessibility for seizures and physical reactions](https://developer.mozilla.org/en-US/docs/Web/Accessibility/Seizure_disorders), MDN.
-- [Seizure and Vestibular Disorders](https://webaim.org/articles/seizure), WebAIM.
-- [Your Interactive Makes Me Sick](https://source.opennews.org/articles/motion-sick), Eileen Webb.
-- [Revisiting prefers-reduced-motion, the reduced motion media query](https://css-tricks.com/revisiting-prefers-reduced-motion/), Eric Bailey.
-- [Accessibility for Vestibular Disorders: How My Temporary Disability Changed My Perspective](https://alistapart.com/article/accessibility-for-vestibular), Facundo Corradini.
-- [Accessible Web Animation: The WCAG on Animation Explained](https://css-tricks.com/accessible-web-animation-the-wcag-on-animation-explained), Val Head.
-- [Designing Safer Web Animation For Motion Sensitivity](https://alistapart.com/article/designing-safer-web-animation-for-motion-sensitivity), Val Head.
-- Lots of useful stuff about accessible animation on [Val Head's blog](https://valhead.com/blog/).
+- [WCAG 2.2](https://www.w3.org/TR/WCAG22/)
+- ″[Web accessibility for seizures and physical reactions](https://developer.mozilla.org/en-US/docs/Web/Accessibility/Seizure_disorders/)″ on MDN
+- ″[Seizure and Vestibular Disorders](https://webaim.org/articles/seizure/)″ from WebAIM
+- ″[Revisiting prefers-reduced-motion, the reduced motion media query](https://css-tricks.com/revisiting-prefers-reduced-motion/)″ by Eric Bailey
+- ″[Accessible Web Animation: The WCAG on Animation Explained](https://css-tricks.com/accessible-web-animation-the-wcag-on-animation-explained)″ by Val Head
+- ″[Designing Safer Web Animation For Motion Sensitivity](https://alistapart.com/article/designing-safer-web-animation-for-motion-sensitivity)″ by Val Head
+- Lots of useful stuff about accessible animation on [Val Head's blog](https://valhead.com/blog/)
+- ″[Are animated GIFs accessible?](https://mary.codes/blog/web_accessibility/are_animated_gifs_accessible/)″ by Mary Knize.
