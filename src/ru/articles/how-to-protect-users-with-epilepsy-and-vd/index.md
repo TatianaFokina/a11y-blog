@@ -260,7 +260,7 @@ _Красная вспышка_ — пара противоположных пе
 
 ***
 
-Making an interface safe is important and not that complicated. When people with epilepsy or migraines visit a website, it's not just about their ability to read the text. An inaccessible interface can worsen their well-being and even become a threat to their life.
+Сделать интерфейс безопасным важно и не так сложно. Когда на сайт заходят люди с эпилепсией или мигренями, речь идёт не только о возможности прочитать текст. Недоступный интерфейс может ухудшить их самочувствие и даже стать угрозой для жизни.
 
 ## Полезные ссылки
 
