@@ -2,12 +2,13 @@
 title: CSS media feature to improve accessibility
 description: What custom settings come and how to take them into account in web interfaces. You will learn about media features that track animation settings, contrast, transparency, inversion, colour scheme and forced colour mode.
 keyTheme:
-    - CSS
-    - Usability
+  - CSS
+  - Usability
 date: 2024-05-09
 layout: article.njk
 templateEngineOverride: md, njk
 ---
+
 When people talk about accessibility and CSS, they often mean properties that affect the accessibility tree and screen readers. But there's another ally in the battle for accessibility interfaces — media features.
 
 Media feature is a condition for the @media CSS directive. It indicates a specific characteristic of the device or browser. For example, screen orientation (`orientation`) or display mode (`display-mode`).
@@ -145,9 +146,9 @@ Users can separately increase or decrease the contrast level in the system witho
 
 Who uses the setting:
 
-- People with visual impairments. For example, people with glaucoma.
-- People with migraines and headaches.
-- Users with old or poor-quality displays.
+- People with visual impairments. For example, people with glaucoma
+- People with migraines and headaches
+- Users with old or poor-quality displays
 - Other users who lack contrast levels due to lighting.
 
 macOS and iOS have an Increased Contrast Mode. It increases the difference between shades of grey and makes the borders of elements clearer.
@@ -171,8 +172,8 @@ Users can switch background transparency on or off. Opaque backgrounds are often
 
 A transparent background can increase cognitive load and reduce the readability of text. Therefore, this setting is used by:
 
-- People with visual impairments. For example, with astigmatism or reduced vision.
-- Users with cognitive disabilities. For example, people with dyslexia or attention deficit disorder.
+- People with visual impairments. For example, with astigmatism or reduced vision
+- Users with cognitive disabilities. For example, people with dyslexia or attention deficit disorder
 - People with migraines and headaches.
 
 Transparency is customisable on Windows and macOS.
@@ -194,9 +195,9 @@ These settings only affect transparency in the system interface.
 
 The `@media` directive has several media types. They describe the device on which the document is displayed.
 
-- `all`. All devices. It is set automatically if no other type is specified.
-- `screen`. Devices with screens. For example, phones and laptops.
-- `print`. Devices with preview and print functions. The same as printers.
+- `all`. All devices. It is set automatically if no other type is specified
+- `screen`. Devices with screens. For example, phones and laptops
+- `print`. Devices with preview and print functions. The same as printers
 - `speech`. Devices with speech synthesis. For example, screen readers and voice assistants.
 
 The `speech` media type may be interesting from the point of view of accessibility. So far it is not supported by browsers. It used to be supported by Opera browser on Presto engine but stopped after switching to Blink.
@@ -215,7 +216,7 @@ Tracks whether animation settings are selected to reduce animation intensity.
 
 There are two values:
 
-- `no-preference`, the default animation settings.
+- `no-preference`, the default animation settings
 - `reduce`, the modified animation settings.
 
 [Prefers-reduced-motion has good browser support](https://caniuse.com/prefers-reduced-motion) at 91.75%.
@@ -227,7 +228,7 @@ Setting `animation: none` to elements with animation will stop it completely.
 ```css
 @media (prefers-reduced-motion: reduce) {
   .danger-animation {
-	animation: none;
+    animation: none;
   }
 }
 ```
@@ -237,7 +238,7 @@ Another example. The site uses `scroll-behaviour` to scroll smoothly to blocks. 
 ```css
 @media (prefers-reduced-motion: no-preference) {
   html {
-	scroll-behavior: smooth;
+    scroll-behavior: smooth;
   }
 }
 ```
@@ -251,7 +252,7 @@ Parallax often makes users feel nauseous and vertigo. To make sure no one gets s
 
 @media (prefer-reduced-motion: reduce) {
   .parallax-scrolling-image {
-	position: relative;
+    position: relative;
   }
 }
 ```
@@ -259,7 +260,6 @@ Parallax often makes users feel nauseous and vertigo. To make sure no one gets s
 Animation can also be an important part of a website. Therefore, it is better to build off the content. You can always slow down animations so that they are not dangerous for users or distracting.
 
 I wrote more about this media feature and animation requirements in [post about accessibility for people with vestibular disorders and epileptic seizures](/ru/articles/how-to-protect-users-with-epilepsy-and-vd/).
-
 
 #### Preference-reduced-motion testing
 
