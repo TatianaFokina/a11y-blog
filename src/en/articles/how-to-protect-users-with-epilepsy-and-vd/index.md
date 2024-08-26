@@ -46,7 +46,7 @@ Seizures can occur on their own or be part of a disability. If they recur freque
 
 Seizures can be influenced not only by internal factors but also by external ones, such as light or sounds. Seizures triggered by light, sounds, and even reading are called _reflex seizures_. When there are many such seizures, a person has _reflex epilepsy (RE)_.
 
-Reflex epilepsy comes in several types. I am going to focus only on _photosensitive epilepsy (PSE)_. It's triggered by intense flickering light or movement. [PSE occurs in 3–5% of all people with epilepsy](https://www.epilepsy.com/what-is-epilepsy/seizure-triggers/photosensitivity/). The condition manifest between the ages of 7 and 19, but people can experience it in their adult life as well.
+Reflex epilepsy comes in several types. I am going to focus only on _photosensitive epilepsy (PSE)_. It's triggered by intense flickering light or movement. [PSE occurs in 3–5% of all people with epilepsy](https://www.epilepsy.com/what-is-epilepsy/seizure-triggers/photosensitivity/). The condition manifest between the ages of seven (7) and nineteen (19), but people can experience it in their adult life as well.
 
 Content that flashes, flickers, or blinks can lead to an epileptic seizure. These triggers seriously increase electrical activity in neurons.
 
@@ -57,7 +57,7 @@ Content that flashes, flickers, or blinks can lead to an epileptic seizure. Thes
 Several elements in web interfaces can potentially cause seizures or other adverse physical reactions:
 
 - media content such as videos and GIFs
-- animated scrolling that lasts longer than 1/4 second
+- animated scrolling that lasts longer than one quarter (1/4) second or 15 milliseconds
 - web canvas animations
 - graphics with contrasting stripes, squares, spirals, and concentric circles
 - SVG, CSS, and JavaScript animations. E.g., moving images next to text or parallax scrolling effects where foreground and background scroll simultaneously in different directions
@@ -78,7 +78,7 @@ For more examples of problematic interfaces, I recommend reading ″[Your Intera
 
 It's crucial to note that directly involving people with epilepsy and vestibular disorders in testing can be potentially dangerous. Therefore, the most responsible approach is to be proactive and implement expert recommendations.
 
-To ensure we don`t inadvertently harm users, consider the guidelines below.
+To ensure we don't unintentionally harm users, consider the guidelines below.
 
 **Monitor flash frequency**. The rapid appearance of bright light is called _flashes_. They can be either general or red. Flashes are common in videos and animations.
 
@@ -88,7 +88,7 @@ _A red flash_ is a pair of opposite transitions involving a saturated red color.
 
 Besides flashes, there are also _blinks_. Blinking content switches between two states. It's usually used to draw attention to specific elements on a page.
 
-The frequency of general and red flashes, as well as blinks, should not exceed 3 times per second or 3 hertz (Hz). This is the minimum accessibility requirement for people with photosensitive epilepsy.
+The frequency of general and red flashes, as well as blinks, should not exceed three (3) times per second or three (3) hertz (Hz). This is the minimum accessibility requirement for people with photosensitive epilepsy.
 
 The best solution to the problem of flashes and blinks is to avoid them altogether. Another approach is the small safe area technique, where you reduce the size of the video or the part of the page with potentially dangerous animation. The area should occupy less than 10% of the central field of vision or less than 25% of the screen size. This is because the central part of the eye consists of a large number of sensors that more actively transmit signals to the visual cortex and can overload neurons.
 
@@ -97,13 +97,14 @@ Reducing the area of flashes and blinks is not the best solution, as users may a
 {% note "The recommended flash area for a display with a 1024 by 768 aspect ratio and a 15-17 inch diagonal at a standard viewing distance (58-68 centimeters) is 341 by 256 pixels." %}
 
 Regarding blinks, if they are short-lived and stop automatically, that's generally acceptable.
+
 You can check videos and animations using the free [Photosensitive Epilepsy Analysis Tool (PEAT)](https://trace.umd.edu/peat/). However, it's only suitable for non-commercial purposes. For commercial use, there's the paid [Harding Test](https://www.hardingfpa.com).
 
 **Turn off animation**. You can disable animation if it's not a key functionality. The `prefers-reduced-motion` media feature is useful for this. It checks the ″Reduce Motion″ setting in macOS or the ″Show Animations″ setting in Windows. You can see how this media feature works in [W3C demo](https://www.w3.org/WAI/WCAG21/working-examples/css-reduced-motion-query/).
 
 There are no absolute values for speed, smoothness, and other animation properties. So you can rely on the experience of other developers or ask for advice from users.
 
-Option 1: Only `prefers-reduced-motion` ([suggested by Val Head](https://github.com/jensimmons/cssremedy/issues/11#issuecomment-462867630)).
+Option one (1): Only `prefers-reduced-motion` ([suggested by Val Head](https://github.com/jensimmons/cssremedy/issues/11#issuecomment-462867630)).
 
 ```css
 @media (prefers-reduced-motion: reduce) {
@@ -118,7 +119,7 @@ Option 1: Only `prefers-reduced-motion` ([suggested by Val Head](https://github.
 }
 ```
 
-Option 2: Combining `prefers-reduced-motion` and `update`.
+Option two (2): Combining `prefers-reduced-motion` and `update`.
 
 [The `update` media feature](https://www.w3.org/TR/mediaqueries-4/#update) determines whether the device can change the appearance of the site's content once it has been rendered. There are three values: `none`, `slow`, and `fast`.
 
@@ -138,7 +139,7 @@ In this example, the `slow` value is used. It triggers when the layout changes a
 
 {% note "You can use the [Magica11y](https://magica11y.github.io) suite of utilities to work with this and other media features." %}
 
-Option 3 what has everything.
+Option three (3) what has everything.
 
 ```css
 :root {
@@ -176,7 +177,7 @@ Option 3 what has everything.
 }
 ```
 
-Option 4 what is suitable for your browser CSS-extension.
+Option fourth (4) what is suitable for your browser CSS-extension.
 
 ```css
 @media (prefers-reduced-motion: reduce) {
@@ -234,7 +235,7 @@ Another solution with GIFs is to give users a choice between video, .gif, or a s
     type="image/gif"
     media="(prefers-reduced-motion: no-preference)"
   >
-  <img src="pic.png" alt="Текстовое описание">
+  <img src="pic.png" alt="Tex alternative">
 </picture>
 ```
 
@@ -242,7 +243,7 @@ Another solution with GIFs is to give users a choice between video, .gif, or a s
 
 **Don't burn users' eyes**. High contrast isn't always good, especially with animation. It's best when the contrast is neither too high nor too low, or when there are color theme settings on a site itself.
 
-**Check images**. Follow a couple of simple recommendations about patterns and images. If graphics consist of straight contrasting lines, it's better to stop at 8. If they're waves, place no more than 5 next to each other.
+**Check images**. Follow a couple of simple recommendations about patterns and images. If graphics consist of straight contrasting lines, it's better to stop at eight (8). If they're waves, place no more than five (5) next to each other.
 
 **Warn about risks**. Place a warning about dangerous content if you're unsure and can't do anything else. This is often done with videos and games.
 
