@@ -1,14 +1,17 @@
 ---
 title: Название страницы
-description: Почему у страниц должны быть названия и как их правильно написать.
+description: Почему у страниц должны быть названия и как их правильно составлять.
+ogImage: cover.png
 keyTheme:
-    - WCAG
-    - HTML
-    - Тексты
+  - WCAG
+  - HTML
+  - Контент
 date: 2022-12-30
+updated: 2024-08-27
 layout: article.njk
 templateEngineOverride: md, njk
 ---
+
 В этом посте из серии про разбор Руководств по доступности веб-контента (Web Content Accessibility Guidelines, коротко WCAG) расскажу про [критерий 2.4.2: название страницы](https://www.w3.org/TR/WCAG22/#page-titled).
 
 Это базовый критерий уровня A, который относится к принципу управляемости и к руководству про навигируемость.
@@ -65,12 +68,12 @@ templateEngineOverride: md, njk
 ```html
 <!doctype html>
 <html lang="nb-NO">
-    <head>
-        <title>Litteratur – NRK Kultur</title>
-    </head>
-    <body>
-        …
-    </body>
+  <head>
+    <title>Litteratur – NRK Kultur</title>
+  </head>
+  <body>
+     …
+  </body>
 </html>
 ```
 
@@ -79,7 +82,7 @@ templateEngineOverride: md, njk
 - Главная страница справочника MDN называется «MDN Web Docs», а отдельная страница про свойство `width` в разделе CSS — «width - CSS: Cascading Style Sheets | MDN».
 - Главная страница справочника Доки называется «Дока», а отдельная страница про свойство `width` в разделе CSS — «width — CSS — Дока».
 
-Хороший пример доступного и динамически изменяющегося заголовка — [веб-версия Notion](https://www.notion.so). Когда создаёте новую страницу, у неё стандартный `<title>` «Untitled». Он изменяется после того, как вводите название в поле для основного заголовка страницы. Главное не забывать это делать, если планируете делиться страницей с другими пользователями.
+Хороший пример доступного и динамически изменяющегося заголовка — [веб-версия Notion](https://www.notion.so/). Когда создаёте новую страницу, у неё стандартный `<title>` «Untitled». Он изменяется после того, как вводите название в поле для основного заголовка страницы. Главное не забывать это делать, если планируете делиться страницей с другими пользователями.
 
 ## Примеры барьеров
 
@@ -102,10 +105,10 @@ templateEngineOverride: md, njk
 
 ## Что почитать
 
-- [Success Criterion 2.4.2 Page Titled](https://www.w3.org/TR/WCAG22/#page-titled), WCAG 2.2.
-- [Understanding Success Criterion 2.4.2 Page Titled](https://www.w3.org/WAI/WCAG22/Understanding/page-titled.html), WCAG 2.2.
-- [Write descriptive page titles](https://www.accessguide.io/guide/descriptive-page-titles), Access Guide.
-- [Accessibility testing guide. 2.4.2 Page Titled](https://github.com/alphagov/wcag-primer/wiki/2.4.2), gov.uk.
-- [Page Title](https://dequeuniversity.com/checklists/web/page-title), Deque.
-- [Descriptive HTML page titles help users quickly understand a web page’s content](https://accessibility.iu.edu/creating-content/web-content/titles.html), Индианский университет.
-- [7 tactics that benefit both accessibility and SEO](https://www.deque.com/blog/7-tactics-that-benefit-both-accessibility-and-seo/), Мэттью Лукен.
+- [Success Criterion 2.4.2 Page Titled](https://www.w3.org/TR/WCAG22/#page-titled), WCAG 2.2
+- [Understanding Success Criterion 2.4.2 Page Titled](https://www.w3.org/WAI/WCAG22/Understanding/page-titled.html), WCAG 2.2
+- [Write descriptive page titles](https://www.accessguide.io/guide/descriptive-page-titles/), Access Guide
+- [Accessibility testing guide. 2.4.2 Page Titled](https://github.com/alphagov/wcag-primer/wiki/2.4.2/), gov.uk
+- [Page Title](https://dequeuniversity.com/checklists/web/page-title/), Deque
+- [Descriptive HTML page titles help users quickly understand a web page’s content](https://accessibility.iu.edu/creating-content/web-content/titles.html), Индианский университет
+- [7 tactics that benefit both accessibility and SEO](https://www.deque.com/blog/7-tactics-that-benefit-both-accessibility-and-seo/), Мэттью Лукен

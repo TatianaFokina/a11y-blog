@@ -2,21 +2,23 @@
 title: Видимый фокус
 description: Разбираемся с критерием о видимом клавиатурном фокусе у интерактивных элементов.
 keyTheme:
-    - WCAG
-    - Дизайн
-    - CSS
-    - Клавиатура
+  - WCAG
+  - Дизайн
+  - CSS
+  - Клавиатура
 date: 2022-12-18
+updated: 2024-08-27
 layout: article.njk
 templateEngineOverride: md, njk
 ---
+
 В этом посте из серии про разбор Руководств по доступности веб-контента (Web Content Accessibility Guidelines, коротко WCAG) расскажу про [критерий 2.4.7: видимый фокус](https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html).
 
 Критерий относится к принципу управляемости и к руководству про доступность с клавиатуры. Во WCAG 2.1 это критерий уровня AA. Во WCAG 2.2 уровень изменится на A.
 
 ## Коротко о критерии
 
-У интерфейса, с которым можно взаимодействовать с помощью клавиатуры, должен быть как минимум один способ работы с видимым **индикатором фокуса (focus indicator)**.
+У интерфейса, с которым можно взаимодействовать с помощью клавиатуры, должен быть как минимум один способ работы с видимым индикатором фокуса (focus indicator).
 
 ## Подробнее
 
@@ -48,11 +50,11 @@ templateEngineOverride: md, njk
 
 ```css
 a:focus {
-    outline: 0;
+  outline: 0;
 }
 
 button:focus {
-    outline: none;
+  outline: none;
 }
 ```
 
@@ -74,7 +76,7 @@ button:focus {
     alt="В фокусе ссылка на Elden Ring Deluxe Edition. Видна цена и скидка в 20%. После ссылки в фокусе идёт блок с похожими играми — Thymesia, Cult Lamb, Isaac, Diablo 2 и другими."
   >
   <figcaption class="article__image-caption">
-    Страница игры Elden Ring на сайте Xbox.
+    Сайт Xbox.
   </figcaption>
 </figure>
 
@@ -83,7 +85,7 @@ button:focus {
 - При фокусе на чёрной кнопке с белым текстом вокруг неё появляется тонкая чёрная рамка. Её трудно увидеть.
 - При фокусе на ссылке она никак визуально не изменяется.
 
-На [сайте Pixar](https://www.pixar.com) у всех интерактивных элементов отменены стили фокуса и используется `outline: 0`. Это можно проверить с помощью клавиши <kbd>Tab</kbd> и <kbd><kbd>Tab</kbd> + <kbd>Shift</kbd></kbd>.
+На [сайте Pixar](https://www.pixar.com/) у всех интерактивных элементов отменены стили фокуса и используется `outline: 0`. Это можно проверить с помощью клавиши <kbd>Tab</kbd> и <kbd>Tab Shift</kbd>.
 
 На [сайте PlayStation](https://www.playstation.com/en-us/) у элементов есть стили фокуса, но некоторые элементы в неинтерактивном состоянии выглядят как будто они в фокусе. Например, на скриншоте фокус сделан на кнопке «Learn More» («Узнать больше»). Это видно благодаря синей рамке вокруг неё. У ссылки «PS5 Console» точно такая же синяя рамка в неактивном состоянии. Из-за этого трудно понять, где на самом деле сейчас фокус.
 
@@ -91,10 +93,10 @@ button:focus {
   <img
     class="article__image-item"
     src="images/playstation-site.png"
-    alt="Выделена кнопка и ссылка. На кнопке «Узнать больше» сделан фокус. Он выглядит как синяя рамка со скруглёнными углами. После кнопки располодена ссылка «PS5 Console» c текстом и изображением с белой консолью и контролом, который лежит перед ней. Вокруг ссылки видна синяя рамка со скруглёнными углами, которая похожа на фокус у кнопки."
+    alt="Одинаковые стили у кнопки в фокусе и ссылки без фокуса."
    >
   <figcaption class="article__image-caption">
-    Главная страница сайта PlayStation.
+    Главная страница PlayStation.
   </figcaption>
 </figure>
 
@@ -102,14 +104,14 @@ button:focus {
 
 Критерий тестируют смешанным способом.
 
-- Найдите все интерактивные элементы с помощью <kbd>Tab или скриптом</kbd>.
+- Найдите все интерактивные элементы с помощью <kbd>Tab</kbd> или скриптом.
 - Убедитесь, что у всех элементов есть видимый фокус.
 
-Найти интерактивные элементы на странице можно разными способами. Например, использовать букмарклеты [ANDI](https://www.ssa.gov/accessibility/andi/help/install.html) или [Force Show Keyboard Focus](https://pauljadam.com/bookmarklets/focus.html). Ещё можно написать [свой небольшой скрипт](https://codepen.io/svinkle/pen/WgYRxq) и собирать интерактивные элементы в консоли в браузере.
+Найти интерактивные элементы на странице можно разными способами. Например, использовать букмарклеты [ANDI](https://www.ssa.gov/accessibility/andi/help/install.html) или [Force Show Keyboard Focus](https://pauljadam.com/bookmarklets/focus.html). Ещё можно написать [свой небольшой скрипт](https://codepen.io/svinkle/pen/WgYRxq/) и собирать интерактивные элементы в консоли в браузере.
 
 ```js
 document.addEventListener('focus', () => {
-    console.log(document.activeElement);
+  console.log(document.activeElement);
 }, true);
 ```
 
@@ -117,8 +119,8 @@ document.addEventListener('focus', () => {
 
 ## Что почитать
 
-- [Success Criterion 2.4.7 Focus Visible](https://www.w3.org/TR/WCAG22/#focus-visible), WCAG 2.2.
-- [Understanding Success Criterion 2.4.7: Focus Visible](https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html), WCAG 2.2.
-- [Ensure that focus indicator is visible](https://www.accessguide.io/guide/focus-indicator), Access Guide.
-- [Accessibility testing guide. 2.4.7 Focus Visible](https://github.com/alphagov/wcag-primer/wiki/2.4.7), gov.uk.
-- [Force Focus Tools](https://www.webaxe.org/force-focus-tools/), Web Axe.
+- [Success Criterion 2.4.7 Focus Visible](https://www.w3.org/TR/WCAG22/#focus-visible), WCAG 2.2
+- [Understanding Success Criterion 2.4.7: Focus Visible](https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html), WCAG 2.2
+- [Ensure that focus indicator is visible](https://www.accessguide.io/guide/focus-indicator/), Access Guide
+- [Accessibility testing guide. 2.4.7 Focus Visible](https://github.com/alphagov/wcag-primer/wiki/2.4.7/), gov.uk
+- [Force Focus Tools](https://www.webaxe.org/force-focus-tools/), Web Axe

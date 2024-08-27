@@ -1,15 +1,18 @@
 ---
 title: Консистентная идентификация
-description: Что такое консистентная идентификация на страницах и как избежать этот барьер.
+description: Что такое консистентная идентификация на страницах и как избежать проблем с ней.
+ogImage: cover.png
 keyTheme:
-    - WCAG
-    - Дизайн
-    - ARIA
-    - HTML
+  - WCAG
+  - Дизайн
+  - ARIA
+  - HTML
 date: 2022-10-22
+updated: 2024-08-27
 layout: article.njk
 templateEngineOverride: md, njk
 ---
+
 В Руководстве по доступности веб-контента (Web Content Accessibility Guidelines или коротко WCAG) описаны барьеры, которые лучше избегать в цифровых продуктах.
 
 Проблема WCAG в том, что не всегда понятно, что руководства хотят от дизайнеров, разработчиков и других специалистов. Так что решила написать серию постов с коротким разбором критериев простым языком.
@@ -80,27 +83,29 @@ templateEngineOverride: md, njk
   </figcaption>
 </figure>
 
-На [сайте Amazon](https://www.amazon.com/) на страницах с категориями товаров есть пагинация. В ней одинаковые по функциональности элементы с одинаковыми названиями в `aria-label` — «Current page, page 1», «Current page, page 2» и так далее.
+На [сайте Amazon](https://www.amazon.com/) на страницах с категориями товаров есть пагинация. В ней одинаковые по функциональности элементы с одинаковыми названиями в `aria-label` — «Current page, page 1», «Current page, page 2» и так далее. Для переключения между страницами есть стрелки «Вперёд» и «Назад», а также конкретные номера страниц.
 
 <figure class="article__image">
   <img
     class="article__image-item"
     src="images/amazon-first-page.png"
-    alt="На странице расположено несколько карточек товаров, выделена пагинация. Видны элементы со стрелками «Вперёд», «Назад» и номерами «1», «2», «3», «400» и многоточием между «3» и «400». Сейчас активна первая страница."
+    alt="Страница с товарами для животных."
   >
   <figcaption class="article__image-caption">
-    Страница с товарами для животных на Amazon. На ней есть пагинация с кнопками с видимыми названиями «Previous» и «Next», а также ссылки на конкретные страницы со скрытыми названиями «Current page, page 1» и так далее.
+    Пример с пагинацией на Amazon.
   </figcaption>
 </figure>
+
+Если перейти на другую страницу, блок с пагинацией будет выглядеть точно так же и располагаться в том же месте страницы.
 
 <figure class="article__image">
   <img
     class="article__image-item"
     src="images/amazon-second-page.png"
-    alt="На странице расположено несколько карточек товаров и блок с ответами на самые частые вопросы, выделена пагинация. Видны элементы со стрелками «Вперёд», «Назад» и номерами «1», «2», «3», «7» и многоточием между «3» и «7». Сейчас активна первая страница."
+    alt="Другая страница торговой площадки."
   >
   <figcaption class="article__image-caption">
-    Другая страница Amazon с пагинацией. У всех ссылок такие же видимые и скрытые подписи, как и на других страницах сайта.
+    Убеждаемся, что пагинация на Amazon везде выглядит одинаково.
   </figcaption>
 </figure>
 
@@ -118,6 +123,6 @@ templateEngineOverride: md, njk
 
 ## Что почитать
 
-- [WCAG 2.2](https://www.w3.org/TR/WCAG22/), W3C.
-- [Understanding Success Criterion 3.2.4: Consistent Identification](https://www.w3.org/WAI/WCAG22/Understanding/consistent-identification.html), WCAG 2.2.
-- [Provide consistent UI components](https://www.accessguide.io/guide/consistent-ui/), Access Guide.
+- [WCAG 2.2](https://www.w3.org/TR/WCAG22/)
+- [Understanding Success Criterion 3.2.4: Consistent Identification](https://www.w3.org/WAI/WCAG22/Understanding/consistent-identification.html), WCAG 2.2
+- [Provide consistent UI components](https://www.accessguide.io/guide/consistent-ui/), Access Guide

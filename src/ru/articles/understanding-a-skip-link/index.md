@@ -109,7 +109,7 @@ templateEngineOverride: md, njk
 
 **iOS и VoiceOver**. При переходе по skip link визуально срабатывает прокрутка, но, после свайпа, фокус перемещается на другую область, а не на содержимое основного блока. Другой баг возвращает в начало страницы, когда пытаешься перейти к следующему элементу в основном блоке.
 
-**Safari и VoiceOver**. [В ишьюс GOV.UK найдёте баг](https://github.com/alphagov/govuk-frontend/issues/2187) с десктопным Safari 14 и VoiceOver. Если нажать на skip link, а потом на клавишу со стрелкой, то фокус переместится на следующий элемент после ссылки.
+**Safari и VoiceOver**. [В ишьюс GOV.UK найдёте баг](https://github.com/alphagov/govuk-frontend/issues/2187/) с десктопным Safari 14 и VoiceOver. Если нажать на skip link, а потом на клавишу со стрелкой, то фокус переместится на следующий элемент после ссылки.
 
 **Android и TalkBack**. Скрытые ссылки просто не получают фокус. Это ошибка всей операционной системы, из-за которой на таких элементах не запускается событие фокуса.
 
@@ -312,7 +312,7 @@ templateEngineOverride: md, njk
 }
 ```
 
-Свойство `clip` устарело, и ему на смену должно прийти `clip-path`. Пока будущее не наступило окончательно, поэтому [`clip-path` поддерживается с префиксом или частично](https://caniuse.com/css-clip-path) (`-webkit-clip-path`).
+Свойство `clip` устарело, и ему на смену должно прийти `clip-path`. Пока будущее не наступило окончательно, поэтому [`clip-path` поддерживается с префиксом или частично](https://caniuse.com/css-clip-path/) (`-webkit-clip-path`).
 
 **Вариант 3** с `transform`.
 
@@ -342,16 +342,16 @@ WebAIM рекомендует не показывать ссылку неожи�
 
 Собрала небольшой список сайтов со skip link, где можно посмотреть, как они задизайнены у других. Используйте для навигации <kbd>Tab</kbd> на Windows, <kbd>Tab</kbd> или <kbd>Option Tab</kbd> на macOS.
 
-- [The New York Times](https://www.nytimes.com)
-- [BBC](https://www.bbc.com)
-- [GOV.UK](https://www.gov.uk)
-- [Deque](https://www.deque.com)
-- [WebAIM](https://webaim.org)
-- [Amazon](https://www.amazon.com)
-- [PlayStation](https://www.playstation.com)
+- [The New York Times](https://www.nytimes.com/)
+- [BBC](https://www.bbc.com/)
+- [GOV.UK](https://www.gov.uk/)
+- [Deque](https://www.deque.com/)
+- [WebAIM](https://webaim.org/)
+- [Amazon](https://www.amazon.com/)
+- [PlayStation](https://www.playstation.com/)
 - [Microsoft](https://www.microsoft.com/)
 - [World of Warcraft](https://worldofwarcraft.com/en-gb/)
-- [Reddit](https://www.reddit.com)
+- [Reddit](https://www.reddit.com/)
 
 ## Пара финальных слов
 
@@ -364,11 +364,11 @@ WebAIM рекомендует не показывать ссылку неожи�
 - [«Skip Navigation» Links](https://webaim.org/techniques/skipnav/)
 - [Use skip navigation links](https://www.a11yproject.com/posts/skip-nav-links/), Камерон Кандифф
 - [A Deep Dive on Skipping to Content](https://css-tricks.com/a-deep-dive-on-skipping-to-content/), Пол Рэдклифф
-- [Deep Dive on Skipping to Content](https://plousia.com/blog/some-thoughts-css-tricks-deep-dive-skipping-content), Сюзанна Чельсо
+- [Deep Dive on Skipping to Content](https://plousia.com/blog/some-thoughts-css-tricks-deep-dive-skipping-content/), Сюзанна Чельсо
 - [How to Create a «Skip to Content» Link](https://css-tricks.com/how-to-create-a-skip-to-content-link/), Пол Райан
 - [Implement a Skip Link for Navigation-Heavy Sites](https://benmyers.dev/blog/skip-links/), Бен Майерс
 - [Your skip links are broken](https://axesslab.com/skip-links/), Хампус Сетфош
 
 ***
 
-Спасибо [Василию Дудину](https://twitter.com/vasiliy_dudin) за помощь с редактированием ❤️
+Спасибо [Василию Дудину](https://twitter.com/vasiliy_dudin/) за помощь с редактированием ❤️

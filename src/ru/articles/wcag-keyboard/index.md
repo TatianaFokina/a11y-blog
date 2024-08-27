@@ -1,15 +1,17 @@
 ---
 title: Клавиатура
-description: Разбираемся с критерием WCAG про доступность интерфейса для клавиатуры.
+description: Разбираемся с критерием про доступность интерфейса для клавиатуры.
+ogImage: cover.png
 keyTheme:
-    - WCAG
-    - Клавиатура
-    - HTML
+  - WCAG
+  - Клавиатура
+  - HTML
 date: 2023-03-07
+updated: 2024-08-27
 layout: article.njk
 templateEngineOverride: md, njk
-ogImage: cover.jpg
 ---
+
 В этом посте из серии про разбор Руководств по доступности веб-контента (Web Content Accessibility Guidelines, а коротко WCAG) расскажу про два принципа, связанных с клавиатурой.
 
 Это критерии [2.1.1: клавиатура](https://www.w3.org/TR/WCAG22/#keyboard) базового уровня A и [2.1.3: клавиатура (без исключений)](https://www.w3.org/TR/WCAG22/#keyboard-no-exception) самого высокого уровня AAA. Они связаны с принципом управляемости и руководством про доступность с клавиатуры.
@@ -64,14 +66,14 @@ ogImage: cover.jpg
 
 Протестировать оба критерия можно только ручным способом. Для этого проверьте всю функциональность интерфейса с помощью клавиатуры.
 
-- Пройдитесь с помощью Tab по всем интерактивным элементам.
-- Повзаимодействуйте с элементами с помощью Enter и пробела и других клавиш, если они поддерживаются.
+- Пройдитесь с помощью <kbd>Tab</kbd> по всем интерактивным элементам.
+- Повзаимодействуйте с элементами с помощью <kbd>Enter</kbd> и пробела или других клавиш, если они поддерживаются.
 - Если элемент прокручивается, попробуйте это сделать с помощью стрелок вверх, вниз, вправо и влево.
 - Проверьте, есть ли альтернативный способ взаимодействия с элементом с помощью клавиатуры.
 
 ## Что почитать
 
-- [Understanding SC 2.1.1: Keyboard (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/keyboard), WCAG 2.2.
-- [Understanding SC 2.1.3: Keyboard (No Exception) (Level AAA)](https://www.w3.org/WAI/WCAG22/Understanding/keyboard-no-exception), WCAG 2.2.
-- [Make all functionality available through the keyboard](https://www.accessguide.io/guide/keyboard), Acess Guide.
-- [Accessibility testing guide. 2.1.1 Keyboard](https://github.com/alphagov/wcag-primer/wiki/2.1.1#211-keyboard), gov.uk.
+- [Understanding SC 2.1.1: Keyboard (Level A)](https://www.w3.org/WAI/WCAG22/Understanding/keyboard/), WCAG 2.2
+- [Understanding SC 2.1.3: Keyboard (No Exception) (Level AAA)](https://www.w3.org/WAI/WCAG22/Understanding/keyboard-no-exception/), WCAG 2.2
+- [Make all functionality available through the keyboard](https://www.accessguide.io/guide/keyboard/), Acess Guide
+- [Accessibility testing guide. 2.1.1 Keyboard](https://github.com/alphagov/wcag-primer/wiki/2.1.1#211-keyboard), gov.uk

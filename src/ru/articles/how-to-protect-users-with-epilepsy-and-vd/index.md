@@ -265,11 +265,11 @@ _Красная вспышка_ — пара противоположных пе
 ## Полезные ссылки
 
 - [WCAG 2.2](https://www.w3.org/TR/WCAG22)
-- [Web accessibility for seizures and physical reactions](https://developer.mozilla.org/en-US/docs/Web/Accessibility/Seizure_disorders/) (MDN)
-- [Seizure and Vestibular Disorders](https://webaim.org/articles/seizure/) (WebAIM)
-- [Revisiting prefers-reduced-motion, the reduced motion media query](https://css-tricks.com/revisiting-prefers-reduced-motion/) (Эрик Бэйли)
-- [Accessible Web Animation: The WCAG on Animation Explained](https://css-tricks.com/accessible-web-animation-the-wcag-on-animation-explained/) (Вал Хед)
-- [Designing Safer Web Animation For Motion Sensitivity](https://alistapart.com/article/designing-safer-web-animation-for-motion-sensitivity/) (Вал Хед)
+- [Web accessibility for seizures and physical reactions](https://developer.mozilla.org/en-US/docs/Web/Accessibility/Seizure_disorders/), MDN
+- [Seizure and Vestibular Disorders](https://webaim.org/articles/seizure/), WebAIM
+- [Revisiting prefers-reduced-motion, the reduced motion media query](https://css-tricks.com/revisiting-prefers-reduced-motion/), Эрик Бэйли
+- [Accessible Web Animation: The WCAG on Animation Explained](https://css-tricks.com/accessible-web-animation-the-wcag-on-animation-explained/), Вал Хед
+- [Designing Safer Web Animation For Motion Sensitivity](https://alistapart.com/article/designing-safer-web-animation-for-motion-sensitivity/), Вал Хед
 - Да в целом [блог Вал Хед](https://valhead.com/blog/)
-- [Are animated GIFs accessible?](https://mary.codes/blog/web_accessibility/are_animated_gifs_accessible/) (Мэри Книз)
-- [`prefers-reduced-motion`](https://doka.guide/a11y/prefers-reduced-motion/) (Дока)
+- [Are animated GIFs accessible?](https://mary.codes/blog/web_accessibility/are_animated_gifs_accessible/), Мэри Книз
+- [`prefers-reduced-motion`](https://doka.guide/a11y/prefers-reduced-motion/), Дока
