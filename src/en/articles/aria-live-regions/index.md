@@ -1,5 +1,5 @@
 ---
-title: What you need to know about ARIA live regions?
+title: What you need to know about ARIA live regions
 description: If you're looking to make dynamic page content accessible, ARIA provides a solution. Previously, assistive technologies struggled with these elements, but now they can be properly handled using ARIA live regions.
 ogImage: cover.png
 keyTheme:
