@@ -1,141 +1,118 @@
 ---
-title: Everything you need to know about ARIA Live Regions
-description: If you have a dynamically changing part of a page and you're thinking about making it accessible, there may be a legitimate question about how to do it. In the past, assistive technologies (including screen readers) didn't know how to handle them properly. Now the problem of accessibility of dynamically changing page content can be solved with ARIA.
+title: What you need to know about ARIA live regions
+description: If you're looking to make dynamic page content accessible, ARIA provides a solution. Previously, assistive technologies struggled with these elements, but now they can be properly handled using ARIA live regions. 
 keyTheme:
-    - HTML
-    - Screen readers
+  - ARIA
+  - HTML
+  - Screen readers
 date: 2024-05-11
+updated: 2024-08-28
 layout: article.njk
 templateEngineOverride: md, njk
 ---
 
-(This is a translation of my article from [Web Standarts](https://web-standards.ru/articles/aria-live-regions/), editor Vadim Makeev)
+If you have a dynamically changing part of a page and you're thinking about making it accessible, you may wonder how to do it. This could apply to:
 
-How to make content changes accessible.
+- Chats
+- Progress bars and timers
+- News and weather widgets
+- Alerts and notifications (new messages, likes, subscriptions)
+- Currency rates and tickers (stock quotes, indices, bonds)
+- Sports statistics, and more.
 
-If you have a dynamically changing part of a page and you're thinking about making it accessible, there may be a legitimate question about how to make it so. These could be:
+Previously, assistive technologies (including screen readers) couldn't properly process these dynamic elements. Users wouldn't know about errors or new data until they returned to a previous section or reached the end of the page. Now the accessibility of dynamically changing content can be addressed using ARIA.
 
-- Chats;
-- Progress bars and timers;
-- Widgets with news and weather forecasts;
-- Miscellaneous bugs and alerts: new post, like, subscribe;
-- Tickers (stock exchange information about stock quotes, indices, bonds), currency rates;
-- Sports statistics and much more.
+If you're unfamiliar with this acronym, _WAI-ARIA_ or simply _ARIA_ (Web Accessibility Initiative - Accessible Rich Internet Applications) is a standard consisting of special roles and attributes added to markup. These roles and attributes extend or augment the functionality of standard HTML elements or elements in another programming host languages.
 
-Previously, assistive technologies (including screen readers) didn't know how to properly process these. Users couldn't know if there was an error or new data until they returned to the previous block or reached the end of the page. Now the problem of accessibility of dynamically changing page content can be solved with ARIA.
+To create a dynamic (″alive″) part of the page where changes occur, we need to implement what ARIA terminology calls a ″Live Region.″ The WAI-ARIA 1.2 standard [defines a live region](https://www.w3.org/TR/wai-aria-1.2/#dfn-live-region) as follows:
 
-If you're not familiar with this acronym, WAI-ARIA _(Web Accessibility Initiative - Accessible Rich Internet Applications)_ or simply ARIA is a standard consisting of a set of special roles and attributes that are added to markup and extend or augment the functions of standard HTML elements.
+> _Live Regions_ are perceived areas of pages that are usually updated as a result of an external event when a user focuses somewhere else. These regions are not always updated due to user interaction with an UI. This practice has become commonplace as a result of the heavy use of Ajax.
 
-All we need to do is make the part of the page where the changes occur. In ARIA terminology, this is called a "live region." You can find [this definition](https://www.w3.org/TR/wai-aria-1.2/#dfn-live-region) in the standard:
+Thus, by using live regions, we can ensure that users of screen readers are informed about important changes on the page, even when they set keyboard focus on a different element.
 
-> **Live Regions** are perceived areas of pages that are usually updated as a result of an external event when a user focuses somewhere else. These regions are not always updated due to user interaction with an UI. This practice has become commonplace as a result of the heavy use of Ajax.
+To create an interactive area on a page, we have a few options:
 
-Thus, the main purpose of such areas is to tell screen readers how to properly handle content changes that aren't necessarily dependent on users.
+- Add new content as the page loads or after it's refreshed
+- Add an entire element to the page using JavaScript
+- Change or add only the content of an element while keeping the element itself on the page
+- Change the value of the `display` CSS property from `none` to `block`, or `visibility` from `hidden` to `visible`
+- Add or remove the `hidden` HTML attribute from an element
+- Use native HTML elements with implicit live region roles and attributes
+- Add the `aria-live` attribute or a special ARIA role to a parent element.
 
-To make an interactive area on a page, we just need to add the `aria-live=""` attribute or a special ARIA role to any parent element. Then the changes of all its child elements will become available to screen readers. They will know now how to handle updates to the contents of such elements.
+Once implemented, changes to all child elements within the live region will become accessible to screen readers. Users will then be informed about updates to the contents of these elements and know how to interact with them.
 
-There are several such roles and attributes in ARIA. Let's talk about the roles first.
+Let's talk in detail about live regions 🧟.
 
-## Interactive Area Roles
+## ″Alive″ HTML elements
 
-There aren't many ARIA roles that make part of a page an interactive area. They are used like this: `role="alert"` Here's a complete list of them:
+`<output>`
 
-- `alert`;
-- `status`;
-- `log`;
-- `timer`;
+`<progress>`
+
+## ARIA roles
+
+There aren't many ARIA roles that make part of a page a live region. Here's a complete list of these roles:
+
+- `alert`
+- `status`
+- `log`
+- `timer`
 - `marquee`.
 
-Let's deal with each role in order.
+They are used like this: `role="alert"`, `role="timer"`, etc.
 
-### Alert
+**Tell me about your status**. The `status` live region contains additional information that is not particularly urgent and describes the status of changes (also known as a status bar). It can convey information about a successful user action, a need to wait for a process to complete, or a small error occurrence. For example, this role can be assigned to a message about successful autosave of text or used when validating fields in a registration form.
 
-A type of interactive area that contains information that is important at a certain point in time. It can be an error message, a warning that appears on the screen after some user actions or without his participation (a sudden error on the server side). Such a message can be either text or sound.
+In this example, we tell that happend with changes in document:
+
+```html
+<div class="status-message" role="status">
+  Your changes haven't been saved 👋
+</div>
+```
+
+The `status` role is most commonly used and has a low announcement priority due to its default attributes `aria-live="polite"` and `aria-atomic="true"`. This means that screen readers will announce everything happening in the area, but not immediately and without interrupting other announcements.
+
+By the way, screen readers have a special command that helps users find out about a status. In NVDA, this command is invoked by pressing <kbd>Insert End</kbd>. In JAWS, it's <kbd>Insert 3</kbd>.
+
+**Check your logs**. The `log` live region, surprisingly, contains logs 😱. For example, it can be a history of messages from chat, a list of errors, and similar content. For logs, the sequence in which new information appears is important. Think of the event log in your operating system.
+
+This example shows content updates in a chat. When a user types a message in a text box, it is added to the end of the conversation.
+
+```html
+<h3>Message history</h3>
+<div role="log">
+  <ul>
+    <li>
+      Can i pet your Welsh Corgi Cardigan
+      right now i really need it
+      <time datetime="2077-04-21T12:09">12:09</time>
+    </li>
+    <li>
+      Were you hacked again?
+      <time datetime="2077-04-21T13:00">13:00</time>
+    </li>
+  </ul>
+</div>
+```
+
+By default, the `log` role is assigned `aria-live="polite"` and `aria-atomic="false"`, so screen readers don't immediately announce the latest changes.
+
+**Be on a high alert**. The `alert` live live region contains information that is important at a certain point in time. It can be an error message or a warning that appears on the screen after user actions or without their participation (such as a sudden server-side error). Such a message can be either text or sound.
 
 Let's take a look at a simple example where we warn users about something _really_ important:
 
 ```html
-<div class="warning" role="alert">
-    You've stared into the abyss for too long,
-    and now the abyss is staring back at you.
+<div class="so-warning" role="alert">
+  You've stared into the abyss for too long,
+  and now the abyss is staring back at you.
 </div>
 ```
 
-Screen reader will instantly announce it the moment it appears, and interrupt the other announcement if there is one.
+The screen reader will instantly announce it the moment it appears, interrupting any other ongoing announcement. The reason for this is the attributes `aria-live="assertive"` and `aria-atomic="true"` implicit in the `alert` role.
 
-👉 For maximum compatibility, use `role="alert"` together with the `aria-live="assertive"` attribute. That said, such an element can still be incorrectly declared by VoiceOver on iOS. Let's make some minor changes to our example:
-
-```html
-<div class="warning" role="alert" aria-live="assertive">
-    You've stared into the abyss for too long,
-    and now the abyss is staring back at you.
-</div>
-```
-
-It turns out that we duplicated the behaviour already built into `role="alert"` by using the `assertive` value of the `aria-live` attribute. The latter tells screen readers to announce changes immediately.
-
-### Status
-
-The area with this role contains additional information that is not particularly important and describes the status of changes (status bar). It can be information that a user action is successful or vice versa, that it is necessary to wait for some process to complete or that there is an error somewhere. For example, such a role can be assigned to the message about successful autosave of text or used when validating fields in the registration form.
-
-By the way, there is a special command in screen readers that helps users to find out about a status. In NVDA this command is invoked by pressing the keys <kbd>Ins End</kbd>. And by <kbd>Ins 3</kbd> in JAWS.
-
-In the example, we tell users that changes have been saved:
-
-```html
-<div class="status-message" role="status">
-    We've saved your changes automatically.
-</div>
-```
-
-The screen reader will declare this with a pause, not immediately, as in the case of `role="alert"`.
-
-👉 The behaviour of `aria-live="polite"` attribute is included in `role="status"`. It's recommended to use them together for maximum compatibility. Therefore, the example above now looks like this:
-
-```html
-<div class="status-message" role="status" aria-live="polite">
-    We've saved your changes automatically.
-</div>
-```
-
-A screen reader will announce a successful autosave with a pause and won't interrupt other announcements.
-
-### Log
-
-A type of interactive area that contains logs. For example, a history of messages from chat rooms, a list of errors, and the like. For logs, the sequence in which new information appears is important. Think of the event log in your OS.
-
-This example shows content updates in a chat room. When a user types a message in a text box, it is added to the end of the conversation.
-
-```html
-<div role="log">
-    <h4>Message history</h4>
-    <ul>
-        <li>
-            Can you borrow your Welsh corgi cardigan
-            till Monday? I really need it.
-        </li>
-    </ul>
-</div>
-```
-
-Теперь скринридер объявляет о новых комментариях после того, как пользователь перестал набирать или отправлять сообщение.
-
-👉 `role="log"` на всякий случай лучше сочетать с атрибутом `aria-live="polite"`:
-
-```html
-<div role="log" aria-live="polite">
-    <h4>Message history</h4>
-    <ul>
-        <li>
-            Can you borrow your Welsh corgi cardigan
-            till Monday? I really need it.
-        </li>
-        <li>Have you been hacked again?</li>
-    </ul>
-</div>
-```
-
-In this case, all changes will surely be announced with a pause and not interrupt other more important changes.
+An important point in using the `alert` role is that the urgent content should be dynamically appearing, not loading. Most often, this is an error message for a form that becomes visible after clicking the ″Submit″ button. Also, use this role only for text content.
 
 ### Marquee
 
@@ -152,7 +129,7 @@ In this example, we add `role="marquee"` for a block with information about curr
 
 A screen reader will announce changes in this block when the user focuses on it. Exchange rates change frequently, so constant announcements about it will only annoy users.
 
-👉 `role="marquee"` should be used together with the `aria-live="off"` attribute:
+`role="marquee"` should be used together with the `aria-live="off"` attribute:
 
 ```html
 <ul role="marquee" aria-live="off">
@@ -185,18 +162,18 @@ This role has a default behaviour built in, where the A screen reader won't anno
 
 If you want a screen reader to announce changes after a certain time interval, you can do it with JavaScript. We need to switch `aria-live="off"` to `aria-live="polite"` at the desired interval, e.g. 60 minutes.
 
-## Attributes of interactive areas
+## ARIA attributes
 
 Now let's talk about attributes that make any area of the page interactive. There are four of them in total:
 
-- `aria-live`;
-- `aria-atomic`;
-- `aria-relevant`;
+- `aria-live`
+- `aria-atomic`
+- `aria-relevant`
 - `aria-busy`.
 
 Let's take a look at each of them.
 
-### Aria-live.
+### Aria-live
 
 This attribute is used to determine how important changes that have occurred to elements are.
 
@@ -323,8 +300,7 @@ The last optional attribute is `aria-busy=""`. Tells assistive technologies whet
 
 ## Further reading
 
-- Standard [WAI-ARIA 1.2](https://www.w3.org/TR/wai-aria-1.2/).
-- Note [Hiding and Updating Content](https://web.dev/articles/hiding-and-updating-content) on web.dev.
-- Some examples of using ARIA attributes in [ARIA Live Regions](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions) on MDN.
-- [ARIA Live Regions](https://medium.com/@rishabhsrao/aria-live-regions-6cc96e1a8b72) by Rishabh Rao.
-- [How to make inline error messages accessible](https://hidde.blog/how-to-make-inline-error-messages-accessible/) by Hidde de Vries.
+- [WAI-ARIA 1.3](https://www.w3.org/TR/wai-aria-1.3/)
+- ″[ARIA Live Regions](https://medium.com/@rishabhsrao/aria-live-regions-6cc96e1a8b72/)″ by Rishabh Rao
+- ″[How to make inline error messages accessible](https://hidde.blog/how-to-make-inline-error-messages-accessible/)″ by Hidde de Vries
+- ″[What Live Regions are?](https://doka.guide/a11y/live-region/)″ on Doka Guide (a lot of demos).
