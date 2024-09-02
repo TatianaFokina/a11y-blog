@@ -7,7 +7,7 @@ keyTheme:
   - UX
   - CSS
 date: 2022-10-31
-updated: 2024-06-28
+updated: 2024-09-02
 layout: article.njk
 templateEngineOverride: md, njk
 ---
@@ -139,7 +139,7 @@ ul li {
   </figcaption>
 </figure>
 
-На [сайте NRK](https://www.nrk.no) есть блок с информацией об авторе текста и его контактами. В нём ссылка на почту, её размер `196.18px` на `41px`. Это соответствует максимальным требованиям о размере цели, так как между ссылкой и другими интерактивными элементами большое расстояние.
+На [сайте NRK](https://www.nrk.no/) есть блок с информацией об авторе текста и его контактами. В нём ссылка на почту, её размер `196.18px` на `41px`. Это соответствует максимальным требованиям о размере цели, так как между ссылкой и другими интерактивными элементами большое расстояние.
 
 <figure class="article__image">
   <img
@@ -171,7 +171,7 @@ ul li {
 - Кнопка размером `20px` на `20px`.
 - Список ссылок, высота которых меньше `24px`, а ещё между ними не такие большие расстояния.
 
-На [сайте Zara](https://www.zara.com) в выпадающем списке меню со ссылками небольшое расстояние между элементами, а их высота всего `16px`. Так что они не соответствуют минимальному требованию.
+На [сайте Zara](https://www.zara.com/) в выпадающем списке меню со ссылками небольшое расстояние между элементами, а их высота всего `16px`. Так что они не соответствуют минимальному требованию.
 
 <figure class="article__image">
   <img
@@ -210,15 +210,13 @@ ul li {
 
 На Andriod есть приложение для автоматического тестирования [Accessibility Checker](https://play.google.com/store/apps/details?id=com.google.android.apps.accessibility.auditor&hl=en_US&gl=US). В том числе приложение проверяет размеры кнопок в мобильных приложениях.
 
-В Figma, Sketch и Adobee XD можете использовать платный плагин [Adee](https://adee.co/). Ещё может помочь Stark — платный инструмент для аудита дизайн-систем. В нём есть специальная функция [Touch Targets](https://www.getstark.co/support/getting-started/using-touch-targets/). Альтернативный вариант — любой плагин для показа размеров всех элементов и расстояния между ними. К примеру, [Measure](https://www.figma.com/community/plugin/739918456607459153/measure) для Figma.
+В Figma, Sketch и Adobee XD можете использовать платный плагин [Adee](https://adee.co/). Ещё может помочь Stark — платный инструмент для аудита дизайн-систем. В нём есть специальная функция [Touch Targets](https://www.getstark.co/support/getting-started/using-touch-targets/). Альтернативный вариант — любой плагин для показа размеров всех элементов и расстояния между ними. К примеру, [Measure](https://www.figma.com/community/plugin/739918456607459153/measure/) для Figma.
 
 ## Что почитать
 
-- [Success Criterion 2.5.5 Target Size (Enhanced)](https://www.w3.org/TR/WCAG22/#target-size-enhanced), WCAG 2.2
-- [Success Criterion 2.5.8 Target Size (Minimum)](https://www.w3.org/TR/WCAG22/#target-size-minimum), WCAG 2.2
 - [Understanding Success Criterion 2.5.5: Target Size (Enhanced)](https://www.w3.org/WAI/WCAG22/Understanding/target-size-enhanced.html), WCAG 2.2
 - [Understanding Success Criterion 2.5.8: Target Size (Minimum)](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html), WCAG 2.2
-- [Provide buttons with a large target size](https://www.accessguide.io/guide/large-target-size)
+- [Provide buttons with a large target size](https://www.accessguide.io/guide/large-target-size/)
 - [Touch Targets on Touchscreens](https://www.nngroup.com/articles/touch-target-size/), Аврора Харли
 - [Fitts's Law](https://www.nngroup.com/videos/fittss-law/) (видео), Лекси Кейн
 - [Finger-Friendly Design: Ideal Mobile Touchscreen Target Sizes](https://www.smashingmagazine.com/2012/02/finger-friendly-design-ideal-mobile-touchscreen-target-sizes/), Энтони Т.
