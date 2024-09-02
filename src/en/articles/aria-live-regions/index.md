@@ -7,12 +7,12 @@ keyTheme:
   - HTML
   - Screen readers
 date: 2024-05-11
-updated: 2024-08-28
+updated: 2024-09-02
 layout: article.njk
 templateEngineOverride: md, njk
 ---
 
-(This is a translation of my article from Web Standarts, editor Vadim Makeev)
+(This is a translation of my [Russian-language article from Web Standards](https://web-standards.ru/articles/aria-live-regions/) edited by Vadim Makeev and Olga Aleksashenko. I've also rewritten some parts and provided more details based on ″[What Live Regions are?](https://doka.guide/a11y/live-region/)″ on Doka Guide).
 
 If you have a dynamically changing part of a page and you're thinking about making it accessible, you may wonder how to do it. This could apply to:
 
@@ -300,5 +300,4 @@ Finally, you can use native HTML elements such as `<output>` and `<progress>`, w
 
 - [WAI-ARIA 1.3](https://www.w3.org/TR/wai-aria-1.3/)
 - ″[ARIA Live Regions](https://medium.com/@rishabhsrao/aria-live-regions-6cc96e1a8b72/)″ by Rishabh Rao
-- ″[How to make inline error messages accessible](https://hidde.blog/how-to-make-inline-error-messages-accessible/)″ by Hidde de Vries
-- ″[What Live Regions are?](https://doka.guide/a11y/live-region/)″ on Doka Guide (a lot of demos).
+- ″[How to make inline error messages accessible](https://hidde.blog/how-to-make-inline-error-messages-accessible/)″ by Hidde de Vries.
