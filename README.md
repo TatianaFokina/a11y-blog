@@ -20,19 +20,19 @@ There is a list of technologies what you can deal in tis project:
 
 Install dependencies:
 
-```
+```bash
 pnpm i
 ```
 
 Run a test build for local development:
 
-```
+```bash
 pnpm watch
 ```
 
 Build and deployment:
 
-```
+```bash
 pnpm build+deploy
 ```
 

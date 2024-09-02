@@ -13,7 +13,7 @@ module.exports = {
 		commonjs(), // Converts CommonJS modules to ES6 for inclusion in the Rollup bundle
 		terser({
 			format: {
-				comments: false, // Удаляет комментарии
+				comments: false, // Removes comments
 			},
 		}),
 	]
