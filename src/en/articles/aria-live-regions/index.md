@@ -1,6 +1,6 @@
 ---
 title: What you need to know about ARIA live regions
-description: If you're looking to make dynamic page content accessible, ARIA provides a solution. Previously, assistive technologies struggled with these elements, but now they can be properly handled using ARIA live regions.
+description: If you're looking to make dynamic page content accessible, WAI-ARIA provides a solution. Previously, assistive technologies struggled with these elements, but now they can be properly handled using ARIA live regions.
 ogImage: cover.png
 keyTheme:
   - ARIA
@@ -12,6 +12,8 @@ layout: article.njk
 templateEngineOverride: md, njk
 ---
 
+(This is a translation of my article from Web Standarts, editor Vadim Makeev)
+
 If you have a dynamically changing part of a page and you're thinking about making it accessible, you may wonder how to do it. This could apply to:
 
 - Chats
@@ -21,7 +23,7 @@ If you have a dynamically changing part of a page and you're thinking about maki
 - Currency rates and tickers (stock quotes, indices, bonds)
 - Sports statistics, and more.
 
-Previously, assistive technologies (including screen readers) couldn't properly process these dynamic elements. Users wouldn't know about errors or new data until they returned to a previous section or reached the end of the page. Now the accessibility of dynamically changing content can be addressed using ARIA.
+Previously, assistive technologies (particularly screen readers) couldn't properly process these dynamic elements. Users wouldn't know about errors or new data until they returned to a previous section or reached the end of the page. Now the accessibility of dynamically changing content can be addressed using ARIA.
 
 If you're unfamiliar with this acronym, _WAI-ARIA_ or simply _ARIA_ (Web Accessibility Initiative - Accessible Rich Internet Applications) is a standard consisting of special roles and attributes added to markup. These roles and attributes extend or augment the functionality of standard HTML elements or elements in another programming host languages.
 
@@ -31,25 +33,154 @@ To create a dynamic (″alive″) part of the page where changes occur, we need 
 
 Thus, by using live regions, we can ensure that users of screen readers are informed about important changes on the page, even when they set keyboard focus on a different element.
 
-To create an interactive area on a page, we have a few options:
+First of all, we need to create changes on a page. Basically, it's all about manipulating HTML elements and their content. For that, you can do these:
 
-- Add new content as the page loads or after it's refreshed
-- Add an entire element to the page using JavaScript
+- Add or delete a content as the page loads or after it's refreshed
+- Add or delete an element to the page using JavaScript
 - Change or add only the content of an element while keeping the element itself on the page
 - Change the value of the `display` CSS property from `none` to `block`, or `visibility` from `hidden` to `visible`
-- Add or remove the `hidden` HTML attribute from an element
-- Use native HTML elements with implicit live region roles and attributes
-- Add the `aria-live` attribute or a special ARIA role to a parent element.
+- Add or remove the `hidden` HTML attribute from an element.
 
-Once implemented, changes to all child elements within the live region will become accessible to screen readers. Users will then be informed about updates to the contents of these elements and know how to interact with them.
+The second step is all about creating a live region where any of the changes from the previous list happen. For this purpose, we have two options: Use native HTML elements and a set of special ARIA roles and attributes. Once implemented, changes to all child elements within the live region will become accessible to screen readers.
 
-Let's talk in detail about live regions 🧟.
+## HTML elements
 
-## ″Alive″ HTML elements
+Unfortunately, there are not many native HTML elements for live regions (at least for now). One of them is the `<output>` element.
 
-`<output>`
+`<output>` used to display results. These could be mathematical calculations or the correct missing word in a sentence for grammar tests. Another less obvious use case is for pop-up notifications or toasts 🧇. These are alerts that slide in at the bottom or top of the screen and disappear after some time.
 
-`<progress>`
+```html
+<button>Save</button>
+
+<div>
+  <output>
+    <!-- Message text added by JavaScript -->
+  </output>
+  <button aria-label="Close">X</button>
+</div>
+```
+
+The content of `<output>` is automatically read by screen readers thanks to the implicit `status` role. This is one of the commonly use live region roles. The role has a low announcement priority, so screen readers will announce changes inside `<output>` after other, higher-priority content. For example, after a message that a button has been pressed, or after an error text with the `alert` role.
+
+Now `<output>` is not yet supported in all browsers and by all screen readers. To be safe, explicitly assign the `status` role to the element.
+
+```html
+<output role="status">
+  <!-- Message text added by JavaScript -->
+</output>
+```
+
+The second HTML element is `<progress>`. It's used for task completion indicators, also known as progress bars. This could be an indicator for file uploading or clearing a folder with deleted emails.
+
+Technically speaking, the `<progress>` element doesn't create a live region, but screen readers still announce the loading progress in percentages or with a special sound notification.
+
+When you use `<progress>`, don't forget to set the `max` and `value` attributes for it. Without them, screen readers won't be able to track the loading progress when it has a clear beginning and end. So, change the value attribute using JavaScript and explicitly set the `max` value.
+
+`<progress>` should also have a label so users understand what's being loaded. Use `<label>` for a visible element's name, and `aria-label` for a label accessible only to assistive technologies.
+
+```html
+<label for="progress-bar">Deleting old emails</label>
+<progress id="progress-bar" max="100" value="0"></progress>
+```
+
+## ARIA attributes
+
+Let's start with ARIA attributes that help us create a live region on any area of the page. The primary attribute for this purpose is `aria-live`. Other attributes allows us to set up how changes in the region should be announced.
+
+The `aria-live` attribute is commonly used one. It determines how important changes are. By default, almost all HTML elements have the `off` value. Such parts of a page could be changed, but users will only learn that's something is going on if they have focused on them or on elements inside.
+
+<aside>
+
+By the way, WAI-ARIA specifies that in some cases assistive technologies may override the values of the `aria-live` attribute and announce any changes instantly.
+
+</aside>
+
+The second value of `aria-live` is `polite`. It indicates a low priority of announcement. Screen readers pause before such an announcement, don't interrupt current tasks, and wait until a user stops interacting with the interface.
+
+`aria-live="polite"` is suitable for notifications about new posts, likes, and autosaves. In this example, we show the status message using JavaScript after the button is clicked.
+
+```html
+<form>
+  <!-- Other form elements -->
+  <button
+    type="submit"
+    aria-describedby="success"
+  >
+    Send
+  </button>
+  <span id="success" aria-live="polite">
+    We have received your application. Processing will take
+    one eternity.
+  </span>
+</form>
+```
+
+`aria-live="assertive"` indicates the highest priority level of announcements. Such changes will be announced immediately, while changes with lower priority will be queued and announced later. The WAI-ARIA standard doesn't recommend using this value when there's no immediate need to notify users of changes. Such cases would be a server error or when data hasn't been saved.
+
+```html
+<form>
+  <label for="devil-fruit">Devil fruit</label>
+  <input type="text" id="devil-fruit">
+  <button type="submit">Save settings</button>
+</form>
+
+<div id="error" aria-live="assertive">
+  Your settings weren't saved.
+  Please try again.
+</div>
+```
+
+The `aria-atomic` attribute describes the amount of changes that need to be announced. This can be the entire live region or a part of it. The attribute is extremely useful for timers.
+
+The attribute has only two values, default `false` and `true`. When choosing the right value for `aria-atomic`, you need to understand whether the context is important for understanding changes. In most cases, leaving the default value is the best idea.
+
+If you use `aria-atomic="true"` in a timer, assistive technologies will correctly announce the current time: First the hours, even if they haven't changed, then the minutes. Without this attribute, screen readers will only announce the changed minutes.
+
+```html
+<div role="timer" aria-live="polite" aria-atomic="true">
+  <span id="timer-hours"></span>
+  <span id="timer-mins"></span>
+</div>
+```
+
+The `aria-busy` attribute lets assistive technologies know an element is currently changing and that they should not announce anything yet, but wait for these changes to complete.
+
+`aria-busy` attribute has two possible values: `false` and `true`. By default, if the attribute is not specified, it is assumed to be `false`.
+
+It makes sense to use the attribute when the page is auto-updating. Something has been removed, something has been added, and so on. For example, a feed like in social media. In this cases, you can set `aria-busy="true"` for the entire region during loading, and then remove it. This way, screen readers will only announce the changes when the user clicks the ″Refresh Feed″ button and all elements have loaded.
+
+```html
+<div role="feed" aria-busy="true">
+  <!-- Here all posts are uploading -->
+</div>
+```
+
+To ensure that all changes is declared, we'll first add the `aria-busy` attribute with the `true` value and then use JavaScript to replace its with `false` or remove it altogether when all changes are complete.
+
+The `aria-relevant` attribute informs screen readers about which type of changes to announce. This can be the addition of text or elements, their removal, or all of these.
+
+You can set for `aria-relevant` a few values:
+
+- `additions` for added elements
+- `text` for added text
+- `removals` for removed content
+- `all` when all types of changes in the live region are important.
+
+By default, the attribute is set to `additions text`, which indicates that text has been changed and there's new information on the page.
+
+In fact, there are few real-world scenarios for using this attribute. It either [doesn't work in many browsers and screen readers](https://github.com/w3c/aria/issues/712/), or it's advised not to use it at all.
+
+The attribute was intended to be particularly useful in cases like a chat or updating a friends list. For example, when a friend has gone offline and is no longer available, we could use `aria-relevant` to let a screen reader user know. We would need to set `aria-relevant="all"` for the list. Then, some screen readers should announce that a contact has been deleted. However, this only works in JAWS when a child item is deleted (it no longer works with a parent item.) VoiceOver and NVDA aren't affected by this attribute.
+
+```html
+<ul
+  id="friend-list"
+  aria-live="polite"
+  aria-relevant="additions removals"
+>
+  <!-- Links on friends profiles -->
+</ul>
+```
 
 ## ARIA roles
 
@@ -61,7 +192,7 @@ There aren't many ARIA roles that make part of a page a live region. Here's a co
 - `timer`
 - `marquee`.
 
-They are used like this: `role="alert"`, `role="timer"`, etc.
+They are used like this: `role="alert"`, `role="timer"`, and so on.
 
 **Tell me about your status**. The `status` live region contains additional information that is not particularly urgent and describes the status of changes (also known as a status bar). It can convey information about a successful user action, a need to wait for a process to complete, or a small error occurrence. For example, this role can be assigned to a message about successful autosave of text or used when validating fields in a registration form.
 
@@ -76,6 +207,21 @@ In this example, we tell that happend with changes in document:
 The `status` role is most commonly used and has a low announcement priority due to its default attributes `aria-live="polite"` and `aria-atomic="true"`. This means that screen readers will announce everything happening in the area, but not immediately and without interrupting other announcements.
 
 By the way, screen readers have a special command that helps users find out about a status. In NVDA, this command is invoked by pressing <kbd>Insert End</kbd>. In JAWS, it's <kbd>Insert 3</kbd>.
+
+**Be on a high alert**. The `alert` live live region contains information that is important at a certain point in time. It can be an error message or a warning that appears on the screen after user actions or without their participation (such as a sudden server-side error). Such a message can be either text or sound.
+
+Let's take a look at a simple example where we warn users about something _really_ important:
+
+```html
+<div class="so-warning" role="alert">
+  You've stared into the abyss for too long,
+  and now the abyss is staring back at you.
+</div>
+```
+
+Keep in mind that the changing content should be textual and dynamically appear, not load. For example, an error message that becomes visible after clicking the ″Submit″ button in a form.
+
+Screen readers will instantly announce urgent changes, interrupting any ongoing announcements. This behavior is due to the attributes `aria-live="assertive"` and `aria-atomic="true"` which are implicit in the `alert` role.
 
 **Check your logs**. The `log` live region, surprisingly, contains logs 😱. For example, it can be a history of messages from chat, a list of errors, and similar content. For logs, the sequence in which new information appears is important. Think of the event log in your operating system.
 
@@ -100,204 +246,55 @@ This example shows content updates in a chat. When a user types a message in a t
 
 By default, the `log` role is assigned `aria-live="polite"` and `aria-atomic="false"`, so screen readers don't immediately announce the latest changes.
 
-**Be on a high alert**. The `alert` live live region contains information that is important at a certain point in time. It can be an error message or a warning that appears on the screen after user actions or without their participation (such as a sudden server-side error). Such a message can be either text or sound.
-
-Let's take a look at a simple example where we warn users about something _really_ important:
-
-```html
-<div class="so-warning" role="alert">
-  You've stared into the abyss for too long,
-  and now the abyss is staring back at you.
-</div>
-```
-
-The screen reader will instantly announce it the moment it appears, interrupting any other ongoing announcement. The reason for this is the attributes `aria-live="assertive"` and `aria-atomic="true"` implicit in the `alert` role.
-
-An important point in using the `alert` role is that the urgent content should be dynamically appearing, not loading. Most often, this is an error message for a form that becomes visible after clicking the ″Submit″ button. Also, use this role only for text content.
-
-### Marquee
-
-This kind of area contains information that changes rapidly. This role is similar to `log`, but in this case the sequence in which the information is updated is irrelevant. A simple example where `role="marquee"` might come in handy is tickers and exchange rates.
+**Sell me this pen**. The `marquee` live region contains information that changes rapidly. This role is similar to `log`, but in this case the sequence in which the information is updated is irrelevant. A simple example where the `marquee` role might come in handy is tickers and exchange rates.
 
 In this example, we add `role="marquee"` for a block with information about currency rates:
 
 ```html
+<h3>Current currency rates</h3>
 <ul role="marquee">
-    <li>1 yuan for 9999.56 ₽</li>
-    <li>1 frontendcoin for 100000000000.32 ₽</li>
+  <li>999 USD = 1 Septim</li>
+  <li>333 EUR = 1 Septim</li>
 </ul>
 ```
 
-A screen reader will announce changes in this block when the user focuses on it. Exchange rates change frequently, so constant announcements about it will only annoy users.
+The `marquee` role contains the attribute `aria-live="off"` by default, so the role has no announcement priority. Screen readers will not report changes in such an area without focus on it, even if users are not currently interacting with the page.
 
-`role="marquee"` should be used together with the `aria-live="off"` attribute:
-
-```html
-<ul role="marquee" aria-live="off">
-    <li>1 yuan for 9999.56 ₽</li>
-    <li>1 frontendcoin for 100000000000.32 ₽</li>
-</ul>
-```
-
-We've simply duplicated the default `role="marquee"` behaviour for maximum compatibility.
-
-### Timer
-
-This role is needed for areas that contain counters that count down and backward. For example, a countdown timer, clock, or stopwatch.
+**What you waiting for?**. The `timer` live region is any area where a countdown or regular time count is displayed. For example, a countdown timer, clock, or stopwatch.
 
 ```html
-<div role="timer">
-    <!-- Time is rapidly running out here -->
+<div
+  role="timer"
+  aria-atomic="true"
+>
+  <span id="clock-mins"></span>
+  <span id="clock-secs"></span>
 </div>
 ```
 
-This role has a default behaviour built in, where the A screen reader won't announce changes to the timer, and the user will only know about them when focusing on it.
+The `timer` role has no announcement priority, so it's set to `aria-live="off"` by default. Therefore, it's recommended to additionally use `aria-live="polite"` and `aria-atomic="true"` with it. If you want a screen reader to announce changes after a certain time interval, you can do it with JavaScript. Just switch `aria-live="off"` to `aria-live="polite"` at the interval what you need, e.g., every 60 minutes.
 
-👉 The element with `role="timer"` should also be set to the `aria-live="off"` attribute for full compatibility with all assistive devices and browsers:
+## Wrapping up
 
-```html
-<div role="timer" aria-live="off">
-    <!-- Time is rapidly running out here -->
-</div>
-```
+If you have a part of your page whose content changes, you need to make it a live region. Assistive technologies will then be able to keep users informed about all the changes. You can make such a part a live region by using ARIA roles such as `status`, `alert`, `log`, `marquee`, and `timer`. Another way is using the `aria-live` attribute.
 
-If you want a screen reader to announce changes after a certain time interval, you can do it with JavaScript. We need to switch `aria-live="off"` to `aria-live="polite"` at the desired interval, e.g. 60 minutes.
+The use cases for ARIA live regions roles:
 
-## ARIA attributes
+- `status` for less important notifications: Autosave messages, form validation feedback
+- `alert` for important and time-sensitive information: Server errors, lost internet connection
+- `log` for situations where the sequence of information updates is important: Message history, list of system errors
+- `marquee` for frequently updating information: Tickers, currency rates, forecast widgets
+- `timer` for a part of a page where we count down or up: Stopwatch, timers, pomodoro timer
 
-Now let's talk about attributes that make any area of the page interactive. There are four of them in total:
+The `aria-live` ARIA attribute is responsible for how urgently changes need to be announced. In most cases, there's no urgency to announce changes, so `aria-live="polite"` comes in handy. Sometimes, when it's an important message, such as a critical error, you can use `aria-live="assertive"`.
 
-- `aria-live`
-- `aria-atomic`
-- `aria-relevant`
-- `aria-busy`.
+Other ARIA live regions attributes are optional and provide assistive technologies with more details about the amount of changes, their type, and so on. Here is the list of them:
 
-Let's take a look at each of them.
+- `aria-atomic` affects whether a screen reader announces the entire region or only that part where changes occured
+- `aria-busy` indicates whether the element's content is currently being updated or not.
+- `aria-relevant` defines the type of content changes to be announced
 
-### Aria-live
-
-This attribute is used to determine how important changes that have occurred to elements are.
-
-That is, the values of this attribute reflect how urgently and quickly assistive technologies need to inform users of these changes. The attribute has three values: `off`, `polite`, and `assertive`.
-
-- `off` (default value) - indicates the lowest priority, so such changes aren't announced. This behaviour is built into elements with `role="marquee"` and `role="timer"`. It can be set to areas that aren't important or change too quickly.
-- `polite` - indicates a low priority level. It is used when there are changes to an area that assistive technologies don't need to announce instantly. Screen readers pause before such an announcement, don't interrupt current tasks and wait until a user stops interacting with the interface. This is how elements with `role="status"` and `role="log"` behave. It's suitable for notifications about new posts, likes, autosaves and the like.
-- `assertive` - indicates the highest priority level. Such changes will be announced immediately, while changes with lower priority will be queued and announced later. This is how elements with `role="alert"` behave, so this attribute can be used to announce important changes, for example, a server error or that data hasn't been saved. The specification doesn't recommend using this value when there's no immediate need to notify users of changes.
-
-Here are a couple of simple examples of using `aria-live="polite"` and `aria-live="assertive"`.
-
-In this example with `aria-live="polite"` the name of the dish in the paragraph is changed when the button is clicked using the script.
-
-```html
-<p aria-live="polite">My favourite dish is
-    <span id="food">lutefisk</span>.
-</p>
-
-<button type="button">Next dish</button>
-```
-
-A screen reader will pause before an announcement.
-
-Here we have a form with several settings and a save button. If the changes aren't saved, a message about it should appear. Let's set it to `aria-live="assertive"`:
-
-```html
-<form>
-    <p>
-        <label for="devil-fruit">Devil fruit</label>
-        <input type="text" id="devil-fruit">
-    </p>
-    …
-    <button type="submit">Save settings</button>
-</form>
-
-<div class="alert-window" role="alert" aria-live="assertive">
-    Your settings weren't saved,
-    try again, yo-ho-ho!
-</div>
-```
-
-Here a screen reader announces it immediately.
-
-❗ The WAI-ARIA standard also specifies that in some cases assistive technologies may override the values of the `aria-live` attribute and announce any changes instantly.
-
-### Aria-atomic
-
-This attribute is optional and affects the extent to which assistive technologies will announce changes: the whole content or just the changed part of it.
-
-The attribute has only two values, `false` and `true`.
-
-- `false` (default value) - the value when assistive technologies will only report changes.
-- `true` - with this value all content is declared, including the changed part.
-
-When choosing the right value for `aria-atomic=""`, you need to understand whether the context is important for understanding changes. In most cases, leaving the default value is sufficient.
-
-In this example, it's important to keep the context, so you can use `aria-atomic="true"`:
-
-```html
-<p aria-live="polite" aria-atomic="true">My favourite dish is
-    <span id="food">lutefisk</span>.
-</p>
-
-<button type="button">Next dish</button>
-```
-
-Now a screen reader will read out the whole sentence, not just the part that changes after the button is clicked.
-
-### Aria-relevant
-
-The purpose of this attribute is to tell assistive technologies exactly what changes have taken place on the page and therefore in the accessibility tree. This could be removing old content or adding new content. The attribute is optional.
-
-`aria-relevant=""` can contain one or more values separated by a space.
-
-- `additions` - new information has been added to the page.
-- `removals` - information has been removed.
-- `text` - new text or equivalent information has been added, such as the new content of the `alt` attribute.
-- `additions text` **(default value)** indicates that a text has been changed and there's a piece of new information on the page.
-- `all` - all possible values. Equivalent to the ``additions removals text`` value.
-
-In fact, there are few real-world scenarios for using this attribute. It either [doesn't work in many browsers and screen readers](https://github.com/w3c/aria/issues/712), or it's [advised not to use it at all](https://medium.com/dev-channel/why-authors-should-avoid-aria-relevant-5d3164fab1e3) and use alternative methods.
-
-The most realistic scenario for using it is a friends list. When a friend has gone offline and is no longer available, we can use this attribute to let a user know. We need to set `aria-relevant="all"` for the list. Then some screen readers will announce that a contact has been deleted. This works in JAWS when a child item is deleted (it no longer works with a parent item). VoiceOver and NVDA aren't affected by this attribute.
-
-### Aria-busy
-
-`aria-busy=""` lets assistive technologies know whether an element's content is currently being updated or not. The attribute makes sense to apply when the page is auto-updating content. Something has been removed, something has been added, some part of it has been changed, and we need to be informed about it all at once in one go. This can be useful when our page has sports statistics that are updated in real-time, a text document that can be edited by several people, some news widget or a weather widget.
-
-`aria-busy=""` has two values, `false` and `true`.
-
-- `false` (default value) - with this value, assistive technologies don't wait for changes to complete.
-- `true` - this value tells assistive technologies that they need to wait until an element has finished changing, at which point they can collect all changes and make an announcement. That is, while the content is updating, screen reader users, for example, won't be able to read that updating part.
-
-In the example below, we have sports scores that are updated regularly during competitions:
-
-```html
-<h2>Current score</h2>
-<p role="score" aria-live="polite" aria-busy="true">9:0</p>
-```
-
-To ensure that all information is declared after all changes, we'll first add `aria-busy` attribute with a value of `true` and then use JavaScript to replace its value with `false` or remove it altogether when all changes are complete.
-
-## Summary
-
-If you have a part of your page whose content changes, you need to make it an interactive area. Screen readers will then be able to keep their users informed about all the changes. You can make such a part interactive by using `role="alert"`, `role="status"`, `role="log"`, `role="marquee"`, `role="timer"` and `aria-live` attribute.
-
-Use `role="alert"` for important errors and warnings. For better compatibility, add it for necessary elements together with the `aria-live="assertive"` and `aria-atomic="true"` attribute (optional).
-
-`role="status"` is suitable for reporting less important errors and warnings. For example, an autosave message, an incorrectly filled field, and the like. This role should be combined with the `aria-live="polite"` attribute for compatibility.
-
-If you need to make message history, error list and anything where the sequence of information updates is important, use `role="log"`. For greater compatibility, use the `aria-live="polite"` attribute along with it.
-
-When you have tickers, currency rates or any other element on your page where information changes quickly, then set `role="marquee"` for them. For compatibility, supplement it with `aria-live="off"`.
-
-For a timer, counter or stopwatch set `role="timer"`. Don't forget `aria-live="off"` for better compatibility.
-
-`aria-live=""` is responsible for how urgently changes need to be announced. Where changes don't need to be announced, use `aria-live="off"`. In most cases there's no urgency to announce changes, so `aria-live="polite"` comes in handy. Sometimes, when it's an important message, such as a server error, you can use `aria-live="assertive"`.
-
-`aria-atomic=""` is an optional attribute. It affects whether a screen reader announces a context or only announces changes. By default, all elements are set to `aria-atomic="false"`, meaning screen readers only report content changes. If you change it to `aria-atomic="true"`, screen readers will read out the whole thing, including the unchanged part. In most cases, there's no need to change the default behaviour.
-
-Another optional attribute is `aria-relevant=""`. It is needed to define the type of content changes. It has several values, which can be listed with a space. There are few real-world usage scenarios (deleting or adding a friend to your friend list), and many A screen readers ignore it.
-
-The last optional attribute is `aria-busy=""`. Tells assistive technologies whether the element's content is currently being updated or not. By default, elements are set to `aria-busy="false"`. Screen readers announce changes without waiting for them to complete. In some cases, you can use `aria-busy="true"` when you want to wait for all updates. May be useful for sports statistics or a text document in group edit mode.
+Finally, you can use native HTML elements such as `<output>` and `<progress>`, which have implicit live region behavior.
 
 ## Further reading
 
