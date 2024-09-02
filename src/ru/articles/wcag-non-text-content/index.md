@@ -1,6 +1,7 @@
 ---
 title: Нетекстовое содержимое
 description: Что такое нетекстовое содержимое и текстовые альтернативы.
+ogImage: cover.png
 keyTheme:
     - WCAG
     - HTML
