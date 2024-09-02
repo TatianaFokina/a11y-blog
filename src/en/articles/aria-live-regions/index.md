@@ -27,7 +27,7 @@ Previously, assistive technologies (particularly screen readers) couldn't proper
 
 If you're unfamiliar with this acronym, _WAI-ARIA_ or simply _ARIA_ (Web Accessibility Initiative - Accessible Rich Internet Applications) is a standard consisting of special roles and attributes added to markup. These roles and attributes extend or augment the functionality of standard HTML elements or elements in another programming host languages.
 
-To create a dynamic (″alive″) part of the page where changes occur, we need to implement what ARIA terminology calls a ″Live Region.″ The WAI-ARIA 1.2 standard [defines a live region](https://www.w3.org/TR/wai-aria-1.2/#dfn-live-region) as follows:
+To create a dynamic (″alive″) part of the page where changes occur, we need to implement what ARIA terminology calls a ″Live Region″. The WAI-ARIA 1.2 standard [defines a live region](https://www.w3.org/TR/wai-aria-1.2/#dfn-live-region) as follows:
 
 > _Live Regions_ are perceived areas of pages that are usually updated as a result of an external event when a user focuses somewhere else. These regions are not always updated due to user interaction with an UI. This practice has become commonplace as a result of the heavy use of Ajax.
 
