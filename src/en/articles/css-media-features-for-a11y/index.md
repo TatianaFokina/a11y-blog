@@ -1,6 +1,7 @@
 ---
 title: CSS media feature to improve accessibility
 description: What custom settings come and how to take them into account in web interfaces. You will learn about media features that track animation settings, contrast, transparency, inversion, colour scheme and forced colour mode.
+ogImage: cover.png
 keyTheme:
   - CSS
   - Usability
