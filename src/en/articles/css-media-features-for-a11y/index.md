@@ -14,6 +14,7 @@ templateEngineOverride: md, njk
 When people talk about accessibility and CSS, they often mean properties that affect the accessibility tree and assistive technologies such as screen readers and voice control software. But there's another ally in the battle for accessible interfaces — media features.
 
 _Media features_ are conditions for the `@media` CSS at-rule. They indicate specific characteristics of the device or browser. For example, screen orientation (`orientation`) or display mode (`display-mode`).
+
 In this article, I'll talk about a few media features: `prefers-reduced-motion`, `prefers-color-scheme`, `inverted-colors`, `forced-colors`, `ms-high-contrast`, `prefers-contrast`, and `prefers-reduced-transparency`.
 
 These media features track operating system settings which changed by users who aren't satisfied with the default behavior of the system. For example, people with disabilities and those who are uncomfortable with the default design. Real world examples:
@@ -40,7 +41,7 @@ Users who may adjust animation settings include:
 - People with vestibular disorders or those prone to seizures
 - People with cognitive disabilities and neurodivergent users, particularly those with attention deficit disorder (ADD).
 
-Most operating systems include a ″reduce motion″ or ″minimize animation″ setting to accommodate these users needs.
+Most operating systems include the ″Reduce motion″ or ″Minimize animation″ setting to accommodate these users needs.
 
 ### Color scheme
 
@@ -81,18 +82,18 @@ Who uses inverted colors mode:
 
 Most operating systems have inverted colors setting. On iOS, there are even two types of inversion: Smart and classic. In smart invert mode, pictures and videos are not inverted, while in classic one, all content is inverted.
 
-### Color mode
+### Forced colors
 
 _Forced colors mode_ limits the number of colors to improve text readability by changing the contrast between text and background. High-contrast colors are mainly used. This mode changes colors both in the system and on websites.
 
 Who uses forced colors mode:
 
-- Users with visual impairments;
+- Users with visual impairments
 - People with migraines and headaches
 - People with photosensitive epilepsy
 - Users who need to reduce visual noise to improve concentration.
 
-Currently, this mode can only be selected in Windows. In Windows 10 and earlier versions, it's called Windows high contrast mode (WHCM). In Windows 11, it's called contrast themes.
+Currently, this mode can only be selected on Windows. On Windows 10 and earlier versions, it's called Windows high contrast mode (WHCM). On Windows 11, it's called contrast themes.
 
 The high contrast mode has several pre-set color schemes:
 
@@ -128,7 +129,7 @@ In Firefox, the originally white background will remain the same, gray links and
 
 You can change the default behavior in Firefox. The setting is located in the Language and Appearance section, specifically in the ″Colors″ subsection. Open the modal window with the ″Manage Colors…″ button and select the ″Use system colors″ checkbox.
 
-In Windows 11, the set of contrast themes has changed: Aquatic, desert, dusk, and night sky have been added.
+On Windows 11, the set of contrast themes has changed: Aquatic, desert, dusk, and night sky have been added.
 
 <figure class="article__image">
   <img
@@ -181,7 +182,7 @@ A transparent background can increase cognitive load and reduce text readability
 - Users with cognitive disabilities and neurodivergent people. For instance, dyslexic users or those with ADD
 - People with migraines and headaches.
 
-Transparency can be precisely adjusted in Windows and macOS. These settings not only affect the transparency in the system interface but also on websites and in browsers. This screenshot shows the navigation background of the first window is semi-transparent, while the second one has an opaque and solid background.
+Transparency can be precisely adjusted on Windows and in macOS. These settings not only affect the transparency in the system interface but also on websites and in browsers. This screenshot shows the navigation background of the first window is semi-transparent, while the second one has an opaque and solid background.
 
 <figure class="article__image">
   <img
@@ -190,7 +191,7 @@ Transparency can be precisely adjusted in Windows and macOS. These settings not 
     alt="Comparison of two windows with transparency turned on and off."
   >
   <figcaption class="article__image-caption">
-    This is how the transparency setting works in Windows 11.
+    This is how the transparency setting works on Windows 11.
   </figcaption>
 </figure>
 
@@ -330,7 +331,7 @@ In Firefox, the themes are located in the first tab with the inspector. The togg
   </figcaption>
 </figure>
 
-In Safari, dark theme emulation is enabled in the web inspector. The toggle is called ″Force Dark Appearance″ and is located in the panel below all the tabs.
+In Safari, dark theme emulation is enabled in the web inspector. The toggle is labelled ″Force Dark Appearance″ and is located in the panel below all the tabs.
 
 <figure class="article__image">
   <img
@@ -381,7 +382,7 @@ There is only manually option for testing styles for the inverted colors mode.
 
 **macOS**: <samp>System preferences</samp> → <samp>Accessibility</samp> → <samp>Display</samp> → <samp>Invert colors</samp>.
 
-**iOS**: <samp>Settings</samp> → <samp>Accessibility</samp> → <samp>Display and text size</samp> → <samp>Smart invert</samp> or <samp>classic invert</samp>.
+**iOS**: <samp>Settings</samp> → <samp>Accessibility</samp> → <samp>Display and text size</samp> → <samp>Smart invert</samp> or <samp>Classic invert</samp>.
 
 ### forced-colors
 
