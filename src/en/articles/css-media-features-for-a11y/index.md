@@ -6,7 +6,7 @@ keyTheme:
   - CSS
   - Usability
 date: 2024-05-09
-update: 2024-09-04
+updated: 2024-09-04
 layout: article.njk
 templateEngineOverride: md, njk
 ---
