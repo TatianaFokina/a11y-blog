@@ -560,7 +560,7 @@ Currently, `prefers-contrast` doesn't necessarily track a high level of contrast
 - `no-preference`: No settings are selected
 - `more`: Contrast is increased
 - `less`: Contrast is decreased
-- `custom`: A forced colors mode is selected in the system. For example, Windows high contrast mode.
+- `custom`: Forced colors mode is selected in the system. For example, Windows high contrast mode.
 
 [Global browser support for `prefers-contrast`](https://caniuse.com/mdn-css_at-rules_media_prefers-contrast/) is quite high — 93% (second half of 2024).
 
