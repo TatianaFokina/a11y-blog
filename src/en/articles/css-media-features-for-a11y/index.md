@@ -6,7 +6,7 @@ keyTheme:
   - CSS
   - Usability
 date: 2024-05-09
-updated: 2024-09-04
+updated: 2024-09-05
 layout: article.njk
 templateEngineOverride: md, njk
 ---
@@ -214,7 +214,7 @@ Now we move on to media features that will help make web interfaces more accessi
 
 Some of them are not yet well supported by browsers. Things may change in the future with the development of CSS. In any case, it's useful to know about them.
 
-### prefer-reduced-motion
+### prefers-reduced-motion
 
 It tracks whether animation settings are selected to reduce its intensity. This is useful for any animation on the website. The animation can be slowed down or completely disabled.
 
@@ -386,4 +386,287 @@ There is only manually option for testing styles for the inverted colors mode.
 
 ### forced-colors
 
-The translation is work in progress.
+It tracks forced colors mode. For example, high contrast mode in Windows. Works well with another media feature `prefers-color-scheme`.
+
+Possiblr values for `forced-colors`:
+
+- `none`: Forced colors mode isn't selected and the color palette isn't limited
+- `active`: Forced colors mode is enabled.
+
+[Browser support of `forced-colors`](https://caniuse.com/mdn-css_at-rules_media_forced-colors/) is quite high — 93% (second half of 2024). So use it instead of the deprecated `ms-high-contrast` in newer versions of Edge.
+
+When the browser learns about the selection of forced colors mode, it limits the color palette to a small set of colors. Some values are canceled altogether.
+
+The following properties have their static colors (set by developers) replaced with dynamic (system) colors:
+
+- `color`
+- `background-color`
+- `border-color`
+- `outline-color`
+- `column-rule-color`
+- `text-decoration-color`
+- `text-emphasis-color`
+- `webkit-tap-highlight-color`
+- `fill`
+- `stroke`
+- `flood-color`
+- `stop-color`
+- `lighting-color`.
+
+For this list of properties, other values are forcibly set:
+
+- `color-scheme` — `light dark`;
+- `background-image` without `url` gets the value `none` if it's an interactive element. The exception is buttons in Internet Explorer and legacy versions of Edge
+- `box-shadow` — `none`
+- `text-shadow` — `none`
+- `scrollbar-color` — `auto`.
+
+In the case of high contrast mode, it's better to turn off the internal designer 👩‍🎨. People need the mode not for aesthetics, but to improve content readability. So the media feature for forced colors should be used wisely and only when it's really necessary. In most cases, the browser itself handles this task.
+
+The main rule for working with styles in forced colors mode is to use dynamic colors instead of static ones. They can be set using special [CSS system color keywords](https://www.w3.org/TR/css-color-3/#css-system). For example, `Window` for the window background, `ButtonText` for button text color, and `WindowText` for text color. This way, we let the system know which color to replace our static color with.
+
+Another important feature of this mode is that browsers decide on applying system styles based on the semantics of elements. When a website has div-based layout, the browser will apply regular text styles to all elements. This also applies to elements with ARIA roles. For example, `<div role="link">` is not a real link, so the system colors for link text won't be applied to this element.
+
+If text is placed over an image, a black backplate will appear behind it. Its styles cannot be controlled. The first screenshot shows the original Xbox site interface in Vivaldi on Windows 10. The second shows it in black high contrast mode. A black backplate has appeared under the text.
+
+<figure class="article__image">
+  <img
+    class="article__image-item"
+    src="images/whcm-blackplates.png"
+    alt="Halo Infinite advertising banner with a brief description of the game and supported gaming platforms, with an image of the series' main character on the background."
+  >
+  <figcaption class="article__image-caption">
+    Xbox website without and with black high contrast mode. A piece of Master Chief says hello.
+  </figcaption>
+</figure>
+
+If you keep semantics in mind and want to optimize the website for high contrast mode, you only need to pay attention to a few points. These are SVGs, images with transparent backgrounds, checkboxes and radio buttons, as well as elements with the `box-shadow` CSS property. These are the ones that most often need fine-tuning.
+
+In the image, I've gathered elements from different websites that users of high contrast mode might have difficulty with. Buttons and links with SVG icons blend into the background or become less contrasting. A black logo or dark image with a transparent background can also blend into the background. In the case of a checkbox or radio button, it's unclear whether they are selected or not. The icons of social media remained blue, gray, and red and look low-contrast against the black background. Yandex logo is blended into the background, and he black circle from the toggle button and the letters of the same color. Finally, the black icon with a cross for opening the menu disappeared against the background of the same color.
+
+<figure class="article__image">
+  <img
+    class="article__image-item"
+    src="images/whcm-problems.png"
+    alt="Examples of the problematic elements."
+  >
+  <figcaption class="article__image-caption">
+    Doka Guide home page, footer from ″Web Standards″ website, Reddit theme toggle, Instagram menu, button with icon to expand menu on Zara website, Yandex search.
+  </figcaption>
+</figure>
+
+In this example, I improved buttons with icons in high contrast mode using the `buttonText` keyword. This way, buttons will paint based on the system color for them.
+
+```css
+@media (forced-colors: active) {
+  .button__svg {
+    fill: buttonText;
+  }
+}
+```
+
+You can check how this works in Windows using the [demo with a button with inline SVG](https://codepen.io/tatiana-fokina/pen/VwzmRVP/) from CodePen.
+
+In this code we set styles for the focus indicator using both `box-shadow` and `outline` CSS properties. In high contrast mode, the `outline` properties will apply instead of the `box-shadow` one canceled by the system. In default color mode, only `box-shadow` will be visible.
+
+```css
+.button {
+  border: 1px solid transparent;
+}
+
+.button:focus {
+  box-shadow: 0 0 4px 1px darkslateblue;
+  outline: 2px solid transparent;
+}
+```
+
+For solid color SVG icons, it's better to use the `currentColor` keyword for `fill` and `stroke`. This way, they will inherit the system color of the parent element.
+
+Let's imagine we have a link with an inline SVG icon. In default color mode, the link color is indigo, in high contrast mode it will be overridden by the system. The SVG with the class `.link__svg` also inherits the same color in default mode, and in high contrast mode it eill be the system color.
+
+```css
+.link {
+  color: indigo;
+}
+
+.link__svg {
+  fill: currentColor;
+}
+```
+
+Let's take the [demo with a Twitter link](https://codepen.io/tatiana-fokina/pen/GRvNzbZ/) as an example. If we enable black high contrast mode, the link text and icon will become the system yellow color.
+
+#### Bug in SVG
+
+In older versions of Chromium-based browsers, [SVG icons may not change color](https://bugs.chromium.org/p/chromium/issues/detail?id=1164162). This happened due to changes in the CSS specification.
+
+If you really want to fix this issue, use a temporary hack with the `forced-color-adjust: auto` property for your SVG. In this case, the child element will inherit the color of the parent when high contrast mode is enabled.
+
+```css
+.link {
+  color: indigo;
+}
+
+.link__svg {
+  fill: currentColor;
+  forced-color-adjust: auto;
+}
+```
+
+You can check how the hack works in my [demo with a fix for the Twitter link](https://codepen.io/tatiana-fokina/pen/GRvNzbZ/) from CodePen.
+
+Another way to deal with the bug is `forced-color-adjust: preserve-parent-color`. In this case, the element inherits the parent's value if no other methods are used, such as `inherit` or `currentColor`. In default colors mode, it behaves like the `none` value.
+
+You can also completely cancel the replacement of static colors with dynamic ones using `forced-color-adjust: none`. In most situations, it's better not to use it. It could be useful if it's important to preserve colors. A good example for that is [color palettes](https://codepen.io/somelaniesaid/pen/eYZEorP/).
+
+#### Test the forced-colors feature
+
+In Chromium-based browsers, open the developer tools. Find the button with three dots named ″Customize and control DevTools″, expand the ″More tools″ dropdown and go to the ″Rendering″ section. Then enable the option ″Emulate CSS media feature forced-colors″.
+
+Firefox doesn't allow emulating forced colors mode through its inspector, but there's a workaround. Enter `about:config` in the browser's search bar, find `ui.forcedColors` through the search, and set the value to `true` or `1`. Don't forget to revert it back afterwards.
+
+You can also enable forced colors mode manually in Windows 11: <samp>Settings</samp> → <samp>Personalization</samp> → <samp>Colors</samp> → <samp>Contrast themes</samp>.
+
+### ms-high-contrast (deprecated)
+
+It precisely tracks whether the user has selected high contrast mode. Corresponds to high contrast themes in Windows versions up to 11.
+
+The media feature is non-standard and already deprecated. It's better to use the modern alternative `forced-colors` instead. It may be needed when support for Internet Explorer and Edge version 18 and lower is required.
+
+Available values for `ms-high-contrast`:
+
+- `black-on-white`: For mode with black text on white background
+- `white-on-black`: For mode with white text on black background
+- `active`: For other color combinations.
+
+When you work with styles for `ms-high-contrast`, consider the same things as for `forced-colors`. The only peculiarity is that this media feature removes `background-image` from interactive elements. Here's how you can change this behaviour:
+
+```css
+@media (-ms-high-contrast: black-on-white) {
+  .interactive-element {
+    background-image: url("bg-image.png");
+  }
+}
+```
+
+### prefers-contrast
+
+It determines the selection of settings that decrease or increase the contrast difference between colors.
+
+Currently, `prefers-contrast` doesn't necessarily track a high level of contrast, as in high contrast mode. However, it's worth noting that in the future, this media feature may be more closely related to it.
+
+`prefers-contrast` can have the following values:
+
+- `no-preference`: No settings are selected
+- `more`: Contrast is increased
+- `less`: Contrast is decreased
+- `custom`: A forced colors mode is selected in the system. For example, Windows high contrast mode.
+
+[Global browser support for `prefers-contrast`](https://caniuse.com/mdn-css_at-rules_media_prefers-contrast/) is quite high — 93% (second half of 2024).
+
+When considering the contrast mode, you can add any styles that will improve the user experience. In this example, we change the border of an element to ensure the styles are visible in high contrast:
+
+```css
+.image {
+  border: 3px dashed lightpink;
+}
+
+@media (prefers-contrast: more) {
+  .image {
+    border: 3px solid black;
+  }
+}
+```
+
+In this code all media expressions define high contrast mode.
+
+```css
+@media (forced-colors: active) {
+  /* CSS properties */
+}
+
+@media (prefers-contrast: forced) {
+  /* CSS properties */
+}
+
+@media (prefers-contrast: custom) {
+  /* CSS properties */
+}
+```
+
+You can see `forced-colors` in action right now in Safari using my [demo with a cute otter](https://codepen.io/tatiana-fokina/pen/rNzjBXZ/) on CodePen.
+
+#### Test the prefers-contrast feature
+
+Now you can quickly emulate `prefers-contrast` in Chromium-based browsers. Open the developer tools and find the button with three dots ″Customize and control DevTools″. Then expand the ″More tools″ dropdown and go to the ″Rendering″ section. After that, enable the option ″Emulate CSS media feature prefers-contrast″.
+
+Firefox doesn't allow emulating `prefers-contrast` in the inspector, but there's an alternative. Enter `about:config` in the browser's search bar and find the `ui.prefersСontrast` setting through the search. Now set its value to `true` or `1`, just don't forget to revert it back afterwards.
+
+You can test the media feature in systems through the contrast increase setting.
+
+**macOS**: <samp>System preferences</samp> → <samp>Accessibility</samp> → <samp>Display</samp> → <samp>Increase contrast</samp>.
+
+**iOS**: <samp>Settings</samp> → <samp>Accessibility</samp> → <samp>Display and text size</samp> → <samp>Increase contrast</samp>.
+
+### prefers-reduced-transparency
+
+It tracks the disabling or reduction of `transparency` in the system.
+
+The list of all values for `prefers-reduced-transparency`:
+
+- `no-preference`: A user hasn't changed transparency settings
+- `reduce`: Transparency is reduced or turned off.
+
+Currently, [browsers support of `prefers-reduced-transparency`](https://caniuse.com/?search=prefers-reduced-transparency/) is quite well — 71% (second half of 2024).
+
+Let's take a look at a practical example. In the code below, I overrode `opacity` for elements with a transparent background:
+
+```css
+.transparency-bg {
+  opacity: 0.5;
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .transparency-bg {
+    opacity: 1;
+  }
+}
+```
+
+#### Test the prefers-reduced-transparency feature
+
+You can quickly emulate the transparency settings in the Chromium developer tools. Find the button with three dots named ″Customize and control DevTools″ in the top panel. Expand the ″More tools″ dropdown and go to the ″Rendering″ section. Then enable the option ″Emulate CSS media feature prefers-reduced-transparency″.
+
+Firefox doesn't allow emulating `prefers-reduced-transparency` directly through the inspector, but there's an alternative. Enter `about:config` in the browser's search bar and find the `ui.prefersReducedTransparency` setting through the search. Set its value to `true` or `1`, and but don't forget to revert it back afterwards.
+
+Of course, you can turn transparency off directly in your operating system.
+
+**Windows 11**: <samp>Settings</samp> → <samp>Personalization</samp> → <samp>Colors</samp> → <samp>Transparency effects</samp>.
+
+**macOS**: <samp>System preferences</samp> → <samp>Accessibility</samp> → <samp>Display</samp> → <samp>Reduce transparency</samp>.
+
+**iOS**: <samp>Settings</samp> → <samp>Accessibility</samp> → <samp>Display and text size</samp> → <samp>Reduce transparency</samp>
+
+## What I didn't mention
+
+In this post, I didn't cover only one media feature for user preferences — `prefers-reduced-data`. It tracks the volume of data reception chosen by a user. Although it's related to performance, it's also useful for accessibility. For more details, read ″[Creating websites with `prefers-reduced-data`](https://polypane.app/blog/creating-websites-with-prefers-reduced-data/)″.
+
+## Futher reading
+
+- [Media Queries Level 5](https://www.w3.org/TR/mediaqueries-5/)
+- [Operating System and Browser Accessibility Display Modes](https://www.a11yproject.com/posts/operating-system-and-browser-accessibility-display-modes/)
+- [thoughtbot.com, dark mode, and other user preferences](https://ericwbailey.design/writing/thoughtbot-com-dark-mode-and-other-user-preferences/)
+- [Respecting Users’ Motion Preferences](https://www.smashingmagazine.com/2021/10/respecting-users-motion-preferences/)
+- [Creating Accessible UI Animations](https://www.smashingmagazine.com/2023/11/creating-accessible-ui-animations/)
+- [A Complete Guide to Dark Mode on the Web](https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/)
+- [I no longer understand `prefers-contrast`](https://kilianvalkhof.com/2023/css-html/i-no-longer-understand-prefers-contrast/)
+- [Styling for Windows high contrast with new standards for forced colors](https://blogs.windows.com/msedgedev/2020/09/17/styling-for-windows-high-contrast-with-new-standards-for-forced-colors/)
+- [CurrentColor SVG in forced colors modes](https://melanie-richards.com/blog/currentcolor-svg-hcm/)
+- [`prefers-reduced-motion`](https://doka.guide/a11y/prefers-reduced-motion/) (Doka Guide)
+- [`prefers-reduced-transparency`](https://doka.guide/a11y/prefers-reduced-transparency/) (Doka Guide)
+- [`forced-colors`](https://doka.guide/a11y/forced-colors/) (Doka Guide)
+- [`prefers-color-scheme`](https://doka.guide/css/prefers-color-scheme/) (Doka Guide).
+
+***
+
+Thanks to [Vasiliy Dudin](https://twitter.com/vasiliy_dudin/) for his help with editing and translating this text.
