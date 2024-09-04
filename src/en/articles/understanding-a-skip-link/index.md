@@ -367,4 +367,4 @@ There are quite a few ways to develop the skip link. All of them have pros and c
 
 ***
 
-Thanks to [Vasily Dudin](https://twitter.com/vasiliy_dudin) for help with editing ❤️
+Thanks to [Vasily Dudin](https://twitter.com/vasiliy_dudin) for help with editing ❤️.
