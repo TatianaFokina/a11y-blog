@@ -2,22 +2,24 @@ const fs = require("node:fs");
 const path = require("node:path");
 const crypto = require("node:crypto");
 
-module.exports = eleventyConfig => {
+module.exports = (eleventyConfig) => {
 	// Dates
-	eleventyConfig.addFilter("dateFormat", function(value, format) {
+	eleventyConfig.addFilter("dateFormat", function (value, format) {
 		const date = new Date(value);
 		if (isNaN(date.getTime())) {
-		// If the string cannot be converted to a date, return it as is
-		return value;
+			// If the string cannot be converted to a date, return it as is
+			return value;
 		}
 		switch (format) {
 			case "readable":
 				const currentLang = this.page.lang;
-				return date.toLocaleString(currentLang, {
-					year: "numeric",
-					month: "long",
-					day: "numeric"
-				}).replace(" г.", "");
+				return date
+					.toLocaleString(currentLang, {
+						year: "numeric",
+						month: "long",
+						day: "numeric",
+					})
+					.replace(" г.", "");
 			case "ISO":
 				return date.toISOString();
 		}
@@ -25,7 +27,7 @@ module.exports = eleventyConfig => {
 
 	// Get the first `n` elements of a collection.
 	eleventyConfig.addFilter("slice", (array, n) => {
-		if( n < 0 ) {
+		if (n < 0) {
 			return array.slice(n);
 		}
 
@@ -37,15 +39,14 @@ module.exports = eleventyConfig => {
 		return Math.min.apply(null, numbers);
 	});
 
-
 	// Filehash
 	const assetHashes = {};
 	eleventyConfig.addFilter("filehash", (url) => {
-		if (process.env.ELEVENTY_ENV !== 'production') {
+		if (process.env.ELEVENTY_ENV !== "production") {
 			return url;
 		}
 
-		const filePath = path.join(eleventyConfig.dir.output, url);	
+		const filePath = path.join(eleventyConfig.dir.output, url);
 		if (!assetHashes[url]) {
 			const fileBuffer = fs.readFileSync(filePath);
 			const hashSum = crypto.createHash("md5");
@@ -55,4 +56,4 @@ module.exports = eleventyConfig => {
 
 		return `${url}?v=${assetHashes[url]}`;
 	});
-}
+};

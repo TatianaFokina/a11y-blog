@@ -1,18 +1,18 @@
 const { EleventyI18nPlugin } = require("@11ty/eleventy");
 
-module.exports = eleventyConfig => {
+module.exports = (eleventyConfig) => {
 	eleventyConfig.addPlugin(EleventyI18nPlugin, {
 		// Default language
-		defaultLanguage: "ru", 
+		defaultLanguage: "ru",
 		filters: {
 			url: "locale_url",
-			links: "locale_links"
+			links: "locale_links",
 		},
-		errorMode: "strict"
+		errorMode: "strict",
 	});
 
 	// Translate filter
-	eleventyConfig.addFilter("translate", function(key, lang = null) {
+	eleventyConfig.addFilter("translate", function (key, lang = null) {
 		// Get the current language from the page context
 		const currentLang = lang || this.ctx.page.lang || "ru";
 		// Get translations for the current language
@@ -20,4 +20,4 @@ module.exports = eleventyConfig => {
 		// Return translation or key if translation is missing
 		return translations[key] || key;
 	});
-}	
+};

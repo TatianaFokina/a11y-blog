@@ -2,17 +2,17 @@ const yaml = require("js-yaml");
 const markdownIt = require("markdown-it");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginNavigation = require("@11ty/eleventy-navigation");
-const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 // 11ty config files
 const pluginMd = require("./.eleventy.md.js");
 const pluginShortcodes = require("./.eleventy.shortcodes.js");
-const pluginFilters= require("./.eleventy.filters.js");
-const pluginI18n= require("./.eleventy.i18n.js");
-const pluginTransforms= require("./.eleventy.transforms.js");
+const pluginFilters = require("./.eleventy.filters.js");
+const pluginI18n = require("./.eleventy.i18n.js");
+const pluginTransforms = require("./.eleventy.transforms.js");
 
-module.exports = function(eleventyConfig) {
-	eleventyConfig.addDataExtension("yaml", contents => yaml.load(contents));
+module.exports = function (eleventyConfig) {
+	eleventyConfig.addDataExtension("yaml", (contents) => yaml.load(contents));
 	eleventyConfig.addGlobalData("env", process.env.ELEVENTY_ENV);
 
 	// Plugins
@@ -46,8 +46,12 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("src/fonts");
 	eleventyConfig.addPassthroughCopy("src/scripts");
 	eleventyConfig.addPassthroughCopy({ "src/assets/*.{svg,jpg,png}": "assets" });
-	eleventyConfig.addPassthroughCopy({ "src/assets/favicons/*.{svg,jpg,png,ico}": "assets/favicons" });
-	eleventyConfig.addPassthroughCopy( "src/(en|ru)/articles/**/*.(gif|jpg|png|webp|svg)");
+	eleventyConfig.addPassthroughCopy({
+		"src/assets/favicons/*.{svg,jpg,png,ico}": "assets/favicons",
+	});
+	eleventyConfig.addPassthroughCopy(
+		"src/(en|ru)/articles/**/*.(gif|jpg|png|webp|svg)"
+	);
 
 	return {
 		dir: {
@@ -62,9 +66,6 @@ module.exports = function(eleventyConfig) {
 		htmlTemplateEngine: "njk",
 		passthroughFileCopy: true,
 		markdownTemplateEngine: false,
-		templateFormats: [
-			"md",
-			"njk",
-		],
+		templateFormats: ["md", "njk"],
 	};
 };

@@ -31,8 +31,8 @@ $preferredValCalc: calc(1.25rem + 4.2254 * (1vw - 6px));
 
 @function fluidSizes($minVal, $maxVal, $preferredVal: $preferredValCalc) {
 	@return clamp(
-		toRem($minVal), 
-		$preferredVal, 
+		toRem($minVal),
+		$preferredVal,
 		toRem($maxVal)
 	);
 }
