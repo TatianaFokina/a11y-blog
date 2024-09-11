@@ -9,7 +9,7 @@ $line-height-menu-link: 1.7;
 	justify-content: center;
 	flex-wrap: wrap;
 	width: 100%;
-	gap: $gap-4x;
+	gap: $gap-16;
 
 	@include media(lg) {
 		justify-content: space-between;
@@ -35,8 +35,8 @@ $line-height-menu-link: 1.7;
 	align-items: center;
 	position: relative;
 	width: 100%;
-	padding: $gap-3x;
-	gap: $gap-2x;
+	padding: $gap-12;
+	gap: $gap-8;
 	line-height: $line-height-menu-link;
 	border-bottom: 0;
 
@@ -46,7 +46,7 @@ $line-height-menu-link: 1.7;
 	}
 
 	@include media(lg) {
-		padding: $gap-5x;
+		padding: $gap-20;
 	}
 }
 

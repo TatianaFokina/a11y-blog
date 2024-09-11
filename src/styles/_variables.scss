@@ -23,31 +23,6 @@ $img-filter: unset;
 $img-filter--dark: brightness(.8) contrast(1.2);
 
 // Gaps
-$gap-1x: 4px;
-$gap-2x: $gap-1x * 2; // 8px
-$gap-3x: $gap-1x * 3; // 12px
-$gap-4x: $gap-1x * 4; // 16px
-$gap-5x: $gap-1x * 5; // 20px
-$gap-6x: $gap-1x * 6; // 24px
-$gap-7x: $gap-1x * 7; // 28px
-$gap-8x: $gap-1x * 8; // 32px
-$gap-9x: $gap-1x * 9; // 36px
-$gap-10x: $gap-1x * 10; // 40px
-$gap-12x: $gap-1x * 12; // 48px
-$gap-13x: $gap-1x * 13; // 52px
-$gap-14x: $gap-1x * 14; // 56px
-$gap-15x: $gap-1x * 15; // 60px
-$gap-29x: $gap-1x * 29; // 116px
-
-// Border radius
-$radius-4: 4px;
-$radius-8: 8px;
-$radius-10: 10px;
-$radius-16: 16px;
-$radius-24: 24px;
-$radius-26: 26px;
-$radius-32: 32px;
-
 $gap-2: 2px;
 $gap-4: 4px;
 $gap-8: 8px;
@@ -67,6 +42,15 @@ $gap-52: 52px;
 $gap-56: 56px;
 $gap-60: 60px;
 $gap-116: 116px;
+
+// Border radius
+$radius-4: 4px;
+$radius-8: 8px;
+$radius-10: 10px;
+$radius-16: 16px;
+$radius-24: 24px;
+$radius-26: 26px;
+$radius-32: 32px;
 
 // Grid breakpoints and container min-widths
 $breakpoints: (

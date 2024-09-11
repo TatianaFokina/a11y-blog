@@ -3,8 +3,8 @@
 
 .header__switcher {
 	display: flex;
-	padding: $gap-1x;
-	padding-inline: $gap-1x;
+	padding: $gap-4;
+	padding-inline: $gap-4;
 	border: 3px solid var(--border-color);
 	border-radius: $radius-32;
 	user-select: none;
@@ -12,7 +12,7 @@
 
 .header__switcher-button {
 	margin: 0;
-	padding: $gap-3x $gap-4x;
+	padding: $gap-12 $gap-16;
 	border: 2px solid transparent;
 	border-radius: $radius-32;
 	color: var(--text-color);
@@ -41,7 +41,7 @@
 	}
 
 	@include media(lg) {
-		padding: $gap-2x $gap-3x;
+		padding: $gap-8 $gap-12;
 	}
 }
 

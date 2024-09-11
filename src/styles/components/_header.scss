@@ -5,10 +5,10 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: $gap-6x;
+	gap: $gap-24;
 
 	@include media(lg) {
 		flex-direction: row;
-		gap: $gap-8x;
+		gap: $gap-32;
 	}
 }

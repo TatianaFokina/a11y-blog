@@ -33,7 +33,7 @@
 .article__note {
 	display: flex;
 	align-items: flex-start;
-	margin: fluidSizes($gap-4, $gap-8x) 0;
+	margin: fluidSizes($gap-4, $gap-32) 0;
 	padding: fluidSizes($gap-8, $gap-16);
 	gap: $gap-16;
 	background: var(--bg-part-color);
@@ -55,7 +55,7 @@
 
 .article__code {
 	display: block;
-	margin: $gap-5x 0;
+	margin: $gap-20 0;
 	padding: fluidSizes($gap-16, $gap-28);
 	word-wrap: break-word;
 	background: var(--code-color);

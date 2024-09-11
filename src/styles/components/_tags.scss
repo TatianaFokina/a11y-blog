@@ -5,7 +5,7 @@
 	flex-wrap: wrap;
 	margin: 0;
 	padding: 0;
-	gap: $gap-1x;
+	gap: $gap-4;
 	list-style: none;
 }
 
@@ -14,11 +14,11 @@
 }
 
 .topics--in-card {
-	margin-bottom: $gap-3x;
+	margin-bottom: $gap-12;
 }
 
 .topics__item {
-	padding: $gap-1x $gap-2x;
+	padding: $gap-4 $gap-8;
 	color: var(--text-color);
 	border: 1px solid var(--border-color);
 	border-radius: $radius-10;

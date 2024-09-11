@@ -7,7 +7,7 @@
 	width: 100%;
 	margin-top: 0;
 	padding: 0;
-	gap: $gap-5x;
+	gap: $gap-20;
 }
 
 h2:has(+ .cards) {
@@ -30,8 +30,8 @@ h2:has(+ .cards) {
 	flex-direction: column;
 	justify-content: space-between;
 	width: 100%;
-	padding: $gap-4x;
-	gap: $gap-4x;
+	padding: $gap-16;
+	gap: $gap-16;
 	background: var(--bg-part-color);
 	border-radius: $radius-26;
 
@@ -45,13 +45,13 @@ h2:has(+ .cards) {
 	}
 
 	@include media(md) {
-		padding: $gap-10x;
+		padding: $gap-40;
 	}
 }
 
 .cards__item--compact {
 	display: inline-flex;
-	padding: $gap-5x;
+	padding: $gap-20;
 }
 
 .cards__item-heading {
@@ -96,7 +96,7 @@ h2:has(+ .cards) {
 .cards__item-details {
 	display: inline-flex;
 	align-items: center;
-	gap: $gap-2x;
+	gap: $gap-8;
 }
 
 .cards__item-details__ico {
@@ -112,5 +112,5 @@ h2:has(+ .cards) {
 .cards__item-date {
 	display: inline-flex;
 	align-items: center;
-	gap: $gap-1x;
+	gap: $gap-4;
 }

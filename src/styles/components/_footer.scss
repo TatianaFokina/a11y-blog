@@ -6,16 +6,16 @@
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: flex-end;
-	gap: $gap-2x $gap-4x;
-	padding-top: $gap-29x;
-	padding-bottom: $gap-12x;
+	padding-top: $gap-116;
+	padding-bottom: $gap-48;
+	gap: $gap-16;
 }
 
 .footer__column {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	gap: $gap-2x;
+	gap: $gap-8;
 
 	@include media(sm) {
 		gap: unset;

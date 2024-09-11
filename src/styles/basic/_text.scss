@@ -61,13 +61,13 @@ figure {
 }
 
 blockquote {
-	margin: $gap-5x 0;
+	margin: $gap-20 0;
 	border-left: 4px solid var(--border-color);
 	word-wrap: break-word;
 }
 
 blockquote p {
-	padding-left: $gap-6x;
+	padding-left: $gap-24;
 }
 
 h1 {
