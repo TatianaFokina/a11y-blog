@@ -3,10 +3,10 @@ title: Информация и взаимосвязи
 description: Почему важно подкреплять визуальное представление элементов правильной разметкой.
 ogImage: cover.png
 keyTheme:
- - WCAG
- - HTML
- - CSS
- - ARIA
+  - WCAG
+  - HTML
+  - CSS
+  - ARIA
 date: 2023-01-17
 updated: 2024-09-02
 layout: article.njk
