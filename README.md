@@ -15,7 +15,7 @@ Here is a list of technologies you will work with in this project:
 - Markdown for content
 - [SCSS](https://sass-lang.com/) for styles
 - Vanilla JavaScript
-- [Yaml](https://yaml.org/) and [json]
+- [Yaml](https://yaml.org/) and [JSON](https://www.json.org/json-en.html)
 - Miscellaneous: [Rollup](https://rollupjs.org/), [pnpm](https://pnpm.io/), [Lightning CSS](https://lightningcss.dev).
 
 ## Development
