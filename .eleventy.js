@@ -1,5 +1,4 @@
 const yaml = require("js-yaml");
-const markdownIt = require("markdown-it");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
@@ -24,13 +23,6 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPlugin(pluginRss);
 	eleventyConfig.addPlugin(pluginTransforms);
 	eleventyConfig.addPlugin(syntaxHighlight);
-
-	// Configure Markdown-It
-	const markdownItOptions = {
-		html: false,
-		breaks: true,
-	};
-	eleventyConfig.setLibrary("md", markdownIt(markdownItOptions));
 
 	// Collections
 	eleventyConfig.addCollection("articlesEn", (collectionApi) => {
