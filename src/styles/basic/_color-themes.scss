@@ -4,26 +4,26 @@
 	--select-color: #{$fuchsia-alpha};
 	--bg-color: #{$beige-2};
 	--bg-part-color: #{$beige-1};
-	--text-color: #{$blue-7};
+	--text-color: #{$blue-8};
 	--code-color: #{$blue-2};
-	--border-color: #{$blue-5};
+	--border-color: #{$blue-6};
 	--color-hover: #{$green-1};
-	--menu-elements-color-hover: #{$blue-4};
-	--button-bg-color: #{$blue-7};
+	--menu-elements-color-hover: #{$blue-7};
+	--button-bg-color: #{$blue-8};
 	--button-text-color: #{$beige-2};
 	--img-filter: #{$img-filter};
 }
 
 .base[data-theme="dark"] {
-	--select-color: #{fuchsia-alpha};
-	--bg-color: #{$blue-9};
-	--bg-part-color: #{$blue-7};
+	--select-color: #{$fuchsia-alpha};
+	--bg-color: #{$blue-10};
+	--bg-part-color: #{$blue-8};
 	--text-color: #{$green-1};
-	--code-color: #{$blue-7};
+	--code-color: #{$blue-8};
 	--border-color: #{$beige-2};
-	--color-hover: #{$blue-8};
-	--menu-elements-color-hover: #{$blue-3};
+	--color-hover: #{$blue-9};
+	--menu-elements-color-hover: #{$blue-4};
 	--button-bg-color: #{$beige-2};
-	--button-text-color: #{$blue-6};
+	--button-text-color: #{$blue-7};
 	--img-filter: #{$img-filter--dark};
 }

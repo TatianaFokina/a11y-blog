@@ -31,22 +31,24 @@ $line-height-menu-link: 1.7;
 }
 
 .navigation__list-item-link {
+	height: 54px;
 	display: inline-flex;
 	align-items: center;
 	position: relative;
 	width: 100%;
-	padding: $gap-12;
+	padding: 0 $gap-12;
 	gap: $gap-8;
 	line-height: $line-height-menu-link;
-	border-bottom: 0;
+	border: 1px solid transparent;
+	border-radius: $radius-16;
 
 	&:hover {
 		background: inherit;
-		color: var(--menu-elements-color-hover);
+		border-color: var(--menu-elements-color-hover);
 	}
 
 	@include media(lg) {
-		padding: $gap-20;
+		padding: $gap-12 $gap-16;
 	}
 }
 

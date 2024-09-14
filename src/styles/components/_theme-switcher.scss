@@ -2,30 +2,25 @@
 @import "../mixins-and-functions";
 
 .header__switcher {
+	height: 54px;
 	display: flex;
-	padding: $gap-4;
-	padding-inline: $gap-4;
-	border: 3px solid var(--border-color);
-	border-radius: $radius-32;
+	flex: 0 0 auto;
+	gap: 4px;
+	padding: 4px;
+	border: 2px solid var(--button-bg-color);
+	border-radius: $radius-16;
 	user-select: none;
 }
 
 .header__switcher-button {
 	margin: 0;
 	padding: $gap-12 $gap-16;
-	border: 2px solid transparent;
-	border-radius: $radius-32;
+	font-size: inherit;
+	border-radius: $radius-10;
 	color: var(--text-color);
 	background: transparent;
 	cursor: pointer;
-
-	&:nth-last-child(1) {
-		border-radius: 3px $radius-32 $radius-32 3px;
-	}
-
-	&:nth-last-child(2) {
-		border-radius: $radius-32 3px 3px $radius-32;
-	}
+	border: 1px solid transparent;
 
 	&[aria-pressed="true"]:focus-visible {
 		@include focus (
@@ -51,7 +46,6 @@
 
 	&:hover {
 		color: var(--button-text-color);
-		background: var(--menu-elements-color-hover);
 	}
 }
 
@@ -59,7 +53,6 @@
 	color: inherit;
 
 	&:hover {
-		color: var(--button-text-color);
-		background: var(--menu-elements-color-hover);
+		border: 1px solid var(--menu-elements-color-hover);
 	}
 }
