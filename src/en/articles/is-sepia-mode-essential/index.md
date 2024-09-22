@@ -1,6 +1,6 @@
 ---
-title: Is sepia mode the default accessible feature?
-description: Bla bla bla.
+title: Is sepia mode the default feature?
+description: Struggling with dark mode? You're not alone! I share my experience with eyestrain and halation, dive into the world of astigmatism, and question why dark themes are everywhere despite not working for everyone.
 ogImage: cover.png
 keyTheme:
   - Design
@@ -13,7 +13,7 @@ I like Pocket. Actually, no: I LOVE Pocket. It helps me keep many articles and p
 
 If you're unfamiliar with Pocket, it's a service for storing web bookmarks in a less chaotic way, unlike collecting hundreds of tabs in your browser.
 
-Another reason to appreciate Pocket is its consistent reading experience. I deal with only one font type, size, column width, and color theme. There are no distracting animations or unpredictable readability issues caused by creative designers' choices (that's not something bad). With a Premium account, you can customize everything without compromising readability.
+Another reason to appreciate Pocket is its consistent reading experience. I deal with only one font type, size, column width, and color theme. There are no distracting animations or unpredictable readability issues caused by creative designers' choices (that's not something bad.) With a Premium account, you can customize everything without compromising readability.
 
 I also enjoy using the Pocket app. It has an offline mode; you just need to synchronize your data beforehand.
 
