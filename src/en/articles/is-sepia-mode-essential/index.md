@@ -1,0 +1,180 @@
+---
+title: Is sepia mode the default accessible feature?
+description: Bla bla bla.
+ogImage: cover.png
+keyTheme:
+  - Design
+  - Content
+date: 2024-09-25
+layout: article.njk
+---
+
+I like Pocket. Actually, no: I LOVE Pocket. It helps me keep many articles and posts I'm curious about in one place. Sometimes I have too many articles to read, so I start procrastinating, but that's my problem, not Pocket's.
+
+If you're unfamiliar with Pocket, it's a service for storing web bookmarks in a less chaotic way, unlike collecting hundreds of tabs in your browser.
+
+Another reason to appreciate Pocket is its consistent reading experience. I deal with only one font type, size, column width, and color theme. There are no distracting animations or unpredictable readability issues caused by creative designers' choices (that's not something bad). With a Premium account, you can customize everything without compromising readability.
+
+I also enjoy using the Pocket app. It has an offline mode; you just need to synchronize your data beforehand.
+
+You might think, ″Are you advertising this service to us?″ If so, it's free promotion 😅. But no, my intention is to share my humble opinion (or should I say demure?) and the accessibility barrier I surprisingly encountered.
+
+The disclaimer: This is my **personal** opinion and experience and doesn't reflect everyone else's. Of course, I'm not blaming anyone, especially the team that created one of my favorite web services and mobile apps. Cheers!
+
+## Personal barrier
+
+I opened the Pocket app for the first time in a few months and realized that the dark theme was set by default. It was strange because I always use sepia theme both on the web and in the app. I went to the settings to change the theme again, but there was no sepia at all. Only dark, light, and system colors were available.
+
+<figure class="article__image">
+  <img
+    class="article__image-item"
+    src="images/pocket-app-dark-theme.png"
+    alt="Two Pocket app screens show display settings. The first screen offers light, dark, and system theme options. The second screen displays light and dark themes in a modal window."
+  >
+  <figcaption class="article__image-caption">
+    Mobile app.
+  </figcaption>
+</figure>
+
+At the exact moment when I opened the app, went to an article, and started to read, I realized how painful it was. It didn't just strain my eyes; I simply couldn't concentrate on reading. Words and lines of text blurred together, and it was impossible to find the next line. Why? I have astigmatism and sometimes this condition doesn't work well with specific dark themes and color contrast.
+
+Of course, Pocket provides me with a choice. I can update my account to Premium and enjoy reading again. But I have a question: Is sepia theme as essential for users as dark and light ones?
+
+## It's astigmatism, hi
+
+**Astigmatism** (uh-STIG-muh-tiz-um) is a common and generally treatable imperfection in the curvature of the eye bla bla bla… To put it simply, some people's eyes have an egg-shaped or football-shaped cornea instead of a perfectly round one.
+
+Your vision is the result of light that passes through the front part of the eye (cornea) and hits the back of the eyeball (retina). After that, the optic nerve and brain finish the job.
+
+Eyes of people with astigmatism can't produce a clear image on the retina because light doesn't focus on a single point as it should. As a result, objects you're looking at may appear blurry, distorted, and partly out of focus.
+
+By default, without corrective lenses, everything around people with astigmatism appears slightly doubled (diplopia) and blurred at close and far distances. It's as if two nearly identical images on semi-transparent paper don't align perfectly when you place one on top of the other.
+
+<figure class="article__image">
+  <img
+    class="article__image-item"
+    src="images/astigmatism-simulation.png"
+    alt="The kaomoji-like logo with an otter holding a rock is blurred and doubled, lacking a clear border"
+  >
+  <figcaption class="article__image-caption">
+    My blog logo simulate astigmatism.
+  </figcaption>
+</figure>
+
+People may also experience eyestrain due to certain stimuli. These stimuli can include bright lights, flashes, glossy surfaces, and high color contrast.
+
+Other possible symptoms of astigmatism can include light sensitivity, difficulty with night vision, headaches, fatigue, and halos around lights.
+
+Halos are an interesting and annoying symptom that some people with astigmatism experience. Halation is essentially what you might imagine – it's when you see a ″halo″ or glow around illuminated objects. This effect can occur with both physical light sources and digital content on displays. Because of this, it can be challenging to read neon signs in the dark, see clearly on streets with many lights (especially when it's rainy), or read from screens in particular situations, such as when using dark mode.
+
+A long time ago, I was curious about why my eyes seemed to struggle every time I used dark themes for reading and coding. I did some research and found the culprit. The main reason for the unhealthy relationship between my eyes and dark themes is related to how eye's pupil (the black round spot) basically work.
+
+Imagine a professional, fancy camera. When you take a picture in poorly lit spaces, your camera needs more light. As a true professional, you can adjust the aperture on the camera lens. In this particular situation, without proper lighting, you need to open the aperture wider, which means increasing the size of the hole between the metal ″blades″ that form the diaphragm. Conversely, when there's too much light, you need to reduce the amount of it entering the camera by closing the aperture.
+
+If you're not into photography, think of it this way: When you're in a dark room, eye's pupil becomes larger. In bright sunlight, pupil opening becomes smaller.
+
+When you read black text on a white background, your eyes receive more light, causing your pupils to become smaller. In reverse, when reading white text on a black background, your eyes receive less light, resulting in pupil becoming larger.
+
+People with astigmatism may be more affected by light levels than those without this condition. So, it can be more challenging to see clearly in the dark. It's often easier for individuals with astigmatism to focus on objects when it's bright because their pupils small, which can somewhat reduce the symptoms of astigmatism.
+
+## Sepia mood
+
+As mentioned earlier, people with astigmatism may find it hard to read white text on a black background, and this difficulty can be worsen when experiencing halation. This is noticeable with dark mode.
+
+When you experience halation (which can be a symptom of astigmatism or other eye conditions), using dark mode can lead to a halation effect.
+
+The **halation effect** is a visual distortion where white letters appear to have a halo behind them, making them seem to shine, blur, or blend with each other. This can make text appear foggy and difficult to read.
+
+Let's simulate the halation effect. The first screen shows how the text looks by default in the Pocket app. For you, it possibly doesn't look so bad, and it's not even extremely high contrast.
+
+The second picture shows how I see the same text in the same app. It's blurred and doubled simultaneously, so I can't properly read every line and word on the screen. Plus I have an eyestrain after reading too.
+
+<figure class="article__image">
+  <img
+    class="article__image-item"
+    src="images/normal-vision-vs-astigmatism.png"
+    alt="Two screens show two ways to see the same white text on a black background"
+  >
+  <figcaption class="article__image-caption">
+    Life is hard sometimes.
+  </figcaption>
+</figure>
+
+The easiest way to deal with doubled and shining text is sepia mode.
+
+**Sepia** is a reddish-brown color that is neither too dark nor too bright, making it unlikely to create high contrast with black text. By extra point, it's a calm color that reminds me of the hue of old book pages. I almost smell the scent of aged paper when looking at the color!
+
+Actually, the web version of Pocket includes a sepia mode now. There is a sepia option in the display settings, along with font size adjustments and light and dark modes.
+
+<figure class="article__image">
+  <img
+    class="article__image-item"
+    src="images/web-pocket-sepia-theme.png"
+    alt="Pocket sepia mode in the browser"
+  >
+  <figcaption class="article__image-caption">
+    I feel relieved.
+  </figcaption>
+</figure>
+
+Sepia mode helps me to read long text. For many people, including me, it's more comfortable to read black text on a sepia or other shades of beige background. In fact, it's not just a matter of comfort. With sepia background I'm not fighting with severe eyestrain for days after reading.
+
+## Other factors
+
+Of course, dark mode is not the only factor affecting reading comfort for people with astigmatism. Comfortable reading experiences also depend on readability and legibility.
+
+**Readability** refers to how easy it is to read a piece of text. It includes various factors such as font family, font size, line spacing and length, color, and contrast.
+
+**Legibility** relates to how clear and distinguishable individual characters and letters are. It involves factors such as font type, character shapes, weight and width, letter spacing, and stroke width.
+
+If you combine poor readability, poor legibility, and dark mode, someone with astigmatism won't appreciate it 😩.
+
+Let's consider an example. Two texts are pure white and placed on a bright black background.
+
+For the first, wider column, I use IBM Plex Serif font with a size of 17 pixels. I also use different weights: Semi-bold, bold, thin, light, italic, thin italic, and so on. The line height is set to auto, which results in 22 pixels.
+
+For the second, narrower column, I use IBM Plex Sans with a size of 21 pixels and regular weight. I also increased the line height to 34 pixels.
+
+<figure class="article__image">
+  <img
+    class="article__image-item"
+    src="images/readability-and-legibility.png"
+    alt="Comparison of readability and legibility for the two columns of text"
+  >
+  <figcaption class="article__image-caption">
+    Let's play with fonts.
+  </figcaption>
+</figure>
+
+For me personally, it's much easier to read the text from the second column, even though it's a high-contrast white-on-black theme.
+
+## To be, or not to be
+
+[Approximately 40% of adult population has astigmatism](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10045990/), making it one of the most common eye conditions worldwide. This means that about 1 (one) in 3 (three) people have astigmatism.
+
+As developers and designers, we often consider the experience of people with various visual conditions, such as light sensitivity, glaucoma, or blurred vision with low contrast. Dark themes have become particularly popular in the developer community. They can save battery life on certain types of screens, reduce eye strain during nighttime coding sessions, and are aesthetically pleasing.
+
+You can easily find the [researches shows that mobile users prefer dark mode](https://worldmetrics.org/dark-mode-usage-statistics/). We like numbers, right?
+
+But what do these statistics and decisions based on them actually tell us? For me, they don't answer several critical questions:
+
+- How many users have astigmatism, especially among those who report that they no longer experience eyestrain
+- What if light themes are so painfully bright that people prefer to choose dark mode because there's no better alternative
+- How can we be sure that users don't turn light mode on in their browser and stay with dark mode on system level.
+
+We shouldn't forget about people with attention-deficit hyperactivity disorder (ADHD), dyslexia, or different eye conditions, not only astigmatism, who may struggle with dark themes as well. It appears that in many cases, these groups aren't well-represented in statistics and research.
+
+Somehow, we've decided dark themes is a silver bullet and only one good alternative for classic light mode. For me, while it definitely fixes some problems, it sometimes creates accessibility barriers instead.
+
+I can't force everyone to immediately implement multiple themes or theme settings everywhere. Perhaps that's good news for managers, ha-ha. However, it's a good idea to think about dark mode critically and don't consider that it's accessible by default.
+
+At least you have the power to avoid using bright black and white. In this world, we have different colors, not only black and white. What about something between these two opposite sides? There are at least light gray and beige.
+
+## Further reading
+
+- ″[Why ‘dark mode’ causes more accessibility issues than it solves](https://medium.com/@h_locke/why-dark-mode-causes-more-accessibility-issues-than-it-solves-d2f8359bb46a)″ by H Locke
+- ″[Are Dark Themes Really Better for Your Eyes and Battery?](https://www.maketecheasier.com/are-dark-themes-better-for-eyes-battery/)″ by Andrew Braun
+- ″[Dark Mode vs. Light Mode: Which Is Better?](https://www.nngroup.com/articles/dark-mode/)″ on NN/g
+- ″[Alternatives to Using Pure Black (#000000) for Text and Backgrounds](https://uxplanet.org/alternatives-to-using-pure-black-000000-for-text-and-backgrounds-54ef0e733cdb)″ by Dmitry Sergushkin
+- [Sensory Perception and Interaction Research Group at the University of British Columbia](http://www.cs.ubc.ca/labs/spin/)
+- ″[Astigmatism and dark mode](https://www.lkhrs.com/blog/2023/astigmatism-and-dark-mode/)″, by Luke Wild.
