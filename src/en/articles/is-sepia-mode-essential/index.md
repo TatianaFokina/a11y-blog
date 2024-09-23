@@ -73,17 +73,17 @@ Imagine a professional, fancy camera. When you take a picture in poorly lit spac
 
 If you're not into photography, think of it this way: In a dark room, your eye's pupils becomes larger. In bright sunlight, the pupil's opening becomes smaller.
 
-When you read black text on a white background, your eyes receive more light, causing your pupils to become smaller. In reverse, when reading white text on a black background, your eyes receive less light,and your pupils become bigger.
+When you read black text on a white background, your eyes receive more light, causing your pupils to become smaller. In reverse, when reading white text on a black background, your eyes receive less light,and your pupils become bigger.
 
-People with astigmatism may be more affected by light levels than those without this condition. It can be more challenging to see clearly in the dark. It's often easier for individuals with astigmatism to focus on objects when they're bright because their pupils are small, which can somewhat reduce the symptoms of astigmatism.
+People with astigmatism may be more affected by light levels than those without this condition. It can be more challenging to see clearly in the dark. It's often easier for individuals with astigmatism to focus on objects when they're bright because their pupils are small, which can somewhat reduce the symptoms of astigmatism.
 
 ## Sepia mood
 
-As mentioned earlier, people with astigmatism may find it hard to read white text on a black background, and this difficulty can worsen when experiencing halation. This is noticeable in dark mode.
+As mentioned earlier, people with astigmatism may find it hard to read white text on a black background, and this difficulty can worsen when experiencing halation. This is noticeable in dark mode.
 
-When you experience halation (a symptom of astigmatism or other eye conditions), using dark mode can lead to a halation effect.
+When you experience halation (a symptom of astigmatism or other eye conditions), using dark mode can lead to a halation effect.
 
-The **halation effect** is a visual distortion where white letters appear to have a halo behind them, making them seem to shine, blur, or blend with each other. This can make text appear foggy and difficult to read.
+The **halation effect** is a visual distortion where white letters appear to have a halo behind them, making them seem to shine, blur, or blend with each other. This can make text appear foggy and difficult to read.
 
 Let's simulate the halation effect. The first screen shows how the text looks by default in the Pocket app. For you, it possibly doesn't look so bad, and it's not even high contrast.
 
@@ -123,17 +123,17 @@ Sepia mode helps me to read long texts. For many people, including me, it's easi
 
 Of course, dark mode is not the only factor affecting reading comfort for people with astigmatism. Comfortable reading experiences also depend on readability and legibility.
 
-**Readability** refers to how easy it is to read texts. It includes font family, font size, line spacing and length, color, and contrast.
+**Readability** refers to how easy it is to read texts. It includes font family, font size, line spacing and length, color, and contrast.
 
 **Legibility** refers to how clear and distinguishable individual characters and letters are. It involves font type, character shapes, weight and width, letter spacing, and stroke width.
 
 If you combine poor readability, legibility, and dark mode, someone with astigmatism won't appreciate it 😩.
 
-Let's consider an example. Two texts are pure white and placed on a bright black background.
+Let's consider an example. Two texts are pure white and placed on a bright black background.
 
-For the first, wider column, I use IBM Plex Serif font with a size of 17 pixels. I also use different weights: Semi-bold, bold, thin, light, italic, thin italic, and so on. The line height is set to auto, which results in 22 pixels.
+For the first, wider column, I use IBM Plex Serif font with a size of 17 pixels. I also use different weights: Semi-bold, bold, thin, light, italic, thin italic, and so on. The line height is set to auto, which results in 22 pixels.
 
-For the second, narrower column, I use IBM Plex Sans with a size of 21 pixels and regular weight. I also increased the line height to 34 pixels.
+For the second, narrower column, I use IBM Plex Sans with a size of 21 pixels and regular weight. I also increased the line height to 34 pixels.
 
 <figure class="article__image">
   <img
@@ -146,29 +146,29 @@ For the second, narrower column, I use IBM Plex Sans with a size of 21 pixels
   </figcaption>
 </figure>
 
-Personally, it's much easier to read the text in the second column, even though it's a high-contrast white-on-black theme.
+Personally, it's much easier to read the text in the second column, even though it's a high-contrast white-on-black theme.
 
 ## To be, or not to be
 
-[Approximately 40% of the adult population has astigmatism](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10045990/), making it one of the most common eye conditions worldwide. This means that about 1 (one) in 3 (three) people have astigmatism.
+[Approximately 40% of the adult population has astigmatism](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10045990/). This means about 1 (one) in 3 (three) people have astigmatism. It makes this eye condition one of the most common worldwide. This means that about 1 (one) in 3 (three) people have astigmatism.
 
 As developers and designers, we often consider people's experience with various visual conditions, such as light sensitivity, glaucoma, or blurred vision with low contrast. Dark themes have become popular in the developer community. They can save battery life on certain screens, reduce eye strain during nighttime coding sessions, and are aesthetically pleasing.
 
 You can easily find the [research shows that mobile users prefer dark mode](https://worldmetrics.org/dark-mode-usage-statistics/). We like numbers.
 
-But what do these statistics and decisions based on them actually tell us? For me, they don't answer several critical questions:
+But what do these statistics and decisions based on them actually tell us? For me, they don't answer several critical questions:
 
-- How many users have astigmatism, especially among those who report that they no longer experience eyestrain
-- What if light themes are so bright that people prefer to choose dark mode because there's no better alternative
-- How can we be sure that users don't turn light mode on in their browser and stick with system dark mode?
+- How many users have astigmatism, especially among those who report that they no longer experience eyestrain
+- What if light themes are so bright that people prefer to choose dark mode because there's no better alternative
+- How can we be sure that users don't turn light mode on in their browser and stick with system dark mode?
 
-We shouldn't forget about people with attention-deficit hyperactivity disorder (ADHD), dyslexia, or different eye conditions, not only astigmatism, who may struggle with dark themes as well. It seems these groups aren't well represented in statistics and research.
+We shouldn't forget about people with attention-deficit hyperactivity disorder (ADHD), dyslexia, or different eye conditions, not only astigmatism, who may struggle with dark themes as well. It seems these groups aren't well represented in statistics and research.
 
-Somehow, we've decided dark themes are a silver bullet and the only alternative to light mode. While it fixes some problems, it sometimes creates accessibility barriers instead.
+Somehow, we've decided dark themes are a silver bullet and the only alternative to light mode. While it fixes some problems, it sometimes creates accessibility barriers instead.
 
-I can't force everyone to immediately implement multiple themes or settings everywhere. Perhaps that's good news for managers, haha. However, it's a good idea to think about dark mode critically and not make a decision that is accessible by default.
+I can't force everyone to immediately implement multiple themes or settings everywhere. Perhaps that's good news for managers, haha. However, it's a good idea to think about dark mode critically and not make a decision that is accessible by default.
 
-At least you have the power to avoid using bright black and white. In this world, we have different colors, not only black and white. What about something between these two opposite sides? There are at least light gray and beige.
+At least you have the power to avoid using bright black and white. In this world, we have different colors, not only black and white. What about something between these two opposite sides? There are at least light gray and beige.
 
 ## Further reading
 
@@ -177,4 +177,4 @@ At least you have the power to avoid using bright black and white. In this wor
 - ″[Dark mode vs. light mode: Which is better?](https://www.nngroup.com/articles/dark-mode/)″ on NN/g
 - ″[Alternatives to using pure black (#000000) for text and backgrounds](https://uxplanet.org/alternatives-to-using-pure-black-000000-for-text-and-backgrounds-54ef0e733cdb)″ by Dmitry Sergushkin
 - [Sensory perception and interaction research group at the University of British Columbia](http://www.cs.ubc.ca/labs/spin/)
-- ″[Astigmatism and dark mode](https://www.lkhrs.com/blog/2023/astigmatism-and-dark-mode/)″, by Luke Wild.
+- ″[Astigmatism and dark mode](https://www.lkhrs.com/blog/2023/astigmatism-and-dark-mode/)″ by Luke Wild.
