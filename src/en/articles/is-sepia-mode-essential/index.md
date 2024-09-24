@@ -81,13 +81,13 @@ People with astigmatism may be more affected by light levels than those without 
 
 As mentioned earlier, people with astigmatism may find it hard to read white text on a black background, and this difficulty can worsen when experiencing halation. This is noticeable in dark mode.
 
-When you experience halation (a symptom of astigmatism or other eye conditions), using dark mode can lead to a halation effect.
+When you experience halation, using dark mode can lead to a halation effect.
 
 The **halation effect** is a visual distortion where white letters appear to have a halo behind them, making them seem to shine, blur, or blend with each other. This can make text appear foggy and difficult to read.
 
-Let's simulate the halation effect. The first screen shows how the text looks by default in the Pocket app. For you, it possibly doesn't look so bad, and it's not even high contrast.
+Let's simulate the halation effect. The first screen shows how the text looks by default in the Pocket app. For you, it possibly doesn't look so bad. Words are easy-to-read and lines have clear borders.
 
-The second picture shows how I see the text in the app. It's blurred and doubled simultaneously, so I can't read every line and word on the screen well. Plus, I have an eyestrain after reading.
+The second picture shows how I see the text in the app. It's blurred and doubled simultaneously, so I can't read every line and word on the screen well.
 
 <figure class="article__image">
   <img
@@ -104,13 +104,13 @@ The easiest way to deal with doubled and shining text is sepia mode.
 
 **Sepia** is a reddish-brown color that is neither too dark nor too bright, making it unlikely to create high contrast with black text. By the point, it's a calm color that reminds me of the hue of old book pages. I almost smell the scent of aged paper when looking at the color!
 
-Actually, the web version of Pocket includes a sepia mode. There is a sepia option in the display settings, along with font size adjustments and light and dark modes.
+Actually, the web version of Pocket includes a sepia mode. There is a sepia option in the display settings, along with font size adjustments and other color modes.
 
 <figure class="article__image">
   <img
     class="article__image-item"
     src="images/web-pocket-sepia-theme.png"
-    alt="Pocket sepia mode in the browser"
+    alt="Pocket with sepia mode in the browser."
   >
   <figcaption class="article__image-caption">
     I feel relieved.
@@ -121,7 +121,7 @@ Sepia mode helps me to read long texts. For many people, including me, it's easi
 
 ## Other factors
 
-Of course, dark mode is not the only factor affecting reading comfort for people with astigmatism. Comfortable reading experiences also depend on readability and legibility.
+Of course, dark mode is not the only factor affecting reading comfort for people with astigmatism. Comfortable reading experiences also depend on text readability and legibility.
 
 **Readability** refers to how easy it is to read texts. It includes font family, font size, line spacing and length, color, and contrast.
 
@@ -131,7 +131,7 @@ If you combine poor readability, legibility, and dark mode, someone with astigma
 
 Let's consider an example. Two texts are pure white and placed on a bright black background.
 
-For the first, wider column, I use IBM Plex Serif font with a size of 17 pixels. I also use different weights: Semi-bold, bold, thin, light, italic, thin italic, and so on. The line height is set to auto, which results in 22 pixels.
+For the first, wider column, I use IBM Plex Serif font with a size of 17 pixels. I also set different weights: Semi-bold, bold, thin, light, italic, thin italic, and so on. The line height is set to auto, which results in 22 pixels.
 
 For the second, narrower column, I use IBM Plex Sans with a size of 21 pixels and regular weight. I also increased the line height to 34 pixels.
 
@@ -146,27 +146,25 @@ For the second, narrower column, I use IBM Plex Sans with a size of 21 pixels an
   </figcaption>
 </figure>
 
-Personally, it's much easier to read the text in the second column, even though it's a high-contrast white-on-black theme.
+Personally, it's easier to read the text in the second column, even though it's a high-contrast white-on-black theme.
 
 ## To be, or not to be
 
-[Approximately 40% of the adult population has astigmatism](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10045990/). This means about 1 (one) in 3 (three) people have astigmatism. It makes this eye condition one of the most common worldwide. This means that about 1 (one) in 3 (three) people have astigmatism.
+[Approximately 40% of the adult population has astigmatism](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10045990/). This means about 1 (one) in 3 (three) people have astigmatism. It makes this eye condition one of the most common worldwide. This means about 1 (one) in 3 (three) people have astigmatism.
 
-As developers and designers, we often consider people's experience with various visual conditions, such as light sensitivity, glaucoma, or blurred vision with low contrast. Dark themes have become popular in the developer community. They can save battery life on certain screens, reduce eye strain during nighttime coding sessions, and are aesthetically pleasing.
+Dark themes save battery life on devices with certain types of screens, look aesthetically pleasing, and make interfaces more accessible for users with light sensitivity, glaucoma, etc. You can easily find [statistics and research that confirm users prefer dark mode](https://worldmetrics.org/dark-mode-usage-statistics/). Business loves numbers.
 
-You can easily find the [research shows that mobile users prefer dark mode](https://worldmetrics.org/dark-mode-usage-statistics/). We like numbers.
+To draw objective conclusions from research, it's important to interpret the data and consider the details correctly. Studies about users of dark themes don't always answer all questions:
 
-But what do these statistics and decisions based on them actually tell us? For me, they don't answer several critical questions:
+- how many users with astigmatism are among those who prefer dark interfaces;
+- why people don't use light themes more actively;
+- is the dark theme selected both in the system and the browser?
 
-- How many users have astigmatism, especially among those who report that they no longer experience eyestrain
-- What if light themes are so bright that people prefer to choose dark mode because there's no better alternative
-- How can we be sure that users don't turn light mode on in their browser and stick with system dark mode?
+Don't forget about people with Attention Deficit Hyperactivity Disorder (ADHD), dyslexia, or other neurodivergences. Users who avoid dark modes don't always have astigmatism. Possibly statistics don't reflect the number of neurodivergent people.
 
-We shouldn't forget about people with attention-deficit hyperactivity disorder (ADHD), dyslexia, or different eye conditions, not only astigmatism, who may struggle with dark themes as well. It seems these groups aren't well represented in statistics and research.
+Perhaps developers and designers _believed_ that dark color mode was the only alternative to a light theme. In reality, there is no single correct solution. While dark mode fixes some problems, it sometimes creates accessibility barriers instead.
 
-Somehow, we've decided dark themes are a silver bullet and the only alternative to light mode. While it fixes some problems, it sometimes creates accessibility barriers instead.
-
-I can't force everyone to immediately implement multiple themes or settings everywhere. Perhaps that's good news for managers, haha. However, it's a good idea to think about dark mode critically and not make a decision that is accessible by default.
+I can't force everyone to implement multiple themes or settings everywhere. That's good news for managers, haha. However, it's a good idea to think about dark mode critically and not make a decision that is accessible by default.
 
 At least you have the power to avoid using bright black and white. In this world, we have different colors, not only black and white. What about something between these two opposite sides? There are at least light gray and beige.
 
