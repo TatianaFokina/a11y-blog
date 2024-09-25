@@ -7,8 +7,8 @@ $hr-height: 15px;
 	background: var(--select-color);
 }
 
-p {
-	margin: fluidSizes($gap-4, $gap-8) 0;
+p:not(:last-of-type) {
+	margin-bottom: fluidSizes($gap-8, $gap-20);
 }
 
 hr {

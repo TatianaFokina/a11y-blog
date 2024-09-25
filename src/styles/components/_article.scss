@@ -67,7 +67,7 @@
 	display: inline-flex;
 	flex-direction: column;
 	width: 100%;
-	margin: fluidSizes($gap-20, $gap-24) 0;
+	margin-bottom: fluidSizes($gap-20, $gap-24);
 	padding: fluidSizes($gap-8, $gap-32);
 	gap: $gap-20;
 	background: $accent-color-2;
