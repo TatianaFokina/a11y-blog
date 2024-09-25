@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html class="page" lang="en">
+<head>
+	<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="If you have a dynamically changing part of a page and you&#39;re thinking about making it accessible, there may be a legitimate question about how to do it. In the past, assistive technologies (including screen readers) didn&#39;t know how to handle them properly. Now the problem of accessibility of dynamically changing page content can be solved with ARIA.">
+<link rel="canonical" href="https://a11y-blog.dev/en/articles/aria-live-regions/index.undefined" />
+
+
+<title>
+	
+		Everything you need to know about ARIA Live Regions — Blog on Digital Accessibility
+	
+</title>
+
+<link rel="alternate" hreflang="en" href="https://a11y-blog.dev/en/articles/aria-live-regions/index.undefined" />
+
+	
+
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://a11y-blog.dev/en/articles/aria-live-regions/index.undefined">
+<meta property="og:title" content="Everything you need to know about ARIA Live Regions">
+<meta property="og:description" content="If you have a dynamically changing part of a page and you&#39;re thinking about making it accessible, there may be a legitimate question about how to do it. In the past, assistive technologies (including screen readers) didn&#39;t know how to handle them properly. Now the problem of accessibility of dynamically changing page content can be solved with ARIA.">
+<meta property="og:image" content="https://a11y-blog.dev/assets/og-image-en.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://a11y-blog.dev/en/articles/aria-live-regions/index.undefined">
+<meta name="twitter:title" content="Everything you need to know about ARIA Live Regions">
+<meta name="twitter:description" content="If you have a dynamically changing part of a page and you&#39;re thinking about making it accessible, there may be a legitimate question about how to do it. In the past, assistive technologies (including screen readers) didn&#39;t know how to handle them properly. Now the problem of accessibility of dynamically changing page content can be solved with ARIA.">
+<meta name="twitter:site" content="https://a11y-blog.dev/en/articles/aria-live-regions/index.undefined">
+<meta name="twitter:image" content="https://a11y-blog.dev/assets/og-image-en.png">
+	
+	
+	
+
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Article",
+			"headline": "Everything you need to know about ARIA Live Regions",
+			"description": "If you have a dynamically changing part of a page and you're thinking about making it accessible, there may be a legitimate question about how to do it. In the past, assistive technologies (including screen readers) didn't know how to handle them properly. Now the problem of accessibility of dynamically changing page content can be solved with ARIA.",
+			"keywords": "HTML, Screen readers",
+			"image": "https://a11y-blog.dev/assets/og-image-en.png",
+			"author": {
+				"@type": "Person",
+				"name": "Tatiana Fokina",
+				"url": "https://www.linkedin.com/in/tatiana-fokina-frontend/"
+			},
+			"publisher": {
+				"@type": "Organization",
+				"name": "Tatiana Fokina",
+				"url": "https://www.linkedin.com/in/tatiana-fokina-frontend/",
+				"logo": {
+					"@type": "ImageObject",
+					"url": "https://a11y-blog.dev/assets/og-image-en.png"
+				}
+			},
+			"datePublished": "2024-05-11T00:00:00.000Z",
+			"dateModified": "2024-05-11T00:00:00.000Z"
+		}
+	</script>
+
+	<script defer src="/scripts/bundle.js"></script>
+	<link rel="stylesheet" href="/styles/styles.css">
+	<link rel="icon" sizes="32x32" href="/assets/favicons/favicon.ico" type="image/png" >
+<link rel="icon" href="/assets/favicons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+	<link rel="alternate" type="application/rss+xml" title="Practical advice on digital accessibility for frontend developers, QA testers and designers. Here you'll learn about methods of creating accessible and user-friendly interfaces, standards, assistive technologies and laws." href="https://a11y-blog.dev/en/feed.xml">
+</head>
+
+<body class="base" data-theme="light">
+	<header>
+	<div class="header wrapper">
+		<nav class="navigation">
+	<a class="logo" href="/en/">
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 269 198" class="logo__svg">
+	<path class="logo__svg-path" d="M0.360337 128.243C-4.95996 80.963 48.9099 0 143.698 0C198.853 0 240.797 25.5 240.797 80.317C240.797 142 149.515 189.124 98.1198 196C45.7968 203 6.29684 181 0.360337 128.243Z"/>
+	<path fill="currentColor" d="M46.809 170.197c-.354-.256-.548-.581-.583-.976-.034-.394.124-.728.476-1.002 2.826-2.787 5.447-5.136 7.864-7.048.21-.129.445-.205.708-.228.285-.025.548.074.788.296.262.22.407.483.434.79.026.307-.037.588-.192.845-.205.172-2.544 2.21-7.017 6.113.56.348 1.804 1.056 3.73 2.125 1.948 1.066 3.38 1.912 4.297 2.539.2.269.312.536.335.799.02.241-.1.505-.362.793-.264.266-.549.412-.856.439-.284.025-.474.009-.567-.049-.984-.643-2.44-1.509-4.368-2.6-1.907-1.092-3.469-2.037-4.687-2.836Zm22.666-10.695-.588-6.342c-.104-1.183.217-1.808.962-1.873.767-.067 1.223.224 1.369.874.068.281.274 1.997.615 5.147.342 3.15.7 6.1 1.073 8.85.395 2.748.697 5.317.906 7.706.058.657-.407 1.029-1.393 1.115-.658.058-1.027-.374-1.107-1.294-.877.827-1.962 1.298-3.255 1.411-1.644.144-3.035-.353-4.172-1.49-1.116-1.139-1.752-2.607-1.91-4.405-.157-1.797.058-3.505.645-5.124.608-1.643 1.66-2.873 3.156-3.688.928-.501 1.841-.791 2.74-.869.328-.029.648-.035.959-.018Zm.558 4.489c-.195-.468-.413-.814-.654-1.036-.242-.243-.496-.376-.763-.397a3.495 3.495 0 0 0-.896-.021c-.351.031-.767.2-1.248.507s-.871.772-1.17 1.394c-.598 1.245-.839 2.525-.724 3.84.113 1.293.458 2.334 1.035 3.123.597.765 1.367 1.106 2.31 1.023.963-.084 1.678-.621 2.144-1.612.465-.99.634-2.219.505-3.688-.144-1.643-.323-2.688-.539-3.133Zm8.722-10.734c.395-.034.784.12 1.167.461.383.342.593.721.63 1.138.034.394-.128.817-.486 1.268-.336.449-.712.692-1.129.728-.416.037-.815-.105-1.196-.425-.36-.322-.564-.757-.611-1.305-.093-1.052.428-1.672 1.56-1.859l.065-.006Zm2.888 17.106.234 2.298c.037.416-.097.782-.4 1.095-.306.292-.646.454-1.018.487-.548.048-.857-.201-.927-.747-.897-6.967-1.377-10.822-1.443-11.568a45.924 45.924 0 0 1-.14-2.737c.01-.398.244-.617.705-.658 1.161-.101 1.86.312 2.096 1.241.108.477.174.857.2 1.142l.049 2.083.644 7.364Zm16.003-13.458c.307-.027.546.062.719.268.17.184.267.396.288.637l-.004.332c-.716 2.426-1.228 4.392-1.538 5.899a102.326 102.326 0 0 1-.456 2.358c-.088.516-.24 1.424-.458 2.724-.217 1.299-.365 2.14-.442 2.523-.241.772-.745 1.191-1.513 1.258-.372.033-.656-.185-.852-.654-.893-2.13-2.14-4.517-3.74-7.159-1.6-2.643-2.517-4.153-2.748-4.53-.212-.401-.332-.766-.361-1.095-.029-.328.086-.659.344-.99.28-.334.606-.517.979-.55.372-.032.707.137 1.005.509.283.461 1.08 1.749 2.392 3.865 1.333 2.114 2.285 3.786 2.857 5.017.01-.134.063-.414.158-.842.779-3.977 1.446-6.829 2.001-8.556.32-.624.777-.962 1.369-1.014Zm6.243-.348c.241-.021.486.002.735.069.249.066.547.195.895.385.368.167.704.347 1.008.541.324.171.765.419 1.324.746.559.326 1.302.747 2.231 1.262.928.515 2.155 1.291 3.681 2.328.519.374.795.748.827 1.12.031.351-.113.728-.431 1.131l-.54.644c-.18.214-.681.667-1.504 1.357l-.926.777c-.412.345-1.133.938-2.163 1.779a38.709 38.709 0 0 0-2.826 2.533c-.104.075-.309.126-.616.153-.307.027-.614-.079-.922-.317-.286-.24-.443-.513-.47-.82-.028-.329.014-.597.129-.806.984-.859 2.26-1.932 3.826-3.217 1.588-1.287 2.759-2.284 3.515-2.991-.678-.426-1.736-1.029-3.173-1.809a447.403 447.403 0 0 1-4.915-2.783c-.315-.326-.486-.642-.513-.949-.027-.307.039-.567.197-.779.18-.215.39-.333.631-.354Z"/>
+	<path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4" d="M37.955 129.137c11.424-1 12.098 6.699 23.521 5.7 11.424-1 10.75-8.699 22.175-9.698 11.424-1 12.097 6.699 23.494 5.702 11.424-.999 10.751-8.698 22.148-9.695 11.424-1 12.097 6.699 23.494 5.702 11.424-1 10.751-8.698 22.174-9.698 11.424-.999 12.098 6.7 23.522 5.7 11.423-.999 10.75-8.698 22.174-9.698 11.424-.999 12.097 6.7 23.522 5.7 11.423-.999 10.749-8.698 22.173-9.697"/>
+	<ellipse cx="180.489" cy="89.24" fill="currentColor" rx="8.943" ry="6.686" transform="rotate(-5 180.489 89.24)"/>
+	<path fill="currentColor" stroke="currentColor" stroke-width=".3" d="m213.386 96.552.147-.03-.03-.147-2.457-12.266c-1.117-5.575-6.146-9.14-11.587-8.05-5.47 1.095-8.738 6.323-7.621 11.898l2.457 12.267.03.147.147-.03 3-.6.147-.03-.029-.147-2.458-12.267c-.757-3.78 1.37-7.22 4.987-7.944 3.587-.719 6.875 1.635 7.632 5.416l2.458 12.266.029.148.147-.03 3.001-.601Z"/>
+	<path fill="currentColor" d="M156.169 71.198c8.129.897 13.618 8.104 12.686 16.546l-2.04 18.491-3.708-.409 2.041-18.491c.705-6.388-3.359-11.764-9.389-12.43-6.074-.67-11.212 3.691-11.917 10.079l-2.04 18.491-3.708-.409 2.041-18.492c.931-8.441 7.86-14.278 16.034-13.376ZM134.393 102.629l.25 2.857-15.127 1.323-.25-2.857 15.127-1.323ZM75.155 101.711c1.307 1.479 2.567 2.607 3.778 3.385 1.209.76 2.192 1.107 2.948 1.041.945-.083 1.944-.352 2.995-.808l.325 3.713c-.82.522-1.961.847-3.422.974-1.564.137-3.112-.238-4.645-1.126-1.515-.889-3.115-2.256-4.8-4.1-1.404 2.166-2.793 3.812-4.167 4.936-1.358 1.106-2.802 1.726-4.331 1.86-1.427.125-2.624.005-3.59-.361l-.326-3.713c.252.1.7.182 1.347.246.646.065 1.158.081 1.537.048.98-.086 1.959-.57 2.938-1.452.995-.901 2.053-2.267 3.174-4.097-2.328-2.065-4.072-3.99-5.233-5.776-1.145-1.805-1.793-3.567-1.943-5.286-.226-2.578.449-4.767 2.023-6.567 1.575-1.8 3.754-2.823 6.538-3.066 2.767-.242 5.082.386 6.945 1.886 1.862 1.482 2.906 3.521 3.133 6.116.29 3.318-1.45 7.367-5.224 12.147ZM92.012 93.013c-1.953.17-3.618-1.227-3.803-3.339-.199-2.27 1.203-3.882 3.156-4.053 1.849-.162 3.615 1.173 3.813 3.444.185 2.112-1.318 3.786-3.166 3.948ZM53.592 96.376c-1.953.17-3.618-1.226-3.803-3.338-.199-2.27 1.203-3.883 3.157-4.054 1.848-.161 3.614 1.174 3.812 3.444.185 2.112-1.318 3.786-3.166 3.948ZM108.182 107.188l-.758-8.662-4.795.42-.336-3.842 4.795-.42-.582-6.651c2.769-1.212 4.902-2.862 6.399-4.95 1.515-2.09 2.164-4.372 1.947-6.847-.373-4.262-2.725-6.204-7.056-5.825-1.22.107-2.489.452-3.806 1.035a13.781 13.781 0 0 0-3.47 2.2l-2.032-3.33c2.508-2.21 5.567-3.474 9.176-3.79 3.523-.308 6.316.33 8.377 1.917 2.078 1.585 3.258 3.984 3.539 7.198.244 2.784-.355 5.443-1.796 7.976-1.424 2.532-3.557 4.676-6.399 6.431l.37 4.228 5.697-.498.336 3.84-5.697.5.757 8.662-4.666.408ZM69.465 66.36c6.824-.597 12.608-.245 17.352 1.054 4.766 1.298 8.247 3.47 10.443 6.516l-4.832.423c-3.871-3.783-11.393-5.186-22.564-4.209-5.226.457-9.65 1.373-13.275 2.746-3.625 1.374-6.24 3.135-7.844 5.285l-4.832.422c1.9-3.456 5.017-6.214 9.353-8.274 4.335-2.076 9.735-3.397 16.199-3.963ZM28.153 101.589l5.697-.498-.37-4.228c-3.141-1.267-5.632-3.014-7.472-5.243-1.84-2.23-2.883-4.736-3.126-7.52-.281-3.214.464-5.782 2.235-7.703 1.772-1.922 4.41-3.036 7.917-3.343 3.627-.317 6.867.395 9.72 2.137l-1.448 3.634c-1.134-.698-2.41-1.218-3.825-1.562-1.399-.345-2.7-.465-3.902-.36-4.314.378-6.285 2.697-5.912 6.96.218 2.492 1.254 4.635 3.108 6.43 1.872 1.793 4.25 3.04 7.134 3.74l.582 6.652 4.795-.42.336 3.841-4.795.42.758 8.662-4.64.406-.759-8.662-5.697.498-.336-3.841Z"/>
+</svg>
+	<span class="visually-hidden">Blog on Digital Accessibility</span>
+</a>
+
+	<ul class="navigation__list">
+		<li class="navigation__list-item">
+			
+			
+				
+				
+			
+
+			
+			
+			
+
+			<a class="navigation__list-item-link" href="/ru/">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" class="navigation__list-item-ico" aria-hidden="true">
+	<circle cx="12" cy="12" r="10"/>
+	<path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+	<path d="M2 12h20"/>
+</svg>
+				<span lang="ru">
+					Русский
+				</span>
+			</a>
+		</li>
+		<li class="navigation__list-item">
+			<a class="navigation__list-item-link" href="/en/feed.xml">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" class="navigation__list-item-ico" aria-hidden="true">
+	<path d="M4 11a9 9 0 0 1 9 9"/>
+	<path d="M4 4a16 16 0 0 1 16 16"/>
+	<circle cx="5" cy="19" r="1"/>
+</svg>
+				RSS
+			</a>
+		</li>
+	</ul>
+</nav>
+
+<section class="header__switcher" aria-label="Color scheme">
+	<button class="header__switcher-button" aria-pressed="true" value="light">
+		Light
+	</button>
+	<button class="header__switcher-button" aria-pressed="false" value="dark">
+		Dark
+	</button>
+</section>
+	</div>
+</header>
+	<div class="base__body wrapper">
+		<main>
+			
+			
+<header class="article-header">
+	<h1>Everything you need to know about ARIA Live Regions</h1>
+
+	<ul class="topics topics--in-article">
+		
+			<li class="topics__item">HTML</li>
+		
+			<li class="topics__item">Screen readers</li>
+		
+	</ul>
+
+	<div class="article-header__dates">
+		<div class="article-header__dates-item">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" class="article-header__dates-item__ico" aria-hidden="true">
+	<path d="M8 2v4"/>
+	<path d="M16 2v4"/>
+	<rect width="18" height="18" x="3" y="4" rx="2"/>
+	<path d="M3 10h18"/>
+</svg>
+			<time datetime="2024-05-11T00:00:00.000Z">May 11, 2024</time>
+		</div>
+		
+	</div>
+</header>
+
+<div class="article">
+	<p>(This is a translation of my article from <a href="https://web-standards.ru/articles/aria-live-regions/" rel="noopener">Web Standarts</a>, editor Vadim Makeev)</p>
+<p>How to make content changes accessible.</p>
+<p>If you have a dynamically changing part of a page and you're thinking about making it accessible, there may be a legitimate question about how to make it so. These could be:</p>
+<ul>
+<li>Chats;</li>
+<li>Progress bars and timers;</li>
+<li>Widgets with news and weather forecasts;</li>
+<li>Miscellaneous bugs and alerts: new post, like, subscribe;</li>
+<li>Tickers (stock exchange information about stock quotes, indices, bonds), currency rates;</li>
+<li>Sports statistics and much more.</li>
+</ul>
+<p>Previously, assistive technologies (including screen readers) didn't know how to properly process these. Users couldn't know if there was an error or new data until they returned to the previous block or reached the end of the page. Now the problem of accessibility of dynamically changing page content can be solved with ARIA.</p>
+<p>If you're not familiar with this acronym, WAI-ARIA <em>(Web Accessibility Initiative - Accessible Rich Internet Applications)</em> or simply ARIA is a standard consisting of a set of special roles and attributes that are added to markup and extend or augment the functions of standard HTML elements.</p>
+<p>All we need to do is make the part of the page where the changes occur. In ARIA terminology, this is called a &quot;live region.&quot; You can find <a href="https://www.w3.org/TR/wai-aria-1.2/#dfn-live-region" rel="noopener">this definition</a> in the standard:</p>
+<blockquote>
+<p><strong>Live Regions</strong> are perceived areas of pages that are usually updated as a result of an external event when a user focuses somewhere else. These regions are not always updated due to user interaction with an UI. This practice has become commonplace as a result of the heavy use of Ajax.</p>
+</blockquote>
+<p>Thus, the main purpose of such areas is to tell screen readers how to properly handle content changes that aren't necessarily dependent on users.</p>
+<p>To make an interactive area on a page, we just need to add the <code>aria-live=&quot;&quot;</code> attribute or a special ARIA role to any parent element. Then the changes of all its child elements will become available to screen readers. They will know now how to handle updates to the contents of such elements.</p>
+<p>There are several such roles and attributes in ARIA. Let's talk about the roles first.</p>
+<h2>Interactive Area Roles</h2>
+<p>There aren't many ARIA roles that make part of a page an interactive area. They are used like this: <code>role=&quot;alert&quot;</code> Here's a complete list of them:</p>
+<ul>
+<li><code>alert</code>;</li>
+<li><code>status</code>;</li>
+<li><code>log</code>;</li>
+<li><code>timer</code>;</li>
+<li><code>marquee</code>.</li>
+</ul>
+<p>Let's deal with each role in order.</p>
+<h3>Alert</h3>
+<p>A type of interactive area that contains information that is important at a certain point in time. It can be an error message, a warning that appears on the screen after some user actions or without his participation (a sudden error on the server side). Such a message can be either text or sound.</p>
+<p>Let's take a look at a simple example where we warn users about something <em>really</em> important:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>warning<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>alert<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    You've stared into the abyss for too long,
+    and now the abyss is staring back at you.
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>Screen reader will instantly announce it the moment it appears, and interrupt the other announcement if there is one.</p>
+<p>👉 For maximum compatibility, use <code>role=&quot;alert&quot;</code> together with the <code>aria-live=&quot;assertive&quot;</code> attribute. That said, such an element can still be incorrectly declared by VoiceOver on iOS. Let's make some minor changes to our example:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>warning<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>alert<span class="token punctuation">"</span></span> <span class="token attr-name">aria-live</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>assertive<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    You've stared into the abyss for too long,
+    and now the abyss is staring back at you.
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>It turns out that we duplicated the behaviour already built into <code>role=&quot;alert&quot;</code> by using the <code>assertive</code> value of the <code>aria-live</code> attribute. The latter tells screen readers to announce changes immediately.</p>
+<h3>Status</h3>
+<p>The area with this role contains additional information that is not particularly important and describes the status of changes (status bar). It can be information that a user action is successful or vice versa, that it is necessary to wait for some process to complete or that there is an error somewhere. For example, such a role can be assigned to the message about successful autosave of text or used when validating fields in the registration form.</p>
+<p>By the way, there is a special command in screen readers that helps users to find out about a status. In NVDA this command is invoked by pressing the keys <kbd>Ins End</kbd>. And by <kbd>Ins 3</kbd> in JAWS.</p>
+<p>In the example, we tell users that changes have been saved:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>status-message<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>status<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    We've saved your changes automatically.
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>The screen reader will declare this with a pause, not immediately, as in the case of <code>role=&quot;alert&quot;</code>.</p>
+<p>👉 The behaviour of <code>aria-live=&quot;polite&quot;</code> attribute is included in <code>role=&quot;status&quot;</code>. It's recommended to use them together for maximum compatibility. Therefore, the example above now looks like this:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>status-message<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>status<span class="token punctuation">"</span></span> <span class="token attr-name">aria-live</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>polite<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    We've saved your changes automatically.
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>A screen reader will announce a successful autosave with a pause and won't interrupt other announcements.</p>
+<h3>Log</h3>
+<p>A type of interactive area that contains logs. For example, a history of messages from chat rooms, a list of errors, and the like. For logs, the sequence in which new information appears is important. Think of the event log in your OS.</p>
+<p>This example shows content updates in a chat room. When a user types a message in a text box, it is added to the end of the conversation.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>log<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h4</span><span class="token punctuation">></span></span>Message history<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h4</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>
+            Can you borrow your Welsh corgi cardigan
+            till Monday? I really need it.
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>Теперь скринридер объявляет о новых комментариях после того, как пользователь перестал набирать или отправлять сообщение.</p>
+<p>👉 <code>role=&quot;log&quot;</code> на всякий случай лучше сочетать с атрибутом <code>aria-live=&quot;polite&quot;</code>:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>log<span class="token punctuation">"</span></span> <span class="token attr-name">aria-live</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>polite<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h4</span><span class="token punctuation">></span></span>Message history<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h4</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>
+            Can you borrow your Welsh corgi cardigan
+            till Monday? I really need it.
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>Have you been hacked again?<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>In this case, all changes will surely be announced with a pause and not interrupt other more important changes.</p>
+<h3>Marquee</h3>
+<p>This kind of area contains information that changes rapidly. This role is similar to <code>log</code>, but in this case the sequence in which the information is updated is irrelevant. A simple example where <code>role=&quot;marquee&quot;</code> might come in handy is tickers and exchange rates.</p>
+<p>In this example, we add <code>role=&quot;marquee&quot;</code> for a block with information about currency rates:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>marquee<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>1 yuan for 9999.56 ₽<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>1 frontendcoin for 100000000000.32 ₽<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span></code></pre>
+<p>A screen reader will announce changes in this block when the user focuses on it. Exchange rates change frequently, so constant announcements about it will only annoy users.</p>
+<p>👉 <code>role=&quot;marquee&quot;</code> should be used together with the <code>aria-live=&quot;off&quot;</code> attribute:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>marquee<span class="token punctuation">"</span></span> <span class="token attr-name">aria-live</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>off<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>1 yuan for 9999.56 ₽<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span>1 frontendcoin for 100000000000.32 ₽<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span></code></pre>
+<p>We've simply duplicated the default <code>role=&quot;marquee&quot;</code> behaviour for maximum compatibility.</p>
+<h3>Timer</h3>
+<p>This role is needed for areas that contain counters that count down and backward. For example, a countdown timer, clock, or stopwatch.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>timer<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token comment">&lt;!-- Time is rapidly running out here --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>This role has a default behaviour built in, where the A screen reader won't announce changes to the timer, and the user will only know about them when focusing on it.</p>
+<p>👉 The element with <code>role=&quot;timer&quot;</code> should also be set to the <code>aria-live=&quot;off&quot;</code> attribute for full compatibility with all assistive devices and browsers:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>timer<span class="token punctuation">"</span></span> <span class="token attr-name">aria-live</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>off<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token comment">&lt;!-- Time is rapidly running out here --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>If you want a screen reader to announce changes after a certain time interval, you can do it with JavaScript. We need to switch <code>aria-live=&quot;off&quot;</code> to <code>aria-live=&quot;polite&quot;</code> at the desired interval, e.g. 60 minutes.</p>
+<h2>Attributes of interactive areas</h2>
+<p>Now let's talk about attributes that make any area of the page interactive. There are four of them in total:</p>
+<ul>
+<li><code>aria-live</code>;</li>
+<li><code>aria-atomic</code>;</li>
+<li><code>aria-relevant</code>;</li>
+<li><code>aria-busy</code>.</li>
+</ul>
+<p>Let's take a look at each of them.</p>
+<h3>Aria-live.</h3>
+<p>This attribute is used to determine how important changes that have occurred to elements are.</p>
+<p>That is, the values of this attribute reflect how urgently and quickly assistive technologies need to inform users of these changes. The attribute has three values: <code>off</code>, <code>polite</code>, and <code>assertive</code>.</p>
+<ul>
+<li><code>off</code> (default value) - indicates the lowest priority, so such changes aren't announced. This behaviour is built into elements with <code>role=&quot;marquee&quot;</code> and <code>role=&quot;timer&quot;</code>. It can be set to areas that aren't important or change too quickly.</li>
+<li><code>polite</code> - indicates a low priority level. It is used when there are changes to an area that assistive technologies don't need to announce instantly. Screen readers pause before such an announcement, don't interrupt current tasks and wait until a user stops interacting with the interface. This is how elements with <code>role=&quot;status&quot;</code> and <code>role=&quot;log&quot;</code> behave. It's suitable for notifications about new posts, likes, autosaves and the like.</li>
+<li><code>assertive</code> - indicates the highest priority level. Such changes will be announced immediately, while changes with lower priority will be queued and announced later. This is how elements with <code>role=&quot;alert&quot;</code> behave, so this attribute can be used to announce important changes, for example, a server error or that data hasn't been saved. The specification doesn't recommend using this value when there's no immediate need to notify users of changes.</li>
+</ul>
+<p>Here are a couple of simple examples of using <code>aria-live=&quot;polite&quot;</code> and <code>aria-live=&quot;assertive&quot;</code>.</p>
+<p>In this example with <code>aria-live=&quot;polite&quot;</code> the name of the dish in the paragraph is changed when the button is clicked using the script.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">aria-live</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>polite<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>My favourite dish is
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>food<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>lutefisk<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>.
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Next dish<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+<p>A screen reader will pause before an announcement.</p>
+<p>Here we have a form with several settings and a save button. If the changes aren't saved, a message about it should appear. Let's set it to <code>aria-live=&quot;assertive&quot;</code>:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>devil-fruit<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Devil fruit<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>devil-fruit<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+    …
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Save settings<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>alert-window<span class="token punctuation">"</span></span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>alert<span class="token punctuation">"</span></span> <span class="token attr-name">aria-live</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>assertive<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    Your settings weren't saved,
+    try again, yo-ho-ho!
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<p>Here a screen reader announces it immediately.</p>
+<p>❗ The WAI-ARIA standard also specifies that in some cases assistive technologies may override the values of the <code>aria-live</code> attribute and announce any changes instantly.</p>
+<h3>Aria-atomic</h3>
+<p>This attribute is optional and affects the extent to which assistive technologies will announce changes: the whole content or just the changed part of it.</p>
+<p>The attribute has only two values, <code>false</code> and <code>true</code>.</p>
+<ul>
+<li><code>false</code> (default value) - the value when assistive technologies will only report changes.</li>
+<li><code>true</code> - with this value all content is declared, including the changed part.</li>
+</ul>
+<p>When choosing the right value for <code>aria-atomic=&quot;&quot;</code>, you need to understand whether the context is important for understanding changes. In most cases, leaving the default value is sufficient.</p>
+<p>In this example, it's important to keep the context, so you can use <code>aria-atomic=&quot;true&quot;</code>:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">aria-live</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>polite<span class="token punctuation">"</span></span> <span class="token attr-name">aria-atomic</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>My favourite dish is
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>food<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>lutefisk<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>.
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Next dish<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span></code></pre>
+<p>Now a screen reader will read out the whole sentence, not just the part that changes after the button is clicked.</p>
+<h3>Aria-relevant</h3>
+<p>The purpose of this attribute is to tell assistive technologies exactly what changes have taken place on the page and therefore in the accessibility tree. This could be removing old content or adding new content. The attribute is optional.</p>
+<p><code>aria-relevant=&quot;&quot;</code> can contain one or more values separated by a space.</p>
+<ul>
+<li><code>additions</code> - new information has been added to the page.</li>
+<li><code>removals</code> - information has been removed.</li>
+<li><code>text</code> - new text or equivalent information has been added, such as the new content of the <code>alt</code> attribute.</li>
+<li><code>additions text</code> <strong>(default value)</strong> indicates that a text has been changed and there's a piece of new information on the page.</li>
+<li><code>all</code> - all possible values. Equivalent to the <code>additions removals text</code> value.</li>
+</ul>
+<p>In fact, there are few real-world scenarios for using this attribute. It either <a href="https://github.com/w3c/aria/issues/712" rel="noopener">doesn't work in many browsers and screen readers</a>, or it's <a href="https://medium.com/dev-channel/why-authors-should-avoid-aria-relevant-5d3164fab1e3" rel="noopener">advised not to use it at all</a> and use alternative methods.</p>
+<p>The most realistic scenario for using it is a friends list. When a friend has gone offline and is no longer available, we can use this attribute to let a user know. We need to set <code>aria-relevant=&quot;all&quot;</code> for the list. Then some screen readers will announce that a contact has been deleted. This works in JAWS when a child item is deleted (it no longer works with a parent item). VoiceOver and NVDA aren't affected by this attribute.</p>
+<h3>Aria-busy</h3>
+<p><code>aria-busy=&quot;&quot;</code> lets assistive technologies know whether an element's content is currently being updated or not. The attribute makes sense to apply when the page is auto-updating content. Something has been removed, something has been added, some part of it has been changed, and we need to be informed about it all at once in one go. This can be useful when our page has sports statistics that are updated in real-time, a text document that can be edited by several people, some news widget or a weather widget.</p>
+<p><code>aria-busy=&quot;&quot;</code> has two values, <code>false</code> and <code>true</code>.</p>
+<ul>
+<li><code>false</code> (default value) - with this value, assistive technologies don't wait for changes to complete.</li>
+<li><code>true</code> - this value tells assistive technologies that they need to wait until an element has finished changing, at which point they can collect all changes and make an announcement. That is, while the content is updating, screen reader users, for example, won't be able to read that updating part.</li>
+</ul>
+<p>In the example below, we have sports scores that are updated regularly during competitions:</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>Current score<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>score<span class="token punctuation">"</span></span> <span class="token attr-name">aria-live</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>polite<span class="token punctuation">"</span></span> <span class="token attr-name">aria-busy</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>9:0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span></code></pre>
+<p>To ensure that all information is declared after all changes, we'll first add <code>aria-busy</code> attribute with a value of <code>true</code> and then use JavaScript to replace its value with <code>false</code> or remove it altogether when all changes are complete.</p>
+<h2>Summary</h2>
+<p>If you have a part of your page whose content changes, you need to make it an interactive area. Screen readers will then be able to keep their users informed about all the changes. You can make such a part interactive by using <code>role=&quot;alert&quot;</code>, <code>role=&quot;status&quot;</code>, <code>role=&quot;log&quot;</code>, <code>role=&quot;marquee&quot;</code>, <code>role=&quot;timer&quot;</code> and <code>aria-live</code> attribute.</p>
+<p>Use <code>role=&quot;alert&quot;</code> for important errors and warnings. For better compatibility, add it for necessary elements together with the <code>aria-live=&quot;assertive&quot;</code> and <code>aria-atomic=&quot;true&quot;</code> attribute (optional).</p>
+<p><code>role=&quot;status&quot;</code> is suitable for reporting less important errors and warnings. For example, an autosave message, an incorrectly filled field, and the like. This role should be combined with the <code>aria-live=&quot;polite&quot;</code> attribute for compatibility.</p>
+<p>If you need to make message history, error list and anything where the sequence of information updates is important, use <code>role=&quot;log&quot;</code>. For greater compatibility, use the <code>aria-live=&quot;polite&quot;</code> attribute along with it.</p>
+<p>When you have tickers, currency rates or any other element on your page where information changes quickly, then set <code>role=&quot;marquee&quot;</code> for them. For compatibility, supplement it with <code>aria-live=&quot;off&quot;</code>.</p>
+<p>For a timer, counter or stopwatch set <code>role=&quot;timer&quot;</code>. Don't forget <code>aria-live=&quot;off&quot;</code> for better compatibility.</p>
+<p><code>aria-live=&quot;&quot;</code> is responsible for how urgently changes need to be announced. Where changes don't need to be announced, use <code>aria-live=&quot;off&quot;</code>. In most cases there's no urgency to announce changes, so <code>aria-live=&quot;polite&quot;</code> comes in handy. Sometimes, when it's an important message, such as a server error, you can use <code>aria-live=&quot;assertive&quot;</code>.</p>
+<p><code>aria-atomic=&quot;&quot;</code> is an optional attribute. It affects whether a screen reader announces a context or only announces changes. By default, all elements are set to <code>aria-atomic=&quot;false&quot;</code>, meaning screen readers only report content changes. If you change it to <code>aria-atomic=&quot;true&quot;</code>, screen readers will read out the whole thing, including the unchanged part. In most cases, there's no need to change the default behaviour.</p>
+<p>Another optional attribute is <code>aria-relevant=&quot;&quot;</code>. It is needed to define the type of content changes. It has several values, which can be listed with a space. There are few real-world usage scenarios (deleting or adding a friend to your friend list), and many A screen readers ignore it.</p>
+<p>The last optional attribute is <code>aria-busy=&quot;&quot;</code>. Tells assistive technologies whether the element's content is currently being updated or not. By default, elements are set to <code>aria-busy=&quot;false&quot;</code>. Screen readers announce changes without waiting for them to complete. In some cases, you can use <code>aria-busy=&quot;true&quot;</code> when you want to wait for all updates. May be useful for sports statistics or a text document in group edit mode.</p>
+<h2>Further reading</h2>
+<ul>
+<li>Standard <a href="https://www.w3.org/TR/wai-aria-1.2/" rel="noopener">WAI-ARIA 1.2</a>.</li>
+<li>Note <a href="https://web.dev/articles/hiding-and-updating-content" rel="noopener">Hiding and Updating Content</a> on web.dev.</li>
+<li>Some examples of using ARIA attributes in <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions" rel="noopener">ARIA Live Regions</a> on MDN.</li>
+<li><a href="https://medium.com/@rishabhsrao/aria-live-regions-6cc96e1a8b72" rel="noopener">ARIA Live Regions</a> by Rishabh Rao.</li>
+<li><a href="https://hidde.blog/how-to-make-inline-error-messages-accessible/" rel="noopener">How to make inline error messages accessible</a> by Hidde de Vries.</li>
+</ul>
+
+</div>
+
+<section aria-labelledby="heading">
+	<h2 id="heading">Other articles</h2>
+	
+
+
+
+
+
+
+
+	
+
+	
+
+	
+		
+		
+			
+		
+		
+		
+			
+		
+	
+
+	
+
+	
+
+
+
+	<ul class="cards cards--in-article">
+		
+			<li class="cards__item cards__item--compact">
+				<a href="/en/articles/how-to-protect-users-with-epilepsy-and-vd/index.undefined" class="cards__item-link">How to avoid harming users with epilepsy and vestibular impairment</a>
+				<span class="cards__item-details">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke-width="2"
+						stroke-linecap="round"
+						class="cards__item-details__ico"
+						aria-hidden="true"
+					>
+						<path d="m12 19-7-7 7-7"/>
+						<path d="M19 12H5"/>
+					</svg>
+					Previous
+				</span>
+			</li>
+		
+		
+			<li class="cards__item cards__item--compact">
+				<a href="/en/articles/css-media-features-for-a11y/index.undefined" class="cards__item-link">CSS media feature to improve accessibility</a>
+				<span class="cards__item-details">
+					Next
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke-width="2"
+						stroke-linecap="round"
+						class="cards__item-details__ico"
+						aria-hidden="true"
+					>
+						<path d="M5 12h14"/>
+						<path d="m12 5 7 7-7 7"/>
+					</svg>
+				</span>
+			</li>
+		
+	</ul>
+
+</section>
+		</main>
+	</div>
+	<footer>
+	<div class="footer wrapper">
+		<div class="footer__column">
+			<span aria-hidden="true">ʢ·͡ᴥ·ʡ∩๐า╭∩าﾉ\</span>
+			<small>Tatiana Fokina, 2021–2024</small>
+		</div>
+		<div class="footer__column">
+			<small>
+				Build on <a href="https://www.11ty.dev/">11ty</a>, icons by <a href="https://lucide.dev">Lucide</a>
+			</small>
+			<small>
+				Find an issue? Let me know on <a href="https://github.com/TatianaFokina/a11y-blog">GitHub</a>
+			</small>
+		</div>
+	</div>
+</footer>
+
+
+	
+</body>
+</html>
