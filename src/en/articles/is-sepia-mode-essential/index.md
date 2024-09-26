@@ -9,7 +9,7 @@ date: 2024-09-25
 layout: article.njk
 ---
 
-I like Pocket. Actually, no: I LOVE Pocket. It helps me keep many articles and posts I'm curious about in one place. Sometimes I have too many articles to read, so I start procrastinating, but that's my problem, not Pocket's.
+I like Pocket. Actually, no: I _love_ Pocket. It helps me keep many articles and posts I'm curious about in one place. Sometimes I have too many articles to read, so I start procrastinating, but that's my problem, not Pocket's.
 
 If you're unfamiliar with Pocket, it's a service for storing web bookmarks less chaotically, unlike collecting hundreds of tabs in your browser.
 
