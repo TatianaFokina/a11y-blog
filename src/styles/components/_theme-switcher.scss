@@ -13,6 +13,8 @@
 }
 
 .header__switcher-button {
+	display: flex;
+	align-items: center;
 	margin: 0;
 	padding: $gap-12 $gap-16;
 	font-size: inherit;
