@@ -1,24 +1,20 @@
 ---
 title: "Typography checklists: Readability"
-description: Readability checklist and short notes on it (?)
+description: Readability checklist and short notes on it.
 ogImage: cover.png
 keyTheme:
   - Content
-date: 2024-11-25
+date: 2024-11-28
 layout: article.njk
 ---
 
 This is the first part of two of a series of posts on accessibility, typography, and their friendship 🫂
 
-The series based on my talk ″[Accessibility and typography](https://tatianafokina.github.io/talks/a11y-and-typography/)″ what I had at Tbilisi A11y & UX Day in November 2024.
+The series based on my talk ″[Accessibility and typography](https://tatianafokina.github.io/talks/a11y-and-typography/)″. I had the talk at Tbilisi A11y & UX Day in November 2024.
 
-## What is readability?
+The first post is about readability.
 
 _Readability_ is a characteristic of text that defines how easy it is to read the text. There are three main factors that affect readability:
-
-- person’s unique attributes (health factors),
-- the topic of the text,
-- typography (the choice of typeface and how it’s used).
 
 ## Readability checklist
 
@@ -30,7 +26,7 @@ _Readability_ is a characteristic of text that defines how easy it is to read th
 - Readability score is 70–100 based on the automatic test.
 - There is no critical issues with legibility.
 
-Check the interactive version of the readability checklist. (?)
+You can find an interactive readability checklist on the Typographa11y site. It is a pet-project supports the post.
 
 ## Notes
 
@@ -50,35 +46,37 @@ Text complexity is affected by:
 
 - Purpose: Informational, entertain, persuade, etc.
 - Structure: The way how the ideas are organized.
-- Layout: How visual elements of the text are presented.
-- Visual supports: Heavy/light use of images and media content.
+- Layout: How visual elements of the text are presented (headings, paragraphs, lists, etc.)
+- Visual supports: Heavy or light use of images and media content.
 - Language features: Clarity of the language including vocabulary, sentence structure, and style.
-- Knowledge demands: Assumptions about a reader’s life experiences.
+- Knowledge demands: Assumptions about a reader’s level of education and experience.
 
 ### Sentences, words and voice
 
-Readable words should be plainspoken. It's better to avoid long words and replace them with similar, shorter ones if possible.
+Plainspoken, familiar words are more transparent than long and rare ones. For example, more users know about ″maples″ than ″acer.″
 
 Longer sentences are usually harder to break down than concise ones. Avoid convoluted sentence structures with many clauses and conjunctions.
 
-Active voice points out who or what is performing an action in the sentence. It includes active verbs. For example, ″The cat ate the food.″
+Active voice points out who or what is performing an action in the sentence. For example, ″The cat ate the food.″
 
-## Testing and tools
+## Testing
 
 Readability is calculate automatically with readability calculators and grammar checkers.
 
-Readability calculators based on formulas that consider the length of the words and the sentences. Based on that, calculators check the reading level of your text.
+Readability сalculators check the reading level of your text based on formulas. Readability formulas consider the length of the sentences and the words familiarity.
 
 The reading level counts in approximate years of education. The perfect readability score should be between 70 to 100. This is 5th to 8th grade. It means that the text is understood by teenagers, young adults, and other people.
 
 Another way to conduct the readability testing is to perform the eye tracking test.
 
+## Tools
+
 Common readability calculators:
 
-- [Flesch-Kincaid reading level](https://readabilityformulas.com/learn-how-to-use-the-flesch-kincaid-grade-level/)
-- [Fry graph](https://readabilityformulas.com/calculator-fry-graph-readability-formula.php)
-- [Dale-Chall](https://readabilityformulas.com/calculator-dale-chall-formula.php)
-- [Spache](https://readabilityformulas.com/calculator-spache-readability-formula.php).
+- [Oscar Stories readability scores](https://oscarstories.com/calculator/)
+- [WebFX readability test](https://www.webfx.com/tools/read-able/)
+- [TextRazor](https://www.textrazor.com)
+- [Readable](https://readable.com)
 
 Some examples of grammar checkers:
 
