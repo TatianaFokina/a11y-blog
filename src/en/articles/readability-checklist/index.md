@@ -26,7 +26,7 @@ _Readability_ is a characteristic of text that defines how easy it is to read th
 - Readability score is 70–100 based on the automatic test.
 - There is no critical issues with legibility.
 
-You can find an interactive readability checklist on the Typographa11y site. It is a pet-project supports the post.
+You can find an [interactive readability checklist](https://tatianafokina.github.io/typographa11y/en/readability.html) on the Typographa11y site. It is a pet-project supports the post.
 
 ## Notes
 
@@ -76,7 +76,7 @@ Common readability calculators:
 - [Oscar Stories readability scores](https://oscarstories.com/calculator/)
 - [WebFX readability test](https://www.webfx.com/tools/read-able/)
 - [TextRazor](https://www.textrazor.com)
-- [Readable](https://readable.com)
+- [Readable](https://readable.com).
 
 Some examples of grammar checkers:
 
