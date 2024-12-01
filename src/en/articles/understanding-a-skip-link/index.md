@@ -113,7 +113,7 @@ The first option works more or less well in modern browsers, but there is one â€
 
 **Chrome blowser**: The skip link doesn't send focus to the anchor element via the <kbd>Tab</kbd> key, and moves to the next element after the link.
 
-[The bug on the iOS platform](https://bugs.webkit.org/show_bug.cgi?id=179011) was fixed in April 2020. [Chromium team fixed bug](https://bugs.chromium.org/p/chromium/issues/detail?id=37721) back in 2017. [The bug on Android](https://bugs.chromium.org/p/chromium/issues/detail?id=657157) haven't been fixed yet. [The bug on Android](https://bugs.chromium.org/p/chromium/issues/detail?id=657157) hasn't been fixed yet. Hence, these bugs don't occur with iOS 13+ or older versions of Chrome. However, some screen reader users don't update versions of browsers and operating systems frequently.
+[The bug on the iOS platform](https://bugs.webkit.org/show_bug.cgi?id=179011) was fixed in April 2020. [Chromium team fixed bug](https://bugs.chromium.org/p/chromium/issues/detail?id=37721) back in 2017. [The bug on Android](https://bugs.chromium.org/p/chromium/issues/detail?id=657157) haven't been fixed yet. Hence, these bugs don't occur with iOS 13+ or older versions of Chrome. However, some screen reader users don't update versions of browsers and operating systems frequently.
 
 **Option 2**: The skip link refers to the `h1` element as a child of the `main` one.
 
