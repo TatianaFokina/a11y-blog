@@ -1,10 +1,10 @@
 ---
-title: "Typography checklists: Readability"
+title: "Readability checklist"
 description: Readability checklist and short notes on it.
 ogImage: cover.png
 keyTheme:
   - Content
-date: 2024-11-28
+date: 2024-12-04
 layout: article.njk
 ---
 
