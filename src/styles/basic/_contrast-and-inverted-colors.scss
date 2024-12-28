@@ -11,11 +11,11 @@
 		background: CanvasText;
 	}
 
-	.cards__item {
+	.card__item {
 		border: 2px solid transparent;
 	}
 
-	.cards__item:focus-within {
+	.card__item:focus-within {
 		@include focus (
 			$width: 4px,
 			$offset: 2px,

@@ -1,6 +1,7 @@
 @import "../variables";
 
-.topics {
+.topics,
+.card__topic {
 	display: flex;
 	flex-wrap: wrap;
 	margin: 0;
@@ -13,11 +14,7 @@
 	justify-content: center;
 }
 
-.topics--in-card {
-	margin-bottom: $gap-12;
-}
-
-.topics__item {
+.card__topic-item {
 	padding: $gap-4 $gap-8;
 	color: var(--text-color);
 	border: 1px solid var(--border-color);
