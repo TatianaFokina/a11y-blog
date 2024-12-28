@@ -1,14 +1,18 @@
-<footer>
-	<div class="footer wrapper">
-		<div class="footer__column">
-			<span aria-hidden="true">ʢ·͡ᴥ·ʡ∩๐า╭∩าﾉ\</span>
-			<small>{{ "name" | translate }}, 2021–{% currentYear %}</small>
+<footer class="footer">
+	<div class="footer__container wrapper">
+		<div class="footer__info-column">
+			<span aria-hidden="true">
+				ʢ·͡ᴥ·ʡ∩๐า╭∩าﾉ\
+			</span>
+			<small class="footer__info-text">
+				{{ "name" | translate }}, 2021–{% currentYear %}
+			</small>
 		</div>
-		<div class="footer__column">
-			<small>
+		<div class="footer__links-column">
+			<small class="footer__info-text">
 				{{ "developed" | translate }} <a href="{{ links.copyright.eleventy }}">11ty</a>, {{ "icons from" | translate }} <a href="{{ links.copyright.lucide }}">Lucide</a>
 			</small>
-			<small>
+			<small class="footer__info-text">
 				{{ "github repo" | translate }} <a href="{{ links.public.github }}">GitHub</a>
 			</small>
 		</div>

@@ -1,7 +1,7 @@
 @import "../variables";
 @import "../mixins-and-functions";
 
-.footer {
+.footer__container {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
@@ -11,7 +11,8 @@
 	gap: $gap-16;
 }
 
-.footer__column {
+.footer__info-column,
+.footer__links-column {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -20,4 +21,9 @@
 	@include media(sm) {
 		gap: unset;
 	}
+}
+
+.footer__info-text {
+	font-size: var(--step--1);
+	line-height: $line-height-small;
 }
