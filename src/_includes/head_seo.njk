@@ -1,23 +1,28 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="{{ description or 'site description' | translate | safe }}">
-<link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+<meta name="description" content="{{ description or "site description" | translate | safe }}">
+<link rel="canonical" href="{{ site.url }}{{ page.url }}">
 
-{% set isHomePage = page.url === ('/' + page.lang + '/') %}
+<link rel="alternate" href="https://a11y-blog.dev" hreflang="x-default">
+<link rel="alternate" href="https://a11y-blog.dev/ru/" hreflang="ru">
+<link rel="alternate" href="https://a11y-blog.dev/en/" hreflang="en-US">
+
+{% set isHomePage = page.url === ("/" + page.lang + "/") %}
 <title>
 	{% if isHomePage %}
-		{{ 'site name' | translate | safe }}
+		{{ "site name" | translate | safe }}
 	{% else %}
-		{{ title }} — {{ 'site name' | translate | safe }}
+		{{ title }} — {{ "site name" | translate | safe }}
 	{% endif %}
 </title>
 
-<link rel="alternate" hreflang="{{ page.lang }}" href="{{ site.url }}{{ page.url }}" />
+<link rel="alternate" hreflang="{{ page.lang }}" href="{{ site.url }}{{ page.url }}">
 {% for link in page.url | locale_links %}
 	{% if link.url %}
 		<link
 			rel="alternate"
 			hreflang="{{ link.lang }}"
-			href="{{ site.url }}{{ link.url }}">
+			href="{{ site.url }}{{ link.url }}"
+		>
 	{% endif %}
 {% endfor %}
