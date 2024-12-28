@@ -1,0 +1,45 @@
+@import "../variables";
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+a {
+	color: var(--text-color);
+	border-bottom: 2px solid var(--border-color);
+	text-decoration: none;
+
+	&:hover {
+		background: var(--color-hover);
+	}
+
+	&:focus-visible {
+		@include focus (
+			$offset: 2px
+		);
+	}
+}
+
+hr {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	height: $hr-height;
+	margin: fluidSizes($gap-48, $gap-56) auto fluidSizes($gap-20, $gap-28);
+	border: 0;
+
+	&:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		width: 100%;
+		height: $hr-height;
+		background-image: url("../assets/wave.svg");
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+}
