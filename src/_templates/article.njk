@@ -7,7 +7,7 @@ layout: _base.njk
 
 	<ul class="topics topics--in-article">
 		{% for tag in keyTheme %}
-			<li class="topics__item">{{ tag }}</li>
+			<li class="card__topic-item">{{ tag }}</li>
 		{% endfor %}
 	</ul>
 
@@ -30,7 +30,9 @@ layout: _base.njk
 	{{ content | safe }}
 </div>
 
-<section aria-labelledby="heading">
-	<h2 id="heading">{{ "other articles" | translate }}</h2>
+<section class="cards__list" aria-labelledby="section-label">
+	<h2 class="cards_heading" id="section-label">
+		{{ "other articles" | translate }}
+	</h2>
 	{% include "article-navigation.njk" %}
 </section>

@@ -1,17 +1,25 @@
-<article class="cards__item">
-	<h3 class="cards__item-heading">
-		<a class="cards__item-heading-link" href="{{ article.url }}">{{ article.data.title }}</a>
+<article class="card__item">
+	<h3 class="card__heading">
+		<a class="card__heading-link" href="{{ article.url }}">
+			{{ article.data.title }}
+		</a>
 	</h3>
-	<p class="cards__item-description">{{ article.data.description }}</p>
-	<footer>
-		<ul class="topics topics--in-card">
+	<p class="card__description">
+		{{ article.data.description }}
+	</p>
+	<footer class="card__footer">
+		<ul class="card__topic">
 			{% for tag in article.data.keyTheme %}
-				<li class="topics__item">{{ tag }}</li>
+				<li class="card__topic-item">
+					{{ tag }}
+				</li>
 			{% endfor %}
 		</ul>
-		<div class="cards__item-date">
+		<div class="card__date">
 			{% include "../assets/ico-published.svg" %}
-			<time datetime="{{ article.date | dateFormat("ISO") }}">{{ article.data.date | dateFormat("readable") }}</time>
+			<time datetime="{{ article.date | dateFormat("ISO") }}">
+				{{ article.data.date | dateFormat("readable") }}
+			</time>
 		</div>
 	</footer>
 </article>

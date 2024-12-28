@@ -4,13 +4,16 @@ layout: _base.njk
 
 {{ content | safe }}
 
-<section aria-labelledby="heading">
+<section class="cards__list" aria-labelledby="label">
 
-	<h2 id="heading">{{ 'latest (heading)' | translate }}</h2>
+	<h2 class="cards_heading" id="label">
+		{{ "latest (heading)" | translate }}
+	</h2>
 
-	{% set collectionName = 'articles' + page.lang.charAt(0).toUpperCase() + page.lang.slice(1) %}
+	{% set collectionName = "articles" + page.lang.charAt(0).toUpperCase() + page.lang.slice(1) %}
 	{% set articleslist = collections[collectionName] | slice(3) %}
-	<div class="cards">
+
+	<div class="card">
 		{% for article in articleslist %}
 			{% include "card.njk" %}
 		{% endfor %}
@@ -18,6 +21,8 @@ layout: _base.njk
 
 	{% set maxArticles = articleslist.length | min(3) %}
 	{% if maxArticles === 3 %}
-		<a href="/{{ page.lang }}/articles/">{{ 'all articles (link)' | translate }}</a>
+		<a class="cards__link" href="/{{ page.lang }}/articles/">
+			{{ "all articles (link)" | translate }}
+		</a>
 	{% endif %}
 </section>

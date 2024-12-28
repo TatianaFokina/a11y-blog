@@ -1,36 +1,37 @@
 @import "../variables";
 @import "../mixins-and-functions";
 
-.cards {
-	display: inline-flex;
+.cards_heading:has(+ .card) {
+	margin-block-end: fluidSizes($gap-28, $gap-32);
+}
+
+.card {
+	display: flex;
 	flex-direction: column;
 	width: 100%;
-	margin-top: 0;
-	padding: 0;
 	gap: $gap-20;
 }
 
-h2:has(+ .cards) {
-	margin-bottom: fluidSizes($gap-32, $gap-36);
+.card:has(+ .cards__link) {
+	margin-block-end: fluidSizes($gap-20, $gap-24);
 }
 
-.cards:has(+ a) {
-	margin-bottom: fluidSizes($gap-20, $gap-24);
-}
+.card--in-article {
+	padding-block: 0;
+	padding-inline: 0;
 
-.cards--in-article {
 	@include media(md) {
 		flex-direction: row;
 	}
 }
 
-.cards__item {
+.card__item {
 	position: relative;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	padding: $gap-24;
 	width: 100%;
-	padding: $gap-16;
 	gap: $gap-16;
 	background: var(--bg-part-color);
 	border-radius: $radius-26;
@@ -49,40 +50,36 @@ h2:has(+ .cards) {
 	}
 }
 
-.cards__item--compact {
+.card__item--compact {
 	display: inline-flex;
 	padding: $gap-20;
 }
 
-.cards__item-heading {
-	margin-top: 0;
+.card__heading {
+	padding-block: 0;
+	margin-block-end: $gap-12;
 }
 
-.cards__item:focus-within {
+.card__item:focus-within {
 	@include focus (
-		$width: 4px,
+		$width: $gap-4,
 		$offset: 2px
 	);
 }
 
-.cards__item-heading-link:focus-visible,
-.cards__item-link:focus-visible {
-	outline: 0;
-}
-
-.cards__item-heading-link,
-.cards__item-link {
+.card__heading-link,
+.card__item-link {
 	font-weight: bold;
 	color: inherit;
 	border-bottom: 0;
 
 	&:after {
-		content: "";
 		position: absolute;
-		left: 0;
+		content: "";
 		top: 0;
-		right: 0;
 		bottom: 0;
+		left: 0;
+		right: 0;
 	}
 
 	&:hover {
@@ -91,26 +88,41 @@ h2:has(+ .cards) {
 		border-bottom: 0;
 		transition: none;
 	}
+
+	&:focus-visible {
+		outline: 0;
+	}
 }
 
-.cards__item-details {
+.card__item-details {
 	display: inline-flex;
 	align-items: center;
 	gap: $gap-8;
 }
 
-.cards__item-details__ico {
+.card__item-details__ico {
 	width: 1rem;
 	height: auto;
 	stroke: currentColor;
 }
 
-.cards__item-description {
-	margin: 0;
+.card__description {
+	margin-block: 0;
+	padding-block: 0;
 }
 
-.cards__item-date {
+.card__footer {
+	display: flex;
+	flex-direction: column;
+	margin-block-start: $gap-8;
+	gap: 6px;
+}
+
+.card__date {
 	display: inline-flex;
 	align-items: center;
+	margin-block: 0;
+	padding-block: 0;
 	gap: $gap-4;
+	font-size: var(--step--1);
 }
