@@ -1,24 +1,22 @@
 {
-	"name": "Блог о цифровой доступности",
-	"description": "Практические советы по цифровой доступности для фронтенд-разработчиков, QA тестировщиков и дизайнеров. Тут вы узнаете о методах создания доступных и удобных интерфейсов, стандартах, ассистивных технологиях и законах.",
-	"lang": "en",
-	"dir": "ltr",
-	"id": "/",
-	"start_url": "/",
-	"orientation": "natural",
-	"icons": [
-		{
-			"src": "/assets/favicons/icon-192.png",
-			"sizes": "192x192",
-			"type": "image/png"
-		},
-		{
-			"src": "/assets/favicons/icon-512.png",
-			"sizes": "512x512",
-			"type": "image/png"
-		}
-	],
-	"theme_color": "#ffffff",
-	"background_color": "#ffffff",
-	"display": "browser"
+  "name": "Блог о цифровой доступности",
+  "description": "Практические советы по цифровой доступности для фронтенд-разработчиков, QA тестировщиков и дизайнеров. Тут вы узнаете о методах создания доступных и удобных интерфейсов, стандартах, ассистивных технологиях и законах.",
+  "icons": [
+    {
+      "src": "/assets/favicons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/favicons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "orientation": "natural",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff"
 }
