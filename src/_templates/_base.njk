@@ -10,10 +10,10 @@
 	<link rel="alternate" type="application/rss+xml" title="{{ "site description" | translate | safe }}" href="{{ site.url }}{{ "feedUrl" | translate }}">
 </head>
 
-<body class="base" data-theme="light">
+<body class="base layout" data-theme="light">
 	{% include "header.njk" %}
-	<div class="base__body wrapper">
-		<main>
+	<div class="layout__body wrapper">
+		<main class="layout__main">
 			{% if layout !== "article.njk" %}
 				<h1>{{ title }}</h1>
 			{% endif %}
