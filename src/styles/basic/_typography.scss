@@ -1,80 +1,136 @@
 @import "../mixins-and-functions";
 @import "../variables";
 
+:root {
+	--step--1: clamp(0.8125rem, 0.4572rem + 0.9857vw, 1rem);
+	--step-0: clamp(1rem, 0.8068rem + 0.9091vw, 1.25rem);
+	--step-1: clamp(1.5rem, 1.3715rem + 0.6045vw, 1.6663rem);
+	--step-2: clamp(2.2211rem, 2.2723rem + -0.1051vw, 2.25rem);
+	--step-3: clamp(2.9607rem, 3.3151rem + -1.5064vw, 3.375rem);
+}
+
+// Line height
+$line-height-base: 1.6;
+$line-height-small: 1.5;
+$line-height-h1: 1.216;
+$line-height-h2: 1.362;
+$line-height-h3: 1.778;
+$line-height-h4: 1.185;
+
+// Text content margins and paddings
+$h1-gap-start: clamp(0.5rem, 0.368rem + 0.147vw, 0.6875rem);
+$h1-gap-end: clamp(1.625rem, 1.191rem + 0.466vw, 2rem);
+$h2-gap-start: clamp(0.625rem, 1.191rem + 0.466vw, 1rem);
+$h2-gap-end: clamp(0.625rem, 0.666rem + 0.155vw, 1rem);
+$h3-gap-start: clamp(1rem, 0.33rem + 0.777vw, 1.25rem);
+$h3-gap-end: clamp(0.4375rem, 0.265rem + 0.388vw, 0.75rem);
+$h4-gap-start: clamp(0.375rem, 0.283rem + 0.078vw, 0.4375rem);
+$h4-gap-end: clamp(1.125rem, 0.781rem + 0.544vw, 1.5625rem);
+$text-gap-start: clamp(0.3125rem, 0.316rem + 0.155vw, 0.375rem);
+$text-gap-end: clamp(0.875rem, 0.615rem + 0.388vw, 1rem);
+
 // Font family
-$sans-font-family: "IBM Plex Sans", "Arial", "Helvetica", sans-serif;
+$sans-font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
 $mono-font-family: "IBM Plex Mono", "Courier New", monospace;
 
-// Base and headings line height
-$line-height-base: 1.6;
-$line-height-h1: 1.318;
-$line-height-h2: 1.263;
-$line-height-h3: 1.285;
-$line-height-h4: 1.5;
+.layout {
+	font-family: $sans-font-family;
+	font-size: var(--step-0);
+	line-height: $line-height-base;
+}
 
-// Font sizes
-$font-3xLarge: 44px;
-$font-2xLarge: 38px;
-$font-xLarge: 34px;
-$font-large: 28px;
-$font-big: 24px;
-$font-base: 20px;
-$font-medium: 18px;
-$font-small: 16px;
-$font-xSmall: 14px;
-
+// h1
 h1 {
-	font-size: fluidSizes($font-2xLarge, $font-3xLarge);
+	padding-block-start: $h1-gap-start;
+	margin-block-end: $h1-gap-end;
+	font-size: var(--step-3);
 	line-height: $line-height-h1;
 }
 
+// h2
+.cards_heading,
 h2 {
-	font-size: fluidSizes($font-large, $font-xLarge);
+	padding-block-start: $h2-gap-start;
+	margin-block-end: $h2-gap-end;
+	font-size: var(--step-2);
 	line-height: $line-height-h2;
 }
 
+// h3
+.card__heading,
 h3 {
-	font-size: fluidSizes($font-big, $font-large);
+	padding-block-start: $h3-gap-start;
+	margin-block-end: $h3-gap-end;
+	font-size: var(--step-1);
 	line-height: $line-height-h3;
 }
 
+// h4
 h4 {
+	padding-block-start: $h4-gap-start;
+	margin-block-end: $h4-gap-end;
+	font-size: var(--step-0);
 	line-height: $line-height-h4;
+}
+
+p, ul, ol, blockquote {
+	padding-block-start: $text-gap-start;
+	margin-block-end: $text-gap-end;
 }
 
 samp {
 	font-family: $sans-font-family;
 }
 
-small,
-.cards__item-date,
+.card__topic-item,
 .article-header__dates-item,
 .article__note-text,
 .article__image-caption {
-	font-size: fluidSizes($font-xSmall, $font-small);
-
+	margin-block: 0;
+	padding-block: 0;
+	font-size: var(--step--1);
+	line-height: $line-height-small;
 }
 
-small,
-.cards__item-date,
-.article__note-text,
-.article__image-caption {
-	line-height: $line-height-h4;
+.footer__info-text {
+	font-size: var(--step--1);
+	line-height: $line-height-small;
 }
 
 pre,
 code,
-kbd {
+kbd,
+samp {
 	font-family: $mono-font-family;
-	font-size: fluidSizes($font-small, $font-small);
+	font-size: var(--step--1)
 }
 
-.topics__item {
-	font-size: fluidSizes($font-xSmall, $font-xSmall);
+code {
+	padding: $gap-4;
+	word-wrap: break-word;
+	color: var(--text-color);
+	background: var(--code-color);
+	border-radius: $radius-4;
 }
 
-.base {
-	font-family: $sans-font-family;
-	font-size: fluidSizes($font-medium, $font-base);
-	line-height: $line-height-base;
+blockquote {
+	word-wrap: break-word;
+	border-left: 4px solid var(--border-color);
+}
+
+ul,
+ol {
+	padding-inline-start: $gap-20;
+}
+
+blockquote ul,
+blockquote ol {
+	padding-block: 0;
+	padding-inline-start: $gap-44;
+}
+
+blockquote p {
+	padding-block: 0;
+	margin-bottom: 0;
+	padding-inline-start: $gap-28;
 }
