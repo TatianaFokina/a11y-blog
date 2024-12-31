@@ -2,7 +2,7 @@
 @import "../mixins-and-functions";
 
 .cards_heading:has(+ .card) {
-	margin-block-end: fluidSizes($gap-28, $gap-32);
+	margin-block-end: clamp(1.75rem, 1.332rem + 0.311vw, 2rem);
 }
 
 .card {
@@ -13,7 +13,7 @@
 }
 
 .card:has(+ .cards__link) {
-	margin-block-end: fluidSizes($gap-20, $gap-24);
+	margin-block-end: clamp(1.25rem, 0.932rem + 0.311vw, 1.5rem);
 }
 
 .card--in-article {
@@ -30,8 +30,8 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	padding: $gap-24;
 	width: 100%;
+	padding: clamp(1.5rem, 0.928rem + 1.243vw, 2.5rem);
 	gap: $gap-16;
 	background: var(--bg-part-color);
 	border-radius: $radius-26;
@@ -44,10 +44,6 @@
 	&:hover {
 		background: var(--color-hover);
 	}
-
-	@include media(md) {
-		padding: $gap-40;
-	}
 }
 
 .card__item--compact {
@@ -57,7 +53,7 @@
 
 .card__heading {
 	padding-block: 0;
-	margin-block-end: $gap-12;
+	margin-block-end: clamp(0.625rem, 0.466rem + 0.155vw, 0.75rem);
 }
 
 .card__item:focus-within {
@@ -115,7 +111,7 @@
 	display: flex;
 	flex-direction: column;
 	margin-block-start: $gap-8;
-	gap: 6px;
+	gap: $gap-8;
 }
 
 .card__date {
