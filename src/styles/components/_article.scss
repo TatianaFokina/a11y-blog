@@ -27,7 +27,7 @@
 }
 
 .article {
-	margin-top: fluidSizes($gap-52, $gap-60);
+	margin-block-start: clamp(3rem, 2.264rem + 0.621vw, 3.5rem);
 }
 
 .article__note {
