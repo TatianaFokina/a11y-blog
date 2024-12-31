@@ -1,5 +1,13 @@
 @import "../variables";
 
+$hr-height: 15px;
+
+figure {
+	display: block;
+	margin-block: 0;
+	padding-block: 0;
+}
+
 img {
 	display: block;
 	max-width: 100%;
@@ -22,12 +30,16 @@ a {
 	}
 }
 
+a > code {
+	padding-bottom: 0.1%;
+}
+
 hr {
 	position: relative;
 	display: inline-block;
 	width: 100%;
 	height: $hr-height;
-	margin: fluidSizes($gap-48, $gap-56) auto fluidSizes($gap-20, $gap-28);
+	margin: fluidSizes(48px, 56px) auto fluidSizes(20px, 28px);
 	border: 0;
 
 	&:after {
