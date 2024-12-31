@@ -6,7 +6,7 @@ keyTheme:
   - CSS
   - Usability
 date: 2024-05-09
-updated: 2024-09-05
+updated: 2024-12-31
 layout: article.njk
 templateEngineOverride: md, njk
 ---
@@ -309,7 +309,7 @@ For example, images in dark theme can be made less contrasting using filter, and
   }
 
   .image {
-    filter: brightness(.8) contrast(1.2);
+    filter: brightness(0.8) contrast(1.2);
   }
 }
 ```
@@ -651,7 +651,7 @@ Of course, you can turn transparency off directly in your operating system.
 
 In this post, I didn't cover only one media feature for user preferences — `prefers-reduced-data`. It tracks the volume of data reception chosen by a user. Although it's related to performance, it's also useful for accessibility. For more details, read ″[Creating websites with `prefers-reduced-data`](https://polypane.app/blog/creating-websites-with-prefers-reduced-data/)″.
 
-## Futher reading
+## Further reading
 
 - [Media Queries Level 5](https://www.w3.org/TR/mediaqueries-5/)
 - [Operating System and Browser Accessibility Display Modes](https://www.a11yproject.com/posts/operating-system-and-browser-accessibility-display-modes/)
@@ -667,6 +667,6 @@ In this post, I didn't cover only one media feature for user preferences — `pr
 - [`forced-colors`](https://doka.guide/a11y/forced-colors/) (Doka Guide)
 - [`prefers-color-scheme`](https://doka.guide/css/prefers-color-scheme/) (Doka Guide).
 
-***
+---
 
 Thanks to [Vasiliy Dudin](https://twitter.com/vasiliy_dudin/) for his help with editing and translating this text.
