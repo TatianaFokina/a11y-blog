@@ -1,14 +1,18 @@
 @import "../variables";
 @import "../mixins-and-functions";
 
+$footer-gap-start: clamp(5.5625rem, 3.991rem + 2.097vw, 7.25rem);
+$footer-gap-inner: clamp(0.875rem, 0.666rem + 0.155vw, 1rem);
+$footer-gap-end: clamp(2.375rem, 1.73rem + 0.777vw, 3rem);
+
 .footer__container {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: flex-end;
-	padding-top: $gap-116;
-	padding-bottom: $gap-48;
-	gap: $gap-16;
+	padding-top: $footer-gap-start;
+	padding-bottom: $footer-gap-end;
+	gap: $footer-gap-inner;
 }
 
 .footer__info-column,
@@ -21,9 +25,4 @@
 	@include media(sm) {
 		gap: unset;
 	}
-}
-
-.footer__info-text {
-	font-size: var(--step--1);
-	line-height: $line-height-small;
 }
