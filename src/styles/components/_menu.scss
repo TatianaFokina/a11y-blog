@@ -16,21 +16,13 @@ $line-height-menu-link: 1.7;
 	}
 }
 
-.navigation__list {
+.navigation__box {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	margin: 0;
-	padding: 0;
-	list-style: none;
 }
 
-.navigation__list-item {
-	margin: 0;
-	padding: 0;
-}
-
-.navigation__list-item-link {
+.navigation__link {
 	height: 54px;
 	display: inline-flex;
 	align-items: center;
@@ -52,7 +44,7 @@ $line-height-menu-link: 1.7;
 	}
 }
 
-.navigation__list-item-ico {
+.navigation__link-icon {
 	width: 2rem;
 	height: auto;
 	stroke: currentColor;

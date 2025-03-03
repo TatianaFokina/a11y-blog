@@ -1,39 +1,35 @@
 <nav class="navigation">
 	{% include "logo.njk" %}
 
-	<ul class="navigation__list">
-		<li class="navigation__list-item">
-			{# Path and other language and text for reference #}
-			{% if page.lang == "ru" %}
-				{% set targetLang = "en" %}
-				{% set langLabel = "English" %}
-			{% else %}
-				{% set targetLang = "ru" %}
-				{% set langLabel = "Русский" %}
+	<div class="navigation__box">
+		{# Path and other language and text for reference #}
+		{% if page.lang == "ru" %}
+			{% set targetLang = "en" %}
+			{% set langLabel = "English" %}
+		{% else %}
+			{% set targetLang = "ru" %}
+			{% set langLabel = "Русский" %}
+		{% endif %}
+
+		{# If we have such a page in another language, then we set the value of the variable #}
+		{% set targetURL = null %}
+		{% for link in page.url | locale_links %}
+			{% if link.url %}
+				{% set targetURL = link.url %}
 			{% endif %}
+		{% endfor %}
 
-			{# If we have such a page in another language, then we set the value of the variable #}
-			{% set targetURL = null %}
-			{% for link in page.url | locale_links %}
-				{% if link.url %}
-					{% set targetURL = link.url %}
-				{% endif %}
-			{% endfor %}
-
-			<a class="navigation__list-item-link" href="{{ targetURL if targetURL else ("/" ~ targetLang ~ "/") }}">
-				{% include "../assets/ico-language.svg" %}
-				<span lang="{{ targetLang }}">
-					{{ langLabel }}
-				</span>
-			</a>
-		</li>
-		<li class="navigation__list-item">
-			<a class="navigation__list-item-link" href="{{ "feedUrl" | translate }}">
-				{% include "../assets/ico-rss.svg" %}
-				RSS
-			</a>
-		</li>
-	</ul>
+		<a class="navigation__link" href="{{ targetURL if targetURL else ("/" ~ targetLang ~ "/") }}">
+			{% include "../assets/ico-language.svg" %}
+			<span lang="{{ targetLang }}">
+				{{ langLabel }}
+			</span>
+		</a>
+		<a class="navigation__link" href="{{ "feedUrl" | translate }}">
+			{% include "../assets/ico-rss.svg" %}
+			RSS
+		</a>
+	</div>
 </nav>
 
 {% include "theme-switcher.njk" %}
