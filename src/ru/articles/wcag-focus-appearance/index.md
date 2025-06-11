@@ -8,12 +8,12 @@ keyTheme:
   - CSS
   - Клавиатура
 date: 2023-01-27
-updated: 2024-08-27
+updated: 2025-06-11
 layout: article.njk
 templateEngineOverride: md, njk
 ---
 
-В этом посте из серии про разбор Руководств по доступности веб-контента (Web Content Accessibility Guidelines, коротко WCAG) расскажу про новый критерий из WCAG 2.2 — [2.4.11: внешний вид фокуса](https://www.w3.org/TR/WCAG22/#focus-appearance). Он связан с другим [критерием про видимый фокус](/ru/articles/wcag-focus-visible/), про который уже рассказывала раньше.
+В этом посте из серии про разбор Руководств по доступности веб-контента (Web Content Accessibility Guidelines, коротко WCAG) расскажу про новый критерий из WCAG 2.2 — [2.4.13: внешний вид фокуса](https://www.w3.org/TR/WCAG22/#focus-appearance). Он связан с другим [критерием про видимый фокус](/ru/articles/wcag-focus-visible/), про который уже рассказывала раньше.
 
 Критерий про внешний вид фокуса уровня AA. Он относится к принципу управляемости и к руководству про доступность с клавиатуры.
 
@@ -215,8 +215,8 @@ document.addEventListener('focus', () => {
 
 ## Что почитать
 
-- [Success Criterion 2.4.11 Focus Appearance](https://www.w3.org/TR/WCAG22/#focus-appearance)
-- [Understanding Success Criterion 2.4.11: Focus Appearance](https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance.html), WCAG 2.2
+- [Success Criterion 2.4.13 Focus Appearance](https://www.w3.org/TR/WCAG22/#focus-appearance)
+- [Understanding Success Criterion 2.4.13: Focus Appearance](https://www.w3.org/WAI/WCAG22/Understanding/focus-appearance.html), WCAG 2.2
 - [A guide to designing accessible, WCAG-compliant focus indicators](https://www.sarasoueidan.com/blog/focus-indicators/), Сара Суайдан
 - [Focus appearance explained](https://www.tempertemper.net/blog/focus-appearance-explained/), Мартин Андерхилл
 - [Developing a focus style for a themable design system](https://adhoc.team/2022/02/08/creating-focus-style-for-themable-design-system/), Скотт Вебер
