@@ -47,7 +47,9 @@ Most operating systems include the ″Reduce motion″ or ″Minimize animation�
 
 Users can also change the color scheme settings and select the colors that will dominate the system. These are either light or dark shades. The setting does not affect sites if they do not support color schemes.
 
-{% note "Don't confuse dark or light color schemes with night and day modes. This is a different group of settings — the filtered display mode. These settings alter the intensity of blue light." %}
+{% note %}
+Don't confuse dark or light color schemes with night and day modes. This is a different group of settings — the filtered display mode. These settings alter the intensity of blue light.
+{% endnote %}
 
 The following categories of users utilize color scheme setting:
 
@@ -283,7 +285,9 @@ You can also change the animation settings manually.
 
 It determines the selected color theme.
 
-{% note "The dark theme isn't necessarily taken from the system. If the system default is set to a light theme, but the application is set to dark, the web interface will apply the application's theme. So application settings can take priority over system settings." %}
+{% note %}
+The dark theme isn't necessarily taken from the system. If the system default is set to a light theme, but the application is set to dark, the web interface will apply the application's theme. So application settings can take priority over system settings.
+{% endnote %}
 
 Values for `prefers-color-scheme`:
 

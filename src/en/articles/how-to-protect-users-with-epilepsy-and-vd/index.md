@@ -50,7 +50,9 @@ Reflex epilepsy comes in several types. I am going to focus only on _photosensit
 
 Content that flashes, flickers, or blinks can lead to an epileptic seizure. These triggers seriously increase electrical activity in neurons.
 
-{% note "The most dangerous spectra for people with photosensitive epilepsy are red and blue." %}
+{% note %}
+The most dangerous spectra for people with photosensitive epilepsy are red and blue.
+{% endnote %}
 
 ## Problematic content
 
@@ -94,7 +96,9 @@ The best solution to the problem of flashes and blinks is to avoid them altogeth
 
 Reducing the area of flashes and blinks is not the best solution, as users may access the site from a mobile device and hold it too close to their eyes.
 
-{% note "The recommended flash area for a display with a 1024 by 768 aspect ratio and a 15-17 inch diagonal at a standard viewing distance (58-68 centimeters) is 341 by 256 pixels." %}
+{% note %}
+The recommended flash area for a display with a 1024 by 768 aspect ratio and a 15-17 inch diagonal at a standard viewing distance (58-68 centimeters) is 341 by 256 pixels.
+{% endnote %}
 
 Regarding blinks, if they are short-lived and stop automatically, that's generally acceptable.
 
@@ -137,7 +141,9 @@ In this example, the `slow` value is used. It triggers when the layout changes a
 }
 ```
 
-{% note "You can use the [Magica11y](https://magica11y.github.io) suite of utilities to work with this and other media features." %}
+{% note %}
+You can use the [Magica11y](https://magica11y.github.io) suite of utilities to work with this and other media features.
+{% endnote %}
 
 Option three (3) what has everything.
 

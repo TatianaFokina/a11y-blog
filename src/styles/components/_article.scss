@@ -33,14 +33,14 @@
 .article__note {
 	display: flex;
 	align-items: flex-start;
-	margin: fluidSizes($gap-4, $gap-32) 0;
+	margin: fluidSizes($gap-8, $gap-16) 0;
 	padding: fluidSizes($gap-8, $gap-16);
 	gap: $gap-16;
 	background: var(--bg-part-color);
 	border-radius: $radius-8;
 }
 
-.article__note-text {
+.article__note p {
 	margin: 0;
 	word-break: break-word;
 }
@@ -67,7 +67,7 @@
 	display: inline-flex;
 	flex-direction: column;
 	width: 100%;
-	margin-bottom: fluidSizes($gap-20, $gap-24);
+	margin-bottom: fluidSizes($gap-4, $gap-8);
 	padding: fluidSizes($gap-8, $gap-32);
 	gap: $gap-20;
 	background: $accent-color-2;

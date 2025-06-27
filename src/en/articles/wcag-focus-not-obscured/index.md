@@ -26,7 +26,7 @@ The enhanced criterion 2.4.12 doesn’t allow even partially obscured elements i
 
 Many of us have at least once found ourselves on a website with dropdowns where items are visually hidden but still accessible to the keyboard. Both criteria prevent this and similar keyboard navigation problems.
 
-Elements with a keyboard focus can also be obscured by:
+Elements with a keyboard focus can also be obscured by
 
 - Other dropdown elements: combo boxes, hamburger menus, date pickers
 - Sticky, fixed elements: header, footer, sidebar navigation, cookie banners
@@ -34,21 +34,25 @@ Elements with a keyboard focus can also be obscured by:
 - Non-modal and (pseudo)modal dialog boxes without focus trap: cookie information or newsletter subscription
 - Movable elements: stickers on a virtual Kanban board, color palette in a design tool.
 
-{% note "*Cookies* are text files containing information about the user, for example, about their browser or device. Site owners collect this data mainly for marketing purposes." %}
-
 Not all **dropdowns** are bad. The criteria consider two main cases with dropdowns. The first case is an initially open element, for example, a sidebar menu with site navigation. The second situation is an incorrectly coded dropdown. For instance, extensive navigation with submenus opens with the keyboard and doesn’t close with <kbd>Esc</kbd>.
 
 It’s possible that **fixed navigation** with a lot of items doesn’t meet the minimum criterion. The focus problem becomes especially noticeable. When navigating with the keyboard to the beginning of the page.
 
 **Fixed cookie banner** is another problematic design pattern. Banners with controls and descriptive texts are at risk of violating the level AA criterion. In a lot of cases, cookie banners are placed on pages as the last element. Keyboard users need to go to the end of the page to close the cookie message.
 
+{% note %}
+*Cookies* are text files containing information about the user, for example, about their browser or device. Site owners collect this data mainly for marketing purposes.
+{% endnote %}
+
 **Pop-ups** can also violate the minimum criterion 2.4.11. You may have encountered intrusive tooltips that automatically open when focusing on the related element and persistently obscure part of the remaining content. Only a page refresh can help.
 
 **Dialog boxes** are another enemies of keyboard navigation. Let’s leave aside dialog usability issues. Most non-modal windows that are open by default and positioned in the center of the screen will violate the level AA criterion 2.4.11.
 
-In the case of dialogs, criterion 2.4.11 allows modal windows. A modal dialog will not violate the criterion, even if it’s not coded quite correctly. For example, a user can scroll the page with an open modal dialog using a mouse or other pointer. The main thing is that the modal *truly* prevents setting the keyboard focus on the elements behind it.
+In the case of dialogs, criterion 2.4.11 allows modal windows. A modal dialog will not violate the criterion, even if it’s not coded quite correctly. For example, a user can scroll the page with an open modal dialog using a mouse or other pointer device. The main thing is that the modal *truly* prevents setting the keyboard focus on the elements behind it.
 
+{% note %}
 A non-modal window doesn’t block the main page content. In contrast, a modal dialog prevents accessing the page while it’s open.
+{% endnote %}
 
 **Elements with glass effect or opaque styles**, such as semi-transparent tooltips and fixed site navigation, are the second special case.
 
