@@ -58,7 +58,16 @@ Imagine a semi-transparent tooltip that completely obscures a link. You need to 
 
 For example, the link color is #232323 (young night) after blending with the background, and the background of the tooltip is #373737 (muted gray.) The contrast ratio between colors is 1.32:1. This is below the minimum value for non-text elements. Thus, the criterion 2.4.11 is failed.
 
-![The tooltip with an opaque background that completely obscures the link in text about a platypus.](images/non-text-contrast.png)
+<figure class="article__image">
+  <img
+    class="article__image-item"
+    src="images/non-text-contrast.png"
+    alt="The tooltip with an opaque background that completely obscures the link in text about a platypus."
+  >
+  <figcaption class="article__image-caption">
+    An example of the opaque tooltip.
+  </figcaption>
+</figure>
 
 In this imaginary example, we *didn’t compare* the color of the focus indicator. The only two cases we care about the appearance of the indicator are:
 
@@ -67,7 +76,16 @@ In this imaginary example, we *didn’t compare* the color of the focus indica
 
 For example, a focused button has an inner border, so we compare the border color with the background of the overlaying element. Another case is when a button in a focus state changes its background color. Here we compare the new background color of the button with the background of the other element.
 
-![Buttons are covered by a semi-transparent top layer.](images/focus-indicators-contrast.png)
+<figure class="article__image">
+  <img
+    class="article__image-item"
+    src="images/focus-indicators-contrast.png"
+    alt="Buttons are covered by a semi-transparent top layer"
+  >
+  <figcaption class="article__image-caption">
+    An example of two types of focused buttons.
+  </figcaption>
+</figure>
 
 **Elements that move around the page** fail the minimum criterion when they obscure links, buttons, and interactive components by default before they are moved by users.
 
@@ -112,17 +130,44 @@ On a Wikipedia article page tooltips with images and text appear when focusing o
 
 Since control elements in a focus state are only partially obscured by the tooltip the page complies with the criterion 2.4.11: Focus Not Obscured (Minimum).
 
-![The Wiki article about “Popular Science” magazine. The link to the list of all issues has the opened tooltip. The element partially obscures the image with text surrounded by a blue outline. We can see the last letter “AR” from the first word and the letter “CE” from the second word.](images/wiki-2411-pass.png)
+<figure class="article__image">
+  <img
+    class="article__image-item"
+    src="images/wiki-2411-pass.png"
+    alt="The link to the list of all issues has the opened tooltip. The element partially obscures the image with text surrounded by a blue outline. We can see the last letter “AR” from the first word and the letter “CE” from the second word."
+  >
+  <figcaption class="article__image-caption">
+    The article about “Popular Science” magazine.
+  </figcaption>
+</figure>
 
 In the [Transcend blog](https://transcend.io/blog), the fixed header is moving when scrolling the page up and down. When navigating the page with the keyboard, no interactive element is obscured by the header.
 
-![The sticky navigation with three items is placed at the top of the page. The element obscures a part of text. The “CPRA modified regulations” link is outlined with a black border and isn’t obscured by the overlay.](images/transend-2411-pass.png)
+<figure class="article__image">
+  <img
+    class="article__image-item"
+    src="images/transend-2411-pass.png"
+    alt="The sticky navigation with three items is placed at the top of the page. The element obscures a part of text. The “CPRA modified regulations” link is outlined with a black border and isn’t obscured by the overlay."
+  >
+  <figcaption class="article__image-caption">
+    The Transcend’s blog post.
+  </figcaption>
+</figure>
 
 The page complies with the level AAA criterion 2.4.12: Focus Not Obscured (Enhanced).
 
-In the main tab of YouTube Studio, the notification with an interface hint automatically appears. This element doesn’t cover active links. The page complies with the minimum level AA criterion 2.4.11.
+In the main tab of YouTube Studio, the notification with an interface hint automatically appears. This element doesn’t cover active links. The page pass the level AA criterion 2.4.11.
 
-![The tooltip with hints on team collaboration is expanded close to the side navigation. The tooltip’s tail points to the “Settings” item. There’s no other interactive elements next to or below the tooltip.](images/youtube-studio-2411-pass.png)
+<figure class="article__image">
+  <img
+    class="article__image-item"
+    src="images/youtube-studio-2411-pass.png"
+    alt="The tooltip with hints on team collaboration is expanded close to the side navigation. The tooltip’s tail points to the “Settings” item. There’s no other interactive elements next to or below the tooltip."
+  >
+  <figcaption class="article__image-caption">
+    YouTube Studio.
+  </figcaption>
+</figure>
 
 ## Not so good examples
 
@@ -130,17 +175,44 @@ On the main page of the [NHK World Japan](https://www3.nhk.or.jp/nhkworld/) br
 
 The banner completely obscures one of the links in the footer. The link text color is #808080 (grey), and the cookie banner background color is #4c4c4c (quartz). The contrast ratio between the colors is 2.17:1. The final ratio is below the minimum ratio value for non-text elements (3:1). So the site doesn’t meet the level AA criterion 2.4.11.
 
-![Part of the text “Our site uses…” from the semi-transparent banner obscures the “NHK” link. The link is outlined with a black border, and only the top part of the letters is visible. Nearby the same link is shown when it’s not obscured.](images/nhk-2411-fail.png)
+<figure class="article__image">
+  <img
+    class="article__image-item"
+    src="images/nhk-2411-fail.png"
+    alt="Part of the text “Our site uses…” from the semi-transparent banner obscures the “NHK” link. The link is outlined with a black border, and only the top part of the letters is visible. Nearby the same link is shown when it’s not obscured."
+  >
+  <figcaption class="article__image-caption">
+    The main page of NHK World Japan.
+  </figcaption>
+</figure>
 
-On the [Stockholm University](https://www.su.se/) website, the non-modal window with cookie information is centered on the screen.
+On the [Stockholm University](https://www.su.se/) site, the non-modal window with cookie information is centered on the screen.
 
 Some links in focus states are completely obscured by the non-modal window. Based on that result, the site doesn’t meet the minimum criterion 2.4.11.
 
-![The banner with a non-transparent background obscures the card element. We can see the description and part of the image of a flower field. Nearby, the not obscured card is shown. The link “Stockholms universitet paa plats 147 i QS-rankningen” is outlined with a blue border.](images/stockholm-uni-2411-fail.png)
+<figure class="article__image">
+  <img
+    class="article__image-item"
+    src="images/stockholm-uni-2411-fail.png"
+    alt="The banner with a non-transparent background obscures the card element. We can see the description and part of the image of a flower field. Nearby, the not obscured card is shown. The link “Stockholms universitet paa plats 147 i QS-rankningen” is outlined with a blue border."
+  >
+  <figcaption class="article__image-caption">
+    The Stockholm University site.
+  </figcaption>
+</figure>
 
-When first opening the main page of the [Austrian Embassy in Tokyo](https://www.bmeia.gv.at/en/austrian-embassy-tokyo), the window with cookie information appears. Visually, due to the darkened background, the window looks a modal. However, we can still navigate through the page with the keyboard when the window is open. Labels of some fields, links, and buttons are completely obscured by another element. So the page doesn’t meet criterion 2.4.11 level AA.
+When first opening the main page of the [Austrian Embassy in Tokyo](https://www.bmeia.gv.at/en/austrian-embassy-tokyo) site, the window with cookie information appears. Visually, due to the darkened background, the window looks a modal. However, we can still navigate through the page with the keyboard when the window is open. Labels of some fields, links, and buttons are completely obscured by another element. So the page doesn’t meet criterion 2.4.11 level AA.
 
-![The cookie settings window partly obscures the form field. We can see a small part of the field’s focus indicator. The other screenshot shows the version of the input filled with the text “I am human.”](images/au-embassy-fail.png)
+<figure class="article__image">
+  <img
+    class="article__image-item"
+    src="images/au-embassy-fail.png"
+    alt="The cookie settings window partly obscures the form field. We can see a small part of the field’s focus indicator. The other screenshot shows the version of the input filled with the text “I am human.”"
+  >
+  <figcaption class="article__image-caption">
+    The main page of the Austrian Embassy in Tokyo site.
+  </figcaption>
+</figure>
 
 ## How to test
 
