@@ -41,7 +41,7 @@ It’s possible that **fixed navigation** with a lot of items doesn’t meet th
 **Fixed cookie banner** is another problematic design pattern. Banners with controls and descriptive texts are at risk of violating the level AA criterion. In a lot of cases, cookie banners are placed on pages as the last element. Keyboard users need to go to the end of the page to close the cookie message.
 
 {% note %}
-*Cookies* are text files containing information about the user, for example, about their browser or device. Site owners collect this data mainly for marketing purposes.
+  *Cookies* are text files containing information about the user, for example, about their browser or device. Site owners collect this data mainly for marketing purposes.
 {% endnote %}
 
 **Pop-ups** can also violate the minimum criterion 2.4.11. You may have encountered intrusive tooltips that automatically open when focusing on the related element and persistently obscure part of the remaining content. Only a page refresh can help.
@@ -51,7 +51,7 @@ It’s possible that **fixed navigation** with a lot of items doesn’t meet th
 In the case of dialogs, criterion 2.4.11 allows modal windows. A modal dialog will not violate the criterion, even if it’s not coded quite correctly. For example, a user can scroll the page with an open modal dialog using a mouse or other pointer device. The main thing is that the modal *truly* prevents setting the keyboard focus on the elements behind it.
 
 {% note %}
-A non-modal window doesn’t block the main page content. In contrast, a modal dialog prevents accessing the page while it’s open.
+  A non-modal window doesn’t block the main page content. In contrast, a modal dialog prevents accessing the page while it’s open.
 {% endnote %}
 
 **Elements with glass effect or opaque styles**, such as semi-transparent tooltips and fixed site navigation, are the second special case.
