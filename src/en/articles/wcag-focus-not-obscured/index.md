@@ -62,8 +62,8 @@ For example, the link color is #232323 (young night) after blending with the bac
 
 In this imaginary example, we *didn’t compare* the color of the focus indicator. The only two cases we care about the appearance of the indicator are:
 
-- When the focus indicator is placed inside the focused element
-- When the element in the focus state changes significantly.
+- if the focus indicator is placed inside the focused element
+- if the element in a focus state changes significantly.
 
 For example, a focused button has an inner border, so we compare the border color with the background of the overlaying element. Another case is when a button in a focus state changes its background color. Here we compare the new background color of the button with the background of the other element.
 
