@@ -208,7 +208,7 @@ templateEngineOverride: md, njk
 <figure class="article__image">
   <img
     class="article__image-item"
-    src="images/au-embassy-fail.png
+    src="images/au-embassy-2411-fail.png"
     alt="Под окном с согласием на сбор куки видна часть чёрной рамки вокруг поля. Рядом скриншот с полностью видимым полем для сравнения. В поле введён текст «I am human»."
   >
   <figcaption class="article__image-caption">
