@@ -44,7 +44,7 @@ It’s possible that **fixed navigation** with a lot of items doesn’t meet th
 
 **Pop-ups** can also violate the minimum criterion 2.4.11. You may have encountered intrusive tooltips that automatically open when focusing on the related element and persistently obscure part of the remaining content. Only a page refresh can help.
 
-**Dialog boxes** are another enemy of keyboard navigation. Let’s leave aside dialog usability issues. Most non-modal windows that are open by default and positioned in the center of the screen will violate the level AA criterion 2.4.11.
+**Dialog boxes** are another enemies of keyboard navigation. Let’s leave aside dialog usability issues. Most non-modal windows that are open by default and positioned in the center of the screen will violate the level AA criterion 2.4.11.
 
 In the case of dialogs, criterion 2.4.11 allows modal windows. A modal dialog will not violate the criterion, even if it’s not coded quite correctly. For example, a user can scroll the page with an open modal dialog using a mouse or other pointer. The main thing is that the modal *truly* prevents setting the keyboard focus on the elements behind it.
 
@@ -206,7 +206,7 @@ When first opening the main page of the [Austrian Embassy in Tokyo](https://www
 <figure class="article__image">
   <img
     class="article__image-item"
-    src="images/au-embassy-fail.png"
+    src="images/au-embassy-2411-fail.png"
     alt="The cookie settings window partly obscures the form field. We can see a small part of the field’s focus indicator. The other screenshot shows the version of the input filled with the text “I am human.”"
   >
   <figcaption class="article__image-caption">
