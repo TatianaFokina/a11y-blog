@@ -5,7 +5,7 @@ ogImage: cover.png
 keyTheme:
   - WCAG
   - Keyboard
-date: 2025-06-28
+date: 2025-06-30
 layout: article.njk
 templateEngineOverride: md, njk
 ---

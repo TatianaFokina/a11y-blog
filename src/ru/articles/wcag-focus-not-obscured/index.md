@@ -5,7 +5,7 @@ ogImage: cover.png
 keyTheme:
   - WCAG
   - Клавиатура
-date: 2025-06-27
+date: 2025-06-30
 layout: article.njk
 templateEngineOverride: md, njk
 ---
