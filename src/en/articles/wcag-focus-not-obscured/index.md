@@ -241,11 +241,11 @@ Additional steps for elements obscured by semi-transparent top layer elements:
 
 You can test color ratio with color contrast checking tools. A few names of them are [TPGi’s Colour Contrast Analyser (CCA)](https://www.tpgi.com/color-contrast-checker/) and [Accessible Web’s WCAG Color Contrast Checker](https://accessibleweb.com/color-contrast-checker/).
 
-If every interactive element in a focus state is visible completely or partially, the page passes *2.4.11: Focus Not Obscured (Minimum) (Level AA)*.
+If every interactive element in a focus state is visible completely or partially, the page passes 2.4.11: Focus Not Obscured (Minimum) (Level AA).
 
 If semi-transparent elements completely obscure elements in a focus state, and the contrast ratio between two colors is 3:1 and higher, the page also complies with the level AA criterion.
 
-When no element in the keyboard focus state is obscured by others, the page passes *2.4.12: Focus Not Obscured (Enhanced) (Level AAA)*.
+When no element in the keyboard focus state is obscured by others, the page passes 2.4.12: Focus Not Obscured (Enhanced) (Level AAA).
 
 ## Further reading
 
