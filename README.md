@@ -38,6 +38,20 @@ Build and deployment:
 pnpm build+deploy
 ```
 
+Check the grammar and print the result in console:
+
+```bash
+gramma check -p [file]
+```
+
+Check hanging Russian prepositions and apply non-breaking spaces after necessary prepositions:
+
+```bash
+pnpm fix:ru-preps [file]
+```
+
+Examples of paths: `src/ru/articles/wcag-focus-not-obscured/index.md`, `src/en/articles/wcag-focus-not-obscured/index.md`.
+
 ## Licenses
 
 Code is licensed under [MIT](https://github.com/TatianaFokina/a11y-blog/blob/main/MIT.md), content is licensed under [CC BY-NC-SA 4.0](https://github.com/TatianaFokina/a11y-blog/blob/main/CC.md).

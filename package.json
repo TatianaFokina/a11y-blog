@@ -15,7 +15,8 @@
     "_build:lightningcss": "npx lightningcss-cli --minify --bundle dist/styles/styles.css -d dist/styles",
     "_build:js": "rollup -c",
     "_build:html": "html-minifier --input-dir dist --output-dir dist --file-ext html --collapse-whitespace --remove-comments --minify-css true --minify-js true",
-    "_remove-dist": "rimraf dist"
+    "_remove-dist": "rimraf dist",
+    "fix:ru-preps": "node nbsp-fix.js"
   },
   "dependencies": {
     "@11ty/eleventy": "^2.0.1",
