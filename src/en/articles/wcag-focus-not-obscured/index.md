@@ -97,9 +97,9 @@ For example, a focused button has an inner border, so we compare the border colo
 
 In the description of both criteria, I didn’t find answers to several questions.
 
-How should I treat images, headings, and brief descriptions wrapped by one link? For example, a link with text and graphics (or only graphics,) where only part of the image is visible.
+How should I treat images, headings, and brief descriptions wrapped by one link? For example, a link with text and graphics or only graphics, where only part of the image is visible.
 
-What to do with a focused link when its text blends with the page background, and only the outline around it is visible? Even if the link is partially covered by something else, we don’t see *the element itself*.
+What to do with a focused link when its text blends with the page background, and only the surrounding outline is visible? Even if the link is partially covered by something else, we don’t see *the element itself*.
 
 ## About users
 
@@ -109,13 +109,13 @@ Elements in focus state are also important for **screen magnifier users** who 
 
 Seeing focused elements is also important for **users of alternative input devices**, such as voice control or eye tracking when a person controls the cursor with their eyes.
 
-The next category of users are those who **use pointer devices for navigation** (excluded computer mice.) For instance, styluses, head pointers, and joysticks.
+The next category of users is those who **use pointer devices for navigation** (excluded computer mice.) For instance, styluses, head pointers, and joysticks.
 
-Don’t forget about **neurodivergent users** with disabilities affecting memory and attention. For example, Attention Deficit Hyperactivity Disorder (ADHD,) Long COVID, or Traumatic Brain Injuries (TBIs.) These users often get distracted and forget about their current position and recent actions on the page.
+Don’t forget about **neurodivergent users** with disabilities affecting memory and attention. For example, Attention Deficit Hyperactivity Disorder (ADHD), Long COVID, or Traumatic Brain Injuries (TBIs). These users often get distracted and forget about their current position and recent actions on the page.
 
 ## How to avoid barriers
 
-The simplest solution is not to fix crumbesome navigation in the header and footer, especially on small screens. You can save screen space by reducing the sticky header height during scrolling.
+The simplest solution is not to fix cumbersome navigation in the header and footer, especially on small screens. You can save screen space by reducing the sticky header height during scrolling.
 
 The next helper is the CSS property `scroll-padding`. The property increases the distance between the fixed element and the rest of the page content.
 
@@ -177,7 +177,7 @@ In the main tab of YouTube Studio, the notification with an interface hint autom
 
 On the main page of the [NHK World Japan](https://www3.nhk.or.jp/nhkworld/) broadcasting company website, the cookie banner with a semi-transparent background is fixed at the bottom of the display. When navigating the page with the keyboard some interactive elements are partially obscured by the banner.
 
-The banner completely obscures one of the links in the footer. The link text color is #808080 (grey), and the cookie banner background color is #4c4c4c (quartz). The contrast ratio between the colors is 2.17:1. The final ratio is below the minimum ratio value for non-text elements (3:1). So the site doesn’t meet the level AA criterion 2.4.11.
+The banner completely obscures one of the links in the footer. The link text color is #808080 (gray), and the cookie banner background color is #4c4c4c (quartz). The contrast ratio between the colors is 2.17:1. The final ratio is below the minimum ratio value for non-text elements (3:1). So the site doesn’t meet the level AA criterion 2.4.11.
 
 <figure class="article__image">
   <img
