@@ -6,7 +6,7 @@
   "scripts": {
     "watch": "npm-run-all --parallel _watch:*",
     "build": "cross-env-shell ELEVENTY_ENV=production \"npm-run-all _build:* && eleventy && pnpm _build:html\"",
-    "deploy": "type nul > ./dist/.nojekyll && gh-pages --dist dist --dotfiles true",
+    "deploy": "gh-pages --dist dist --dotfiles --nojekyll",
     "build+deploy": "npm-run-all build deploy",
     "_watch:11ty": "eleventy --serve",
     "_watch:sass": "sass src/styles/styles.scss:dist/styles/styles.css --watch",
