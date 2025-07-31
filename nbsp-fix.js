@@ -2,21 +2,23 @@ const fs = require("fs");
 
 // Prepositions and conjunctions after which a non-breaking space is needed
 const NBSP_WORDS = [
-	'в', 'и', 'к', 'с', 'у', 'о', 'а', 'я', 'но', 'на', 'по', 'из', 'от', 'до', 'за', 'не', 'то', 'ли', 'бы', 'же', 'над', 'под', 'об', 'без', 'для', 'при', 'про', 'через', 'или', 'как', 'со', 'обо', 'про', 'при', 'про', 'без', 'под', 'над', 'из', 'до', 'от', 'по', 'за', 'на', 'об', 'обо', 'со', 'ко', 'во', 'же', 'ли', 'бы', 'то', 'а', 'но', 'и', 'да', 'о', 'у', 'к', 'с', 'в', 'я', 'а', 'но', 'и', 'да', 'о', 'у', 'к', 'с', 'в', 'я'
+	'а', 'без', 'бы', 'в', 'во', 'да', 'для', 'до', 'же', 'за', 'и', 'из',
+	'к', 'как', 'ко', 'ли', 'на', 'над', 'не', 'но', 'о', 'об', 'обо',
+	'от', 'по', 'под', 'при', 'про', 'с', 'со', 'то', 'у', 'через', 'я'
 ];
 
 const NBSP = '\u00A0';
 
 function processText(text) {
 	// Replace space after short words with a non-breaking space
-	// Only if not inside code/tags/links
-	// Example: " в доме" => "\u00A0доме"
 	// The word must be at the start of a line or after a space/punctuation mark
-	// Character class: space, punctuation marks (brackets are escaped)
 	const pattern = new RegExp(
 		'(^|[\\s.,;:!?()\\[\\]"\'«»—-])((?:' + NBSP_WORDS.join('|') + ')) ([а-яёА-ЯЁa-zA-Z0-9])', 'gu'
 	);
-	return text.replace(pattern, (before, word, after) => `${before}${word}${NBSP}${after}`);
+
+	return text.replace(pattern, (match, prefix, preposition, nextChar) => {
+		return `${prefix}${preposition}${NBSP}${nextChar}`;
+	});
 }
 
 function processFile(filePath) {
