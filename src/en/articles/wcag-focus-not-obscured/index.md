@@ -5,7 +5,7 @@ ogImage: cover.png
 keyTheme:
   - WCAG
   - Keyboard
-date: 2025-06-30
+date: 2025-08-01
 layout: article.njk
 templateEngineOverride: md, njk
 ---
@@ -228,16 +228,16 @@ A temporary semi-automatic solution is the single bookmarklet [Show focus styles
 
 Manual testing requires a keyboard. Approximate testing steps:
 
-- Make sure there are interactive elements on the page (buttons, links, etc.)
-- Find overlay elements
-- Navigate through all interactive elements using <kbd>Tab</kbd> and <kbd>Shift Tab</kbd>
-- Repeat the previous steps for other breakpoints.
+1. Make sure there are interactive elements on the page (buttons, links, etc.)
+2. Find overlay elements
+3. Navigate through all interactive elements using <kbd>Tab</kbd> and <kbd>Shift Tab</kbd>
+4. Repeat the previous steps for other breakpoints.
 
 Additional steps for elements obscured by semi-transparent top layer elements:
 
-- Find out the background color of the top element
-- Determine the color of the focused element. Pick the mix of its original color with the background of the overlaying component (without the focus indicator's color)
-- Check the contrast ratio between two colors.
+1. Find out the background color of the top element
+2. Determine the color of the focused element. Pick the mix of its original color with the background of the overlaying component (without the focus indicator's color)
+3. Check the contrast ratio between two colors.
 
 You can test color ratio with color contrast checking tools. A few names of them are [TPGi’s Colour Contrast Analyser (CCA)](https://www.tpgi.com/color-contrast-checker/) and [Accessible Web’s WCAG Color Contrast Checker](https://accessibleweb.com/color-contrast-checker/).
 
