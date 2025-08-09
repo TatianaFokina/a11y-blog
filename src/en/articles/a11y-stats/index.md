@@ -86,3 +86,42 @@ templateEngineOverride: md, njk
 - состояние доступности в компаниях по отраслям;
 - внедрение: мотивация, проблемы, основные направления, этапы, внутреннее обучение сотрудников;
 - результаты внедрения: траты, выгода, конкурентные преимущества.
+
+**[The State of Mobile App Accessibility Report](https://arctouch.com/state-of-mobile-app-accessibility)** — совместное исследование ArcTouch и Fable 50 популярных Android- и iOS-приложений.
+
+**В фокусе отчёта**: доступность мобильных приложений для доставки еды, покупок и их оплаты, фитнесса и стриминга.
+
+**Какая статистика**:
+
+- общее сравнение приложений для Android и iOS;
+- поддержка скринридеров и голосового управления;
+- доступные функции и фичи;
+- основные типы проблем.
+
+### Исследования Fable
+
+[Fable](https://makeitfable.com/) — платформа, которая проводит аудиты доступности на аутсорсе, в том числе пользовательское тестирование.
+
+- 2024 — [Media accessibility](https://makeitfable.com/insights/media-accessibility/)
+- 2024 — [Accessibility in finance](https://makeitfable.com/insights/accessibility-in-finance/)
+- 2023 — [Mobile accessibility](https://makeitfable.com/insights/insights-mobile-accessibility/)
+- 2023 — [Accessibility and AI](https://makeitfable.com/article/insights-ai-and-accessibility/)
+- 2023 — [The state of online shopping for people with disabilities](https://makeitfable.com/insights/insights-the-state-of-online-shopping-for-people-with-disabilities/)
+
+**В фокусе отчётов**: опыт продвинутых пользователей вспомогательных технологий из США и Канады.
+
+## Про законы
+
+[Digital Trust Index: The State of Digital Accessibility in Europe](https://www.digitaltrustindex.eu) — индекс цифрового доверия к европейским сайтам на основе показателей доступности и инклюзии. Ежегодно проводится Craftzing, начиная с 2024 года.
+
+**В фокусе отчёта**: как правительственные и коммерческие сайты соответствуют требованиям European Accessibility Act (EAA).
+
+**Что в отчёте**:
+
+- доступность главных страниц, количество ошибок на них;
+- рейтинг цифровой доступности по странам;
+- основные проблемы.
+
+**[The State of Web Accessibility in 2024](https://www.accessibilitychecker.org/research-papers/the-state-of-web-accessibility-in-2024-research-report/)** — отчёт о доступности 63 000 сайтов, которое провела компания BuiltWith. Сайты проверялись автоматически.
+
+**В фокусе отчёта**: доступность коммерческих сайтов и их соответствие требованиям the Americans with Disabilities Act (ADA).
