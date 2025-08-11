@@ -9,98 +9,98 @@ layout: article.njk
 templateEngineOverride: md, njk
 ---
 
+People now talk about digital accessibility in a casual and general way: It’s important for *all* users. Of course, that’s a fair statement, but managers, developers, and other IT professionals need numbers. One source of these numbers is reports based on automated testing of websites and applications, as well as surveys involving real users.
+
+Here, I’ve collected sources with various statistics related to digital accessibility. Some reports focus on the **technical aspects of the accessibility** — for example, HTML markup and its common problems, the state of WAI-ARIA, or the websites technology stack.
+
+The second type of statistics the result of surveys enlight the **experiences of users of assistive technologies**. Such data helps us understand accessibility barriers and what user strategies help overcome them. This type of data is the most important.
+
+Another kind of statistics comes from analyzing the **legal regulation and company experiences**. Such reports reveal why businesses implement accessibility, what challenges they face, and what results it brings.
+
+Behind all the numbers are *real* people. Studies and reports only show the tip of the iceberg. Any statistics should be adjusted for external factors and the context of their collection — social, legal, and cultural characteristics, as well as disability stigmatization. Always take the numbers from accessibility reports with a grain of salt 🧂
+
 ## Technical accessibility
 
-**[The WebAIM Million](https://webaim.org/projects/million/)** — ежегодный отчёт о доступности одного миллиона самых посещаемых главных страниц сайтов. Составляется WebAIM с 2019 на основе автоматического тестирования.
+**[The WebAIM million](https://webaim.org/projects/million/)** is an annual report on the accessibility of one million of the “top” websites home pages. It compiled by WebAIM since 2019 using automated testing.
 
-**На что проливает свет**: основные технические проблемы с доступностью сайтов.
+**What it reveals**: The main technical accessibility issues of websites.
 
-**Какая статистика**:
+**What kind of statistics is here:**
 
-- количество проблем с доступностью из-за сложности страниц и WAI-ARIA;
-- типы проблем;
-- содержание страниц: контраст, картинки, текстовые альтернативы, заголовки, ориентиры, формы и ссылки;
-- среднее количество ошибок, процент их роста и снижения по отраслям, доменным зонам и языкам сайтов;
-- технологический стек: системы управления контентом (CMS), веб- и JavaScript-фреймворки, библиотеки, платформы электронной коммерции;
-- дополнительные наблюдения и открытия.
+- Number of accessibility issues due to page complexity and WAI-ARIA
+- Types of problems
+- Page content: Contrast ratio, images, text alternatives, headings, landmarks, forms, and links
+- The average number of errors, percentage increase or decrease in errors across industries, top-level domains, and site languages
+- Technology stack: Content management systems (CMS), JavaScript frameworks, libraries, e-commerce platforms
+- Additional observations and findings.
 
-**[Web Almanac](https://almanac.httparchive.org/en/)** — ежегодный отчёт HTTP Archive о состоянии веб-платформы и её доступности в частности. Стартовал в 2010, а информация о сайтах собирается автоматически.
+**[Web almanac](https://almanac.httparchive.org/en/)** is an annual HTTP Archive report about the state of the web platform, with a particular focus on accessibility. Started in 2010, all data is gathered automatically.
 
-**На что проливает свет**: доступность самих сайтов и их содержимого.
+**What it shows**: Technical accessibility of websites and web content.
 
-**Что есть в отчёте**:
+**Statistics in the report**:
 
-- содержимое страниц: контраст, таблицы, формы, заголовки, картинки, видео и аудио, скрытый контент и другое;
-- навигация с клавиатуры;
-- WAI-ARIA;
-- пользовательские настройки и предпочтения;
-- оверлеи и другие виджеты для доступности;
-- статистика по странам и доменным зонам;
-- JavaScript-фреймворки и CMS.
+- Content: contrast ratio, tables, forms, headings, images, video and audio, hidden content, and more
+- Keyboard navigation
+- WAI-ARIA usage
+- User settings and preferences
+- Accessibility overlays and alike widgets
+- Statistics by country and top-level domain
+- JavaScript frameworks and CMS.
 
-Ежегодные отчёты о **[State of Frontend](https://tsh.io/state-of-frontend/)** и **[State of HTML](https://stateofhtml.com/en-US)** также включают отдельные разделы о состоянии доступности.
+Annual reports on the **[State of frontend](https://tsh.io/state-of-frontend/)** and **[State of HTML](https://stateofhtml.com/en-US)** also include dedicated sections about the state of accessibility.
 
-**[Email Accessibility Reports](https://emailmarkup.org/en/reports/accessibility/)** — отчёт Email Markup Consortium (EMC), Parcel.io и Flourish. Собирается с 2022 года на основе автоматического тестирования.
+**[Email accessibility reports](https://emailmarkup.org/en/reports/accessibility/)** is an annual study by the Email Markup Consortium (EMC) and its partners Parcel.io and Flourish. The report compiled since 2022 using automated testing.
 
-**На что проливает свет**: доступность электронной почты с разделением проблем по степени критичности.
+**What it uncovers**: Email accessibility with a breakdown of issues by severity.
 
-**Что есть в отчёте**:
+**The report findings**:
 
-- основные проблемы с вёрсткой писем;
-- популярные и редкие HTML- и CSS-фичи;
-- состояние почтовых клиентов.
+- Main issues in email layouts
+- Popular and rare HTML and CSS features
+- Status of email clients.
 
-## Про людей
+**[The state of mobile app accessibility report](https://arctouch.com/state-of-mobile-app-accessibility)** is a joint study by ArcTouch and Fable on 50 popular Android and iOS apps. The first and so far only report is for 2025.
 
-**[WebAIM Screen Reader User Survey](https://webaim.org/projects/screenreadersurvey10/)** — ежегодный опрос пользователей вспомогательных технологий. Проводится с 2009.
+**What it shows**: Accessibility of mobile apps for food delivery, shopping and payments, fitness, and streaming.
 
-**На что проливает свет**: опыт пользователей скринридеров, большинство из которых живёт в Северной Америке и Европе.
+**What statistics it includes**:
 
-**Какая статистика**:
+- Overall comparison of Android and iOS apps
+- Support for screen readers and voice control
+- Accessible features
+- Types of problems.
 
-- демография пользователей;
-- устройства и платформы;
-- операционные системы и браузеры;
-- скринридеры: типы, пользовательский опыт, паттерны взаимодействия и пр.;
-- проблемные места сайтов и приложений.
+## About users
 
-**[Web Accessibility Survey](https://webaccessibilitysurvey.com/survey-results/)** среди пользователей с инвалидностью, который проводят сабредиты [r/CerebralPalsy](https://www.reddit.com/r/CerebralPalsy/), [r/Autism/](http://reddit.com/r/autism/) и [r/Disability](https://www.reddit.com/r/disability/) при поддержке специалиста по доступности Charlie Beach и директора Americaneagle.com Nick Goodrum. Проводится с 2023.
+**[WebAIM screen reader user survey](https://webaim.org/projects/screenreadersurvey10/)** is an annual survey of assistive technology users. It conducted since 2009.
 
-**В фокусе отчёта**: пользователи доступности из разных регионов мира, пользовательские стратегии, вспомогательные технологии и барьеры.
+**What it reveals**: The experiences of screen reader users, most of whom live in North America and Europe.
 
-**Какая статистика**:
+**What kind of statistics is here:**
 
-- демография пользователей: возраст, страна, тип инвалидности;
-- влияние проблем с доступностью на пользователей;
-- интернет-сёрфинг: основные браузеры, устройства, операционные системы и т. д.;
-- статистика по использованию вспомогательных технологий и других устройств: скринридеры, экранные лупы, клавиатуры и другие;
-- настройки доступности операционных систем и браузеров;
-- доступность мультимедиа, ReCAPTCHA и оверлеев.
+- User demographics
+- Devices and platforms usage
+- Operating systems and browsers
+- Screen readers: Types, user experience, interaction patterns, etc.
+- Websites and apps problems.
 
-**[The State of Digital Accessibility Report (SODAR)](https://www.levelaccess.com/state-of-digital-accessibility/)** составляется общими усилиями Level Access, [International Association of Accessibility Professionals (IAAP)](https://www.accessibilityassociation.org/s/) и [The Global Initiative for Inclusive ICTs (G3ict)](https://g3ict.org/). Ведётся с 2019 на основе опросов компаний-клиентов сервиса.
+**[Web accessibility survey](https://webaccessibilitysurvey.com/survey-results/)** is a survey among users with disabilities conducted by the [r/CerebralPalsy](https://www.reddit.com/r/CerebralPalsy/), [r/Autism/](http://reddit.com/r/autism/), and [r/Disability](https://www.reddit.com/r/disability/) in collaboration with Charlie Beitch and Nick Goodrum. It’s been conducted since 2023.
 
-**На что проливает свет**: региональные тренды доступности в компаниях из Северной Америки и Европы.
+**The report focus on**: Users with disabilities from all over the world, user strategies, assistive technologies, and barriers.
 
-**Какая статистика**:
+**The report findings**:
 
-- состояние доступности в компаниях по отраслям;
-- внедрение: мотивация, проблемы, основные направления, этапы, внутреннее обучение сотрудников;
-- результаты внедрения: траты, выгода, конкурентные преимущества.
+- User demographics: Age, country, type of disability
+- The impact of accessibility problems
+- Internet browsing: Main browsers, devices, operating systems, etc.
+- Usage of assistive technologies and other devices: Screen readers, screen magnifiers, keyboards, and more
+- Accessibility settings for operating systems and browsers
+- Accessibility of multimedia, ReCAPTCHA, and overlays.
 
-**[The State of Mobile App Accessibility Report](https://arctouch.com/state-of-mobile-app-accessibility)** — совместное исследование ArcTouch и Fable 50 популярных Android- и iOS-приложений.
+### Fable surveys
 
-**В фокусе отчёта**: доступность мобильных приложений для доставки еды, покупок и их оплаты, фитнесса и стриминга.
-
-**Какая статистика**:
-
-- общее сравнение приложений для Android и iOS;
-- поддержка скринридеров и голосового управления;
-- доступные функции и фичи;
-- основные типы проблем.
-
-### Исследования Fable
-
-[Fable](https://makeitfable.com/) — платформа, которая проводит аудиты доступности на аутсорсе, в том числе пользовательское тестирование.
+[Fable](https://makeitfable.com/) is a platform providing outsourced accessibility audits, including user testing.
 
 - 2024 — [Media accessibility](https://makeitfable.com/insights/media-accessibility/)
 - 2024 — [Accessibility in finance](https://makeitfable.com/insights/accessibility-in-finance/)
@@ -108,20 +108,36 @@ templateEngineOverride: md, njk
 - 2023 — [Accessibility and AI](https://makeitfable.com/article/insights-ai-and-accessibility/)
 - 2023 — [The state of online shopping for people with disabilities](https://makeitfable.com/insights/insights-the-state-of-online-shopping-for-people-with-disabilities/)
 
-**В фокусе отчётов**: опыт продвинутых пользователей вспомогательных технологий из США и Канады.
+**What the reports highlight**: Experience of advanced assistive technology users from the US and Canada.
 
-## Про законы
+## Accessibility laws and business
 
-[Digital Trust Index: The State of Digital Accessibility in Europe](https://www.digitaltrustindex.eu) — индекс цифрового доверия к европейским сайтам на основе показателей доступности и инклюзии. Ежегодно проводится Craftzing, начиная с 2024 года.
+**[The state of digital accessibility report (SODAR)](https://www.levelaccess.com/state-of-digital-accessibility/)** is compiled jointly by Level Access, the International Association of Accessibility Professionals (IAAP), and the Global Initiative for Inclusive ICTs (G3ict). It’s been conducted since 2019, based on surveys of service clients.
 
-**В фокусе отчёта**: как правительственные и коммерческие сайты соответствуют требованиям European Accessibility Act (EAA).
+**What it reveals**: Regional trends in digital accessibility among companies in North America and Europe.
 
-**Что в отчёте**:
+**Key statistics**:
 
-- доступность главных страниц, количество ошибок на них;
-- рейтинг цифровой доступности по странам;
-- основные проблемы.
+- Accessibility status by sector
+- Implementation: Motivations, challenges, strategic directions, stages, internal training for staff, etc.
+- Results of implementation: Costs, benefits, and competitive advantage.
 
-**[The State of Web Accessibility in 2024](https://www.accessibilitychecker.org/research-papers/the-state-of-web-accessibility-in-2024-research-report/)** — отчёт о доступности 63 000 сайтов, которое провела компания BuiltWith. Сайты проверялись автоматически.
+**[Digital trust index: The state of digital accessibility in Europe](https://www.digitaltrustindex.eu)** measures trust in European websites, focusing on accessibility and inclusion. It’s an annual survey run by Craftzing since 2024.
 
-**В фокусе отчёта**: доступность коммерческих сайтов и их соответствие требованиям the Americans with Disabilities Act (ADA).
+**What it clarifies**: How government and commercial websites comply with the European Accessibility Act (EAA).
+
+**The report findings**:
+
+- Accessibility of home pages
+- Country-by-country digital accessibility ranking
+- Main issues.
+
+**[The state of web accessibility in 2024](https://www.accessibilitychecker.org/research-papers/the-state-of-web-accessibility-in-2024-research-report/)** is a report on 63,000 websites, researched by BuiltWith and AccessibilityChecker. Websites are tested automatically.
+
+**The report focus on**: Accessibility of commercial websites and compliance with the Americans with Disabilities Act (ADA).
+
+**The highlighted statistics**:
+
+- General results and accessibility scores by country and region
+- Compliance across industries: E-commerce, website/blog generators, CMSs
+- Distribution of compliance states across company verticals.
