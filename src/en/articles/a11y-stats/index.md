@@ -1,6 +1,6 @@
 ---
 title: Accessibility in numbers
-description: Collection of digital accessibility statistics sources for developers: Technical reports, user surveys, business studies, and legal regulation research.
+description: Collection of digital accessibility statistics sources for developers. It includes technical reports, user surveys, business studies, and legal regulation research.
 ogImage: cover.png
 keyTheme:
   - Numbers
