@@ -1,10 +1,13 @@
 ---
-title: Accessibility statistic resources
-description: ...
+title: Accessibility in numbers
+description: Collection of digital accessibility statistics sources for developers: Technical reports, user surveys, business studies, and legal regulation research.
 ogImage: cover.png
 keyTheme:
-  - ARIA
-date: 2025-08-24
+  - Numbers
+  - HTML
+  - Users
+  - Legislation
+date: 2025-08-12
 layout: article.njk
 templateEngineOverride: md, njk
 ---
