@@ -78,11 +78,11 @@
 		right: 0;
 	}
 
+	// The card itself changes background on hover, a second layer under the text would lag behind it
 	&:hover {
 		color: inherit;
-		background: inherit;
+		background: none;
 		border-bottom: 0;
-		transition: none;
 	}
 
 	&:focus-visible {
