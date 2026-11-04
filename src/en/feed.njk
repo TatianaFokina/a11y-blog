@@ -7,8 +7,8 @@ permalink: /en/feed.xml
 	<channel>
 		<title>{{ "site name" | translate("en") | safe }}</title>
 		<description>{{ "site description" | translate("en") | safe }}</description>
-		<language>{{ en }}</language>
-		<link>{{ site.url }}/</link>
+		<language>{{ page.lang }}</language>
+		<link>{{ site.url }}/{{ page.lang }}/</link>
 
 		{% set lastArticle = collections.articlesEn | first %}
 		<lastBuildDate>{{ lastArticle.date.toUTCString() }}</lastBuildDate>

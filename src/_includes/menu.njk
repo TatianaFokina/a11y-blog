@@ -20,7 +20,7 @@
 				{% endif %}
 			{% endfor %}
 
-			<a class="navigation__list-item-link" href="{{ targetURL if targetURL else ("/" ~ targetLang ~ "/") }}">
+			<a class="navigation__list-item-link" href="{{ targetURL if targetURL else ("/" ~ targetLang ~ "/") }}" hreflang="{{ targetLang }}">
 				{% include "../assets/ico-language.svg" %}
 				<span lang="{{ targetLang }}">
 					{{ langLabel }}

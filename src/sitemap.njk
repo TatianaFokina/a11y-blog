@@ -10,8 +10,7 @@ eleventyExcludeFromCollections: true
 			<lastmod>{{ page.date.toISOString() }}</lastmod>
 			<changefreq>{{ page.data.changeFreq if page.data.changeFreq else "monthly" }}</changefreq>
 
-			<xhtml:link rel="alternate" hreflang="{{ page.page.lang }}" href="{{ site.url }}{{ page.url }}"/>
-			{% for link in page.url | locale_links %}
+			{% for link in page.url | locale_links | hreflangLinks(page.url, page.page.lang) %}
 				<xhtml:link rel="alternate" hreflang="{{ link.lang }}" href="{{ site.url }}{{ link.url }}"/>
 			{% endfor %}
 		</url>

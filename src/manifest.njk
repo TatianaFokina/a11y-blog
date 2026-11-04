@@ -3,8 +3,8 @@ permalink: manifest.json
 eleventyExcludeFromCollections: true
 ---
 {
-  "name": "{{ "site name" | translate("ru") | safe }}",
-  "description": "{{ "site description" | translate("ru") | safe }}",
+  "name": "{{ "site name" | translate(defaultLanguage) | safe }}",
+  "description": "{{ "site description" | translate(defaultLanguage) | safe }}",
   "icons": [
     {
       "src": "/assets/favicons/icon-192.png",

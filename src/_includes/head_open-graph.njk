@@ -7,6 +7,10 @@
 {% endif %}
 
 <meta property="og:type" content="website">
+<meta property="og:locale" content="{{ "og locale" | translate }}">
+{% for link in page.url | locale_links %}
+	<meta property="og:locale:alternate" content="{{ "og locale" | translate(link.lang) }}">
+{% endfor %}
 <meta property="og:url" content="{{ site.url }}{{ page.url }}">
 <meta property="og:title" content="{{ title }}">
 <meta property="og:description" content="{{ description or "site description" | translate | safe }}">
