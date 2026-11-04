@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+<head>
+	<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Как пропустить большую навигацию с помощью skip link, кому нужны такие ссылки и как их добавить на свой сайт.">
+<link rel="canonical" href="https://a11y-blog.dev/ru/articles/understanding-a-skip-link/index.undefined" />
+
+
+<title>
+	
+		Разбираемся со skip link — Блог о цифровой доступности
+	
+</title>
+
+<link rel="alternate" hreflang="ru" href="https://a11y-blog.dev/ru/articles/understanding-a-skip-link/index.undefined" />
+
+	
+		<link
+			rel="alternate"
+			hreflang="en"
+			href="https://a11y-blog.dev/en/articles/understanding-a-skip-link/index.undefined">
+	
+
+	
+
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://a11y-blog.dev/ru/articles/understanding-a-skip-link/index.undefined">
+<meta property="og:title" content="Разбираемся со skip link">
+<meta property="og:description" content="Как пропустить большую навигацию с помощью skip link, кому нужны такие ссылки и как их добавить на свой сайт.">
+<meta property="og:image" content="https://a11y-blog.dev/assets/og-image-ru.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://a11y-blog.dev/ru/articles/understanding-a-skip-link/index.undefined">
+<meta name="twitter:title" content="Разбираемся со skip link">
+<meta name="twitter:description" content="Как пропустить большую навигацию с помощью skip link, кому нужны такие ссылки и как их добавить на свой сайт.">
+<meta name="twitter:site" content="https://a11y-blog.dev/ru/articles/understanding-a-skip-link/index.undefined">
+<meta name="twitter:image" content="https://a11y-blog.dev/assets/og-image-ru.png">
+	
+	
+	
+
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Article",
+			"headline": "Разбираемся со skip link",
+			"description": "Как пропустить большую навигацию с помощью skip link, кому нужны такие ссылки и как их добавить на свой сайт.",
+			"keywords": "Паттерны, HTML, CSS",
+			"image": "https://a11y-blog.dev/assets/og-image-ru.png",
+			"author": {
+				"@type": "Person",
+				"name": "Татьяна Фокина",
+				"url": "https://www.linkedin.com/in/tatiana-fokina-frontend/"
+			},
+			"publisher": {
+				"@type": "Organization",
+				"name": "Татьяна Фокина",
+				"url": "https://www.linkedin.com/in/tatiana-fokina-frontend/",
+				"logo": {
+					"@type": "ImageObject",
+					"url": "https://a11y-blog.dev/assets/og-image-ru.png"
+				}
+			},
+			"datePublished": "2021-08-23T00:00:00.000Z",
+			"dateModified": "2024-06-13T00:00:00.000Z"
+		}
+	</script>
+
+	<script defer src="/scripts/bundle.js"></script>
+	<link rel="stylesheet" href="/styles/styles.css">
+	<link rel="icon" sizes="32x32" href="/assets/favicons/favicon.ico" type="image/png" >
+<link rel="icon" href="/assets/favicons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+	<link rel="alternate" type="application/rss+xml" title="Практические советы по цифровой доступности для фронтенд-разработчиков, QA тестировщиков и дизайнеров. Тут вы узнаете о методах создания доступных и удобных интерфейсов, стандартах, ассистивных технологиях и законах." href="https://a11y-blog.dev/ru/feed.xml">
+</head>
+
+<body class="base" data-theme="light">
+	<header>
+	<div class="header wrapper">
+		<nav class="navigation">
+	<a class="logo" href="/ru/">
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 269 198" class="logo__svg">
+	<path class="logo__svg-path" d="M0.360337 128.243C-4.95996 80.963 48.9099 0 143.698 0C198.853 0 240.797 25.5 240.797 80.317C240.797 142 149.515 189.124 98.1198 196C45.7968 203 6.29684 181 0.360337 128.243Z"/>
+	<path fill="currentColor" d="M46.809 170.197c-.354-.256-.548-.581-.583-.976-.034-.394.124-.728.476-1.002 2.826-2.787 5.447-5.136 7.864-7.048.21-.129.445-.205.708-.228.285-.025.548.074.788.296.262.22.407.483.434.79.026.307-.037.588-.192.845-.205.172-2.544 2.21-7.017 6.113.56.348 1.804 1.056 3.73 2.125 1.948 1.066 3.38 1.912 4.297 2.539.2.269.312.536.335.799.02.241-.1.505-.362.793-.264.266-.549.412-.856.439-.284.025-.474.009-.567-.049-.984-.643-2.44-1.509-4.368-2.6-1.907-1.092-3.469-2.037-4.687-2.836Zm22.666-10.695-.588-6.342c-.104-1.183.217-1.808.962-1.873.767-.067 1.223.224 1.369.874.068.281.274 1.997.615 5.147.342 3.15.7 6.1 1.073 8.85.395 2.748.697 5.317.906 7.706.058.657-.407 1.029-1.393 1.115-.658.058-1.027-.374-1.107-1.294-.877.827-1.962 1.298-3.255 1.411-1.644.144-3.035-.353-4.172-1.49-1.116-1.139-1.752-2.607-1.91-4.405-.157-1.797.058-3.505.645-5.124.608-1.643 1.66-2.873 3.156-3.688.928-.501 1.841-.791 2.74-.869.328-.029.648-.035.959-.018Zm.558 4.489c-.195-.468-.413-.814-.654-1.036-.242-.243-.496-.376-.763-.397a3.495 3.495 0 0 0-.896-.021c-.351.031-.767.2-1.248.507s-.871.772-1.17 1.394c-.598 1.245-.839 2.525-.724 3.84.113 1.293.458 2.334 1.035 3.123.597.765 1.367 1.106 2.31 1.023.963-.084 1.678-.621 2.144-1.612.465-.99.634-2.219.505-3.688-.144-1.643-.323-2.688-.539-3.133Zm8.722-10.734c.395-.034.784.12 1.167.461.383.342.593.721.63 1.138.034.394-.128.817-.486 1.268-.336.449-.712.692-1.129.728-.416.037-.815-.105-1.196-.425-.36-.322-.564-.757-.611-1.305-.093-1.052.428-1.672 1.56-1.859l.065-.006Zm2.888 17.106.234 2.298c.037.416-.097.782-.4 1.095-.306.292-.646.454-1.018.487-.548.048-.857-.201-.927-.747-.897-6.967-1.377-10.822-1.443-11.568a45.924 45.924 0 0 1-.14-2.737c.01-.398.244-.617.705-.658 1.161-.101 1.86.312 2.096 1.241.108.477.174.857.2 1.142l.049 2.083.644 7.364Zm16.003-13.458c.307-.027.546.062.719.268.17.184.267.396.288.637l-.004.332c-.716 2.426-1.228 4.392-1.538 5.899a102.326 102.326 0 0 1-.456 2.358c-.088.516-.24 1.424-.458 2.724-.217 1.299-.365 2.14-.442 2.523-.241.772-.745 1.191-1.513 1.258-.372.033-.656-.185-.852-.654-.893-2.13-2.14-4.517-3.74-7.159-1.6-2.643-2.517-4.153-2.748-4.53-.212-.401-.332-.766-.361-1.095-.029-.328.086-.659.344-.99.28-.334.606-.517.979-.55.372-.032.707.137 1.005.509.283.461 1.08 1.749 2.392 3.865 1.333 2.114 2.285 3.786 2.857 5.017.01-.134.063-.414.158-.842.779-3.977 1.446-6.829 2.001-8.556.32-.624.777-.962 1.369-1.014Zm6.243-.348c.241-.021.486.002.735.069.249.066.547.195.895.385.368.167.704.347 1.008.541.324.171.765.419 1.324.746.559.326 1.302.747 2.231 1.262.928.515 2.155 1.291 3.681 2.328.519.374.795.748.827 1.12.031.351-.113.728-.431 1.131l-.54.644c-.18.214-.681.667-1.504 1.357l-.926.777c-.412.345-1.133.938-2.163 1.779a38.709 38.709 0 0 0-2.826 2.533c-.104.075-.309.126-.616.153-.307.027-.614-.079-.922-.317-.286-.24-.443-.513-.47-.82-.028-.329.014-.597.129-.806.984-.859 2.26-1.932 3.826-3.217 1.588-1.287 2.759-2.284 3.515-2.991-.678-.426-1.736-1.029-3.173-1.809a447.403 447.403 0 0 1-4.915-2.783c-.315-.326-.486-.642-.513-.949-.027-.307.039-.567.197-.779.18-.215.39-.333.631-.354Z"/>
+	<path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4" d="M37.955 129.137c11.424-1 12.098 6.699 23.521 5.7 11.424-1 10.75-8.699 22.175-9.698 11.424-1 12.097 6.699 23.494 5.702 11.424-.999 10.751-8.698 22.148-9.695 11.424-1 12.097 6.699 23.494 5.702 11.424-1 10.751-8.698 22.174-9.698 11.424-.999 12.098 6.7 23.522 5.7 11.423-.999 10.75-8.698 22.174-9.698 11.424-.999 12.097 6.7 23.522 5.7 11.423-.999 10.749-8.698 22.173-9.697"/>
+	<ellipse cx="180.489" cy="89.24" fill="currentColor" rx="8.943" ry="6.686" transform="rotate(-5 180.489 89.24)"/>
+	<path fill="currentColor" stroke="currentColor" stroke-width=".3" d="m213.386 96.552.147-.03-.03-.147-2.457-12.266c-1.117-5.575-6.146-9.14-11.587-8.05-5.47 1.095-8.738 6.323-7.621 11.898l2.457 12.267.03.147.147-.03 3-.6.147-.03-.029-.147-2.458-12.267c-.757-3.78 1.37-7.22 4.987-7.944 3.587-.719 6.875 1.635 7.632 5.416l2.458 12.266.029.148.147-.03 3.001-.601Z"/>
+	<path fill="currentColor" d="M156.169 71.198c8.129.897 13.618 8.104 12.686 16.546l-2.04 18.491-3.708-.409 2.041-18.491c.705-6.388-3.359-11.764-9.389-12.43-6.074-.67-11.212 3.691-11.917 10.079l-2.04 18.491-3.708-.409 2.041-18.492c.931-8.441 7.86-14.278 16.034-13.376ZM134.393 102.629l.25 2.857-15.127 1.323-.25-2.857 15.127-1.323ZM75.155 101.711c1.307 1.479 2.567 2.607 3.778 3.385 1.209.76 2.192 1.107 2.948 1.041.945-.083 1.944-.352 2.995-.808l.325 3.713c-.82.522-1.961.847-3.422.974-1.564.137-3.112-.238-4.645-1.126-1.515-.889-3.115-2.256-4.8-4.1-1.404 2.166-2.793 3.812-4.167 4.936-1.358 1.106-2.802 1.726-4.331 1.86-1.427.125-2.624.005-3.59-.361l-.326-3.713c.252.1.7.182 1.347.246.646.065 1.158.081 1.537.048.98-.086 1.959-.57 2.938-1.452.995-.901 2.053-2.267 3.174-4.097-2.328-2.065-4.072-3.99-5.233-5.776-1.145-1.805-1.793-3.567-1.943-5.286-.226-2.578.449-4.767 2.023-6.567 1.575-1.8 3.754-2.823 6.538-3.066 2.767-.242 5.082.386 6.945 1.886 1.862 1.482 2.906 3.521 3.133 6.116.29 3.318-1.45 7.367-5.224 12.147ZM92.012 93.013c-1.953.17-3.618-1.227-3.803-3.339-.199-2.27 1.203-3.882 3.156-4.053 1.849-.162 3.615 1.173 3.813 3.444.185 2.112-1.318 3.786-3.166 3.948ZM53.592 96.376c-1.953.17-3.618-1.226-3.803-3.338-.199-2.27 1.203-3.883 3.157-4.054 1.848-.161 3.614 1.174 3.812 3.444.185 2.112-1.318 3.786-3.166 3.948ZM108.182 107.188l-.758-8.662-4.795.42-.336-3.842 4.795-.42-.582-6.651c2.769-1.212 4.902-2.862 6.399-4.95 1.515-2.09 2.164-4.372 1.947-6.847-.373-4.262-2.725-6.204-7.056-5.825-1.22.107-2.489.452-3.806 1.035a13.781 13.781 0 0 0-3.47 2.2l-2.032-3.33c2.508-2.21 5.567-3.474 9.176-3.79 3.523-.308 6.316.33 8.377 1.917 2.078 1.585 3.258 3.984 3.539 7.198.244 2.784-.355 5.443-1.796 7.976-1.424 2.532-3.557 4.676-6.399 6.431l.37 4.228 5.697-.498.336 3.84-5.697.5.757 8.662-4.666.408ZM69.465 66.36c6.824-.597 12.608-.245 17.352 1.054 4.766 1.298 8.247 3.47 10.443 6.516l-4.832.423c-3.871-3.783-11.393-5.186-22.564-4.209-5.226.457-9.65 1.373-13.275 2.746-3.625 1.374-6.24 3.135-7.844 5.285l-4.832.422c1.9-3.456 5.017-6.214 9.353-8.274 4.335-2.076 9.735-3.397 16.199-3.963ZM28.153 101.589l5.697-.498-.37-4.228c-3.141-1.267-5.632-3.014-7.472-5.243-1.84-2.23-2.883-4.736-3.126-7.52-.281-3.214.464-5.782 2.235-7.703 1.772-1.922 4.41-3.036 7.917-3.343 3.627-.317 6.867.395 9.72 2.137l-1.448 3.634c-1.134-.698-2.41-1.218-3.825-1.562-1.399-.345-2.7-.465-3.902-.36-4.314.378-6.285 2.697-5.912 6.96.218 2.492 1.254 4.635 3.108 6.43 1.872 1.793 4.25 3.04 7.134 3.74l.582 6.652 4.795-.42.336 3.841-4.795.42.758 8.662-4.64.406-.759-8.662-5.697.498-.336-3.841Z"/>
+</svg>
+	<span class="visually-hidden">Блог о цифровой доступности</span>
+</a>
+
+	<ul class="navigation__list">
+		<li class="navigation__list-item">
+			
+			
+				
+				
+			
+
+			
+			
+			
+				
+					
+				
+			
+
+			<a class="navigation__list-item-link" href="/en/articles/understanding-a-skip-link/index.undefined">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" class="navigation__list-item-ico" aria-hidden="true">
+	<circle cx="12" cy="12" r="10"/>
+	<path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+	<path d="M2 12h20"/>
+</svg>
+				<span lang="en">
+					English
+				</span>
+			</a>
+		</li>
+		<li class="navigation__list-item">
+			<a class="navigation__list-item-link" href="/ru/feed.xml">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" class="navigation__list-item-ico" aria-hidden="true">
+	<path d="M4 11a9 9 0 0 1 9 9"/>
+	<path d="M4 4a16 16 0 0 1 16 16"/>
+	<circle cx="5" cy="19" r="1"/>
+</svg>
+				RSS
+			</a>
+		</li>
+	</ul>
+</nav>
+
+<section class="header__switcher" aria-label="Тема">
+	<button class="header__switcher-button" aria-pressed="true" value="light">
+		Светлая
+	</button>
+	<button class="header__switcher-button" aria-pressed="false" value="dark">
+		Тёмная
+	</button>
+</section>
+	</div>
+</header>
+	<div class="base__body wrapper">
+		<main>
+			
+			
+<header class="article-header">
+	<h1>Разбираемся со skip link</h1>
+
+	<ul class="topics topics--in-article">
+		
+			<li class="topics__item">Паттерны</li>
+		
+			<li class="topics__item">HTML</li>
+		
+			<li class="topics__item">CSS</li>
+		
+	</ul>
+
+	<div class="article-header__dates">
+		<div class="article-header__dates-item">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" class="article-header__dates-item__ico" aria-hidden="true">
+	<path d="M8 2v4"/>
+	<path d="M16 2v4"/>
+	<rect width="18" height="18" x="3" y="4" rx="2"/>
+	<path d="M3 10h18"/>
+</svg>
+			<time datetime="2021-08-23T00:00:00.000Z">23 августа 2021</time>
+		</div>
+		
+			<div class="article-header__dates-item">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" class="article-header__dates-item__ico" aria-hidden="true">
+	<path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+	<path d="M3 3v5h5"/>
+	<path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/>
+	<path d="M16 16h5v5"/>
+</svg>
+				Обновлено:
+				<time datetime="2024-06-13T00:00:00.000Z">13 июня 2024</time>
+			</div>
+		
+	</div>
+</header>
+
+<div class="article">
+	<p>В вебе есть много небольших, но полезных доступных паттернов. И один из них — <em>ссылка для пропуска контента</em> или <em>скип линк (skip link)</em>. Это гиперссылка, которая ведёт к основному содержанию страницы и помогает пропустить объёмный, часто повторяющийся контент. Её главная цель — экономия времени пользователей.</p>
+<p>Какой контент считается объёмным? Навигационное меню с логотипом и кучей ссылок, громоздкая сложная таблица, буквенные указатели, списки с главами или техническими характеристиками. Чаще всего skip link полезна для пропуска навигации по сайту в хедере.</p>
+<p>Исключения — меню в футере и небольшая навигация в хедере, которая состоит из пары ссылок и логотипа. В случае футера можно вернуться к началу страницы с помощью клавиш, жестов и других встроенных возможностей браузеров. А небольшая навигация не отнимет много времени у пользователей.</p>
+<p>В теории всё просто, но на практике несколько сложнее. Давайте попробуем разобраться со всем по порядку.</p>
+<h2>Теория</h2>
+<h3>Послушаем WCAG 2.2</h3>
+<p>В руководстве по доступности есть два критерия, связанные со skip link. Первый касается их косвенно, а второй напрямую.</p>
+<ul>
+<li><a href="https://www.w3.org/TR/WCAG22/#keyboard" rel="noopener">Критерий 2.1.1. Клавиатура</a> (A). Вся функциональность контента доступна для клавиатуры и не зависит от пауз между нажатиями клавиш.</li>
+<li><a href="https://www.w3.org/TR/WCAG22/#bypass-blocks" rel="noopener">Критерий 2.4.1. Пропуск блоков</a> (А). Доступен механизм пропуска блоков контента, которые повторяются на нескольких страницах.</li>
+</ul>
+<h3>Механизмы пропуска блоков</h3>
+<p>Есть два механизма:</p>
+<ul>
+<li>навигация по ориентирам (landmarks);</li>
+<li>skip link.</li>
+</ul>
+<p>Первый способ доступен для пользователей скринридеров. Ориентиры добавляются с помощью семантических тегов или благодаря ARIA. У второго механизма аудитория больше. Это не только пользователи с особенностями зрения.</p>
+<p>Можно встретить совет о том, что skip link не нужна на сайте с хорошей семантической вёрсткой. Это не совсем верно. Не все пользователи скринридеров знают о шорткатах для открытия меню с ориентирами, а у других пользователей клавиатуры такой возможности нет. К тому же, чем больше вариантов навигации, тем лучше.</p>
+<h3>Кому это нужно</h3>
+<p>Если коротко, то всем, кто последовательно навигируется по страницам и не может быстро пропустить контент. Если развёрнуто, то четырём категориям пользователей. Это:</p>
+<ul>
+<li>Пользователи скринридеров, которые перемещаются по десктопным сайтам с помощью клавиатуры, а по мобильным — касаниями, тапами и свайпами.</li>
+<li>Пользователи с моторными нарушениями, которые пользуются клавиатурой, выносными компьютерными кнопками и <a href="https://axesslab.com/switches/" rel="noopener">другими переключателями</a>.</li>
+<li>Любые другие пользователи клавиатуры. Они могут быть продвинутого уровня или у них временно сломалась мышка.</li>
+<li>Пользователи экранных луп, которые используют для навигации клавиатуру.</li>
+</ul>
+<p>Представьте, что используете для навигации клавиатуру и зашли на сайт интернет-магазина, например, Ozon. Вы нашли нужный товар, перешли к нему и снова оказались в начале страницы. Примерно 40 табов и вот наконец можно узнать больше про понравившийся рюкзак. Со skip link вы бы оказались в нужном месте в одно нажатие и не заснули по пути.</p>
+<h3>Требования к skip link</h3>
+<ul>
+<li>Находится на первом месте в порядке табуляции.</li>
+<li>Ведёт сразу к основному контенту и устанавливает фокус на нём. Она эффективнее, если на странице одна основная область — <code>&lt;main&gt;</code>.</li>
+<li>Может располагаться в основной области страницы. В этом случаем она пропускает нужный блок и ведёт в начало следующего.</li>
+<li>Понятно называется и хорошо описывает, куда ведёт.</li>
+<li>Может быть всегда видна, а может появляться при фокусе с клавиатуры. В обоих случаях отвечает критериям WCAG.</li>
+<li>Можно добавлять несколько таких ссылок. Например, одна ведёт к основному контенту, вторая — к поисковой строке. Не стоит перебарщивать с количеством, иначе в ссылках нет смысла.</li>
+<li>Не должна мешать пользователям мыши. Это дискуссионное требование, но в нём есть разумное зерно. Если такая ссылка всегда видна, то может запутать пользователей мышки. Они не знакомы с этим паттерном, а ещё один способ прокрутки к основному контенту им не нужен.</li>
+</ul>
+<h2>Практика</h2>
+<p>В проекте уже должен поддерживаться фокус с клавиатуры и использоваться семантическая вёрстка. Без этого skip link бесполезна.</p>
+<h3>Размечаем страницу</h3>
+<p>Перед тем, как перейти к разметке, пара слов про текст ссылки. На англоязычных сайтах чаще всего используют «Skip to main content» или «Skip to content». Кажется, что самые подходящие эквиваленты в русском — «Перейти к основному контенту» или более краткое «К основному контенту». «Содержание» — широкое понятие и означает содержимое страницы или оглавление. «Контент» лучше отражает, куда ведёт ссылка.</p>
+<p>Ещё несколько вариантов названия:</p>
+<ul>
+<li>пропустить навигацию (Skip navigation);</li>
+<li>пропустить основную навигацию (Skip main navigation);</li>
+<li>пропустить ссылки в навигации (Skip navigation links).</li>
+</ul>
+<p>Теперь поговорим о разметке.</p>
+<p>Практическая реализация skip link — якорная ссылка. Лучше добавить её в начало <code>&lt;body&gt;</code> или <code>&lt;header&gt;</code>, если это первый элемент на странице. В примерах буду добавлять её в начало хедера.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#main-content<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>skip-link<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    К основному контенту
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+  <span class="token comment">&lt;!-- Внушительная навигация --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">></span></span></code></pre>
+<p>А вот куда она должна вести — главная загвоздка. Есть несколько ответов на этот вопрос.</p>
+<p><strong>Вариант 1</strong>, классический. Ссылка ведёт прямо к <code>&lt;main&gt;</code>.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#main-content<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>skip-link<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    К основному контенту
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+  <span class="token comment">&lt;!-- Внушительная навигация --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>main</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>main-content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token comment">&lt;!-- Контент основного блока --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>main</span><span class="token punctuation">></span></span></code></pre>
+<p>Этот вариант более-менее хорошо работает в современных браузерах, но есть одно «но». <a href="https://axesslab.com/skip-links/" rel="noopener">Могут возникнуть проблемы</a> во всех мобильных браузерах на старых версиях iOS и Android, в старых Chrome и даже в Safari 14. Баги везде разные.</p>
+<p><strong>iOS и VoiceOver</strong>. При переходе по skip link визуально срабатывает прокрутка, но, после свайпа, фокус перемещается на другую область, а не на содержимое основного блока. Другой баг возвращает в начало страницы, когда пытаешься перейти к следующему элементу в основном блоке.</p>
+<p><strong>Safari и VoiceOver</strong>. <a href="https://github.com/alphagov/govuk-frontend/issues/2187" rel="noopener">В ишьюс GOV.UK найдёте баг</a> с десктопным Safari 14 и VoiceOver. Если нажать на skip link, а потом на клавишу со стрелкой, то фокус переместится на следующий элемент после ссылки.</p>
+<p><strong>Android и TalkBack</strong>. Скрытые ссылки просто не получают фокус. Это ошибка всей операционной системы, из-за которой на таких элементах не запускается событие фокуса.</p>
+<p><strong>Chrome</strong>. Фокус остаётся на skip link и перемещается к следующему элементу после ссылки после нажатия на <kbd>Tab</kbd>.</p>
+<p><a href="https://bugs.webkit.org/show_bug.cgi?id=179011" rel="noopener">Баг на iOS</a> исправлен в апреле 2020, а <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=37721" rel="noopener">баг в Chrome</a> — ещё в 2017. <a href="https://bugs.chromium.org/p/chromium/issues/detail?id=657157" rel="noopener">Баг в Android</a> воспроизводился в 2022, и пока нет обновлений. Итого, с этими багами столкнётесь в iOS старше 13 версии и в старых версиях Chrome. К сожалению, часть пользователей скринридеров не часто обновляет браузеры и операционные системы.</p>
+<p><strong>Вариант 2</strong>, в котором ссылка ведёт к <code>&lt;h1&gt;</code> в <code>&lt;main&gt;</code>.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#main-content<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>skip-link<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    К основному контенту
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+  <span class="token comment">&lt;!-- Внушительная навигация --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>main</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>main-content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    Основной заголовок
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+  <span class="token comment">&lt;!-- Остальной контент --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>main</span><span class="token punctuation">></span></span></code></pre>
+<p>Отличается от первого варианта тем, что скринридеры объявят текст заголовка, а не всё текстовое содержимое <code>&lt;main&gt;</code>. Это даст пользователям больше контроля, так как им не нужно прерывать автоматическое объявление вручную.</p>
+<p>У такой разметки те же баги, что и у предыдущего варианта с <code>&lt;main&gt;</code> с атрибутом <code>id</code>.</p>
+<p><strong>Вариант 3</strong>, который решает проблему двух предыдущих.</p>
+<p>Атрибут <code>tabindex</code> с отрицательным значением удаляет элемент из последовательной навигации.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#main-content<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>skip-link<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    К основному контенту
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+  <span class="token comment">&lt;!-- Внушительная навигация --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>main</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>main-content<span class="token punctuation">"</span></span> <span class="token attr-name">tabindex</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>-1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token comment">&lt;!-- Контент основного блока --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>main</span><span class="token punctuation">></span></span></code></pre>
+<p>Этот хак хорошо работает со старыми версиями Chrome и на iOS. И снова «но». В других браузерах это может привести к новым багам:</p>
+<ul>
+<li>При переходе к основному блоку выделяется вся область с отрицательным <code>tabindex</code>.</li>
+<li>При клике по странице фокус вернётся в её начало.</li>
+</ul>
+<p>Здесь на помощь приходит JavaScript. Нужен скрипт, который, после события клика у skip link, устанавливает фокус на <code>main</code> и добавляет ему атрибут <code>tabindex=&quot;-1&quot;</code>. При потере фокуса этот атрибут удаляется. Можно подсмотреть реализацию в <a href="https://codepen.io/2kool2/pen/bxdzEJ" rel="noopener">демке Майка Фоскетта</a>, в том числе для Android. Аника Хенке предлагает более универсальное <a href="https://github.com/selfthinker/dokuwiki_template_writr/blob/master/js/skip-link-focus-fix.js" rel="noopener">решение на jQuery</a>, которое исправляет все ссылки и тоже удаляет <code>tabindex</code> в момент потери фокуса.</p>
+<p><strong>Вариант 4</strong>, в котором skip link ведёт к другой ссылке перед <code>&lt;main&gt;</code>.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#main-content<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>skip-link<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    К основному контенту
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+  <span class="token comment">&lt;!-- Внушительная навигация --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span>
+  <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#main-content<span class="token punctuation">"</span></span>
+  <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>main-content<span class="token punctuation">"</span></span>
+  <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>skip-link skip-link-target<span class="token punctuation">"</span></span>
+  <span class="token punctuation">></span></span>
+    Начало основного контента
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>main</span><span class="token punctuation">></span></span>
+  <span class="token comment">&lt;!-- Контент основного блока --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>main</span><span class="token punctuation">></span></span></code></pre>
+<p>Решение предложил Пол Рэдклифф в «<a href="https://css-tricks.com/a-deep-dive-on-skipping-to-content/" rel="noopener">A Deep Dive on Skipping to Content</a>». Он сделал <a href="https://rpress.io/examples/skip-to-content/skip-to-content-additional-in-content-skip-link.html" rel="noopener">демо для большей наглядности</a>.</p>
+<p>В этом случае скринридер объявит, что мы перешли к ссылке «Начало основного контента».</p>
+<p>Разметка решает проблему пользователей, которые не понимают, сработала ссылка или нет. Также она помогает избежать багов с некорректным поведением фокуса с клавиатуры в некоторых браузерах.</p>
+<p>Этот способ новый и интересный, но вижу несколько проблем.</p>
+<ul>
+<li>Вторая ссылка может сбить с толку пользователей скринридеров. Она никуда не ведёт, а так и хочется нажать на неё.</li>
+<li>Если пользователь без особенностей зрения протабает всю навигацию, то увидит непонятную ссылку «Начало основного контента».</li>
+<li>Точно поймаешь баг на Android, ведь это всё ещё визуально скрытые элементы.</li>
+</ul>
+<p><strong>Вариант 5</strong>, когда вторая ссылка без текста внутри <code>&lt;main&gt;</code>, с <code>href</code> или без него.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#main-content<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>skip-link<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    К основному контенту
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+  <span class="token comment">&lt;!-- Внушительная навигация --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>main</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>main-content<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>visually-hidden-link<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+  <span class="token comment">&lt;!-- Остальной контент --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>main</span><span class="token punctuation">></span></span></code></pre>
+<p>Ссылка без <code>href</code> — <a href="https://www.scottohara.me//note/2019/07/17/placeholder-link.html" rel="noopener">ссылка-плейсхолдер</a>. Её можно использовать для некоторых ситуаций, только если она не должна работать как ссылка. Дело в том, что на неё не устанавливается фокус с клавиатуры.</p>
+<p>Если это ссылка без названия, но с атрибутом <code>href</code>, то скринридеры будут зачитывать содержимое этого атрибута. Например, <code>&quot;#main-content&quot;</code>. Для NVDA эту проблему исправит <code>aria-hidden=&quot;true&quot;</code>.</p>
+<p><strong>Вариант 6</strong> с несколькими ссылками, который подходит для редких случаев.</p>
+<p>В этом примере обе ссылки обёрнуты в дополнительный <code>&lt;nav&gt;</code> с <code>aria-label</code>. Скринридеры объявят, что это навигация со ссылками для пропуска меню. Можно дополнительно обернуть их в <code>&lt;ul&gt;</code>, чтобы пользователям было проще навигироваться.</p>
+<pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav</span> <span class="token attr-name">aria-label</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Ссылки для пропуска меню<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#search<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>skip-link<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      Перейти к поиску по сайту
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#main-content<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>skip-link<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      Перейти к основному контенту
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav</span><span class="token punctuation">></span></span>
+  <span class="token comment">&lt;!-- Внушительная навигация --></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>search<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token comment">&lt;!-- Поиск по сайту --></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>main</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>main-content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token comment">&lt;!-- Контент основного блока --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>main</span><span class="token punctuation">></span></span></code></pre>
+<p>Без хака с <code>tabindex=&quot;-1&quot;</code> из третьего варианта тоже могут возникнуть проблемы в старых и некоторых новых браузерах.</p>
+<h2>Скрываем ссылку</h2>
+<p>Визуально скрывать ссылку и показывать её при фокусе тоже можно разными способами. Есть несколько основных правил:</p>
+<ul>
+<li>Не используйте свойства <code>display: none</code>, <code>visibility: hidden</code> или атрибут <code>hidden</code>. Нам надо скрыть ссылку только визуально.</li>
+<li>Не устанавливайте значение <code>0</code> для <code>width</code> и <code>height</code>. Такой элемент просто не попадёт в фокус.</li>
+</ul>
+<p>Давайте посмотрим на пару примеров со стилями.</p>
+<p><strong>Вариант 1</strong> с <code>position: absolute</code> и безумным отрицательным значением у <code>left</code>.</p>
+<p>Мы просто абсолютно позиционируем элемент, выносим его за видимую область, а при фокусе возвращаем туда, куда нужно.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.skip-link</span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> -999px<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 1px<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 1px<span class="token punctuation">;</span>
+  <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* Показываем при фокусе */</span>
+<span class="token selector">.skip-link:focus-visible</span> <span class="token punctuation">{</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+  <span class="token property">overflow</span><span class="token punctuation">:</span> visible<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p><strong>Вариант 2</strong> с <code>clip</code> или <code>clip-path</code>. Старый добрый visually-hidden способ.</p>
+<p>Можно использовать их одновременно для большей совместимости. Ещё встречала вариант с <code>clip-path: inset(50%)</code>.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.skip-link</span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+
+  <span class="token comment">/* Для всех браузеров */</span>
+  <span class="token property">clip</span><span class="token punctuation">:</span> <span class="token function">rect</span><span class="token punctuation">(</span>0 0 0 0<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">/* Современный способ */</span>
+  <span class="token property">-webkit-clip-path</span><span class="token punctuation">:</span> <span class="token function">polygon</span><span class="token punctuation">(</span>0 0<span class="token punctuation">,</span> 0 0<span class="token punctuation">,</span> 0 0<span class="token punctuation">,</span> 0 0<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">clip-path</span><span class="token punctuation">:</span> <span class="token function">polygon</span><span class="token punctuation">(</span>0 0<span class="token punctuation">,</span> 0 0<span class="token punctuation">,</span> 0 0<span class="token punctuation">,</span> 0 0<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* Показываем при фокусе */</span>
+<span class="token selector">.skip-link:focus-visible</span> <span class="token punctuation">{</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+
+  <span class="token comment">/* Если используете clip */</span>
+  <span class="token property">clip</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+
+  <span class="token comment">/* Если используете clip-path */</span>
+  <span class="token property">-webkit-clip-path</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+  <span class="token property">clip-path</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Свойство <code>clip</code> устарело, и ему на смену должно прийти <code>clip-path</code>. Пока будущее не наступило окончательно, поэтому <a href="https://caniuse.com/css-clip-path" rel="noopener"><code>clip-path</code> поддерживается с префиксом или частично</a> (<code>-webkit-clip-path</code>).</p>
+<p><strong>Вариант 3</strong> с <code>transform</code>.</p>
+<p>Снова позиционируем ссылку абсолютно и прячем её за пределы видимой области с помощью <code>transform</code>. Когда на ней фокус, то возвращаем обратно.</p>
+<pre class="language-css"><code class="language-css"><span class="token selector">.skip-link</span> <span class="token punctuation">{</span>
+  <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+  <span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateY</span><span class="token punctuation">(</span>-100%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* Показываем при фокусе */</span>
+<span class="token selector">.skip-link:focus-visible</span> <span class="token punctuation">{</span>
+  <span class="token property">transform</span><span class="token punctuation">:</span> <span class="token function">translateY</span><span class="token punctuation">(</span>0%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h2>Добавляем последние штрихи</h2>
+<p>Остальная стилизация skip link зависит от вашего дизайнерского видения. Самое главное, чтобы она была хорошо видна при фокусе с клавиатуры.</p>
+<p>WebAIM рекомендует не показывать ссылку неожиданно. Это может сбить с толку пользователей клавиатуры, которые видят интерфейс. Это исправит плавная анимация. Тогда ссылка будет выезжать из-за края экрана и уезжать обратно, когда на ней больше нет фокуса.</p>
+<p>Размещать ссылки можно в любой верхней части экрана. Очень часто их располагают в левом верхнем углу, но это не железное правило.</p>
+<p>Собрала небольшой список сайтов со skip link, где можно посмотреть, как они задизайнены у других. Используйте для навигации <kbd>Tab</kbd> на Windows, <kbd>Tab</kbd> или <kbd>Option Tab</kbd> на macOS.</p>
+<ul>
+<li><a href="https://www.nytimes.com" rel="noopener">The New York Times</a></li>
+<li><a href="https://www.bbc.com" rel="noopener">BBC</a></li>
+<li><a href="https://www.gov.uk" rel="noopener">GOV.UK</a></li>
+<li><a href="https://www.deque.com" rel="noopener">Deque</a></li>
+<li><a href="https://webaim.org" rel="noopener">WebAIM</a></li>
+<li><a href="https://www.amazon.com" rel="noopener">Amazon</a></li>
+<li><a href="https://www.playstation.com" rel="noopener">PlayStation</a></li>
+<li><a href="https://www.microsoft.com/" rel="noopener">Microsoft</a></li>
+<li><a href="https://worldofwarcraft.com/en-gb/" rel="noopener">World of Warcraft</a></li>
+<li><a href="https://www.reddit.com" rel="noopener">Reddit</a></li>
+</ul>
+<h2>Пара финальных слов</h2>
+<p>Часто, чем что-то кажется проще, тем оно сложнее на самом деле. Это произошло и со skip link.</p>
+<p>Вариантов того, как сделать skip link, довольно много для такого небольшого элемента. У них есть плюсы и минусы. Для себя выбрала бы классическую реализацию со ссылкой, которая ведёт к <code>&lt;main&gt;</code> или <code>&lt;h1&gt;</code> с <code>tabindex=&quot;-1&quot;</code> из третьего варианта. И прогрессивно улучшила её с помощью JS. Что касается стилей для скрытия ссылки, то они все рабочие. Можно выбрать любой, который больше подходит для проекта. Я чаще всего пользуюсь абсолютным позиционированием и отрицательным значением <code>left</code>.</p>
+<h2>Что почитать</h2>
+<ul>
+<li><a href="https://webaim.org/techniques/skipnav/" rel="noopener">«Skip Navigation» Links</a></li>
+<li><a href="https://www.a11yproject.com/posts/skip-nav-links/" rel="noopener">Use skip navigation links</a>, Камерон Кандифф</li>
+<li><a href="https://css-tricks.com/a-deep-dive-on-skipping-to-content/" rel="noopener">A Deep Dive on Skipping to Content</a>, Пол Рэдклифф</li>
+<li><a href="https://plousia.com/blog/some-thoughts-css-tricks-deep-dive-skipping-content" rel="noopener">Deep Dive on Skipping to Content</a>, Сюзанна Чельсо</li>
+<li><a href="https://css-tricks.com/how-to-create-a-skip-to-content-link/" rel="noopener">How to Create a «Skip to Content» Link</a>, Пол Райан</li>
+<li><a href="https://benmyers.dev/blog/skip-links/" rel="noopener">Implement a Skip Link for Navigation-Heavy Sites</a>, Бен Майерс</li>
+<li><a href="https://axesslab.com/skip-links/" rel="noopener">Your skip links are broken</a>, Хампус Сетфош</li>
+</ul>
+<hr>
+<p>Спасибо <a href="https://twitter.com/vasiliy_dudin" rel="noopener">Василию Дудину</a> за помощь с редактированием ❤️</p>
+
+</div>
+
+<section aria-labelledby="heading">
+	<h2 id="heading">Другие статьи</h2>
+	
+
+
+
+
+
+
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+		
+		
+			
+		
+		
+		
+			
+		
+	
+
+	
+
+
+
+	<ul class="cards cards--in-article">
+		
+			<li class="cards__item cards__item--compact">
+				<a href="/ru/articles/css-media-features-for-a11y/index.undefined" class="cards__item-link">CSS-медиафичи для улучшения доступности</a>
+				<span class="cards__item-details">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke-width="2"
+						stroke-linecap="round"
+						class="cards__item-details__ico"
+						aria-hidden="true"
+					>
+						<path d="m12 19-7-7 7-7"/>
+						<path d="M19 12H5"/>
+					</svg>
+					Предыдущая
+				</span>
+			</li>
+		
+		
+			<li class="cards__item cards__item--compact">
+				<a href="/ru/articles/how-to-protect-users-with-epilepsy-and-vd/index.undefined" class="cards__item-link">Как не навредить пользователям с эпилепсией и вестибулярными нарушениями</a>
+				<span class="cards__item-details">
+					Следующая
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke-width="2"
+						stroke-linecap="round"
+						class="cards__item-details__ico"
+						aria-hidden="true"
+					>
+						<path d="M5 12h14"/>
+						<path d="m12 5 7 7-7 7"/>
+					</svg>
+				</span>
+			</li>
+		
+	</ul>
+
+</section>
+		</main>
+	</div>
+	<footer>
+	<div class="footer wrapper">
+		<div class="footer__column">
+			<span aria-hidden="true">ʢ·͡ᴥ·ʡ∩๐า╭∩าﾉ\</span>
+			<small>Татьяна Фокина, 2021–2024</small>
+		</div>
+		<div class="footer__column">
+			<small>
+				Разработано на <a href="https://www.11ty.dev/">11ty</a>, иконки с <a href="https://lucide.dev">Lucide</a>
+			</small>
+			<small>
+				Нашли ошибку? Поделитесь ей на <a href="https://github.com/TatianaFokina/a11y-blog">GitHub</a>
+			</small>
+		</div>
+	</div>
+</footer>
+
+
+	
+</body>
+</html>
