@@ -1,5 +1,5 @@
-@import "../variables";
-@import "../mixins-and-functions";
+@use "../variables" as *;
+@use "../mixins-and-functions" as *;
 
 .header {
 	display: flex;

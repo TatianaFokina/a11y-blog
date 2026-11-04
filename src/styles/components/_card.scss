@@ -1,5 +1,5 @@
-@import "../variables";
-@import "../mixins-and-functions";
+@use "../variables" as *;
+@use "../mixins-and-functions" as *;
 
 .cards_heading:has(+ .card) {
 	margin-block-end: clamp(1.75rem, 1.332rem + 0.311vw, 2rem);

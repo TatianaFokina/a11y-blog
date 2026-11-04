@@ -1,5 +1,5 @@
-@import "../mixins-and-functions";
-@import "../variables";
+@use "../mixins-and-functions" as *;
+@use "../variables" as *;
 
 :root {
 	--step--1: clamp(0.8125rem, 0.4572rem + 0.9857vw, 1rem);

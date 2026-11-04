@@ -1,4 +1,5 @@
-@import "../variables";
+@use "../variables" as *;
+@use "../mixins-and-functions" as *;
 
 // High contrast mode
 @media (forced-colors: active) {

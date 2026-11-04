@@ -1,23 +1,19 @@
-// Variables and mixins
-@import "variables";
-@import "mixins-and-functions";
-
 // Core styles
-@import "basic/animation";
-@import "basic/color-themes";
-@import "basic/layout";
-@import "basic/fonts";
-@import "basic/typography";
-@import "basic/global";
-@import "basic/elements";
-@import "basic/contrast-and-inverted-colors";
+@use "basic/animation";
+@use "basic/color-themes";
+@use "basic/layout";
+@use "basic/fonts";
+@use "basic/typography";
+@use "basic/global";
+@use "basic/elements";
+@use "basic/contrast-and-inverted-colors";
 
 // Components
-@import "components/article";
-@import "components/header";
-@import "components/menu";
-@import "components/logo";
-@import "components/theme-switcher";
-@import "components/footer";
-@import "components/card";
-@import "components/tags";
+@use "components/article";
+@use "components/header";
+@use "components/menu";
+@use "components/logo";
+@use "components/theme-switcher";
+@use "components/footer";
+@use "components/card";
+@use "components/tags";

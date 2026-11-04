@@ -1,9 +1,10 @@
-@use 'sass:math';
-@import "variables";
+@use "sass:map";
+@use "sass:math";
+@use "variables" as *;
 
 // @media
 @mixin media($widthName) {
-	$width: map-get($breakpoints, $widthName);
+	$width: map.get($breakpoints, $widthName);
 	@media (width >= $width) {
 		@content;
 	}

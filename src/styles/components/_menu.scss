@@ -1,5 +1,5 @@
-@import "../variables";
-@import "../mixins-and-functions";
+@use "../variables" as *;
+@use "../mixins-and-functions" as *;
 
 $line-height-menu-link: 1.7;
 

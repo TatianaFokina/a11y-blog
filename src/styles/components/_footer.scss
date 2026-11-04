@@ -1,5 +1,5 @@
-@import "../variables";
-@import "../mixins-and-functions";
+@use "../variables" as *;
+@use "../mixins-and-functions" as *;
 
 $footer-gap-start: clamp(5.5625rem, 3.991rem + 2.097vw, 7.25rem);
 $footer-gap-inner: clamp(0.875rem, 0.666rem + 0.155vw, 1rem);

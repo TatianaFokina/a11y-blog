@@ -1,5 +1,6 @@
-@import "../mixins-and-functions";
-@import "../variables";
+@use "sass:map";
+@use "../mixins-and-functions" as *;
+@use "../variables" as *;
 
 *, *::before, *::after {
 	margin: 0;
@@ -23,7 +24,7 @@
 }
 
 .wrapper {
-	max-width: map-get($container-widths, md);
+	max-width: map.get($container-widths, md);
 	width: 100%;
 	margin: 0 auto;
 	padding: 0 $gap-20;
