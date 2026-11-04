@@ -1,17 +1,17 @@
-const yaml = require("js-yaml");
-const pluginRss = require("@11ty/eleventy-plugin-rss");
-const pluginNavigation = require("@11ty/eleventy-navigation");
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+import { load as loadYaml } from "js-yaml";
+import pluginRss from "@11ty/eleventy-plugin-rss";
+import pluginNavigation from "@11ty/eleventy-navigation";
+import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 
 // 11ty config files
-const pluginMd = require("./.eleventy.md.js");
-const pluginShortcodes = require("./.eleventy.shortcodes.js");
-const pluginFilters = require("./.eleventy.filters.js");
-const pluginI18n = require("./.eleventy.i18n.js");
-const pluginTransforms = require("./.eleventy.transforms.js");
+import pluginMd from "./eleventy.md.js";
+import pluginShortcodes from "./eleventy.shortcodes.js";
+import pluginFilters from "./eleventy.filters.js";
+import pluginI18n from "./eleventy.i18n.js";
+import pluginTransforms from "./eleventy.transforms.js";
 
-module.exports = function (eleventyConfig) {
-	eleventyConfig.addDataExtension("yaml", (contents) => yaml.load(contents));
+export default function (eleventyConfig) {
+	eleventyConfig.addDataExtension("yaml", (contents) => loadYaml(contents));
 	eleventyConfig.addGlobalData("env", process.env.ELEVENTY_ENV);
 
 	// Plugins
@@ -44,19 +44,19 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy(
 		"src/(en|ru)/articles/**/*.(gif|jpg|png|webp|svg)"
 	);
+}
 
-	return {
-		dir: {
-			input: "src",
-			output: "dist",
-			includes: "_includes",
-			layouts: "_templates",
-			data: "_data",
-		},
-		dataTemplateEngine: "njk",
-		markdownTemplateEngine: "njk",
-		htmlTemplateEngine: "njk",
-		passthroughFileCopy: true,
-		templateFormats: ["md", "njk"],
-	};
+export const config = {
+	dir: {
+		input: "src",
+		output: "dist",
+		includes: "_includes",
+		layouts: "_templates",
+		data: "_data",
+	},
+	dataTemplateEngine: "njk",
+	markdownTemplateEngine: "njk",
+	htmlTemplateEngine: "njk",
+	passthroughFileCopy: true,
+	templateFormats: ["md", "njk"],
 };

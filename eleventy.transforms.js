@@ -1,7 +1,7 @@
-const prettyData = require("pretty-data");
-const { JSDOM } = require("jsdom");
+import prettyData from "pretty-data";
+import { JSDOM } from "jsdom";
 
-module.exports = (eleventyConfig) => {
+export default (eleventyConfig) => {
 	eleventyConfig.addTransform("xmlmin", function (content, outputPath) {
 		if (outputPath && outputPath.endsWith(".xml")) {
 			let result = prettyData.pd.xmlmin(content);

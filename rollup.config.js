@@ -1,8 +1,8 @@
-const resolve = require("@rollup/plugin-node-resolve").default;
-const commonjs = require("@rollup/plugin-commonjs").default;
-const terser = require("@rollup/plugin-terser").default;
+import resolve from "@rollup/plugin-node-resolve";
+import commonjs from "@rollup/plugin-commonjs";
+import terser from "@rollup/plugin-terser";
 
-module.exports = {
+export default {
 	input: "src/scripts/scripts.js", // Your main script file
 	output: {
 		file: "dist/scripts/bundle.js", // Output file

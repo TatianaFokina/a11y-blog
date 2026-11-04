@@ -1,6 +1,6 @@
-const markdownIt = require("markdown-it");
+import markdownIt from "markdown-it";
 
-module.exports = (eleventyConfig) => {
+export default (eleventyConfig) => {
 	let options = {
 		html: true,
 		breaks: true,

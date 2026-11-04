@@ -1,8 +1,8 @@
-const fs = require("fs");
-const path = require("path");
-const yaml = require("js-yaml");
+import fs from "node:fs";
+import path from "node:path";
+import { load as loadYaml } from "js-yaml";
 
-const i18nDirectory = path.join(__dirname, "i18n");
+const i18nDirectory = path.join(import.meta.dirname, "i18n");
 let translations = {};
 
 fs.readdirSync(i18nDirectory).forEach((file) => {
@@ -11,7 +11,7 @@ fs.readdirSync(i18nDirectory).forEach((file) => {
 			path.join(i18nDirectory, file),
 			"utf8"
 		);
-		const parsedContent = yaml.load(fileContents);
+		const parsedContent = loadYaml(fileContents);
 
 		// Combine content of a file with a translation object for each language
 		Object.keys(parsedContent).forEach((lang) => {
@@ -26,4 +26,4 @@ fs.readdirSync(i18nDirectory).forEach((file) => {
 	}
 });
 
-module.exports = translations;
+export default translations;

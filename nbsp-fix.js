@@ -1,4 +1,4 @@
-const fs = require("fs");
+import fs from "node:fs";
 
 // Prepositions and conjunctions after which a non-breaking space is needed
 const NBSP_WORDS = [

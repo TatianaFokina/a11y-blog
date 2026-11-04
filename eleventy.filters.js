@@ -1,8 +1,8 @@
-const fs = require("node:fs");
-const path = require("node:path");
-const crypto = require("node:crypto");
+import fs from "node:fs";
+import path from "node:path";
+import crypto from "node:crypto";
 
-module.exports = (eleventyConfig) => {
+export default (eleventyConfig) => {
 	// Dates
 	eleventyConfig.addFilter("dateFormat", function (value, format) {
 		const date = new Date(value);
